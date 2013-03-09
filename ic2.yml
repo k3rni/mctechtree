@@ -71,3 +71,9 @@ crafts:
           - refined iron
           - refined iron
           - refined iron
+    - diamond drill:
+        ingredients:
+          - drill
+          - diamond
+          - diamond
+          - diamond

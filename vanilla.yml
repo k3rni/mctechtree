@@ -2,6 +2,7 @@ primitives:
     - cobble
     - wood
     - dirt
+    - sand
     - iron ore
     - coal
     - gold ore
@@ -25,6 +26,9 @@ crafts:
     - charcoal:
         machine: furnace
         ingredients: [wood]
+    - glass:
+        machine: furnace
+        ingredients: [sand]
     - torch:
         makes: 4
         ingredients: [sticks, charcoal]
