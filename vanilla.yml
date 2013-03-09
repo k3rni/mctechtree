@@ -13,10 +13,8 @@ primitives:
 crafts:
     - stone:
         machine: furnace
-        makes: 1
         ingredients: [cobble]
     - furnace:
-        makes: 1
         ingredients: [cobble, cobble, cobble, cobble, cobble, cobble, cobble, cobble]
     - planks:
         makes: 4
@@ -26,7 +24,6 @@ crafts:
         ingredients: [planks, planks]
     - charcoal:
         machine: furnace
-        makes: 1
         ingredients: [wood]
     - torch:
         makes: 4
@@ -38,9 +35,7 @@ crafts:
         makes: 4
         ingredients: [stone, stone, stone, stone]
     - iron:
-        makes: 1
         machine: furnace
         ingredients: [iron ore]
     - piston:
-        makes: 1
         ingredients: [planks, planks, planks, cobble, iron, cobble, cobble, redstone, cobble]

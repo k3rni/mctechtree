@@ -44,11 +44,11 @@ class Database < Set
             ingredients = resolve_items(definition['ingredients'])
             if item
                 item.add_craft do |craft|
-                    craft.makes(definition['makes'], definition['machine'], ingredients)
+                    craft.makes(definition['makes'] || 1, definition['machine'], ingredients)
                 end
             else
                 item = Item.crafted name do |craft|
-                    craft.makes(definition['makes'], definition['machine'], ingredients)
+                    craft.makes(definition['makes'] || 1, definition['machine'], ingredients)
                 end
                 self.add item
             end
@@ -69,6 +69,7 @@ class Craft
         ["Craft(",
          "result=#{self.result},",
          ("machine=#{machine}," if machine),
+         ("count=#{self.count}," if count > 1),
          "ingredients=#{ingredients.map(&:to_s).join('+')}",
          ")"
         ].join('')
@@ -80,6 +81,10 @@ class Craft
 
     def self.create machine, result, count, ingredients
         self.new(machine: machine, result: result, count: count, ingredients: ingredients)
+    end
+
+    def count_ingredients
+        Hash[ingredients.group_by(&:name).map { |name,items| [items.first, items.size] }]
     end
 end
 
@@ -98,6 +103,10 @@ class Item
         else
             name
         end
+    end
+
+    def <=> other
+        self.name <=> other.name
     end
 
     def self.primitive name
@@ -119,11 +128,15 @@ class Item
         yield(CraftBuilder.new(self))
     end
 
-    def tree
+    def resolve(count=1)
         if primitive
-            self
+            [self] * count
         else
-
+            crafts.map do |craft|
+                craft.count_ingredients.map do |item, required_count| 
+                    item.resolve(required_count)
+                end
+            end
         end
     end
 end
