@@ -1,0 +1,39 @@
+primitives:
+    - cobble
+    - wood
+    - dirt
+    - iron ore
+    - coal
+    - gold ore
+    - diamond
+    - redstone
+
+crafts:
+    - stone:
+        machine: furnace
+        makes: 1
+        ingredients: [cobble]
+    - furnace:
+        machine: ~
+        makes: 1
+        ingredients: [cobble, cobble, cobble, cobble, cobble, cobble, cobble, cobble]
+    - planks:
+        machine: ~
+        makes: 4
+        ingredients: wood
+    - sticks:
+        machine: ~
+        makes: 4
+        ingredients: [planks, planks]
+    - charcoal:
+        machine: furnace
+        makes: 1
+        ingredients: [wood]
+    - torch:
+        machine: ~
+        makes: 4
+        ingredients: [sticks, charcoal]
+    - torch:
+        machine: ~
+        makes: 4
+        ingredients: [sticks, coal]
