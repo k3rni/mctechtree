@@ -4,18 +4,70 @@ primitives:
     - sticky resin
 
 crafts: 
+    - refined iron:
+        machine: furnace
+        ingredients: [iron]
     - tin dust:
         machine: macerator
         makes: 2
         ingredients: [tin ore]
+    - copper dust:
+        machine: macerator
+        makes: 2
+        ingredients: [copper ore]
     - tin ingot:
         machine: furnace
-        makes: 1
         ingredients: [tin ore]
     - tin ingot:
         machine: furnace
-        makes: 1
         ingredients: [tin dust]
+    - copper ingot:
+        machine: furnace
+        ingredients: [copper dust]
+    - copper ingot:
+        machine: furnace
+        ingredients: [copper ore]
+    - rubber:
+        machine: furnace
+        ingredients: [sticky resin]
+    - rubber:
+        machine: extractor
+        makes: 3
+        ingredients: [sticky resin]
     - cell:
         makes: 16
         ingredients: [tin ingot, tin ingot, tin ingot, tin ingot]
+    - copper wire:
+        makes: 6
+        ingredients: [copper ingot, copper ingot, copper ingot]
+    - copper cable:
+        ingredients: [copper wire, rubber]
+    - RE battery:
+        ingredients: 
+          - tin ingot
+          - tin ingot
+          - tin ingot
+          - tin ingot
+          - redstone
+          - redstone
+          - copper cable
+    - integrated circuit:
+        ingredients: 
+          - copper cable
+          - copper cable
+          - copper cable
+          - copper cable
+          - copper cable
+          - copper cable
+          - redstone
+          - redstone
+          - refined iron
+    - drill:
+        ingredients: 
+          - RE battery
+          - integrated circuit
+          - refined iron
+          - refined iron
+          - refined iron
+          - refined iron
+          - refined iron

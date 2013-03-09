@@ -130,14 +130,32 @@ class Item
 
     def resolve(count=1)
         if primitive
-            [self] * count
+            Resolver.final(self, count)
         else
             crafts.map do |craft|
-                craft.count_ingredients.map do |item, required_count| 
-                    item.resolve(required_count)
-                end
+                Resolver.create(self, craft, count).resolve
             end
         end
+    end
+end
+
+class Resolver
+    attr_reader :final, :item, :count, :craft
+
+    def initialize attrs={}
+        attrs.each { |key, val| self.send "#{key}=", val }
+    end
+
+    def self.final item, count
+        self.new(final: true, item: item, count: count)
+    end
+
+    def self.create item, craft, count
+        self.new(final: false, item: item, craft: craft, count: count)
+    end
+
+    def resolve
+        ings = craft.count_ingredients
     end
 end
 
