@@ -7,6 +7,8 @@ primitives:
     - gold ore
     - diamond
     - redstone
+    - flint
+    - wool
 
 crafts:
     - stone:
@@ -14,15 +16,12 @@ crafts:
         makes: 1
         ingredients: [cobble]
     - furnace:
-        machine: ~
         makes: 1
         ingredients: [cobble, cobble, cobble, cobble, cobble, cobble, cobble, cobble]
     - planks:
-        machine: ~
         makes: 4
-        ingredients: wood
+        ingredients: [wood]
     - sticks:
-        machine: ~
         makes: 4
         ingredients: [planks, planks]
     - charcoal:
@@ -30,10 +29,18 @@ crafts:
         makes: 1
         ingredients: [wood]
     - torch:
-        machine: ~
         makes: 4
         ingredients: [sticks, charcoal]
     - torch:
-        machine: ~
         makes: 4
         ingredients: [sticks, coal]
+    - stone bricks:
+        makes: 4
+        ingredients: [stone, stone, stone, stone]
+    - iron:
+        makes: 1
+        machine: furnace
+        ingredients: [iron ore]
+    - piston:
+        makes: 1
+        ingredients: [planks, planks, planks, cobble, iron, cobble, cobble, redstone, cobble]
