@@ -1,0 +1,21 @@
+primitives:
+    - copper ore
+    - tin ore
+    - sticky resin
+
+crafts: 
+    - tin dust:
+        machine: macerator
+        makes: 2
+        ingredients: [tin ore]
+    - tin ingot:
+        machine: furnace
+        makes: 1
+        ingredients: [tin ore]
+    - tin ingot:
+        machine: furnace
+        makes: 1
+        ingredients: [tin dust]
+    - cell:
+        makes: 16
+        ingredients: [tin ingot, tin ingot, tin ingot, tin ingot]
