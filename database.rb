@@ -11,10 +11,11 @@ class Database < Set
         self
     end
 
-    def load_primitives names
-        names.each do |name|
+    def load_primitives data
+        data.each do |data|
+            name = data.keys.first
             next if find(name)
-            self.add Item.primitive(name)
+            self.add Item.primitive(name, data.values.first)
         end
     end
 
@@ -41,6 +42,29 @@ class Database < Set
     def resolve_items names
         names.map do |name|
             self.find(name) || Item.pending(name)
+        end
+    end
+
+    def dump_graph fp
+        fp.puts "digraph techtree {"
+            dump_items fp
+            dump_crafts fp
+        fp.puts "}"
+    end
+
+    def dump_items fp
+        self.each do |item|
+            fp.puts %Q(#{item.safe_name} [label="#{item.name}"];)
+        end
+    end
+
+    def dump_crafts fp
+        self.each do |item|
+            item.crafts.each do |craft|
+                craft.count_ingredients.each do |ing, count|
+                    fp.puts %Q(#{ing.safe_name} -> #{craft.result.safe_name} [label=#{count}];)
+                end
+            end
         end
     end
 end

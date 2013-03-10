@@ -11,7 +11,7 @@ class CraftBuilder < SimpleDelegator
 end
 
 class Item
-    attr_accessor :name, :primitive
+    attr_accessor :name, :primitive, :cost
     attr_reader :crafts
 
     def initialize attrs={}
@@ -20,19 +20,22 @@ class Item
     end
 
     def to_s
-        if primitive
-            name.upcase
-        else
-            name
-        end
+        [
+            (primitive ? name.upcase : name),
+            ("@#{cost}" unless cost.nil?)
+        ].join('')
+    end
+
+    def safe_name
+        name.gsub(' ', '_')
     end
 
     def <=> other
         self.name <=> other.name
     end
 
-    def self.primitive name
-        self.new(name: name, primitive: true)
+    def self.primitive name, cost
+        self.new(name: name, primitive: true, cost: cost)
     end
 
     def self.crafted name

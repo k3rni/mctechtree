@@ -1,9 +1,12 @@
 primitives:
-    - copper ore
-    - tin ore
-    - sticky resin
+    - copper ore: 4
+    - tin ore: 4
+    - sticky resin: 3
 
 crafts: 
+    - coal dust:
+        machine: macerator
+        ingredients: [coal]
     - refined iron:
         machine: furnace
         ingredients: [iron]
@@ -77,3 +80,36 @@ crafts:
           - diamond
           - diamond
           - diamond
+    - energy crystal:
+        ingredients:
+          - diamond
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+    - carbon fibers:
+        ingredients:
+          - coal dust
+          - coal dust
+          - coal dust
+          - coal dust
+    - combined carbon fibers:
+        ingredients:
+          - carbon fibers
+          - carbon fibers
+    - carbon plate:
+        ingredients:
+          - combined carbon fibers
+    - iridium:
+        ingredients:
+          - UU-matter
+          - UU-matter
+          - UU-matter
+          - UU-matter
+          - UU-matter
+          - UU-matter
+          - UU-matter

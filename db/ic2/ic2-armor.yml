@@ -1,0 +1,38 @@
+primitives: {}
+
+crafts:
+  - nano helmet:
+        ingredients:
+          - energy crystal
+          - glass
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+  - nano chest:
+        ingredients:
+          - energy crystal
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+  - nano leggings:
+        ingredients:
+          - energy crystal
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+  - nano boots:
+        ingredients:
+          - energy crystal
+          - carbon plate
+          - carbon plate
+          - carbon plate
+          - carbon plate
+

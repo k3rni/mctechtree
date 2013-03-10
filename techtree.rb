@@ -15,7 +15,7 @@ autoload :Database, './database'
 class ItemResolver
     attr_accessor :item, :count, :children
     
-    def initialize(item, count)
+    def initialize(item, count=1)
         @item = item
         @count = count
         @children = item.crafts.map do |craft| 
@@ -25,7 +25,7 @@ class ItemResolver
 
     def cost
         if item.primitive
-            count
+            count * item.cost
         else
             count * min_child_cost
         end
@@ -34,13 +34,24 @@ class ItemResolver
     def min_child_cost
         @children.map(&:cost).min
     end
+    
+    def best_craft
+        @children.select { |c| c.cost == min_child_cost }.first
+    end
 
     def resolve
         if item.primitive
             [:get, count, item]
         else
-            best_craft = @children.select { |c| c.cost == min_child_cost }.first
-            [:craft, (count / best_craft.craft.makes).ceil, best_craft.resolve]
+            [:craft, (count.to_f / best_craft.craft.makes).ceil, best_craft.resolve]
+        end
+    end
+
+    def explain depth=0
+        if item.primitive
+            "#{' ' * depth}#{count} #{item.name}"
+        else
+            "#{' ' * depth}#{(count.to_f / best_craft.craft.makes).ceil} #{best_craft.explain(depth+1)}"
         end
     end
 
@@ -69,6 +80,17 @@ class CraftResolver
         [craft, @children.map { |ir| [ir.count, ir.resolve] }]
     end
 
+    def explain depth=0
+        [ "craft #{craft.result.name} ",
+          ("using #{craft.machine} " if craft.machine),
+          "from (\n",
+          @children.map do |ir| 
+            ir.explain(depth+1) 
+          end.join(",\n#{' '*depth}"),
+          ")"
+        ].join('')
+    end
+
 end
 
 def load_data data, database=nil
@@ -79,4 +101,7 @@ end
 db = Database.new
 db.load_definitions(YAML.load_file('vanilla.yml'))
   .load_definitions(YAML.load_file('ic2.yml'))
+  .load_definitions(YAML.load_file('ic2-armor.yml'))
+
+db.dump_graph File.open('techtree.dot', 'w')
 binding.pry

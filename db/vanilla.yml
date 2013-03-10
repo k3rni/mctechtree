@@ -1,15 +1,15 @@
 primitives:
-    - cobble
-    - wood
-    - dirt
-    - sand
-    - iron ore
-    - coal
-    - gold ore
-    - diamond
-    - redstone
-    - flint
-    - wool
+    - cobble: 1
+    - wood: 1
+    - dirt: 1
+    - sand: 1
+    - iron ore: 10
+    - coal: 4
+    - gold ore: 40
+    - diamond: 100
+    - redstone: 70
+    - flint: 3
+    - wool: 5
 
 crafts:
     - stone:
