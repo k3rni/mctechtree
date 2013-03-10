@@ -17,14 +17,13 @@ crafts:
     - stone:
         machine: furnace
         ingredients: [cobble]
-    - furnace:
-        ingredients: [cobble, cobble, cobble, cobble, cobble, cobble, cobble, cobble]
+    - furnace: [cobble*8]
     - planks:
         makes: 4
         ingredients: [wood]
     - sticks:
         makes: 4
-        ingredients: [planks, planks]
+        ingredients: [planks*2]
     - charcoal:
         machine: furnace
         ingredients: [wood]
@@ -39,13 +38,10 @@ crafts:
         ingredients: [sticks, coal]
     - stone bricks:
         makes: 4
-        ingredients: [stone, stone, stone, stone]
+        ingredients: [stone*4]
     - iron:
         machine: furnace
         ingredients: [iron ore]
-    - piston:
-        ingredients: [planks, planks, planks, cobble, iron, cobble, cobble, redstone, cobble]
-    - bucket:
-        ingredients: [iron, iron, iron]
-    - water bucket:
-        ingredients: [bucket]
+    - piston: [planks*3, cobble*4, iron, redstone]
+    - bucket: [iron*3]
+    - water bucket: [bucket]

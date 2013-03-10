@@ -1,121 +1,76 @@
-primitives: {}
-
 crafts:
     - copper wire:
         makes: 6
-        ingredients: [copper ingot, copper ingot, copper ingot]
+        ingredients: [copper ingot*3]
     - copper cable:
         ingredients: [copper wire, rubber]
     - glass fibre cable:
         makes: 4
         ingredients:
-          - glass
-          - glass
-          - glass
-          - glass
-          - glass
-          - glass
-          - redstone
-          - redstone
+          - glass*6
+          - redstone*2
           - diamond
     - gold wire:
         makes: 12
-        ingredients: [gold ingot, gold ingot, gold ingot]
+        ingredients: [gold ingot*3]
     - insulated gold cable:
         makes: 4
-        ingredients: [gold ingot, rubber, rubber, rubber, rubber]
+        ingredients: [gold ingot, rubber*4]
     - insulated gold cable:
         ingredients: [gold wire, rubber]
-    - 2ins gold cable:
-        ingredients: [insulated gold cable, rubber]
-    - 2ins gold cable:
-        ingredients: [gold wire, rubber, rubber]
+    - 2ins gold cable: [insulated gold cable, rubber]
+    - 2ins gold cable: [gold wire, rubber*2]
+    - HV cable:
+        makes: 12
+        ingredients: [refined iron*3]
+    - insulated HV cable:
+        makes: 4
+        ingredients: [refined iron, rubber*4]
+    - insulated HV cable: [rubber, refined iron]
+    - 2ins HV cable: [insulated HV cable, rubber]
+    - 2ins HV cable: [HV cable, rubber*2]
+    - 3ins HV cable: [rubber*2, insulated HV cable]
+    - 3ins HV cable: [rubber*3, HV cable]
+    - 3ins HV cable: [rubber, 2ins HV cable]
     - RE battery:
-        ingredients: 
-          - tin ingot
-          - tin ingot
-          - tin ingot
-          - tin ingot
-          - redstone
-          - redstone
-          - copper cable
+      - tin ingot*4
+      - redstone*2
+      - copper cable
     - energy crystal:
-        ingredients:
-          - diamond
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
+      - diamond
+      - redstone*8
     - lapotron crystal:
-        ingredients:
-          - lapis
-          - lapis
-          - lapis
-          - lapis
-          - lapis
-          - lapis
-          - advanced circuit
-          - advanced circuit
-          - energy crystal
+      - lapis*6
+      - advanced circuit*2
+      - energy crystal
     - lappack:
-        ingredients:
-          - lapis block
-          - lapis block
-          - lapis block
-          - lapis block
-          - lapis block
-          - lapis block
-          - batpack
-          - advanced circuit
+      - lapis block*6
+      - batpack
+      - advanced circuit
     - batpack:
-        ingredients:
-          - RE battery
-          - RE battery
-          - RE battery
-          - RE battery
-          - RE battery
-          - RE battery
-          - integrated circuit
-          - tin ingot
+      - RE battery*6
+      - integrated circuit
+      - tin ingot
     - MV transformer:
-        ingredients:
-          - 2ins gold cable
-          - 2ins gold cable
-          - machine
+      - 2ins gold cable*2
+      - machine
+    - HV transformer:
+      - 3ins HV cable*2
+      - integrated circuit
+      - MV transformer
+      - energy crystal
     - tesla coil:
-        ingredients:
-          - MV transformer
-          - integrated circuit
-          - refined iron
-          - refined iron
-          - redstone
-          - redstone
-          - redstone
-          - redstone
+      - MV transformer
+      - integrated circuit
+      - refined iron*2
+      - redstone*4
     - MFSU:
-        ingredients:
-          - MFE
-          - advanced machine
-          - advanced circuit
-          - lapotron crystal
-          - lapotron crystal
-          - lapotron crystal
-          - lapotron crystal
-          - lapotron crystal
-          - lapotron crystal
+      - MFE
+      - advanced machine
+      - advanced circuit
+      - lapotron crystal*6
     - MFE:
-        ingredients:
-          - energy crystal
-          - energy crystal
-          - energy crystal
-          - energy crystal
-          - 2ins gold cable
-          - 2ins gold cable
-          - 2ins gold cable
-          - 2ins gold cable
-          - machine
+      - energy crystal*4
+      - 2ins gold cable*4
+      - machine
 

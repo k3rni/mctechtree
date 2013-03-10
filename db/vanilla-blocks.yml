@@ -1,14 +1,2 @@
-primitives: {}
-
 crafts:
-  - lapis block:
-      ingredients:
-        - lapis
-        - lapis
-        - lapis
-        - lapis
-        - lapis
-        - lapis
-        - lapis
-        - lapis
-        - lapis
+  - lapis block: [lapis*9]

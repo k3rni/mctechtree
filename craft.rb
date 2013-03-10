@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'zlib'
+
 class Craft
     attr_accessor :machine, :result, :makes, :ingredients
 
@@ -11,6 +13,10 @@ class Craft
          "ingredients=#{ingredients.map(&:to_s).join('+')}",
          ")"
         ].join('')
+    end
+
+    def hash
+        Zlib.crc32 to_s
     end
 
     def initialize attrs={}

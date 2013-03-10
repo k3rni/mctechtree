@@ -1,84 +1,39 @@
-primitives: {}
-
 crafts:
   - rubber boots:
-      ingredients:
-        - wool
-        - rubber
-        - rubber
-        - rubber
-        - rubber
-        - rubber
-        - rubber
+    - wool
+    - rubber*6
   - nano helmet:
-        ingredients:
-          - energy crystal
-          - glass
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
+      - energy crystal
+      - glass
+      - carbon plate*4
   - nano body armor:
-        ingredients:
-          - energy crystal
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
+      - energy crystal
+      - carbon plate*7
   - nano leggings:
-        ingredients:
-          - energy crystal
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
+      - energy crystal
+      - carbon plate*6
   - nano boots:
-        ingredients:
-          - energy crystal
-          - carbon plate
-          - carbon plate
-          - carbon plate
-          - carbon plate
+      - energy crystal
+      - carbon plate*4
   - quantum helmet:
-      ingredients:
-        - nano helmet
-        - iridium plate
-        - iridium plate
-        - lapotron crystal
-        - advanced circuit
-        - advanced circuit
-        - reinforced glass
+    - nano helmet
+    - iridium plate*2
+    - lapotron crystal
+    - advanced circuit*2
+    - reinforced glass
   - quantum body armor:
-      ingredients:
-        - nano body armor
-        - iridium plate
-        - iridium plate
-        - iridium plate
-        - iridium plate
-        - advanced alloy
-        - advanced alloy
-        - advanced alloy
-        - lapotron crystal
+    - nano body armor
+    - iridium plate*4
+    - advanced alloy*3
+    - lapotron crystal
   - quantum leggings:
-      ingredients:
-        - nano leggings
-        - glowstone
-        - glowstone
-        - machine
-        - machine
-        - iridium plate
-        - iridium plate
-        - lapotron crystal
+    - nano leggings
+    - glowstone*2
+    - machine*2
+    - iridium plate*2
+    - lapotron crystal
   - quantum boots:
-      ingredients:
-        - nano boots
-        - rubber boots
-        - rubber boots
-        - iridium plate
-        - iridium plate
-        - lapotron crystal
+    - nano boots
+    - rubber boots*2
+    - iridium plate*2
+    - lapotron crystal

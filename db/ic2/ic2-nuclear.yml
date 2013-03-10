@@ -1,76 +1,31 @@
-primitives: {}
-
 crafts:
   - coolant cell:
-      ingredients:
-        - water cell
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - tin ingot
+    - water cell
+    - tin ingot*4
   - water cell:
-      ingredients:
-        - cell
-        - water bucket
+    - cell
+    - water bucket
   - 30K coolant cell:
-      ingredients:
-        - coolant cell
-        - coolant cell
-        - coolant cell
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - tin ingot
+    - coolant cell*3
+    - tin ingot*6
   - 60K coolant cell:
-      ingredients:
-        - 30K coolant cell
-        - 30K coolant cell
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - tin ingot
-        - dense copper plate
+    - 30K coolant cell*2
+    - tin ingot*6
+    - dense copper plate
   - dense copper plate:
       machine: compressor
       ingredients:
-        - copper ingot
-        - copper ingot
-        - copper ingot
-        - copper ingot
-        - copper ingot
-        - copper ingot
-        - copper ingot
-        - copper ingot
-  - heat-capacity reactor plating:
-      ingredients:
-        - reactor plating
-        - dense copper plate
-        - dense copper plate
-  - reactor plating:
-      ingredients:
-        - dense copper plate
-        - advanced alloy
+        - copper ingot*8
+  - heat-capacity reactor plating: [reactor plating, dense copper plate*2]
+  - reactor plating: [dense copper plate, advanced alloy]
   - advanced heat exchanger:
-      ingredients:
-        - glass fibre cable
-        - glass fibre cable
-        - glass fibre cable
-        - glass fibre cable
-        - integrated circuit
-        - integrated circuit
-        - heat exchanger
-        - heat exchanger
-        - dense copper plate
+    - glass fibre cable*4
+    - integrated circuit*2
+    - heat exchanger*2
+    - dense copper plate
   - heat exchanger:
-      ingredients:
-        - integrated circuit
-        - dense copper plate
-        - tin ingot
-        - tin ingot
-        - tin ingot
+    - integrated circuit
+    - dense copper plate
+    - tin ingot*3
 
 

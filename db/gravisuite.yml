@@ -1,71 +1,68 @@
-primitives: {}
-
 crafts:
   - superconductor cover:
       makes: 3
       ingredients:
-        - advanced alloy
-        - advanced alloy
-        - advanced alloy
-        - advanced alloy
-        - iridium plate
-        - iridium plate
-        - carbon plate
-        - carbon plate
-        - carbon plate
+        - advanced alloy*4
+        - iridium plate*2
+        - carbon plate*3
   - superconductor:
       makes: 3
       ingredients:
-        - superconductor cover
-        - superconductor cover
-        - superconductor cover
-        - superconductor cover
-        - superconductor cover
-        - superconductor cover
-        - glass fibre cable
-        - glass fibre cable
+        - superconductor cover*6
+        - glass fibre cable*2
         - gold ingot
   - cooling core:
       ingredients:
-        - 60K coolant cell
-        - 60K coolant cell
-        - 60K coolant cell
-        - 60K coolant cell
-        - heat-capacity reactor plating
-        - heat-capacity reactor plating
+        - 60K coolant cell*4
+        - heat-capacity reactor plating*2
         - iridium plate
-        - advanced heat exchanger
-        - advanced heat exchanger
+        - advanced heat exchanger*2
   - ultimate lappack:
       ingredients:
         - iridium plate
         - lappack
         - superconductor
-        - lapotron crystal
-        - lapotron crystal
-        - lapotron crystal
-        - lapotron crystal
-        - lapotron crystal
-        - lapotron crystal
+        - lapotron crystal*6
   - gravitation engine:
       ingredients:
-        - tesla coil
-        - tesla coil
-        - tesla coil
-        - tesla coil
-        - cooling core
-        - cooling core
+        - tesla coil*4
+        - cooling core*2
         - MFSU
-        - superconductor
-        - superconductor
+        - superconductor*2
   - gravitation chestplate:
       ingredients:
         - quantum body armor
-        - superconductor
-        - superconductor
-        - superconductor
-        - superconductor
-        - gravitation engine
-        - gravitation engine
+        - superconductor*4
+        - gravitation engine*2
         - ultimate lappack
+  - advanced diamond drill:
+      ingredients:
+        - overclocker upgrade*3
+        - diamond drill
+        - advanced circuit*2
+  - advanced chainsaw:
+      ingredients:
+        - overclocker upgrade*3
+        - advanced circuit*2
+        - chainsaw
+        - diamond
+  - magnetron:
+      ingredients:
+        - refined iron*4
+        - copper ingot*4
+        - superconductor
+  - vajra core:
+      ingredients:
+        - magnetron
+        - iridium plate*2
+        - tesla coil
+        - superconductor*2
+        - HV transformer
+  - vajra:
+      ingredients:
+        - refined iron*2
+        - energy crystal
+        - advanced alloy*2
+        - carbon plate*2
+        - vajra core
 

@@ -51,7 +51,8 @@ class Item
     end
 
     def safe_name
-        ActiveSupport::Inflector.underscore(name).gsub(' ', '_')
+        # ostatni gsub bo dot marudzi
+        ActiveSupport::Inflector.underscore(name).gsub(' ', '_').gsub(/(^[0-9])/, "n_\\1")
     end
 
     def <=> other
