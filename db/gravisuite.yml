@@ -1,0 +1,71 @@
+primitives: {}
+
+crafts:
+  - superconductor cover:
+      makes: 3
+      ingredients:
+        - advanced alloy
+        - advanced alloy
+        - advanced alloy
+        - advanced alloy
+        - iridium plate
+        - iridium plate
+        - carbon plate
+        - carbon plate
+        - carbon plate
+  - superconductor:
+      makes: 3
+      ingredients:
+        - superconductor cover
+        - superconductor cover
+        - superconductor cover
+        - superconductor cover
+        - superconductor cover
+        - superconductor cover
+        - glass fibre cable
+        - glass fibre cable
+        - gold ingot
+  - cooling core:
+      ingredients:
+        - 60K coolant cell
+        - 60K coolant cell
+        - 60K coolant cell
+        - 60K coolant cell
+        - heat-capacity reactor plating
+        - heat-capacity reactor plating
+        - iridium plate
+        - advanced heat exchanger
+        - advanced heat exchanger
+  - ultimate lappack:
+      ingredients:
+        - iridium plate
+        - lappack
+        - superconductor
+        - lapotron crystal
+        - lapotron crystal
+        - lapotron crystal
+        - lapotron crystal
+        - lapotron crystal
+        - lapotron crystal
+  - gravitation engine:
+      ingredients:
+        - tesla coil
+        - tesla coil
+        - tesla coil
+        - tesla coil
+        - cooling core
+        - cooling core
+        - MFSU
+        - superconductor
+        - superconductor
+  - gravitation chestplate:
+      ingredients:
+        - quantum body armor
+        - superconductor
+        - superconductor
+        - superconductor
+        - superconductor
+        - gravitation engine
+        - gravitation engine
+        - ultimate lappack
+

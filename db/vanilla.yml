@@ -8,6 +8,8 @@ primitives:
     - gold ore: 40
     - diamond: 100
     - redstone: 70
+    - glowstone: 80
+    - lapis: 75
     - flint: 3
     - wool: 5
 
@@ -43,3 +45,7 @@ crafts:
         ingredients: [iron ore]
     - piston:
         ingredients: [planks, planks, planks, cobble, iron, cobble, cobble, redstone, cobble]
+    - bucket:
+        ingredients: [iron, iron, iron]
+    - water bucket:
+        ingredients: [bucket]

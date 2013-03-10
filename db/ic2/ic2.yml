@@ -2,6 +2,7 @@ primitives:
     - copper ore: 4
     - tin ore: 4
     - sticky resin: 3
+    - UU-matter: 500
 
 crafts: 
     - coal dust:
@@ -18,6 +19,16 @@ crafts:
         machine: macerator
         makes: 2
         ingredients: [copper ore]
+    - gold dust:
+        machine: macerator
+        makes: 2
+        ingredients: [gold ore]
+    - gold ingot:
+        machine: furnace
+        ingredients: [gold ore]
+    - gold ingot:
+        machine: furnace
+        ingredients: [gold dust]
     - tin ingot:
         machine: furnace
         ingredients: [tin ore]
@@ -40,20 +51,10 @@ crafts:
     - cell:
         makes: 16
         ingredients: [tin ingot, tin ingot, tin ingot, tin ingot]
-    - copper wire:
-        makes: 6
-        ingredients: [copper ingot, copper ingot, copper ingot]
-    - copper cable:
-        ingredients: [copper wire, rubber]
-    - RE battery:
-        ingredients: 
-          - tin ingot
-          - tin ingot
-          - tin ingot
-          - tin ingot
-          - redstone
-          - redstone
-          - copper cable
+    - machine:
+        ingredients: [refined iron,refined iron,refined iron,refined iron,refined iron,refined iron,refined iron,refined iron]
+    - advanced machine:
+        ingredients: [machine, carbon plate, carbon plate, advanced alloy, advanced alloy]
     - integrated circuit:
         ingredients: 
           - copper cable
@@ -80,17 +81,6 @@ crafts:
           - diamond
           - diamond
           - diamond
-    - energy crystal:
-        ingredients:
-          - diamond
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
-          - redstone
     - carbon fibers:
         ingredients:
           - coal dust
@@ -102,6 +92,7 @@ crafts:
           - carbon fibers
           - carbon fibers
     - carbon plate:
+        machine: compressor
         ingredients:
           - combined carbon fibers
     - iridium:
@@ -113,3 +104,52 @@ crafts:
           - UU-matter
           - UU-matter
           - UU-matter
+    - mixed metal ingot:
+        makes: 2
+        ingredients:
+          - refined iron
+          - copper ingot
+          - tin ingot
+          - refined iron
+          - copper ingot
+          - tin ingot
+          - refined iron
+          - copper ingot
+          - tin ingot
+    - advanced alloy:
+        machine: compressor
+        ingredients: [mixed metal ingot]
+    - iridium plate:
+        ingredients:
+          - iridium
+          - iridium
+          - iridium
+          - iridium
+          - advanced alloy
+          - advanced alloy
+          - advanced alloy
+          - advanced alloy
+          - diamond
+    - reinforced glass:
+        makes: 7
+        ingredients:
+          - glass
+          - glass
+          - glass
+          - glass
+          - glass
+          - glass
+          - glass
+          - advanced alloy
+          - advanced alloy
+    - advanced circuit:
+        ingredients:
+          - integrated circuit
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - lapis
+          - lapis
+          - glowstone
+          - glowstone

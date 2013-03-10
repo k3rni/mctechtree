@@ -1,6 +1,15 @@
 primitives: {}
 
 crafts:
+  - rubber boots:
+      ingredients:
+        - wool
+        - rubber
+        - rubber
+        - rubber
+        - rubber
+        - rubber
+        - rubber
   - nano helmet:
         ingredients:
           - energy crystal
@@ -9,7 +18,7 @@ crafts:
           - carbon plate
           - carbon plate
           - carbon plate
-  - nano chest:
+  - nano body armor:
         ingredients:
           - energy crystal
           - carbon plate
@@ -35,4 +44,41 @@ crafts:
           - carbon plate
           - carbon plate
           - carbon plate
-
+  - quantum helmet:
+      ingredients:
+        - nano helmet
+        - iridium plate
+        - iridium plate
+        - lapotron crystal
+        - advanced circuit
+        - advanced circuit
+        - reinforced glass
+  - quantum body armor:
+      ingredients:
+        - nano body armor
+        - iridium plate
+        - iridium plate
+        - iridium plate
+        - iridium plate
+        - advanced alloy
+        - advanced alloy
+        - advanced alloy
+        - lapotron crystal
+  - quantum leggings:
+      ingredients:
+        - nano leggings
+        - glowstone
+        - glowstone
+        - machine
+        - machine
+        - iridium plate
+        - iridium plate
+        - lapotron crystal
+  - quantum boots:
+      ingredients:
+        - nano boots
+        - rubber boots
+        - rubber boots
+        - iridium plate
+        - iridium plate
+        - lapotron crystal

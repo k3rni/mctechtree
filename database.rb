@@ -1,6 +1,13 @@
 # encoding: utf-8
 
+class UndefinedItemsError < StandardError; end
+
 class Database < Set
+    def initialize(*args)
+        super(*args)
+        @pending = Set.new
+    end
+
     def find(name)
         select { |obj| obj.name == name }.first
     end
@@ -11,11 +18,12 @@ class Database < Set
         self
     end
 
+
     def load_primitives data
         data.each do |data|
             name = data.keys.first
-            next if find(name)
-            self.add Item.primitive(name, data.values.first)
+            item = Item.primitive(name, data.values.first)
+            self.add item
         end
     end
 
@@ -24,6 +32,7 @@ class Database < Set
         data.each do |recipe|
             name = recipe.keys.first # YAMLowy format tak ma
             definition = recipe.values.first
+            old_item = nil
             item = find(name)
             ingredients = resolve_items(definition['ingredients'])
             if item
@@ -39,9 +48,32 @@ class Database < Set
         end
     end
 
+    def fixup_pending
+        @pending.select! do |item|
+            if (newitem = find(item.name))
+                replace_pending item, newitem
+                false # wywal z pending
+            else
+                true
+            end
+        end
+    end
+
+    def replace_pending old, new
+        self.each do |item|
+            item.crafts.each do |craft|
+                craft.replace_ingredients old, new
+            end
+        end
+    end
+
     def resolve_items names
         names.map do |name|
-            self.find(name) || Item.pending(name)
+          item = self.find(name) 
+          if item.nil?
+              item = @pending.select { |obj| obj.name == name }.first || Item.pending(name).tap { |obj| @pending.add obj }
+          end
+          item
         end
     end
 
@@ -62,7 +94,7 @@ class Database < Set
         self.each do |item|
             item.crafts.each do |craft|
                 craft.count_ingredients.each do |ing, count|
-                    fp.puts %Q(#{ing.safe_name} -> #{craft.result.safe_name} [label=#{count}];)
+                    fp.puts %Q(#{ing.safe_name} -> #{craft.result.safe_name} [label="#{count}#{(' ' + craft.machine) if craft.machine}"];)
                 end
             end
         end

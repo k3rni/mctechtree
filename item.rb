@@ -10,6 +10,30 @@ class CraftBuilder < SimpleDelegator
     end
 end
 
+class PendingItem
+    attr_accessor :name
+
+    def initialize name
+        @name = name
+    end
+
+    def hash
+        to_s.hash
+    end
+
+    def <=> other
+        self.name <=> other.name
+    end
+
+    def to_s
+        "!#{name}"
+    end
+
+    def safe_name
+        "!#{ActiveSupport::Inflector.underscore name}".gsub(' ', '_')
+    end
+end
+
 class Item
     attr_accessor :name, :primitive, :cost
     attr_reader :crafts
@@ -27,7 +51,7 @@ class Item
     end
 
     def safe_name
-        name.gsub(' ', '_')
+        ActiveSupport::Inflector.underscore(name).gsub(' ', '_')
     end
 
     def <=> other
@@ -46,10 +70,14 @@ class Item
     end
 
     def self.pending name
-        raise UndefinedItemError.new(name)
+        PendingItem.new(name)
     end
 
     def add_craft
         yield(CraftBuilder.new(self))
+    end
+
+    def resolver
+        ItemResolver.new(self)
     end
 end

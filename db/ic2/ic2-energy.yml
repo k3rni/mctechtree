@@ -1,0 +1,121 @@
+primitives: {}
+
+crafts:
+    - copper wire:
+        makes: 6
+        ingredients: [copper ingot, copper ingot, copper ingot]
+    - copper cable:
+        ingredients: [copper wire, rubber]
+    - glass fibre cable:
+        makes: 4
+        ingredients:
+          - glass
+          - glass
+          - glass
+          - glass
+          - glass
+          - glass
+          - redstone
+          - redstone
+          - diamond
+    - gold wire:
+        makes: 12
+        ingredients: [gold ingot, gold ingot, gold ingot]
+    - insulated gold cable:
+        makes: 4
+        ingredients: [gold ingot, rubber, rubber, rubber, rubber]
+    - insulated gold cable:
+        ingredients: [gold wire, rubber]
+    - 2ins gold cable:
+        ingredients: [insulated gold cable, rubber]
+    - 2ins gold cable:
+        ingredients: [gold wire, rubber, rubber]
+    - RE battery:
+        ingredients: 
+          - tin ingot
+          - tin ingot
+          - tin ingot
+          - tin ingot
+          - redstone
+          - redstone
+          - copper cable
+    - energy crystal:
+        ingredients:
+          - diamond
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+    - lapotron crystal:
+        ingredients:
+          - lapis
+          - lapis
+          - lapis
+          - lapis
+          - lapis
+          - lapis
+          - advanced circuit
+          - advanced circuit
+          - energy crystal
+    - lappack:
+        ingredients:
+          - lapis block
+          - lapis block
+          - lapis block
+          - lapis block
+          - lapis block
+          - lapis block
+          - batpack
+          - advanced circuit
+    - batpack:
+        ingredients:
+          - RE battery
+          - RE battery
+          - RE battery
+          - RE battery
+          - RE battery
+          - RE battery
+          - integrated circuit
+          - tin ingot
+    - MV transformer:
+        ingredients:
+          - 2ins gold cable
+          - 2ins gold cable
+          - machine
+    - tesla coil:
+        ingredients:
+          - MV transformer
+          - integrated circuit
+          - refined iron
+          - refined iron
+          - redstone
+          - redstone
+          - redstone
+          - redstone
+    - MFSU:
+        ingredients:
+          - MFE
+          - advanced machine
+          - advanced circuit
+          - lapotron crystal
+          - lapotron crystal
+          - lapotron crystal
+          - lapotron crystal
+          - lapotron crystal
+          - lapotron crystal
+    - MFE:
+        ingredients:
+          - energy crystal
+          - energy crystal
+          - energy crystal
+          - energy crystal
+          - 2ins gold cable
+          - 2ins gold cable
+          - 2ins gold cable
+          - 2ins gold cable
+          - machine
+

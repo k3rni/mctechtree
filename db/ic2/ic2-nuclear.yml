@@ -1,0 +1,76 @@
+primitives: {}
+
+crafts:
+  - coolant cell:
+      ingredients:
+        - water cell
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - tin ingot
+  - water cell:
+      ingredients:
+        - cell
+        - water bucket
+  - 30K coolant cell:
+      ingredients:
+        - coolant cell
+        - coolant cell
+        - coolant cell
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - tin ingot
+  - 60K coolant cell:
+      ingredients:
+        - 30K coolant cell
+        - 30K coolant cell
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - tin ingot
+        - dense copper plate
+  - dense copper plate:
+      machine: compressor
+      ingredients:
+        - copper ingot
+        - copper ingot
+        - copper ingot
+        - copper ingot
+        - copper ingot
+        - copper ingot
+        - copper ingot
+        - copper ingot
+  - heat-capacity reactor plating:
+      ingredients:
+        - reactor plating
+        - dense copper plate
+        - dense copper plate
+  - reactor plating:
+      ingredients:
+        - dense copper plate
+        - advanced alloy
+  - advanced heat exchanger:
+      ingredients:
+        - glass fibre cable
+        - glass fibre cable
+        - glass fibre cable
+        - glass fibre cable
+        - integrated circuit
+        - integrated circuit
+        - heat exchanger
+        - heat exchanger
+        - dense copper plate
+  - heat exchanger:
+      ingredients:
+        - integrated circuit
+        - dense copper plate
+        - tin ingot
+        - tin ingot
+        - tin ingot
+
+

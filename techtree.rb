@@ -86,22 +86,18 @@ class CraftResolver
           "from (\n",
           @children.map do |ir| 
             ir.explain(depth+1) 
-          end.join(",\n#{' '*depth}"),
+          end.join(",\n"),
           ")"
         ].join('')
     end
 
 end
 
-def load_data data, database=nil
-    database ||= Database.new
-    database
-end
-
 db = Database.new
-db.load_definitions(YAML.load_file('vanilla.yml'))
-  .load_definitions(YAML.load_file('ic2.yml'))
-  .load_definitions(YAML.load_file('ic2-armor.yml'))
+Dir.glob('db/**/*.yml').each do |filename|
+    db.load_definitions YAML.load_file(filename)
+end
+db.fixup_pending
 
 db.dump_graph File.open('techtree.dot', 'w')
 binding.pry
