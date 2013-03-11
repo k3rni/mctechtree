@@ -11,6 +11,12 @@ crafts:
     - refined iron:
         machine: furnace
         ingredients: [iron]
+    - refined iron:
+        machine: furnace
+        ingredients: [refined iron dust]
+    - refined iron dust:
+        machine: macerator
+        ingredients: [refined iron]
     - tin dust:
         machine: macerator
         makes: 2

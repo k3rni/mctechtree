@@ -11,6 +11,7 @@ require 'set'
 autoload :Item, './item'
 autoload :Craft, './craft'
 autoload :Database, './database'
+autoload :Graph, './graph'
 
 class ItemResolver
     attr_accessor :item, :count, :children
