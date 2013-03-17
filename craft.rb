@@ -34,4 +34,10 @@ class Craft
     def replace_ingredients old, new
         ingredients.map! { |obj| (obj == old ? new : obj) }
     end
+
+    def describe_ingredients mul=1
+        count_ingredients.map do |item, count|
+            "#{(count*mul).ceil} * #{item.name}"
+        end.join(', ')
+    end
 end

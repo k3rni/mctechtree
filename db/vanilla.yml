@@ -12,6 +12,8 @@ primitives:
     - lapis: 75
     - flint: 3
     - wool: 5
+    - water: 1
+    - lava: 30
 
 crafts:
     - stone:
@@ -36,12 +38,9 @@ crafts:
     - torch:
         makes: 4
         ingredients: [sticks, coal]
-    - stone bricks:
-        makes: 4
-        ingredients: [stone*4]
     - iron:
         machine: furnace
         ingredients: [iron ore]
     - piston: [planks*3, cobble*4, iron, redstone]
     - bucket: [iron*3]
-    - water bucket: [bucket]
+    - water bucket: [water, bucket]

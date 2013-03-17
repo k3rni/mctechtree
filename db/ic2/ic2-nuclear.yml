@@ -4,7 +4,7 @@ crafts:
     - tin ingot*4
   - water cell:
     - cell
-    - water bucket
+    - water
   - 30K coolant cell:
     - coolant cell*3
     - tin ingot*6

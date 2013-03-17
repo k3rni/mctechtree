@@ -37,3 +37,14 @@ crafts:
     - rubber boots*2
     - iridium plate*2
     - lapotron crystal
+  - scuba helmet:
+    - orange dye
+    - rubber*4
+    - glass
+    - iron bars
+  - hazmat suit:
+    - rubber*6
+    - orange dye*2
+  - hazmat suit leggings:
+    - rubber*6
+    - orange dye

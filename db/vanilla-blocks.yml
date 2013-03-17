@@ -1,2 +1,6 @@
 crafts:
   - lapis block: [lapis*9]
+  - iron block: [iron*9]
+  - stone bricks:
+      makes: 4
+      ingredients: [stone*4]

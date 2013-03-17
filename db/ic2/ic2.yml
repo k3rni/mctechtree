@@ -8,6 +8,13 @@ crafts:
     - coal dust:
         machine: macerator
         ingredients: [coal]
+    - iron dust:
+        machine: macerator
+        makes: 2
+        ingredients: [iron ore]
+    - iron:
+        machine: furnace
+        ingredients: [iron dust]
     - refined iron:
         machine: furnace
         ingredients: [iron]
@@ -41,6 +48,10 @@ crafts:
     - copper ingot:
         machine: furnace
         ingredients: [copper ore]
+    - bronze: # NOTE: forestry daje alternatywną
+        machine: furnace
+        ingredients: [bronze dust]
+    - bronze dust: [copper dust*3, tin dust]
     - rubber:
         machine: furnace
         ingredients: [sticky resin]
@@ -53,11 +64,10 @@ crafts:
         ingredients: [tin ingot*4]
     - machine: [refined iron*8]
     - advanced machine: [machine, carbon plate*2, advanced alloy*2]
-    - integrated circuit:
-        ingredients: 
-          - copper cable*6
-          - redstone*2
-          - refined iron
+    - integrated circuit: 
+      - copper cable*6
+      - redstone*2
+      - refined iron
     - drill:
       - RE battery
       - integrated circuit
@@ -77,7 +87,7 @@ crafts:
         makes: 2
         ingredients:
           - refined iron*3
-          - copper ingot*3
+          - bronze*3
           - tin ingot*3
     - advanced alloy:
         machine: compressor
