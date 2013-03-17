@@ -95,19 +95,19 @@ class Simplifier
 
     def process solution, depth, multiplier = 1
         verb, count, tree = solution
-        puts "PROCESS: #{verb} * #{count}"
+        # puts "#{' '*depth}PROCESS: #{verb} * #{count}"
         send verb, depth, multiplier, count, tree
     end
 
     def get depth, mul, count, item
-        puts "GET #{mul} #{count} #{item}"
-        @raw[item] += mul * count
+        # puts "#{' '*depth}GET #{mul} #{count} #{item}"
+        @raw[item] += (mul * count)
     end
 
     def craft depth, mul, count, tree
-        puts "CRAFT #{mul} #{count}"
+        # puts "#{' '*depth}CRAFT #{mul} #{count}"
         recipe, tail = tree
-        puts "RECIPE #{recipe}"
+        # puts "#{' '*depth}RECIPE #{recipe}"
         @craft_seq[recipe] = [@craft_seq[recipe] || 0, depth].max
         @crafts[recipe] += mul*count
         tail.each do |num, rule|
@@ -140,7 +140,8 @@ class Simplifier
                     else
                       ' ' * "#{j}.".size
                     end),
-                "craft #{(count * craft.makes).ceil} #{craft.result} ",
+                # tu ceil czy floor?
+                "craft #{(count * craft.makes).floor} #{craft.result} ",
                 ("using #{craft.machine} " if craft.machine),
                 "from #{craft.describe_ingredients(count)}"
             ].join ''
@@ -152,16 +153,17 @@ class Simplifier
 
 end
 
-db = Database.new
-Dir.glob('db/**/*.yml').each do |filename|
-    db.load_definitions YAML.load_file(filename)
-end
-db.fixup_pending
 
-db.dump_graph File.open('techtree.dot', 'w')
-s = Simplifier.new(
-        ItemResolver.new(
-        db.find('quantum body armor')
-        ).resolve
-    )
+DB = Database.new
+Dir.glob('db/**/*.yml').each do |filename|
+    DB.load_definitions YAML.load_file(filename)
+end
+DB.fixup_pending
+DB.dump_graph File.open('techtree.dot', 'w')
+
+def solve name, count=1
+    Simplifier.new(ItemResolver.new(DB.find(name), count).resolve).solve
+end
+
+solve 'quantum body armor'
 binding.pry
