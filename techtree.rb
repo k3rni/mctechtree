@@ -81,27 +81,6 @@ class CraftResolver
         [craft, @children.map { |ir| [ir.count, ir.resolve] }]
     end
 
-    def explain depth=0
-        [ "craft #{craft.result.name} ",
-          ("using #{craft.machine} " if craft.machine),
-          "from (\n",
-          @children.map do |ir| 
-            ir.explain(depth+1) 
-          end.join(",\n"),
-          ")"
-        ].join('')
-    end
-
-end
-
-def sum h1, h2
-    Hash[Set.new(h1.keys + h2.keys).map do |key|
-        [key, (h1[key] || 0) + (h2[key] || 0)]
-    end]
-end
-
-def mul a, h1
-    Hash[h1.map {|k, v| [k, a * v]}]
 end
 
 class Simplifier

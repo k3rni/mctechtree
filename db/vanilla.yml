@@ -41,6 +41,9 @@ crafts:
     - iron:
         machine: furnace
         ingredients: [iron ore]
+    - iron bars:
+        makes: 16
+        ingredients: [iron*6]
     - piston: [planks*3, cobble*4, iron, redstone]
     - bucket: [iron*3]
     - water bucket: [water, bucket]
