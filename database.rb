@@ -4,6 +4,7 @@ class UndefinedItemsError < StandardError; end
 class BadDefinitionError < StandardError; end
 
 class Database < Set
+    include Graph
     def initialize(*args)
         super(*args)
         @pending = Set.new
@@ -14,21 +15,22 @@ class Database < Set
     end
 
     def load_definitions data
-        load_primitives(data['primitives'] || {})
-        load_crafts(data['crafts'])
+        group = data['cluster']
+        load_primitives(data['primitives'] || {}, group)
+        load_crafts(data['crafts'], group)
         self
     end
 
 
-    def load_primitives data
+    def load_primitives data, group=nil
         data.each do |data|
             name = data.keys.first
-            item = Item.primitive(name, data.values.first)
+            item = Item.primitive(name, data.values.first, group)
             self.add item
         end
     end
 
-    def load_crafts data
+    def load_crafts data, group=nil
         # TODO: nadpisywanie i kasowanie starych recept, po sygnaturkach
         data.each do |recipe|
             name, makes, machine, ingredients = parse_recipe(recipe)
@@ -39,7 +41,7 @@ class Database < Set
                     craft.makes(makes, machine, ingredients)
                 end
             else
-                item = Item.crafted name do |craft|
+                item = Item.crafted name, group do |craft|
                     craft.makes(makes, machine, ingredients)
                 end
                 self.add item
@@ -47,7 +49,7 @@ class Database < Set
         end
     end
 
-    def parse_recipe recipe
+    def parse_recipe recipe, group=nil
         if recipe.is_a? Hash
             name = recipe.keys.first # YAMLowy format tak ma
             definition = recipe.values.first
@@ -103,29 +105,4 @@ class Database < Set
         end.flatten
     end
 
-    def dump_graph fp
-        fp.puts "digraph techtree {"
-            dump_items fp
-            dump_crafts fp
-        fp.puts "}"
-    end
-
-    def dump_items fp
-        self.each do |item|
-            fp.puts %Q(#{item.safe_name} [label="#{item.name}" shape=box #{" style=bold" if item.primitive}];)
-        end
-    end
-
-    def dump_crafts fp
-        self.each do |item|
-            item.crafts.each do |craft|
-                fp.puts %Q(craft_#{craft.hash} [label="#{craft.machine ? craft.machine : 'craft'}" shape=oval];)
-                fp.puts %Q(craft_#{craft.hash} -> #{craft.result.safe_name} [label="#{craft.makes}"];)
-                craft.count_ingredients.each do |ing, count|
-                    # fp.puts %Q(#{ing.safe_name} -> #{craft.result.safe_name} [label="#{count}#{(' ' + craft.machine) if craft.machine}"];)
-                    fp.puts %Q(#{ing.safe_name} -> craft_#{craft.hash} [label="#{count}"];)
-                end
-            end
-        end
-    end
 end

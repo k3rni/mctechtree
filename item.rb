@@ -35,7 +35,7 @@ class PendingItem
 end
 
 class Item
-    attr_accessor :name, :primitive, :cost
+    attr_accessor :name, :primitive, :cost, :group
     attr_reader :crafts
 
     def initialize attrs={}
@@ -59,12 +59,12 @@ class Item
         self.name <=> other.name
     end
 
-    def self.primitive name, cost
-        self.new(name: name, primitive: true, cost: cost)
+    def self.primitive name, cost, group=nil
+        self.new(name: name, primitive: true, cost: cost, group: group)
     end
 
-    def self.crafted name
-        self.new(name: name, primitive: false).tap do |obj|
+    def self.crafted name, group=nil
+        self.new(name: name, primitive: false, group: group).tap do |obj|
             crafts = CraftBuilder.new(obj)
             yield(crafts)
         end
