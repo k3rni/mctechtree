@@ -1,0 +1,52 @@
+primitives:
+    - rose: 1
+    - dandelion: 1
+    - cactus: 3
+    - cocoa: 20
+
+crafts:
+    - red dye: # rose red
+        ingredients: [rose]
+        makes: 2
+    - yellow dye: # dandelion yellow
+        ingredients: [dandelion]
+        makes: 2
+    - green dye: # cactus green
+        ingredients: [cactus]
+        machine: furnace
+    - gray dye:
+        makes: 2
+        ingredients: [ink sac, bonemeal]
+    # secondary
+    - orange dye:
+        makes: 2
+        ingredients: [red dye, yellow dye]
+    - cyan dye:
+        makes: 2
+        ingredients: [lapis, green dye]
+    - purple dye:
+        makes: 2
+        ingredients: [lapis, red dye]
+    - light blue dye:
+        makes: 2
+        ingredients: [lapis, bonemeal]
+    - pink dye:
+        makes: 2
+        ingredients: [red dye, bonemeal]
+    - lime dye:
+        makes: 2
+        ingredients: [green dye, bonemeal]
+    # tertiary
+    - light gray dye:
+        makes: 3
+        ingredients: [ink sac, bonemeal*2]
+    - magenta dye:
+        makes: 2
+        ingredients: [purple dye, pink dye]
+    - magenta dye:
+        makes: 4
+        ingredients: [lapis, bonemeal, red dye*2]
+    - magenta dye:
+        makes: 3
+        ingredients: [lapis, red dye, pink dye]
+

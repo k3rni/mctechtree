@@ -1,0 +1,8 @@
+primitives:
+    - bone: 2
+    - ink sac: 2
+
+crafts:
+    - bonemeal:
+        ingredients: [bone]
+        makes: 3
