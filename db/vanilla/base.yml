@@ -12,7 +12,9 @@ primitives:
     - lapis: 75
     - flint: 3
     - wool: 5
-    - water: 1
+    - water:
+        cost: 1
+        stacks: false
     - lava: 30
     - leather: 10
     - ender pearl: 90

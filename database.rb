@@ -26,7 +26,7 @@ class Database < Set
       definitions.each do |data|
         name, stacks, cost = parse_primitive(data)
         name = data.keys.first
-        item = Item.primitive(name, data.values.first, stacks, group)
+        item = Item.primitive(name, cost, stacks, group)
         self.add item
       end
     end
@@ -59,7 +59,7 @@ class Database < Set
         stacks = 64
       elsif definition.is_a? Hash
         cost = definition['cost']
-        stacks = definition['stacks'] || 64
+        stacks = definition['stacks'] 
       end
       [name, stacks, cost]
     end
@@ -72,6 +72,7 @@ class Database < Set
         name = recipe.first
         definition = recipe.last
       end
+      # TODO: stacks dla przedmiotów craftowanych
       if definition.is_a? Hash
         ingredients = resolve_items(definition.delete('ingredients'))
         makes = definition.delete('makes') || 1
@@ -96,6 +97,9 @@ class Database < Set
             else
                 true
             end
+        end
+        if @pending.size > 0
+          raise UndefinedItemsError.new(@pending)
         end
     end
 

@@ -41,6 +41,7 @@ class Item
     def initialize attrs={}
         attrs.each { |key, val| self.send "#{key}=", val }
         @crafts = []
+        stacks = 64 if stacks.nil?
     end
 
     def to_s
@@ -53,6 +54,20 @@ class Item
     def safe_name
         # ostatni gsub bo dot marudzi
         ActiveSupport::Inflector.underscore(name).gsub(' ', '_').gsub(/(^[0-9])/, "n_\\1")
+    end
+
+    def stack_info count
+      return nil if @stacks == false
+      num, rem = count.divmod(@stacks)
+      plural = 's' if num > 1
+      if num == 0
+        nil
+      elsif rem == 0
+        # NOTE: marne i18n
+        "#{num} stack#{plural}"
+      else
+        "#{num} stack#{plural} + #{rem}"
+      end
     end
 
     def <=> other

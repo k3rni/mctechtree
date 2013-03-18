@@ -54,7 +54,7 @@ class ItemResolver
         [:get, count, item]
       else
         # [:craft, (count.to_f / best_craft.craft.makes), best_craft.resolve]
-        puts "EC #{best_craft.result} need #{count} / makes #{best_craft.makes} = #{exact_craft count, best_craft.makes}"
+        # puts "EC #{best_craft.result} need #{count} / makes #{best_craft.makes} = #{exact_craft count, best_craft.makes}"
         [:craft, exact_craft(count, best_craft.makes), best_craft.resolve]
       end
     end
@@ -107,8 +107,8 @@ end
 class Simplifier
     attr_accessor :raw, :crafts, :craft_seq
 
-    def initialize(solution)
-        @solution = solution
+    def initialize(solutions)
+        @solutions = solutions
         @crafts = Hash.new { |h, key| h[key] = 0 }
         @craft_seq = Hash.new { |h, key| h[key] = 0 }
         @raw = Hash.new { |h, key| h[key] = 0 }
@@ -138,16 +138,20 @@ class Simplifier
     end
 
     def solve
-        process @solution, 0
-        show_raw
-        show_crafts
-        nil
+      @solutions.each do |sol|
+        process sol, 0
+      end
+      show_raw
+      show_crafts
+      nil
     end
 
     def show_raw
         puts "Resources required:"
         raw.sort_by{|item,count| item.name}.each do |item, count|
-            puts "#{item.name} * #{count.ceil}"
+          stack_info = item.stack_info count.ceil
+          puts ["#{item.name} * #{count.ceil}",
+                (" (#{stack_info})" if stack_info)].join ''
         end
     end
 
@@ -179,9 +183,16 @@ end
 DB.fixup_pending
 DB.dump_graph File.open('techtree.dot', 'w')
 
-def solve name, count=1
-    Simplifier.new(ItemResolver.new(DB.find(name), count).resolve).solve
+def solve *names
+  solutions = names.map do |name|
+    if name =~ /(.+?)\*(\d+)/
+      [$1, $2.to_i]
+    else
+      [name, 1]
+    end
+  end.map { |name, count| ItemResolver.new(DB.find(name), count).resolve }
+  Simplifier.new(solutions).solve
 end
 
-solve 'copper cable', 6
+solve 'copper cable*1'
 binding.pry
