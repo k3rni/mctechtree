@@ -1,0 +1,20 @@
+!!! 5
+%html
+  %head
+    = bootstrap_assets
+    %script(src="/chosen/chosen.jquery.js")
+    %link(rel="stylesheet" href="/chosen/chosen.css")
+  %body
+    - container :fluid do
+      .row
+        .span4
+          %h1 MCTechTree
+        .span8
+          %h3 includes recipes from
+          %dl
+            - recipe_counters.each do |cluster, count|
+              %dt= cluster
+              %dd= count
+      = yield
+    :javascript
+      $('.chzn-select').chosen()
