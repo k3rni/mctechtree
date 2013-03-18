@@ -1,3 +1,5 @@
+cluster: industrialcraft2
+
 primitives:
     - re-enriched uranium cell: 200 # powstaje w reaktorze
 

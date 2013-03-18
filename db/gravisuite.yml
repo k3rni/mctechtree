@@ -1,3 +1,5 @@
+cluster: gravisuite
+
 crafts:
   - superconductor cover:
       makes: 3

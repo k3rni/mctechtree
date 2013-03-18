@@ -1,3 +1,5 @@
+cluster: industrialcraft2
+
 crafts:
   - rubber boots:
     - wool
