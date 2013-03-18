@@ -24,6 +24,7 @@ crafts:
     - cyan dye:
         makes: 2
         ingredients: [lapis, green dye]
+        shapeless: yes
     - purple dye:
         makes: 2
         ingredients: [lapis, red dye]

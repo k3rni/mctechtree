@@ -6,10 +6,12 @@ crafts:
       - redstone*2
       - integrated circuit
     - macerator:
-      - flint*3
-      - cobble*2
-      - machine
-      - integrated circuit
+        ingredients:
+          - flint*3
+          - cobble*2
+          - machine
+          - integrated circuit
+        shape: f f f ~ m ~ ~ i ~
     - extractor:
       - machine
       - treetap*4

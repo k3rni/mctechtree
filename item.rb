@@ -3,8 +3,8 @@
 class UndefinedItemError < StandardError; end
 
 class CraftBuilder < SimpleDelegator
-    def makes count, machine, ingredients
-        craft = Craft.create(machine, __getobj__, count, ingredients)
+    def makes count, machine, ingredients, extra
+        craft = Craft.create(machine, __getobj__, count, ingredients, extra)
         self.crafts << craft
         craft
     end
@@ -35,7 +35,7 @@ class PendingItem
 end
 
 class Item
-    attr_accessor :name, :primitive, :cost, :group
+    attr_accessor :name, :primitive, :cost, :stacks, :group
     attr_reader :crafts
 
     def initialize attrs={}
@@ -59,8 +59,8 @@ class Item
         self.name <=> other.name
     end
 
-    def self.primitive name, cost, group=nil
-        self.new(name: name, primitive: true, cost: cost, group: group)
+    def self.primitive name, cost, stacks, group=nil
+        self.new(name: name, primitive: true, cost: cost, stacks: stacks, group: group)
     end
 
     def self.crafted name, group=nil

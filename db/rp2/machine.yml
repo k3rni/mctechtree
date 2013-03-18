@@ -33,12 +33,17 @@ crafts:
       - iron bars*4
       - wood*4
     - retriever:
-      - brass*2
-      - leather
-      - ender pearl*2
-      - iron*2
-      - blue alloy ingot
-      - filter
+        ingredients:
+          - brass*2
+          - leather
+          - ender pearl*2
+          - iron*2
+          - blue alloy ingot
+          - filter
+        shape: |
+          br le br
+          en fi en
+          ir bl ir
     - sorting machine:
       - iron*5
       - red-doped wafer*2

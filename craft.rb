@@ -1,9 +1,10 @@
 # encoding: utf-8
 
 require 'zlib'
+require 'active_support/core_ext/array'
 
 class Craft
-    attr_accessor :machine, :result, :makes, :ingredients
+    attr_accessor :machine, :result, :makes, :ingredients, :shape
 
     def to_s
         ["Craft(",
@@ -23,8 +24,12 @@ class Craft
         attrs.each { |key, val| self.send "#{key}=", val }
     end
 
-    def self.create machine, result, makes, ingredients
-        self.new(machine: machine, result: result, makes: makes, ingredients: ingredients)
+    def self.create machine, result, makes, ingredients, extra={}
+        opts = {machine: machine, result: result, makes: makes, ingredients: ingredients}.merge extra
+        if opts.delete('shapeless')
+          opts[:shape] = :shapeless
+        end
+        self.new opts
     end
 
     def count_ingredients
@@ -39,5 +44,23 @@ class Craft
         count_ingredients.map do |item, count|
             "#{(count*mul).ceil} * #{item.name}"
         end.join(', ')
+    end
+
+    def grid
+      return nil if shape.nil?
+      # TODO: reprezentacja shapeless?
+      return [ingredients] if shape == :shapeless
+      items = shape.split.map do |prefix| 
+        prefix.nil? ? nil : find_ingredient_by_prefix(prefix) 
+      end
+      if items.size == 9
+        return items.in_groups_of 3
+      elsif items.size == 4
+        return items.in_groups_of 2
+      end
+    end
+
+    def find_ingredient_by_prefix prefix
+      ingredients.select { |item| item.name =~ %r(^#{prefix}) }.first
     end
 end

@@ -60,7 +60,13 @@ crafts:
     - cell:
         makes: 16
         ingredients: [tin ingot*4]
-    - carbon fibers: [coal dust*4]
+        shape: |
+          ~ t ~
+          t ~ t
+          ~ t ~
+    - carbon fibers: 
+        ingredients: [coal dust*4]
+        shape: c c c c
     - combined carbon fibers: [carbon fibers, carbon fibers]
     - carbon plate:
         machine: compressor
@@ -84,4 +90,5 @@ crafts:
         ingredients:
           - glass*7
           - advanced alloy*2
+        shape: g a g g g g g a g
     - iron fence: [refined iron*6]
