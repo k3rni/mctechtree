@@ -1,3 +1,5 @@
+cluster: redpower2
+
 crafts:
     - alloy furnace: [brick block*8]
     - block breaker:

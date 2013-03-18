@@ -1,3 +1,5 @@
+cluster: vanilla
+
 crafts:
   - wooden pickaxe: 
       ingredients: [stick*2, planks*3]

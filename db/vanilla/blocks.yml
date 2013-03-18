@@ -1,3 +1,5 @@
+cluster: vanilla
+
 crafts:
   - lapis block: [lapis*9]
   - iron block: [iron*9]

@@ -1,3 +1,5 @@
+cluster: industrialcraft2
+
 crafts:
     - cutter: [refined iron*3, iron*2]
     - painter: [iron*2, wool*3]

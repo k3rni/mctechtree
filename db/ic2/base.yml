@@ -1,3 +1,5 @@
+cluster: industrialcraft2
+
 primitives:
     - copper ore: 4
     - tin ore: 4

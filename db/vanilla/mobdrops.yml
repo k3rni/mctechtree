@@ -1,3 +1,5 @@
+cluster: vanilla
+
 primitives:
     - bone: 2
     - ink sac: 2

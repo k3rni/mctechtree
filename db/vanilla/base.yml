@@ -1,3 +1,5 @@
+cluster: vanilla
+
 primitives:
     - cobble: 1
     - wood: 1
