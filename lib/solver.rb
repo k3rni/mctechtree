@@ -1,3 +1,5 @@
+require 'ostruct'
+
 class Solver
     attr_accessor :raw, :crafts, :craft_seq
 
@@ -44,31 +46,51 @@ class Solver
       nil
     end
 
+    def raw_resources
+      raw.sort_by { |item, count| item.name }.map do |item, count|
+        stack_info = item.stack_info count.ceil
+        [item.name, count.ceil, stack_info]
+      end
+    end
+
+    def craft_sequence
+        ordering = craft_seq.sort_by { |craft, i| i }.reverse
+        j, last = 1, ordering.first[1] + 1# max waga
+        ordering.map do |craft, order|
+          count = crafts[craft]
+          row = OpenStruct.new(
+            count: (crafts[craft] * craft.makes).round,
+            num: (order < last ? j : nil),
+            machine: craft.machine,
+            result: craft.result,
+            ingredients: craft.describe_ingredients(count)
+          )
+          j += 1 if order < last
+          last = order
+          row
+        end
+    end
+
     def show_raw
         puts "Resources required:"
-        raw.sort_by{|item,count| item.name}.each do |item, count|
-          stack_info = item.stack_info count.ceil
-          puts ["#{item.name} * #{count.ceil}",
+        raw_resources.each do |name, count, stack_info|
+          puts [name, '*', count,
                 (" (#{stack_info})" if stack_info)].join ''
         end
     end
 
     def show_crafts
-        ordering = craft_seq.sort_by { |craft, i| i }.reverse
-        j, last = 1, ordering.first[1] + 1# max waga
-        puts "Recipe:"
-        ordering.each do |craft, order|
-          count = crafts[craft]
-          msg = [
-            (order < last ?  "#{j}." : ' ' * "#{j}.".size),
-            ("using #{craft.machine} " if craft.machine),
-            "craft #{(count * craft.makes).round} #{craft.result} ",
-            "from #{craft.describe_ingredients(count)}"
-          ].join ''
-          j += 1 if order < last
-          last = order
-          puts msg
-        end
+      last_num = nil
+      craft_sequence.each do |row|
+        msg = [
+          (row.num != nil ? "#{row.num}. " : ' ' * "#{last_num}. ".size),
+          ("using #{row.machine} " if row.machine),
+          "craft #{row.count} #{row.result} ",
+          "from #{row.ingredients}"
+        ].join ''
+        last_num = row.num
+        puts msg
+      end
     end
 
 end
