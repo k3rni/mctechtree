@@ -1,5 +1,7 @@
 crafts:
-    - iron furnace: [iron*8]
+    - iron furnace: 
+        ingredients: [iron*8]
+        shape: i i i i ~ i i i i
     - iron furnace: [iron*5, furnace]
     - electric furnace:
       - iron furnace
@@ -11,7 +13,7 @@ crafts:
           - cobble*2
           - machine
           - integrated circuit
-        shape: f f f ~ m ~ ~ i ~
+        shape: f f f c m c ~ i ~
     - extractor:
       - machine
       - treetap*4
