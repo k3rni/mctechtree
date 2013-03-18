@@ -1,2 +1,4 @@
 crafts:
-  - iridium: [UU-matter*7]
+  - iridium: 
+      ingredients: [UU-matter*7]
+      shape: U U U ~ U ~ U U U

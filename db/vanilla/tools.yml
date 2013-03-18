@@ -1,0 +1,28 @@
+crafts:
+  - wooden pickaxe: 
+      ingredients: [stick*2, planks*3]
+      shape: p p p ~ s ~ ~ s ~
+  - wooden axe: 
+      ingredients: [stick*2, planks*3]
+      shape: ~ p p ~ s p ~ s ~
+  - wooden hoe: 
+      ingredients: [stick*2, planks*2]
+      shape: ~ p p ~ s ~ ~ s ~
+  - wooden shovel: 
+      ingredients: [stick*2, planks]
+      shape: ~ p ~ ~ s ~ ~ s ~
+  - wooden sword:
+      ingredients: [stick, planks*2]
+      shape: ~ p ~ ~ p ~ ~ s ~
+  - stone pickaxe:
+      ingredients: [stick*2, cobble*3]
+      shape: c c c ~ s ~ ~ s ~
+  - stone axe:
+      ingredients: [stick*2, cobble*3]
+  - stone hoe:
+      ingredients: [stick*2, cobble*2]
+  - stone shovel:
+      ingredients: [stick*2, cobble]
+  - iron pickaxe:
+      ingredients: [stick*2, iron*3]
+      shape: i i i ~ s ~ ~ s ~
