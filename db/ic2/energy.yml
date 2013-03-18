@@ -73,4 +73,28 @@ crafts:
       - energy crystal*4
       - 2ins gold cable*4
       - machine
-
+    - generator:
+      - RE battery
+      - machine
+      - furnace
+    - generator:
+      - RE battery
+      - refined iron*3
+      - electric furnace
+    - geothermal generator:
+      - cell*2
+      - glass*4
+      - generator
+      - refined iron*2
+    - solar panel:
+      - coal dust*3
+      - glass*3
+      - generator
+      - integrated circuit*2
+    - water mill:
+      - wood*4
+      - stick*4
+      - generator
+    - wind mill:
+      - generator
+      - iron*4

@@ -140,8 +140,8 @@ class Simplifier
                     else
                       ' ' * "#{j}.".size
                     end),
-                # tu ceil czy floor?
-                "craft #{(count * craft.makes).floor} #{craft.result} ",
+                # NOTE: słabo radzi sobie z ratio < 1
+                "craft #{(count * craft.makes).round} #{craft.result} ",
                 ("using #{craft.machine} " if craft.machine),
                 "from #{craft.describe_ingredients(count)}"
             ].join ''

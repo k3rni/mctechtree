@@ -1,0 +1,13 @@
+crafts:
+    - red alloy wire:
+        makes: 12
+        ingredients: [red alloy ingot*3]
+    - insulated wire: # kolorowe pomijamy
+        makes: 12
+        ingredients: [red alloy ingot*3, wool*6]
+    - bundled cable: # kolorowe pomijamy
+      - insulated wire*5
+      - string*4
+    - fine iron wire:
+        machine: diamond drawplate
+        ingredients: [iron]

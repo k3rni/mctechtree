@@ -4,3 +4,5 @@ crafts:
   - stone bricks:
       makes: 4
       ingredients: [stone*4]
+  - brick block: [brick*4]
+

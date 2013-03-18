@@ -14,6 +14,10 @@ primitives:
     - wool: 5
     - water: 1
     - lava: 30
+    - leather: 10
+    - ender pearl: 90
+    - clay: 15
+    - string: 3
 
 crafts:
     - stone:
@@ -23,27 +27,38 @@ crafts:
     - planks:
         makes: 4
         ingredients: [wood]
-    - sticks:
+    - stick:
         makes: 4
         ingredients: [planks*2]
     - charcoal:
         machine: furnace
         ingredients: [wood]
+    - brick:
+        machine: furnace
+        ingredients: [clay]
     - glass:
         machine: furnace
         ingredients: [sand]
     - torch:
         makes: 4
-        ingredients: [sticks, charcoal]
+        ingredients: [stick, charcoal]
     - torch:
         makes: 4
-        ingredients: [sticks, coal]
+        ingredients: [stick, coal]
+    - redstone torch: [stick, redstone]
     - iron:
         machine: furnace
         ingredients: [iron ore]
+    - gold ingot:
+        machine: furnace
+        ingredients: [gold ore]
     - iron bars:
         makes: 16
         ingredients: [iron*6]
     - piston: [planks*3, cobble*4, iron, redstone]
+    - lever: [cobble, stick]
     - bucket: [iron*3]
     - water bucket: [water, bucket]
+    - chest: [wood*8]
+    - pressure plate: [wood*2]
+    - iron pickaxe: [stick*2, iron*3]

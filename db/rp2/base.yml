@@ -1,0 +1,17 @@
+primitives:
+    - silver ore: 20
+    - nikolite: 50
+    - sapphire: 40
+    - ruby: 40
+    - green sapphire: 40
+    - basalt cobblestone: 1
+    - marble: 1
+    - indigo flower: 1
+
+crafts:
+    - marble brick:
+        makes: 4
+        ingredients: [marble*4]
+    - basalt brick:
+        makes: 4
+        ingredients: [basalt*4]

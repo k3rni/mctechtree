@@ -48,3 +48,7 @@ crafts:
   - hazmat suit leggings:
     - rubber*6
     - orange dye
+  - static boots:
+    - iron*4
+    - wool
+    - copper cable*3
