@@ -35,6 +35,10 @@ class Solver
       @solutions.each do |sol|
         process sol, 0
       end
+      self
+    end
+
+    def describe
       show_raw
       show_crafts
       nil

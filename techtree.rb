@@ -32,7 +32,7 @@ def solve *names
       [name, 1]
     end
   end.map { |name, count| ItemResolver.new(DB.find(name), count).resolve }
-  Solver.new(solutions).solve
+  Solver.new(solutions).solve.describe
 end
 
 solve 'copper cable*1'
