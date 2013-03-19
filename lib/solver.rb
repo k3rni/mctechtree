@@ -27,9 +27,10 @@ class Solver
         # puts "#{' '*depth}RECIPE #{recipe}"
         @craft_seq[recipe] = [@craft_seq[recipe] || 0, depth].max
         new_count = exact_craft(mul * count, recipe.makes)
-        @crafts[recipe] += new_count
+        # puts "#{' '*depth}NUM #{@crafts[recipe]} + #{count} or #{new_count}"
+        @crafts[recipe] += [count, new_count].max
         tail.each do |num, rule|
-            process rule, depth+1, new_count
+            process rule, depth+1, [count, new_count].max
         end
     end
 
@@ -59,7 +60,7 @@ class Solver
         ordering.map do |craft, order|
           count = crafts[craft]
           row = OpenStruct.new(
-            count: (crafts[craft] * craft.makes).round,
+            count: (count * craft.makes).round,
             num: (order < last ? j : nil),
             machine: craft.machine,
             result: craft.result,

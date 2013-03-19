@@ -9,6 +9,7 @@ primitives:
     - basalt cobblestone: 1
     - marble: 1
     - indigo flower: 1
+    - rubber wood: 16
 
 crafts:
     - marble brick:
@@ -17,3 +18,9 @@ crafts:
     - basalt brick:
         makes: 4
         ingredients: [basalt*4]
+    - sticks:
+        makes: 8
+        ingredients: [rubber wood]
+    - indigo dye:
+        makes: 2
+        ingredients: [indigo flower]

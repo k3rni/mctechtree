@@ -7,13 +7,13 @@ primitives:
     - cocoa: 20
 
 crafts:
-    - red dye: # rose red
+    - rose red: 
         ingredients: [rose]
         makes: 2
-    - yellow dye: # dandelion yellow
+    - dandelion yellow: 
         ingredients: [dandelion]
         makes: 2
-    - green dye: # cactus green
+    - cactus green:
         ingredients: [cactus]
         machine: furnace
     - gray dye:
