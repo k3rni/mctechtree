@@ -4,6 +4,6 @@ crafts:
   - crescent hammer: 
       ingredients: [iron*3, silver ingot]
       shape: i ~ i ~ s ~ ~ i ~
-  - MJ reader:
+  - multimeter:
       ingredients: [copper ingot*2, lead ingot*2, redstone conductance coil, tin gear]
       shape: c ~ c l r l ~ t ~
