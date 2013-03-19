@@ -1,0 +1,19 @@
+cluster: thermalexpansion
+
+crafts:
+  - liquiduct:
+      ingredients: [copper ingot*2, hardened glass]
+      makes: 4
+  - item tesseract:
+      ingredients: [tin ingot*3, silver ingot*2, pneumatic servo, unattuned tesseract]
+  - liquid tesseract:
+      ingredients: [tin ingot*2, copper ingot, silver ingot*2, pneumatic servo, unattuned tesseract]
+  - energy tesseract:
+      ingredients: [tin ingot*2, electrum ingot, silver ingot*2, redstone conductance coil, unattuned tesseract]
+  - unattuned tesseract:
+      machine: liquid transposer
+      ingredients: [tesseract frame, molten ender*1000]
+  - tesseract frame:
+      ingredients: [tin ingot*4, hardened glass*4, diamond]
+      shape: t h t h d h t h t
+

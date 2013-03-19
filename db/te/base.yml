@@ -16,6 +16,10 @@ crafts:
       machine: magma crucible
       makes: 25 # 25mb
       ingredients: [redstone] 
+  - molten ender:
+      machine: magma crucible
+      makes: 250
+      ingredients: [ender pearl]
   - pulverized obsidian:
       machine: pulverizer
       ingredients: [obsidian]

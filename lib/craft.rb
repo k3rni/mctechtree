@@ -11,7 +11,7 @@ class Craft
          "result=#{self.result},",
          ("machine=#{machine}," if machine),
          ("makes=#{self.makes}," if makes > 1),
-         "ingredients=#{ingredients.map(&:to_s).join('+')}",
+         "ingredients=#{count_ingredients.map{|k,v| "#{k}*#{v}"}.join('+')}",
          ")"
         ].join('')
     end
