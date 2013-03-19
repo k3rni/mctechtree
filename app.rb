@@ -17,8 +17,8 @@ class TechTreeApp < Sinatra::Base
       @@db.each.group_by(&:group).map {|key, g| [key, g.size]}
     end
 
-    def item_names
-      @@db.to_a.map &:name
+    def item_groups
+      @@db.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
     end
   end
   get '/' do

@@ -4,8 +4,10 @@
       %fieldset
         %legend I want to craft...
         %select.chzn-select{name: 'items[]', data: {placeholder: 'type item names'}, multiple: true}
-          - item_names.each do |name|
-            %option(value=name)= name
+          - item_groups.each do |group, items|
+            %optgroup{label: I18n.t("clusters.#{group}")}
+              - items.each do |name|
+                %option(value=name)= name
         %span.help-block
           Examples:
           %i quantum body armor,
