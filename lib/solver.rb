@@ -30,7 +30,7 @@ class Solver
         # puts "#{' '*depth}NUM #{@crafts[recipe]} + #{count} or #{new_count}"
         @crafts[recipe] += [count, new_count].max
         tail.each do |num, rule|
-            process rule, depth+1, [count, new_count].max
+            process rule, depth+1, new_count
         end
     end
 
