@@ -1,0 +1,84 @@
+cluster: redpower2
+
+crafts:
+  - black lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, black dye*2]
+  - red lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, red dye*2]
+  - green lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, green dye*2]
+  - brown lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, brown dye*2]
+  - blue lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, blue dye*2]
+  - purple lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, purple dye*2]
+  - cyan lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, cyan dye*2]
+  - light gray lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, light gray dye*2]
+  - gray lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, gray dye*2]
+  - pink lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, pink dye*2]
+  - lime lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, lime dye*2]
+  - yellow lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, yellow dye*2]
+  - light blue lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, light blue dye*2]
+  - magenta lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, magenta dye*2]
+  - orange lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, orange dye*2]
+  - white lumar:
+      makes: 2
+      ingredients: [redstone, glowstone, white dye*2]
+  - black lamp: [glass*6, black lumar*2, redstone]
+  - red lamp: [glass*6, red lumar*2, redstone]
+  - green lamp: [glass*6, green lumar*2, redstone]
+  - brown lamp: [glass*6, brown lumar*2, redstone]
+  - blue lamp: [glass*6, blue lumar*2, redstone]
+  - purple lamp: [glass*6, purple lumar*2, redstone]
+  - cyan lamp: [glass*6, cyan lumar*2, redstone]
+  - light gray lamp: [glass*6, light gray lumar*2, redstone]
+  - gray lamp: [glass*6, gray lumar*2, redstone]
+  - pink lamp: [glass*6, pink lumar*2, redstone]
+  - lime lamp: [glass*6, lime lumar*2, redstone]
+  - yellow lamp: [glass*6, yellow lumar*2, redstone]
+  - light blue lamp: [glass*6, light blue lumar*2, redstone]
+  - magenta lamp: [glass*6, magenta lumar*2, redstone]
+  - orange lamp: [glass*6, orange lumar*2, redstone]
+  - white lamp: [glass*6, white lumar*2, redstone]
+  - inverted black lamp: [glass*6, black lumar*2, redstone torch]
+  - inverted red lamp: [glass*6, red lumar*2, redstone torch]
+  - inverted green lamp: [glass*6, green lumar*2, redstone torch]
+  - inverted brown lamp: [glass*6, brown lumar*2, redstone torch]
+  - inverted blue lamp: [glass*6, blue lumar*2, redstone torch]
+  - inverted purple lamp: [glass*6, purple lumar*2, redstone torch]
+  - inverted cyan lamp: [glass*6, cyan lumar*2, redstone torch]
+  - inverted light gray lamp: [glass*6, light gray lumar*2, redstone torch]
+  - inverted gray lamp: [glass*6, gray lumar*2, redstone torch]
+  - inverted pink lamp: [glass*6, pink lumar*2, redstone torch]
+  - inverted lime lamp: [glass*6, lime lumar*2, redstone torch]
+  - inverted yellow lamp: [glass*6, yellow lumar*2, redstone torch]
+  - inverted light blue lamp: [glass*6, light blue lumar*2, redstone torch]
+  - inverted magenta lamp: [glass*6, magenta lumar*2, redstone torch]
+  - inverted orange lamp: [glass*6, orange lumar*2, redstone torch]
+  - inverted white lamp: [glass*6, white lumar*2, redstone torch]
+  # TODO: fixtures, inverted fixtures
