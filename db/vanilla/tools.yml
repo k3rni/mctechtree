@@ -28,3 +28,6 @@ crafts:
   - iron pickaxe:
       ingredients: [stick*2, iron*3]
       shape: i i i ~ s ~ ~ s ~
+  - iron axe:
+      ingredients: [stick*2, iron*3]
+      shape: ~ i i ~ s i ~ s ~

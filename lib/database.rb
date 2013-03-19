@@ -8,6 +8,7 @@ class Database < Set
     def initialize(*args)
         super(*args)
         @pending = Set.new
+        @equivalents = Hash.new { |h, key| h[key] = Set.new }
     end
 
     def find(name)
@@ -16,6 +17,7 @@ class Database < Set
 
     def load_definitions data
       group = data['cluster']
+      load_equivalents(data['equivalents'] || {})
       load_primitives(data['primitives'] || {}, group)
       load_crafts(data['crafts'] || {}, group)
       self
@@ -47,6 +49,15 @@ class Database < Set
             self.add item
           end
         end
+    end
+
+    def load_equivalents definitions
+      definitions.each do |names|
+        nn = Set.new(names)
+        nn.each do |name|
+          @equivalents[name].merge(nn - [name])
+        end
+      end
     end
 
     def parse_primitive data
@@ -98,8 +109,22 @@ class Database < Set
                 true
             end
         end
+        # zostało coś? podmień z equivalents
+        @pending.select! do |item|
+          if (eq = @equivalents[item.name])
+            new_item = eq.map { |name| find(name) }.compact.first
+            if new_item.nil?
+              true
+            else
+              replace_pending item, new_item
+              false
+            end
+          else
+            true
+          end
+        end
         if @pending.size > 0
-          raise UndefinedItemsError.new(@pending)
+          raise UndefinedItemsError.new(@pending.to_a.join(','))
         end
     end
 
