@@ -4,3 +4,19 @@ en:
       last_word_connector: ! ', and '
       two_words_connector: ! ' and '
       words_connector: ! ', '
+  clusters:
+    industrialcraft2: IndustrialCraft²
+    redpower2: RedPower 2
+    vanilla: Minecraft
+    thermalexpansion: Thermal Expansion
+    ae: Applied Energistics
+    gravisuite: Gravisuite
+    rail: Railcraft
+    bc3: BuildCraft 3
+    logi: Logistics Pipes
+    thaum: ThaumCraft 3
+    forestry: Forestry
+    gregtech: GregTech
+    chargepads: ChargePads
+    abo: Additional Buildcraft Objects
+

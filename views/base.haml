@@ -15,7 +15,7 @@
           %h3 includes recipes from
           %dl
             - recipe_counters.each do |cluster, count|
-              %dt= cluster
+              %dt= I18n.t "clusters.#{cluster}"
               %dd= count
       = yield
     :javascript
