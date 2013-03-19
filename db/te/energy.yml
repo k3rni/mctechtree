@@ -1,0 +1,9 @@
+cluster: thermalexpansion
+
+crafts:
+  - energy storage frame:
+      ingredients: [electrum ingot*4, hardened glass*4, diamond]
+  - energy cell frame:
+      ingredients: [electrum ingot*3, energy storage frame, lead ingot*2, redstone conductance coil]
+  - steam engine: [copper ingot*3, redstone transmission coil, copper gear*2, piston]
+  - magmatic engine: [invar ingot*3, redstone transmission coil, invar gear*2, piston]

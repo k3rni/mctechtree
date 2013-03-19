@@ -22,6 +22,9 @@ primitives:
     - ender pearl: 90
     - clay: 15
     - string: 3
+    - nether brick: 32
+    - snowball: 1
+
 
 crafts:
     - stone:

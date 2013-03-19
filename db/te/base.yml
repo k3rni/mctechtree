@@ -1,0 +1,31 @@
+cluster: thermalexpansion
+
+primitives:
+  - lead ore: 10
+
+crafts:
+  - molten redstone:
+      machine: magma crucible
+      ingredients: [redstone*40] # 25mb, czyli na jedno wiadro 1000mb trzeba 40 sztuk
+  - pulverized obsidian:
+      machine: pulverizer
+      ingredients: [obsidian]
+  - pulverized lead:
+      machine: pulverizer
+      ingredients: [lead ore]
+      makes: 2
+  - lead ingot:
+      machine: furnace
+      ingredients: [lead ore]
+  - lead ingot:
+      machine: furnace
+      ingredients: [pulverized lead]
+  - pneumatic servo: [iron*2, glass*2, redstone]
+  - redstone reception coil: [redstone*2, gold ingot]
+  - redstone transmission coil: [redstone*2, silver ingot]
+  - redstone conductance coil: [redstone*2, electrum ingot]
+  - copper gear: [copper ingot*4, iron]
+  - tin gear: [tin ingot*4, iron]       
+  - hardened glass:
+      machine: induction smelter
+      ingredients: [pulverized lead, pulverized obsidian]

@@ -7,4 +7,6 @@ crafts:
       makes: 4
       ingredients: [stone*4]
   - brick block: [brick*4]
+  - nether brick block: [nether brick*4]
+  - snow: [snowball*4]
 
