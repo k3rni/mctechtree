@@ -4,6 +4,7 @@ GEM
     active_support (3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
+    addressable (2.3.3)
     coderay (1.0.9)
     columnize (0.3.6)
     debugger (1.5.0)
@@ -12,7 +13,9 @@ GEM
       debugger-ruby_core_source (~> 1.2.0)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.0)
+    libv8 (3.3.10.4)
     method_source (0.8.1)
+    nokogiri (1.5.6)
     pry (0.9.12)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -24,6 +27,8 @@ GEM
       spoon (~> 0.0)
     slop (3.4.3)
     spoon (0.0.1)
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
 
 PLATFORMS
   java
@@ -31,5 +36,8 @@ PLATFORMS
 
 DEPENDENCIES
   active_support
+  addressable
   debugger
+  nokogiri
   pry
+  therubyracer
