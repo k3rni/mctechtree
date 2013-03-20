@@ -19,7 +19,7 @@ autoload :Solver, './lib/solver'
 
 
 DB = Database.new
-Dir.glob('db/**/*.yml').each do |filename|
+Dir.glob('db/wow/**/{apprentice,journeyman,expert,herbs,base}.yml').each do |filename|
     DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending
@@ -44,5 +44,5 @@ def solve *names
   Solver.new(solutions).solve.describe
 end
 
-solve 'molten redstone*1000'
+solve 'Elixir of Minor Agility'
 binding.pry
