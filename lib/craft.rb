@@ -4,7 +4,7 @@ require 'zlib'
 require 'active_support/core_ext/array'
 
 class Craft
-    attr_accessor :machine, :result, :makes, :ingredients, :shape
+    attr_accessor :machine, :result, :makes, :ingredients, :shape, :meta
 
     def to_s
         ["Craft(",

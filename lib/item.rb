@@ -41,7 +41,7 @@ class Item
     def initialize attrs={}
         attrs.each { |key, val| self.send "#{key}=", val }
         @crafts = []
-        stacks = 64 if stacks.nil?
+        self.stacks = 64 if attrs[:stacks].nil?
     end
 
     def to_s
