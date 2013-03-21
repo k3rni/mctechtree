@@ -6,19 +6,25 @@ require 'bundler'
 Bundler.setup
 require 'pry'
 require 'fileutils'
+require 'wowhead/config'
+require 'wowhead/parser'
 require 'wowhead/scraper'
 require 'yaml'
 
-data = Marshal.load(File.read('alchemy-apprentice.obj'))
-
+# TODO: przewalić to do makefile jakiegoś
 profs = Set.new(Wowhead::PROFESSIONS.keys)
 profs = [:alchemy]
+itemkinds = [:herbs, :ores, :cooking_ingredients, :elemental, :cloth, :enchanting, :leather]
 
 FileUtils.mkdir_p "db/wow/"
-File.open("db/wow/herbs.yml", 'w') do |fp|
-  fp.write(YAML.dump_stream(
-    'primitives' => Wowhead.get_herbs
-  ))
+itemkinds.shuffle.each do |kind|
+    puts "base/#{kind}"
+    items = Wowhead.send("get_#{kind}")
+    File.open("db/wow/#{kind}.yml", 'w') do |fp|
+      fp.write(YAML.dump_stream(
+        'primitives' => items
+      ))
+    end
 end
 
 exit
