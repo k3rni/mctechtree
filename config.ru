@@ -14,7 +14,7 @@ require './app'
 require 'yaml'
 
 DB = Database.new
-Dir.glob('db/**/*.yml').each do |filename|
+Dir.glob('wowhead/**/*.yml').each do |filename|
     DB.load_definitions ::YAML.load_file(filename)
 end
 DB.fixup_pending

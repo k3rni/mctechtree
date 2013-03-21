@@ -10,12 +10,12 @@
     - container :fluid do
       .row
         .span4
-          %h1 MCTechTree
+          %h1 WoWTechTree
         .span8
           %h3 includes recipes from
           %dl
             - recipe_counters.each do |cluster, count|
-              %dt= I18n.t "clusters.#{cluster}"
+              %dt= I18n.t "clusters.#{cluster || 'blank'}"
               %dd= count
       = yield
     :javascript
