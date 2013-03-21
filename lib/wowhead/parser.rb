@@ -17,17 +17,22 @@ module Wowhead
 
     def parse_recipes objects, items, include_noncreating=false
       objects.map do |obj|
+        skip = false
         itemnum, count, _x = obj['creates']
         # metadata = extract_recipe_metadata obj
         result_name = lookup_item items, itemnum
         if result_name.nil? && include_noncreating
           result_name = obj['name'].slice(1..-1)
           count = 1
+        elsif result_name.nil?
+          skip = true
         end
         reagents = obj['reagents'].to_a.map do |itemid, num|
           [lookup_item(items, itemid), num]
         end
         if reagents.empty?
+          nil
+        elsif skip
           nil
         else
           {result_name => { 
@@ -48,6 +53,7 @@ module Wowhead
             name = item['name_enus'] || trim_digit(obj['name'])
             info = {
                 level: obj['level'],
+                cost: obj['level'] # czemu nie
             }
             # TODO: url
             # info[:url] = item_url(item['id']).to_s if item['id']
@@ -101,7 +107,7 @@ module Wowhead
         result
     end
 
-    def self.trim_digit name
+    def trim_digit name
       if name =~ /^[0-9](.*)/
           name = $1
       end

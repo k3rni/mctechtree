@@ -45,5 +45,5 @@ def solve *names
   Solver.new(solutions).solve.describe
 end
 
-solve 'Elixir of Minor Agility'
 binding.pry
+solve 'Elixir of Minor Agility'
