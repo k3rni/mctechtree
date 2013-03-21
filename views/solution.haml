@@ -1,0 +1,43 @@
+.row
+  .span8
+    %h3
+      Crafting: #{targets.to_sentence}
+  .span4
+    %p.text-right
+      %a.btn.btn-info(href="/") Craft something else
+.row
+  .span6
+    %h4 Required resources
+    %table.table
+      %thead
+        %tr
+          %th Item
+          %th Count
+          %th Stacks
+      %tbody
+        - raw.each do |name, count, stack_info|
+          %tr
+            %td= name
+            %td= count
+            %td= stack_info
+  .span6
+    %h4 Crafting sequence
+    %table.table
+      %thead
+        %tr
+          %th #
+          %th Craft
+          %th Machine
+          %th From
+      %tbody
+        - crafts.each do |step|
+          %tr
+            %td= step.num
+            %td
+              = step.count if step.count > 1
+              - if targets.include? step.result.to_s
+                %strong= step.result
+              - else
+                = step.result.inspect
+            %td= step.machine
+            %td= step.ingredients

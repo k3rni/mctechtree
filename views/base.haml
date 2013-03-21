@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    = bootstrap_assets
+    %script(src="/chosen/chosen.jquery.js")
+    %link(rel="stylesheet" href="/chosen/chosen.css")
+  %body
+    %a(href="http://github.com/k3rni/mctechtree")
+      %img(style="position:absolute; top:0; right:0; border:0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub")
+    - container :fluid do
+      .row
+        .span4
+          %h1 MCTechTree
+        .span8
+          %h3 includes recipes from
+          %dl
+            - recipe_counters.each do |cluster, count|
+              %dt= I18n.t "clusters.#{cluster}"
+              %dd= count
+      = yield
+    :javascript
+      $('.chzn-select').chosen()
