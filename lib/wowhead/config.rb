@@ -68,7 +68,7 @@ module Wowhead
     cooking: Addressable::URI.parse("http://www.wowhead.com/items=7.8"),
     elemental: Addressable::URI.parse("http://www.wowhead.com/items=7.10"),
     cloth: Addressable::URI.parse("http://www.wowhead.com/items=7.5"),
-    enchanting: Addressable::URI.parse("http://www.wowhead.com/items=7.12"),
+    enchanting_mats: Addressable::URI.parse("http://www.wowhead.com/items=7.12"),
     leather: Addressable::URI.parse("http://www.wowhead.com/items=7.6"),
   }
   class << self

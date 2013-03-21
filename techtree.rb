@@ -19,7 +19,7 @@ autoload :Solver, './lib/solver'
 
 
 DB = Database.new
-Dir.glob('db/wow/**/{apprentice,journeyman,expert,herbs,base}.yml').each do |filename|
+Dir.glob('wowhead/**/*.yml').each do |filename|
     DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending

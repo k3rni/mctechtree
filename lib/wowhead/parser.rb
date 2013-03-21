@@ -15,16 +15,27 @@ module Wowhead
       end
     end
 
-    def parse_recipes raw_recipes, raw_items
-      raw_recipes.map do |obj|
+    def parse_recipes objects, items, include_noncreating=false
+      objects.map do |obj|
         itemnum, count, _x = obj['creates']
-        metadata = extract_recipe_metadata obj
-        result_name = lookup_item raw_items, itemnum
-        next if result_name.nil?
+        # metadata = extract_recipe_metadata obj
+        result_name = lookup_item items, itemnum
+	if result_name.nil? && include_noncreating
+		result_name = obj['name'].slice(1..-1)
+		count = 1
+	else
+		next
+	end
         reagents = obj['reagents'].to_a.map do |itemid, num|
-          [lookup_item(raw_items, itemid), num]
+          [lookup_item(items, itemid), num]
         end
-        {result_name => { makes: count, ingredients: format_reagents(reagents), meta: metadata.stringify_keys }.stringify_keys}
+	next if reagents.empty?
+        {result_name => { 
+		makes: count, 
+		ingredients: format_reagents(reagents), 
+		# meta: metadata.stringify_keys 
+		}.stringify_keys
+	}
       end.compact
     end
 

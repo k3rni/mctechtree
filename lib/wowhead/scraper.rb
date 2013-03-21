@@ -14,7 +14,7 @@ module Wowhead
         c.eval File.read('jquery-core.js')
         c.eval '$ = jQuery'
         c.eval 'fi_addUpgradeIndicator = {}'
-        c.eval 'g_trackEvent = {}'
+        c.eval 'g_trackEvent = function() {}'
         block.call(c) if block != nil
       end
     end
@@ -51,19 +51,12 @@ module Wowhead
 
 
     def get_recipes profession, rank
-        url = recipes_url profession, rank
-        code = fetch_code url, '#lv-spells ~ script'
-        ctx = setup_context
-        g_items = ctx.eval('g_items = {}')
-        g_spells = ctx.eval('g_spells = {}')
-        lv = ctx.eval('global_listview = {}')
-        ctx.eval(LISTVIEW)
-        ctx.eval(code)
+	code = fetch_code recipes_url(profession, rank), '#lv-spells ~ script'
+	objects, items, spells = default_context do |ctx|
+	    ctx.eval(code)
+	end
 
-        recipes = to_ruby_val lv.data.data
-        items = to_ruby_val g_items
-
-        parse_recipes recipes, items
+        parse_recipes objects, items, true
     end
 
     def fetch_code url, selector
@@ -76,23 +69,6 @@ module Wowhead
             values = obj.values.first # taki format
             values['sources'] && values['sources'].include?('crafted')
         end
-    end
-
-    def get_ores
-        code = fetch_code trades_url(:ores), '#lv-items ~ script'
-        objects, items, spells = default_context do |ctx|
-            ctx.eval(code)
-        end
-
-        code = fetch_code trades_url(:ores_with_locations), '#lv-objects ~ script'
-        extra_objects, _i, _s = default_context do |ctx|
-            ctx.eval(code)
-        end
-
-        merged_items = merge_hl items, extra_objects, 'name_enus', 'name'
-
-        @@zones ||= get_zones
-        reject_crafted parse_objects(objects, merged_items, @@zones)
     end
 
     def get_zones
@@ -155,8 +131,8 @@ module Wowhead
         reject_crafted basic_loader(:cloth)
     end
 
-    def get_enchanting
-        reject_crafted basic_loader(:enchanting)
+    def get_enchanting_mats
+        reject_crafted basic_loader(:enchanting_mats)
     end
 
     def get_leather

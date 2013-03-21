@@ -13,26 +13,24 @@ require 'yaml'
 
 # TODO: przewalić to do makefile jakiegoś
 profs = Set.new(Wowhead::PROFESSIONS.keys)
-profs = [:alchemy]
-itemkinds = [:herbs, :ores, :cooking_ingredients, :elemental, :cloth, :enchanting, :leather]
+itemkinds = [:herbs, :ores, :cooking_ingredients, :elemental, :cloth, :enchanting_mats, :leather]
 
-FileUtils.mkdir_p "db/wow/"
-itemkinds.shuffle.each do |kind|
+FileUtils.mkdir_p "wowhead"
+
+def load_base kind
     puts "base/#{kind}"
     items = Wowhead.send("get_#{kind}")
-    File.open("db/wow/#{kind}.yml", 'w') do |fp|
+    File.open("wowhead/#{kind}.yml", 'w') do |fp|
       fp.write(YAML.dump_stream(
         'primitives' => items
       ))
     end
 end
 
-exit
-
-profs.each do |prof|
+def load_prof prof
   Wowhead::RANKS.keys.each do |rank|
     puts "#{prof}/#{rank}"
-    path = "db/wow/#{prof}"
+    path = "wowhead/#{prof}"
     FileUtils.mkdir_p path
     begin
       recipes = Wowhead.get_recipes prof, rank
@@ -47,4 +45,14 @@ profs.each do |prof|
       ))
     end
   end
+end
+
+ARGV.each do |arg|
+    if profs.include? arg.to_sym
+	    load_prof arg.to_sym
+    elsif itemkinds.include? arg.to_sym
+	    load_base arg.to_sym
+    else
+	    puts "WTF #{arg}"
+    end
 end
