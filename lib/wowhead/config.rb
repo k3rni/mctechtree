@@ -78,6 +78,9 @@ module Wowhead
     jewelcrafting_mats:  Addressable::URI.parse("http://www.wowhead.com/items=7.4?filter=cr=86;crs=12;crv=0"), # items/trade goods/jc/crafted=false
     drops: Addressable::URI.parse("http://www.wowhead.com/items=15.4?filter=cr=87;crs=11;crv=0"), # items/misc/other + reagent
     devices: Addressable::URI.parse("http://www.wowhead.com/items=7.3?filter=cr=87;crs=11;crv=0"), # items/trade goods/devices + reagent
+    weapons: Addressable::URI.parse("http://www.wowhead.com/items=2?filter=cr=87;crs=11;crv=0"), # items/weapons + reagent
+    quest: Addressable::URI.parse("http://www.wowhead.com/items=12?filter=cr=87;crs=11;crv=0"), # items/quest + reagent, głównie stary szit
+    parts: Addressable::URI.parse("http://www.wowhead.com/items=7.1?filter=cr=87;crs=11;crv=0"), # items/quest + reagent, głównie stary szit
   }
   class << self
     def recipes_url profession, rank
