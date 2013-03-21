@@ -13,22 +13,29 @@ module Wowhead
         c.eval 'window={location: {}, document: {}}' # DOM dla ubogich
         c.eval File.read('jquery-core.js')
         c.eval '$ = jQuery'
+        # wowheadowe cuda, bez nich się czasem wywala
         c.eval 'fi_addUpgradeIndicator = {}'
+        c.eval 'fi_extraCols = {}'
+        c.eval 'fi_getExtraCols = function() {}'
         c.eval 'g_trackEvent = function() {}'
+        c.eval '$WH = {sprintf: function() {}}'
+        c.eval 'LANG = {}'
         block.call(c) if block != nil
       end
     end
 
     def default_context &block
-        lv, g_items, g_spells = nil
-        setup_context do |ctx|
-            lv = ctx.eval('global_listview = {}')
-            g_items = ctx.eval('g_items = {}')
-            g_spells = ctx.eval('g_spells = {}')
-            ctx.eval(LISTVIEW)
-            block.call(ctx)
-        end
-        [to_ruby_val(lv.data.data), to_ruby_val(g_items), to_ruby_val(g_spells)]
+      lv, g_items, g_spells = nil
+      setup_context do |ctx|
+        lv = ctx.eval('global_listview = {}')
+        g_items = ctx.eval('g_items = {}')
+        g_spells = ctx.eval('g_spells = {}')
+        # występuje czasem na stronach z cenami
+        g_currencies = ctx.eval('g_gatheredcurrencies = {}')
+        ctx.eval(LISTVIEW)
+        block.call(ctx)
+      end
+      [to_ruby_val(lv.data.data), to_ruby_val(g_items), to_ruby_val(g_spells)]
     end
 
     def to_ruby_val v8obj
@@ -51,24 +58,24 @@ module Wowhead
 
 
     def get_recipes profession, rank
-	code = fetch_code recipes_url(profession, rank), '#lv-spells ~ script'
-	objects, items, spells = default_context do |ctx|
-	    ctx.eval(code)
-	end
+      code = fetch_code recipes_url(profession, rank), '#lv-spells ~ script'
+      objects, items, spells = default_context do |ctx|
+        ctx.eval(code)
+      end
 
-        parse_recipes objects, items, true
+      parse_recipes objects, items, (profession == :enchanting)
     end
 
     def fetch_code url, selector
-        doc = Nokogiri::HTML(Net::HTTP.get url)
-        doc.css(selector).text
+      doc = Nokogiri::HTML(Net::HTTP.get url)
+      doc.css(selector).text
     end
 
     def reject_crafted items
-        items.reject do |obj|
-            values = obj.values.first # taki format
-            values['sources'] && values['sources'].include?('crafted')
-        end
+      items.reject do |obj|
+        values = obj.values.first # taki format
+        values['sources'] && values['sources'].include?('crafted')
+      end
     end
 
     def get_zones
@@ -85,58 +92,59 @@ module Wowhead
 
 
     def basic_loader category
-        code = fetch_code trades_url(category), '#lv-items ~ script'
-        objects, items, spells = default_context do |ctx|
-            ctx.eval(code)
-        end
+      code = fetch_code trades_url(category), '#lv-items ~ script'
+      objects, items, spells = default_context do |ctx|
+        ctx.eval(code)
+      end
 
-        @@zones ||= get_zones
-        parse_objects(objects, items, @@zones)
+      @@zones ||= get_zones
+      parse_objects(objects, items, @@zones)
     end
 
     def advanced_loader category, extracat
-        code = fetch_code trades_url(category), '#lv-items ~ script'
-        objects, items, spells = default_context do |ctx|
-            ctx.eval(code)
-        end
+      code = fetch_code trades_url(category), '#lv-items ~ script'
+      objects, items, spells = default_context do |ctx|
+        ctx.eval(code)
+      end
 
-        code = fetch_code trades_url(extracat), '#lv-objects ~ script'
-        extra_objects, _i, _s = default_context do |ctx|
-            ctx.eval(code)
-        end
+      code = fetch_code trades_url(extracat), '#lv-objects ~ script'
+      extra_objects, _i, _s = default_context do |ctx|
+        ctx.eval(code)
+      end
 
-        merged_items = merge_hl items, extra_objects, 'name_enus', 'name'
+      merged_items = merge_hl items, extra_objects, 'name_enus', 'name'
 
-        @@zones ||= get_zones
-        parse_objects(objects, merged_items, @@zones)
-    end
-
-    def get_cooking_ingredients
-        reject_crafted basic_loader(:cooking)
-    end
-
-    def get_elemental
-        reject_crafted basic_loader(:elemental)
+      @@zones ||= get_zones
+      parse_objects(objects, merged_items, @@zones)
     end
 
     def get_ores
-        reject_crafted advanced_loader(:ores, :ores_with_locations)
+      reject_crafted advanced_loader(:ores, :ores_with_locations)
     end
 
     def get_herbs
-        reject_crafted advanced_loader(:herbs, :herbs_with_locations)
+      reject_crafted advanced_loader(:herbs, :herbs_with_locations)
+    end
+    
+    def get_elemental
+      # primale są crafted (ale nie z recki), nie można więc ich olać
+      basic_loader :elemental
     end
 
-    def get_cloth
-        reject_crafted basic_loader(:cloth)
+    def get_devices
+      basic_loader :devices
     end
 
-    def get_enchanting_mats
-        reject_crafted basic_loader(:enchanting_mats)
+    def method_missing name, *args
+      if name =~ /get_(.*)/
+        mode = $1.to_sym
+        if TRADE_URLS.include?(mode)
+          reject_crafted basic_loader(mode)
+        end
+      else
+        super(name, *args)
+      end
     end
 
-    def get_leather
-        reject_crafted basic_loader(:leather)
-    end
   end
 end

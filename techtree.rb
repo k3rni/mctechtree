@@ -19,8 +19,9 @@ autoload :Solver, './lib/solver'
 
 
 DB = Database.new
-Dir.glob('wowhead/**/*.yml').each do |filename|
-    DB.load_definitions YAML.load_file(filename)
+(Dir.glob('wowhead/**/*.yml')).each do |filename|
+  puts "loading #{filename}"
+  DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending
 DB.dump_graph File.open('techtree.dot', 'w')

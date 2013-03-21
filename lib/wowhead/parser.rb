@@ -20,22 +20,23 @@ module Wowhead
         itemnum, count, _x = obj['creates']
         # metadata = extract_recipe_metadata obj
         result_name = lookup_item items, itemnum
-	if result_name.nil? && include_noncreating
-		result_name = obj['name'].slice(1..-1)
-		count = 1
-	else
-		next
-	end
+        if result_name.nil? && include_noncreating
+          result_name = obj['name'].slice(1..-1)
+          count = 1
+        end
         reagents = obj['reagents'].to_a.map do |itemid, num|
           [lookup_item(items, itemid), num]
         end
-	next if reagents.empty?
-        {result_name => { 
-		makes: count, 
-		ingredients: format_reagents(reagents), 
-		# meta: metadata.stringify_keys 
-		}.stringify_keys
-	}
+        if reagents.empty?
+          nil
+        else
+          {result_name => { 
+              makes: count, 
+              ingredients: format_reagents(reagents), 
+              # meta: metadata.stringify_keys 
+            }.stringify_keys
+          }
+        end
       end.compact
     end
 
@@ -44,10 +45,7 @@ module Wowhead
             key = obj['id']
             item = extra[key] || {} # niema to niema
             # puts "K #{key} O #{obj} X #{item}"
-            name = item['name_enus'] || obj['name']
-            if name =~ /^[0-9](.*)/
-                name = $1
-            end
+            name = item['name_enus'] || trim_digit(obj['name'])
             info = {
                 level: obj['level'],
             }
@@ -103,5 +101,10 @@ module Wowhead
         result
     end
 
+    def self.trim_digit name
+      if name =~ /^[0-9](.*)/
+          name = $1
+      end
+    end
   end
 end

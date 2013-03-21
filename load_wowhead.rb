@@ -13,46 +13,32 @@ require 'yaml'
 
 # TODO: przewalić to do makefile jakiegoś
 profs = Set.new(Wowhead::PROFESSIONS.keys)
-itemkinds = [:herbs, :ores, :cooking_ingredients, :elemental, :cloth, :enchanting_mats, :leather]
-
-FileUtils.mkdir_p "wowhead"
+itemkinds = Wowhead::TRADE_URLS.keys # a tak naprawdę metody get_
 
 def load_base kind
-    puts "base/#{kind}"
     items = Wowhead.send("get_#{kind}")
-    File.open("wowhead/#{kind}.yml", 'w') do |fp|
-      fp.write(YAML.dump_stream(
-        'primitives' => items
-      ))
-    end
+    STDOUT.write(YAML.dump_stream(
+      'primitives' => items
+    ))
 end
 
-def load_prof prof
-  Wowhead::RANKS.keys.each do |rank|
-    puts "#{prof}/#{rank}"
-    path = "wowhead/#{prof}"
-    FileUtils.mkdir_p path
-    begin
-      recipes = Wowhead.get_recipes prof, rank
-    rescue 
-      puts $!.class
-      raise
-    end
-    File.open(File.join(path, "#{rank}.yml"), 'w') do |fp|
-      fp.write(YAML.dump_stream(
-        'cluster' => prof,
-        'crafts' => recipes
-      ))
-    end
+def load_prof prof, rank
+  begin
+    recipes = Wowhead.get_recipes prof, rank
+  rescue 
+    raise
   end
+  STDOUT.write(YAML.dump_stream(
+    'cluster' => prof.to_s,
+    'crafts' => recipes
+  ))
 end
 
-ARGV.each do |arg|
-    if profs.include? arg.to_sym
-	    load_prof arg.to_sym
-    elsif itemkinds.include? arg.to_sym
-	    load_base arg.to_sym
-    else
-	    puts "WTF #{arg}"
-    end
+target = ARGV[0].to_sym
+if profs.include? target
+  load_prof target, ARGV[1].to_sym # z rank
+elsif itemkinds.include? target
+  load_base target
+else
+  exit 1
 end
