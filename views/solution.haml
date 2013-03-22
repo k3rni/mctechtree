@@ -27,7 +27,7 @@
         %tr
           %th #
           %th Craft
-          %th Machine
+          %th Profession
           %th From
       %tbody
         - crafts.each do |step|
@@ -39,5 +39,5 @@
                 %strong= step.result
               - else
                 = step.result.inspect
-            %td= step.machine
+            %td= step.result.group
             %td= step.ingredients

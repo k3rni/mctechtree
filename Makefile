@@ -5,15 +5,12 @@ root = wowhead
 
 base_targets = $(addsuffix .yml,$(addprefix $(root)/,$(base_items)))
 prof_targets = $(addsuffix .yml,$(addprefix $(root)/,$(foreach prof,$(professions),$(addprefix $(prof)/,$(ranks)))))
-prof_dirs = $(foreach prof,$(professions),$(root)/$(prof)/$(rank))
+prof_dirs = $(foreach prof,$(professions),$(root)/$(prof))
 
-all: wowhead $(base_targets) $(prof_targets)
+all: $(base_targets) $(prof_targets)
 
-%.yml:
+%.yml: 
 	mkdir -p $(dir $@)
 	./load_wowhead.rb $(wordlist 2,3,$(subst /, ,$(basename $@))) > $@
 
-
-wowhead:
-	mkdir -p $@
 

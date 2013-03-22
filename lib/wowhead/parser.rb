@@ -93,10 +93,33 @@ module Wowhead
         srclist.map { |zoneid| zones[zoneid]['name'] rescue nil }.compact
     end
 
-    def merge_hl hash, list, hkey, lkey
+    def merge_herbs hash, list, hkey, lkey
+        hkey = 'name_enus'
+        lkey = 'name'
         result = {}
         list.map do |e|
             key = hash.select { |k, v| v[hkey] == e[lkey] }.keys.first
+            old = hash[key]
+            if old
+                result[key] = old.merge(e)
+            else
+                result[key] = e
+            end
+        end
+        result
+    end
+
+    def merge_ores hash, list
+        result = {}
+        list.map do |e|
+            deposit_name = Set.new(e['name'].split)
+            matches = hash.map do |k, v|
+                ore_name = Set.new(v['name_enus'].split)
+                [k, v['name_enus'], (deposit_name & ore_name).size]
+            end
+            puts deposit_name.inspect
+            puts matches.inspect
+            key = matches.max { |key, name, rank| rank }.first
             old = hash[key]
             if old
                 result[key] = old.merge(e)

@@ -101,7 +101,7 @@ module Wowhead
       parse_objects(objects, items, @@zones)
     end
 
-    def advanced_loader category, extracat
+    def advanced_loader category, extracat, merge_func
       code = fetch_code trades_url(category), '#lv-items ~ script'
       objects, items, spells = default_context do |ctx|
         ctx.eval(code)
@@ -112,18 +112,21 @@ module Wowhead
         ctx.eval(code)
       end
 
-      merged_items = merge_hl items, extra_objects, 'name_enus', 'name'
+      # w herbs to i działa, ale w ores nazwy obiektów nie pokrywają się z nazwami itemów
+      # np: tin ore -> tin vein, saronite ore -> rich/poor saronite deposit
+      binding.pry
+      merged_items = merge_func.call items, extra_objects
 
       @@zones ||= get_zones
       parse_objects(objects, merged_items, @@zones)
     end
 
     def get_ores
-      reject_crafted advanced_loader(:ores, :ores_with_locations)
+      reject_crafted advanced_loader(:ores, :ores_with_locations, method(:merge_herbs))
     end
 
     def get_herbs
-      reject_crafted advanced_loader(:herbs, :herbs_with_locations)
+      reject_crafted advanced_loader(:herbs, :herbs_with_locations, method(:merge_herbs))
     end
     
     def get_elemental
