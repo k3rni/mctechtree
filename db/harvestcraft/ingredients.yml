@@ -3,7 +3,7 @@ cluster: harvestcraft
 crafts:
 - butter: [milk bucket, salt]
 - buttermilk: [milk bucket, salt] # produkt uboczny produkcji masła, nie umiemy jeszcze inaczej zapisać
-- dough: [flour, water bucket, salt]
+- dough: [flour, water, salt]
 - cheese: [milk bucket, salt*2]
 - bread: 
     ingredients: [dough]

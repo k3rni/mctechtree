@@ -4,8 +4,8 @@ crafts:
 - taco: [tortilla, lettuce, cheese, cooked pork]
 - side salad: [salad, cooked pork, egg, toast]
 - pork lettuce wrap: [lettuce, cooked pork, onion, tomato]
-- omelet: [scrambled eggs, bellpepper, cooked pork, onion]
-- omelet: [scrambled eggs, chili pepper, cooked pork, onion]
+- omelet: [scrambled egg, bellpepper, cooked pork, onion]
+- omelet: [scrambled egg, chili pepper, cooked pork, onion]
 - pork fried rice: [cooked pork, onion, egg, rice, bowl]
 - pork fried rice: [cooked pork, peas, egg, rice, bowl]
 - chili: [cooked pork, beans, bellpepper, bowl]
@@ -25,3 +25,10 @@ crafts:
 - garlic chicken: [cooked chicken, olive oil, garlic*3]
 - chicken celery casserole: [celery, raw chicken, garlic, carrot, any mushroom]
 - hot wings: [cooked chicken, chili pepper, butter]
+- fried egg:
+    ingredients: [skillet, egg]
+    keeps: [egg]
+- scrambled egg:
+    ingredients: [saucepan, egg]
+    keeps: [saucepan]
+- marshmellows: [powdered sugar, water, egg]

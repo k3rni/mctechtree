@@ -1,7 +1,7 @@
 cluster: vanilla
 
 primitives:
-- apple
+- apple: 1
 - wheat: 1
 - cocoa beans: 10
 - sugar cane: 2

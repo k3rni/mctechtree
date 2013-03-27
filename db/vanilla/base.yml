@@ -69,3 +69,5 @@ crafts:
     - water bucket: [water, bucket]
     - chest: [wood*8]
     - pressure plate: [wood*2]
+    - bottle: [glass*3]
+    - bowl: [wood*3]
