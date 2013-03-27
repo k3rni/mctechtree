@@ -1,0 +1,98 @@
+cluster: harvestcraft
+
+primitives:
+# seeds
+- bean seed: 1
+- beet seed: 1
+- bellpepper seed: 1
+- broccoli seed: 1
+- carrot seed: 1
+- coffee seed: 1
+- corn seed: 1
+- cucumber seed: 1
+- eggplant seed: 1
+- grape seed: 1
+- lettuce seed: 1
+- peanut seed: 1
+- peppercorn seed: 1
+- potato seed: 1
+- onion seed: 1
+- pea seed: 1
+- pineapple seed: 1
+- rice seed: 1
+- strawberry seed: 1
+- sweet potato seed: 1
+- tea seed: 1
+- tomato seed: 1
+- turnip seed: 1
+
+# planted crops
+- asparagus: 1
+- beans: 1
+- beet: 1
+- bellpepper: 1
+- broccoli: 1
+- carrot: 1
+- cantelope: 1
+- celery: 1
+- chili pepper: 1
+- coffee bean: 1
+- corn: 1
+- cucumber: 1
+- eggplant: 1
+- garlic: 1
+- ginger: 1
+- harvest wheat: 1
+- lettuce: 1
+- peanut: 1
+- potato: 1
+- onion: 1
+- peas: 1
+- pineapple: 1
+- mustard seeds: 1
+- rice: 1
+- radish: 1
+- sweet potato: 1
+- tea leaf: 1
+- tomato: 1
+- turnip: 1
+- white mushroom: 1
+- zucchini: 1
+#
+# fruits, from trees
+- apple: 1
+- avocado: 1
+- banana: 1
+- cherry: 1
+- cinnamon: 1
+- cocoa bean pod: 1
+- coconut: 1
+- honey beehive: 1
+- lemon: 1
+- lime: 1
+- mango: 1
+- nutmeg: 1
+- olive: 1
+- orange: 1
+- papaya: 1
+- peach: 1
+- pear: 1
+- peppercorn: 1
+- pomegranate: 1
+- plum: 1
+- starfruit: 1
+- vanilla bean: 1
+- walnut: 1
+#
+# bushes
+- blueberry: 1
+- blackberry: 1
+- candleberry: 1
+- cotton: 1
+- cranberry: 1
+- grape: 1
+- kiwi fruit: 1
+- raspberry: 1
+- strawberry: 1
+- sunflower seeds: 1
+

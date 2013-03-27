@@ -21,7 +21,9 @@ class Craft
     end
 
     def initialize attrs={}
-        attrs.each { |key, val| self.send "#{key}=", val }
+        attrs.each do |key, val|
+          self.send "#{key}=", val unless Craft.unsupported? key
+        end
     end
 
     def self.create machine, result, makes, ingredients, extra={}
@@ -62,5 +64,9 @@ class Craft
 
     def find_ingredient_by_prefix prefix
       ingredients.select { |item| item.name =~ %r(^#{prefix}) }.first
+    end
+
+    def self.unsupported? key
+      %w(keeps).include? key
     end
 end

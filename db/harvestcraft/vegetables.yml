@@ -1,0 +1,7 @@
+cluster: harvestcraft
+
+crafts:
+- salad: [bowl, lettuce, carrot, cucumber]
+- salad: [bowl, lettuce, carrot, turnip]
+- salad: [bowl, lettuce, carrot, broccoli]
+# TODO

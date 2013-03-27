@@ -1,0 +1,77 @@
+cluster: harvestcraft
+
+primitives:
+  - salt: 1
+
+crafts:
+- barrel:
+    makes: 6
+    ingredients: [wood*7]
+    shape: w ~ w w ~ w w w w
+- butter churn:
+    ingredients: [stick, wood*4]
+    shape: ~ s ~ w ~ w w ~ w
+- quern:
+    ingredients: [stick, stone*4]
+    shape: ~ sti ~ sto ~ sto sto ~ sto
+- skillet:
+    ingredients: [stick, iron*2]
+    shape: i ~ ~ ~ i ~ ~ ~ s
+- saucepan:
+    ingredients: [stick, iron]
+    shape: ~ i ~ ~ ~ s ~ ~ ~
+- cutting board:
+    ingredients: [iron, stick, planks]
+    shape: i ~ ~ ~ s ~ ~ ~ p
+- pot:
+    ingredients: [iron*4, stick]
+    shape: s i i ~ i i ~ ~ ~
+- bakeware:
+    ingredients: [brick*8]
+    shape: b b b b ~ b b b b
+#- bakeware:
+#    ingredients: [glass*8] # NOTE: interferes with BC tank recipe, disabled
+#    shape: g g g g ~ g g g g
+- mortar and pestle:
+    ingredients: [stone*3,stick]
+    shape: sto sti sto ~ sti ~ ~ ~ ~
+- stone mug:
+    ingredients: [stone*7]
+    shape: s s ~ s s s s s ~
+- flour:
+    machine: quern
+    ingredients: [wheat]
+- flour:
+    machine: quern
+    ingredients: [harvest wheat]
+- flour:
+    machine: quern
+    ingredients: [rice]
+- nutmeg spice:
+    machine: quern
+    ingredients: [nutmeg]
+- cocoa powder:
+    machine: quern
+    ingredients: [cocoa beans]
+- powdered sugar:
+    machine: quern
+    ingredients: [sugar]
+- table salt:
+    makes: 2
+    machine: quern
+    ingredients: [salt]
+- cornmeal:
+    machine: quern
+    ingredients: [corn]
+- cinnamon spice:
+    machine: quern
+    ingredients: [cinnamon]
+- ground coffee:
+    machine: quern
+    ingredients: [coffee bean]
+- black pepper:
+    machine: quern
+    ingredients: [peppercorn]
+- string:
+    ingredients: [cotton*2]
+    shape: c ~ ~ c

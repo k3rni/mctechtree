@@ -1,0 +1,9 @@
+cluster: harvestcraft
+
+crafts:
+- buttered potato: [baked potato, butter, salt]
+- buttered potato: [baked potato, butter, black pepper]
+- mashed potatoes: [bowl, water, buttered potato]
+- spaghetti: [bowl, pasta, tomato, any mushroom]
+- spaghetti: [bowl, pasta, tomato, garlic]
+# TODO
