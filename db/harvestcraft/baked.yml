@@ -1,0 +1,19 @@
+cluster: harvestcraft
+
+crafts:
+- baked potato:
+    machine: furnace
+    ingredients: [potato]
+- toast:
+    machine: furnace
+    ingredients: [bread]
+- popcorn:
+    machine: furnace
+    ingredients: [corn]
+- raisins:
+    machine: furnace
+    ingredients: [grape]
+- rice cake:
+    machine: furnace
+    ingredients: [rice]
+

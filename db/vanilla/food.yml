@@ -1,9 +1,29 @@
 cluster: vanilla
 
 primitives:
+- apple
 - wheat: 1
 - cocoa beans: 10
 - sugar cane: 2
+- pumpkin: 2
+- melon slice: 2
+- milk bucket: 2
+- egg: 3
+- raw chicken: 6
+- raw beef: 9
+- raw pork: 9
+- red mushroom: 2
+- brown mushroom: 2
 
 crafts:
 - sugar: [sugar cane]
+- cooked pork:
+    machine: furnace
+    ingredients: [raw pork]
+- cooked chicken:
+    machine: furnace
+    ingredients: [raw chicken]
+- steak:
+    machine: furnace
+    ingredients: [raw beef]
+ 

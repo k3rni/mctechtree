@@ -1,0 +1,11 @@
+cluster: harvestcraft
+
+crafts:
+- BLT sandwich: [toast*2, cooked pork, lettuce, tomato]
+- breakfast sandwich: [toast*2, cooked pork, fried eggs]
+- chicken sandwich: [toast*2, breaded chicken, mayo, lettuce]
+- hamburger: [toast*2, cooked steak, tomato, lettuce]
+- cheeseburger: [hamburger, cheese]
+- bacon cheeseburger: [cheeseburger, cooked pork]
+- PB&J: [bread*2, peanut butter, grape jelly] 
+- PB&J: [bread*2, peanut butter, strawberry jam] 

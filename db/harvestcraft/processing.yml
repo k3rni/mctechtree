@@ -35,6 +35,9 @@ crafts:
 - mortar and pestle:
     ingredients: [stone*3,stick]
     shape: sto sti sto ~ sti ~ ~ ~ ~
+- stone mug:
+    ingredients: [stone*7]
+    shape: s s ~ s s s s s ~
 - flour:
     machine: quern
     ingredients: [wheat]
@@ -44,9 +47,6 @@ crafts:
 - flour:
     machine: quern
     ingredients: [rice]
-- black pepper:
-    machine: quern
-    ingredients: [peppercorn]
 - nutmeg spice:
     machine: quern
     ingredients: [nutmeg]

@@ -1,0 +1,22 @@
+cluster: harvestcraft
+
+crafts:
+- lemonaide: [lemon, bottle] # typo in game
+- apple juice: [apple, bottle]
+- melon juice: [melon slice*2, bottle]
+- carrot juice: [carrot, bottle]
+- strawberry juice: [strawberry, bottle]
+- grape juice: [grape, bottle]
+- blueberry juice: [blueberry, bottle]
+- cherry juice: [cherry, bottle]
+# there's more juices, most fruits yield one
+- tea:
+    machine: furnace
+    ingredients: [tea leaf]
+- raspberry iced tea: [tea, raspberry, snowball]
+- chai tea: [tea, cinnamon spice, black pepper, sugar]
+- coffee:
+    machine: furnace
+    ingredients: [ground coffee]
+- espresso: [ground coffee*3, sugar]
+

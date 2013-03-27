@@ -1,0 +1,24 @@
+cluster: harvestcraft
+
+crafts:
+- pumpkin pie: [dough, pumpkin, sugar]
+- pizza: [dough, tomato, cheese, cooked pork]
+- strawberry pie: [strawberry, dough, sugar]
+- shephard pie: [cooked pork, mashed potatoes, corn, dough]
+- blueberry muffins: [blueberry, dough, sugar]
+- raspberry tart: [raspberry, dough, sugar]
+- blackberry cobbler: [blackberry, dough, sugar]
+- peach cobbler: [peach, dough, sugar]
+- cherry pie: [cherry, dough, sugar]
+- lemon pie: [lemon, dough, sugar]
+- sweet potato pie: [sweet potato, dough, cinnamon spice, marshmellows]
+- donut: [dough, olive oil]
+- soft pretzel: [dough, butter, salt]
+- veggie pizza: [dough, tomato, lettuce, onion, garlic]
+- veggie pizza: [dough, tomato, lettuce, onion, spice leaf]
+- cheese cake: [milk bucket, sugar, cheese, dough, cinnamon spice]
+- red cupcake: [dough, sugar, red dye]
+- yellow cupcake: [dough, sugar, yellow dye]
+- green cupcake: [dough, sugar, green dye]
+- zucchini bread: [zucchini, dough, cinnamon spice, walnut]
+- 

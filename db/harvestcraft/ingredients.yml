@@ -1,0 +1,35 @@
+cluster: harvestcraft
+
+crafts:
+- butter: [milk bucket, salt]
+- buttermilk: [milk bucket, salt] # produkt uboczny produkcji masła, nie umiemy jeszcze inaczej zapisać
+- dough: [flour, water bucket, salt]
+- cheese: [milk bucket, salt*2]
+- bread: 
+    ingredients: [dough]
+    machine: furnace
+- pasta: [flour, butter]
+- cornmeal dough: [cornmeal, water bucket, salt]
+- corn muffin mix: [cornmeal dough, egg]
+- tortilla:
+    machine: furnace
+    ingredients: [cornmeal dough]
+- mayo: [egg, bottle]
+- vinegar:
+    ingredients: [pot, grape juice]
+    keeps: [pot]
+- peanut butter: [peanut, bottle]
+- grape jelly: [grape, sugar, bottle]
+- strawberry jam: [strawberry, sugar, bottle]
+- stock:
+    ingredients: [pot, bone, bowl]
+    keeps: [pot]
+- stock:
+    ingredients: [pot, raw chicken, bowl]
+    keeps: [pot]
+- mustard: [mustard seeds, vinegar]
+- olive oil: [olive, bottle]
+- vanilla:
+    machine: furnace
+    ingredients: [vanilla bean]
+
