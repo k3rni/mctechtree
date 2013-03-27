@@ -19,4 +19,5 @@ crafts:
     machine: furnace
     ingredients: [ground coffee]
 - espresso: [ground coffee*3, sugar]
+- coffee con leche: [espresso, milk bucket, cinnamon]
 
