@@ -29,9 +29,12 @@ crafts:
 - bakeware:
     ingredients: [brick*8]
     shape: b b b b ~ b b b b
-- bakeware:
-    ingredients: [glass*8]
-    shape: g g g g ~ g g g g
+#- bakeware:
+#    ingredients: [glass*8] # NOTE: interferes with BC tank recipe, disabled
+#    shape: g g g g ~ g g g g
+- mortar and pestle:
+    ingredients: [stone*3,stick]
+    shape: sto sti sto ~ sti ~ ~ ~ ~
 - flour:
     machine: quern
     ingredients: [wheat]
