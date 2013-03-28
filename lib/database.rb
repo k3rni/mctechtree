@@ -85,7 +85,7 @@ class Database < Set
             })
           }
         end
-        load_crafts sm
+        load_crafts sm, group
       end
     end
 
