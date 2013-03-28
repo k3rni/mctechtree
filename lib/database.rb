@@ -21,9 +21,9 @@ class Database < Set
 
     def load_definitions data
       group = data['cluster']
-      load_equivalents(data['equivalents'] || {})
-      load_primitives(data['primitives'] || {}, group)
-      load_crafts(data['crafts'] || {}, group)
+      %w(equivalents primitives craft_templates crafts).each do |key|
+        send "load_#{key}", data[key] || {}, group
+      end
       self
     end
 
@@ -55,12 +55,37 @@ class Database < Set
         end
     end
 
-    def load_equivalents definitions
+    def load_equivalents definitions, group=nil
       definitions.each do |names|
         nn = Set.new(names)
         nn.each do |name|
           @equivalents[name].merge(nn - [name])
         end
+      end
+    end
+
+    def load_craft_templates data, group=nil
+      pat = /\$\(([^)]+)\)/
+      data.each do |recipe|
+        name = recipe.keys.first
+        definition = recipe.values.first
+        key = name[pat, 1]
+        substitutions = definition.delete key
+        sm = substitutions.map do |s|
+          if s.index('/')
+            label, mat = s.split('/')
+          else
+            label = mat = s
+          end
+          new_name = name.gsub("$(#{key})", label)
+          { new_name => definition.merge({
+              'ingredients' => definition['ingredients'].map do |ing|
+                  ing.gsub("$(#{key})", mat)
+              end
+            })
+          }
+        end
+        load_crafts sm
       end
     end
 

@@ -1,54 +1,54 @@
 cluster: redpower2
 
 crafts:
-    - alloy furnace: [brick block*8]
-    - block breaker:
-      - cobble*6
-      - iron pickaxe
-      - piston
-      - redstone
-    - deployer:
-      - cobble*6
-      - chest
-      - piston
-      - redstone
-    - transposer:
-      - cobble*5
-      - wood*2
-      - piston
-      - redstone
-    - filter:
-      - cobble*5
-      - gold ingot*2
-      - piston
-      - red-doped wafer
-    - pneumatic tube:
-        makes: 8
-        ingredients: [brass*2, glass]
-    - item detector:
+- alloy furnace: [brick block*8]
+- block breaker:
+  - cobble*6
+  - iron pickaxe
+  - piston
+  - redstone
+- deployer:
+  - cobble*6
+  - chest
+  - piston
+  - redstone
+- transposer:
+  - cobble*5
+  - wood*2
+  - piston
+  - redstone
+- filter:
+  - cobble*5
+  - gold ingot*2
+  - piston
+  - red-doped wafer
+- pneumatic tube:
+    makes: 8
+    ingredients: [brass*2, glass]
+- item detector:
+  - brass*2
+  - pneumatic tube*2
+  - red-doped wafer*2
+  - wood*2
+  - pressure plate
+- buffer:
+  - iron bars*4
+  - wood*4
+- retriever:
+    ingredients:
       - brass*2
-      - pneumatic tube*2
-      - red-doped wafer*2
-      - wood*2
-      - pressure plate
-    - buffer:
-      - iron bars*4
-      - wood*4
-    - retriever:
-        ingredients:
-          - brass*2
-          - leather
-          - ender pearl*2
-          - iron*2
-          - blue alloy ingot
-          - filter
-        shape: |
-          br le br
-          en fi en
-          ir bl ir
-    - sorting machine:
-      - iron*5
-      - red-doped wafer*2
-      - filter
+      - leather
+      - ender pearl*2
+      - iron*2
       - blue alloy ingot
+      - filter
+    shape: |
+      br le br
+      en fi en
+      ir bl ir
+- sorting machine:
+  - iron*5
+  - red-doped wafer*2
+  - filter
+  - blue alloy ingot
 

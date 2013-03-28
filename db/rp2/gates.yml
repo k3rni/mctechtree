@@ -1,130 +1,130 @@
 cluster: redpower2
 
 crafts:
-    - stone wire: [redstone, stone wafer]
-    - stone anode:
-        makes: 3
-        ingredients: [redstone*4, stone wafer*3]
-    - stone pointer: [stone, redstone torch, stone wafer]
-    - stone cathode: [stone wafer, redstone torch]
-    - sequencer: [stone wafer*4, stone pointer, stone cathode*4]
-    - timer:
-      - stone wafer*2
-      - stone wire*3
-      - stone pointer
-      - stone cathode
-      - stone anode*2
-    - RS latch:
-      - stone wire*4
-      - stone anode*2
-      - stone cathode*2
-      - stone wafer
-    - NOR gate:
-      - stone wafer*4
-      - stone wire*3
-      - stone cathode
-      - stone anode
-    - OR gate:
-      - stone wafer*4
-      - stone wire*3
-      - stone cathode*2
-    - NAND gate:
-      - stone anode*3
-      - stone cathode*3
-      - stone wafer*2
-      - stone wire
-    - AND gate:
-      - stone anode*2
-      - stone cathode*4
-      - stone wafer*2
-      - stone wire
-    - XNOR gate:
-      - stone anode*3
-      - stone cathode*4
-      - stone wire*2
-    - XOR gate:
-      - stone anode*3
-      - stone cathode*3
-      - stone wire*3
-    - pulse former:
-      - stone anode*3
-      - stone cathode*3
-      - stone wire*2
-      - stone wafer
-    - toggle latch:
-      - stone wafer*4
-      - stone wire*2
-      - stone cathode*2
-      - lever
-    - NOT gate:
-      - stone wafer*4
-      - stone anode*3
-      - stone cathode
-      - stone wire
-    - buffer gate:
-      - stone anode*2
-      - stone cathode*2
-      - stone wire*3
-      - stone wafer*2
-    - multiplexer:
-      - stone anode*3
-      - stone cathode*4
-      - stone wafer
-      - stone wire
-    - counter:
-      - stone wafer*4
-      - stone wire*2
-      - stone pointer
-      - stone cathode*2
-    - repeater:
-      - stone wafer*3
-      - stone cathode*2
-      - stone wire*3
-      - stone anode
-    - stone redwire:
-      - stone wafer
-      - red alloy wire
-    - plate assembly:
-      - stone wafer*3
-      - stick*2
-      - stone cathode
-      - red alloy ingot
-    - null cell:
-      - stone wafer*4
-      - stone redwire*5
-    - invert cell:
-      - stone wafer*4
-      - plate assembly
-      - stone redwire*4
-    - non-invert cell:
-      - stone wafer*3
-      - plate assembly
-      - stone redwire*4
-      - stone cathode
-    - silicon chip:
-      - stone wafer*3
-      - red-doped wafer
-    - tainted silicon chip:
-      - silicon chip
-      - glowstone
-    - state cell:
-      - stone wafer*3
-      - stone cathode
-      - stone pointer
-      - stone wire*2
-      - stone anode
-      - silicon chip
-    - synchronizer:
-      - stone wire*5
-      - stone anode
-      - stone cathode
-      - silicon chip*2
-    - randomizer:
-      - stone wafer*4
-      - tainted silicon chip*3
-      - stone wire*4
-    - transparent latch:
-      - stone cathode*5
-      - stone anode
-      - stone wire*2
-      - stone wafer
+- stone wire: [redstone, stone wafer]
+- stone anode:
+    makes: 3
+    ingredients: [redstone*4, stone wafer*3]
+- stone pointer: [stone, redstone torch, stone wafer]
+- stone cathode: [stone wafer, redstone torch]
+- sequencer: [stone wafer*4, stone pointer, stone cathode*4]
+- timer:
+  - stone wafer*2
+  - stone wire*3
+  - stone pointer
+  - stone cathode
+  - stone anode*2
+- RS latch:
+  - stone wire*4
+  - stone anode*2
+  - stone cathode*2
+  - stone wafer
+- NOR gate:
+  - stone wafer*4
+  - stone wire*3
+  - stone cathode
+  - stone anode
+- OR gate:
+  - stone wafer*4
+  - stone wire*3
+  - stone cathode*2
+- NAND gate:
+  - stone anode*3
+  - stone cathode*3
+  - stone wafer*2
+  - stone wire
+- AND gate:
+  - stone anode*2
+  - stone cathode*4
+  - stone wafer*2
+  - stone wire
+- XNOR gate:
+  - stone anode*3
+  - stone cathode*4
+  - stone wire*2
+- XOR gate:
+  - stone anode*3
+  - stone cathode*3
+  - stone wire*3
+- pulse former:
+  - stone anode*3
+  - stone cathode*3
+  - stone wire*2
+  - stone wafer
+- toggle latch:
+  - stone wafer*4
+  - stone wire*2
+  - stone cathode*2
+  - lever
+- NOT gate:
+  - stone wafer*4
+  - stone anode*3
+  - stone cathode
+  - stone wire
+- buffer gate:
+  - stone anode*2
+  - stone cathode*2
+  - stone wire*3
+  - stone wafer*2
+- multiplexer:
+  - stone anode*3
+  - stone cathode*4
+  - stone wafer
+  - stone wire
+- counter:
+  - stone wafer*4
+  - stone wire*2
+  - stone pointer
+  - stone cathode*2
+- repeater:
+  - stone wafer*3
+  - stone cathode*2
+  - stone wire*3
+  - stone anode
+- stone redwire:
+  - stone wafer
+  - red alloy wire
+- plate assembly:
+  - stone wafer*3
+  - stick*2
+  - stone cathode
+  - red alloy ingot
+- null cell:
+  - stone wafer*4
+  - stone redwire*5
+- invert cell:
+  - stone wafer*4
+  - plate assembly
+  - stone redwire*4
+- non-invert cell:
+  - stone wafer*3
+  - plate assembly
+  - stone redwire*4
+  - stone cathode
+- silicon chip:
+  - stone wafer*3
+  - red-doped wafer
+- tainted silicon chip:
+  - silicon chip
+  - glowstone
+- state cell:
+  - stone wafer*3
+  - stone cathode
+  - stone pointer
+  - stone wire*2
+  - stone anode
+  - silicon chip
+- synchronizer:
+  - stone wire*5
+  - stone anode
+  - stone cathode
+  - silicon chip*2
+- randomizer:
+  - stone wafer*4
+  - tainted silicon chip*3
+  - stone wire*4
+- transparent latch:
+  - stone cathode*5
+  - stone anode
+  - stone wire*2
+  - stone wafer

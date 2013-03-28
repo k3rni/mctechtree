@@ -1,12 +1,15 @@
 cluster: vanilla
 
 crafts:
-  - lapis block: [lapis*9]
-  - iron block: [iron*9]
-  - stone bricks:
-      makes: 4
-      ingredients: [stone*4]
-  - brick block: [brick*4]
-  - nether brick block: [nether brick*4]
-  - snow: [snowball*4]
+- lapis block: [lapis*9]
+- iron block: [iron*9]
+- stone bricks:
+    makes: 4
+    ingredients: [stone*4]
+- stone slab:
+    makes: 6
+    ingredients: [stone*3]
+- brick block: [brick*4]
+- nether brick block: [nether brick*4]
+- snow: [snowball*4]
 

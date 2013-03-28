@@ -1,19 +1,19 @@
 cluster: redpower2
 
 crafts:
-    - red alloy wire:
-        makes: 12
-        ingredients: [red alloy ingot*3]
-        shape: ~ r ~ ~ r ~ ~ r ~
-    - insulated wire: # kolorowe pomijamy
-        makes: 12
-        ingredients: [red alloy ingot*3, wool*6]
-        shape: w r w w r w w r w
-    - bundled cable: # kolorowe pomijamy
-        ingredients:
-          - insulated wire*5
-          - string*4
-        shape: s i s i i i s i s
-    - fine iron wire:
-        machine: diamond drawplate
-        ingredients: [iron]
+- red alloy wire:
+    makes: 12
+    ingredients: [red alloy ingot*3]
+    shape: ~ r ~ ~ r ~ ~ r ~
+- insulated wire: # kolorowe pomijamy
+    makes: 12
+    ingredients: [red alloy ingot*3, wool*6]
+    shape: w r w w r w w r w
+- bundled cable: # kolorowe pomijamy
+    ingredients:
+      - insulated wire*5
+      - string*4
+    shape: s i s i i i s i s
+- fine iron wire:
+    machine: diamond drawplate
+    ingredients: [iron]

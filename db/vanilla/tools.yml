@@ -1,33 +1,19 @@
 cluster: vanilla
 
-crafts:
-  - wooden pickaxe: 
-      ingredients: [stick*2, planks*3]
-      shape: p p p ~ s ~ ~ s ~
-  - wooden axe: 
-      ingredients: [stick*2, planks*3]
-      shape: ~ p p ~ s p ~ s ~
-  - wooden hoe: 
-      ingredients: [stick*2, planks*2]
-      shape: ~ p p ~ s ~ ~ s ~
-  - wooden shovel: 
-      ingredients: [stick*2, planks]
-      shape: ~ p ~ ~ s ~ ~ s ~
-  - wooden sword:
-      ingredients: [stick, planks*2]
-      shape: ~ p ~ ~ p ~ ~ s ~
-  - stone pickaxe:
-      ingredients: [stick*2, cobble*3]
-      shape: c c c ~ s ~ ~ s ~
-  - stone axe:
-      ingredients: [stick*2, cobble*3]
-  - stone hoe:
-      ingredients: [stick*2, cobble*2]
-  - stone shovel:
-      ingredients: [stick*2, cobble]
-  - iron pickaxe:
-      ingredients: [stick*2, iron*3]
-      shape: i i i ~ s ~ ~ s ~
-  - iron axe:
-      ingredients: [stick*2, iron*3]
-      shape: ~ i i ~ s i ~ s ~
+craft_templates:
+- $(material) pickaxe:
+    ingredients: [stick*2, $(material)*3]
+    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+- $(material) axe:
+    ingredients: [stick*2, $(material)*3]
+    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+- $(material) shovel:
+    ingredients: [stick*2, $(material)]
+    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+- $(material) hoe:
+    ingredients: [stick*2, $(material)*2]
+    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+- $(material) sword:
+    ingredients: [stick, $(material)*2]
+    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+
