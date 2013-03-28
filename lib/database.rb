@@ -15,6 +15,10 @@ class Database < Set
         select { |obj| obj.name == name }.first
     end
 
+    def each_crafted
+      select { |item| item.crafts.size > 0 }
+    end
+
     def load_definitions data
       group = data['cluster']
       load_equivalents(data['equivalents'] || {})
