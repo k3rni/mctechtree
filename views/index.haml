@@ -10,9 +10,16 @@
                 %option(value=name)= name
         %span.help-block
           Examples:
-          %i quantum body armor,
-          %i induction furnace,
-          %i retriever
+          %i.example quantum body armor,
+          %i.example induction furnace,
+          %i.example retriever
         %button.btn.btn-primary.btn-large.btn-block(type="submit" style="width: 10em; margin: 0 auto") Explain!
-
+:javascript
+  $(function() {
+    $('.example').click(function() {
+      var itemname = $(this).text().replace(',', '');
+      $('option[value="'+itemname+'"]').attr('selected', true);
+      $('select').trigger('liszt:updated');
+    });
+  })
 
