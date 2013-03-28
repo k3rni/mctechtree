@@ -14,11 +14,11 @@ class TechTreeApp < Sinatra::Base
 
   helpers do
     def recipe_counters
-      @@db.each.group_by(&:group).map {|key, g| [key, g.size]}
+      @@db.each_crafted.group_by(&:group).map {|key, g| [key, g.size]}
     end
 
     def item_groups
-      @@db.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
+      @@db.each_crafted.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
     end
   end
   get '/' do
