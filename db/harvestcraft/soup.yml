@@ -1,12 +1,16 @@
 cluster: harvestcraft
 
 crafts:
+- cereal: [bowl, milk bucket, wheat, sugar]
+- cereal: [bowl, milk bucket, harvest wheat, sugar]
+- oatmeal: [wheat, sugar, water, bowl]
+- oatmeal: [harvest wheat, sugar, water, bowl]
 - noodle soup: [pasta, stock]
 - ham bone soup: [cooked pork, potato, salt, stock]
 - cheese soup: [cheese, butter, flour, stock]
 - vegetable soup: [tomato, carrot, potato, stock]
 - onion soup: [onion, toast, stock]
-- peanut soup: [peanut, flour, salt, stock]
+- peanut soup: [peanuts, flour, salt, stock]
 - cucumber soup: [cucumber, vinegar, tomato, stock]
 - carrot soup: [carrot, butter, flour, stock]
 - pumpkin soup: [pumpkin, carrot, onion, stock]
@@ -24,3 +28,4 @@ crafts:
 - cactus soup: [cactus, stock]
 - celery soup: [celery, onion, carrot, stock]
 - asparagus soup: [asparagus, onion, butter, stock]
+
