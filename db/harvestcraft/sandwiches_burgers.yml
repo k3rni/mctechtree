@@ -1,9 +1,11 @@
 cluster: harvestcraft
 
 crafts:
+- grilled cheese: [toast*2, cheese]
 - BLT sandwich: [toast*2, cooked pork, lettuce, tomato]
 - breakfast sandwich: [toast*2, cooked pork, fried egg]
 - chicken sandwich: [toast*2, breaded chicken, mayo, lettuce]
+- fish sandwich: [bread*2, cooked fish, mayo]
 - hamburger: [toast*2, steak, tomato, lettuce]
 - cheeseburger: [hamburger, cheese]
 - bacon cheeseburger: [cheeseburger, cooked pork]

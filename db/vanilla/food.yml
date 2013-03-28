@@ -9,6 +9,7 @@ primitives:
 - melon slice: 2
 - milk bucket: 2
 - egg: 3
+- raw fish: 2
 - raw chicken: 6
 - raw beef: 9
 - raw pork: 9
@@ -17,6 +18,8 @@ primitives:
 
 crafts:
 - sugar: [sugar cane]
+- cake: [milk bucket*3, egg, sugar*2, wheat*3]
+- cookie: [wheat*2, cocoa beans]
 - cooked pork:
     machine: furnace
     ingredients: [raw pork]
@@ -26,4 +29,8 @@ crafts:
 - steak:
     machine: furnace
     ingredients: [raw beef]
+- cooked fish:
+    machine: furnace
+    ingredients: [raw fish]
+- golden apple: [apple, gold nugget*8]
  

@@ -44,7 +44,7 @@ primitives:
 - ginger: 1
 - harvest wheat: 1
 - lettuce: 1
-- peanut: 1
+- peanuts: 1
 - potato: 1
 - onion: 1
 - peas: 1
@@ -95,4 +95,4 @@ primitives:
 - raspberry: 1
 - strawberry: 1
 - sunflower seeds: 1
-
+- spice leaf: 1 # NOTE: where does it come from?

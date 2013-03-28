@@ -76,3 +76,6 @@ crafts:
 - bowl: 
     ingredients: [wood*3]
     makes: 4
+- gold nugget:
+    makes: 9
+    ingredients: [gold ingot]

@@ -3,6 +3,7 @@ cluster: harvestcraft
 crafts:
 - butter: [milk bucket, salt]
 - buttermilk: [milk bucket, salt] # produkt uboczny produkcji masła, nie umiemy jeszcze inaczej zapisać
+- batter: [flour, milk bucket, egg]
 - dough: [flour, water, salt]
 - cheese: [milk bucket, salt*2]
 - bread: 
@@ -18,7 +19,7 @@ crafts:
 - vinegar:
     ingredients: [pot, grape juice]
     keeps: [pot]
-- peanut butter: [peanut, bottle]
+- peanut butter: [peanuts, bottle]
 - grape jelly: [grape, sugar, bottle]
 - strawberry jam: [strawberry, sugar, bottle]
 - stock:
@@ -32,4 +33,6 @@ crafts:
 - vanilla:
     machine: furnace
     ingredients: [vanilla bean]
+- syrup: [water bucket, sugar, bottle]
+- berry syrup: [water bucket, blueberry*2, blackberry*2, raspberry*2, sugar, bottle]
 

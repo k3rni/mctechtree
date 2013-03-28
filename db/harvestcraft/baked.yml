@@ -16,4 +16,21 @@ crafts:
 - rice cake:
     machine: furnace
     ingredients: [rice]
+- dried strawberries:
+    machine: furnace
+    ingredients: [strawberry]
+- dried apple slices:
+    machine: furnace
+    ingredients: [apple]
+- toasted coconut:
+    machine: furnace
+    ingredients: [coconut]
+- corn bread muffins:
+    machine: furnace
+    ingredients: [corn muffin mix]
 
+craft_templates:
+- grilled $(plant):
+    machine: furnace
+    ingredients: [$(plant)]
+    plant: [sweet potato, eggplant, radish, asparagus]
