@@ -1,67 +1,67 @@
 cluster: thermalexpansion
 
 primitives:
-  - lead ore: 10
-  - silver ore: 10
-  - ferrous ore: 40
+- lead ore: 10
+- silver ore: 10
+- ferrous ore: 40
 
 crafts:
-  - silver:
-      machine: furnace
-      ingredients: [silver ore]
-  - silver:
-      machine: furnace
-      ingredients: [pulverized silver]
-  - molten redstone:
-      machine: magma crucible
-      makes: 25 # 25mb
-      ingredients: [redstone] 
-  - molten ender:
-      machine: magma crucible
-      makes: 250
-      ingredients: [ender pearl]
-  - pulverized obsidian:
-      machine: pulverizer
-      ingredients: [obsidian]
-  - pulverized silver:
-      machine: pulverizer
-      ingredients: [silver ore]
-      makes: 2
-  - pulverized lead:
-      machine: pulverizer
-      ingredients: [lead ore]
-      makes: 2
-  - lead ingot:
-      machine: furnace
-      ingredients: [lead ore]
-  - lead ingot:
-      machine: furnace
-      ingredients: [pulverized lead]
-  - electrum ingot:
-      machine: furnace
-      ingredients: [electrum blend]
-  - electrum blend: 
-      ingredients: [pulverized gold, pulverized silver]
-      makes: 2
-  - invar ingot:
-      machine: furnace
-      ingredients: [invar blend]
-  - invar blend:
-      makes: 3
-      ingredients: [pulverized iron*2, pulverized ferrous metal]
-  - pulverized ferrous metal: 
-      machine: pulverizer
-      ingredients: [ferrous ore]
-  - pneumatic servo: [iron*2, glass*2, redstone]
-  - redstone reception coil: [redstone*2, gold ingot]
-  - redstone transmission coil: [redstone*2, silver]
-  - redstone conductance coil: [redstone*2, electrum ingot]
-  - copper gear: [copper ingot*4, iron]
-  - tin gear: [tin ingot*4, iron]       
-  - invar gear: [invar ingot*4, iron]
-  - machine frame:
-      ingredients: [iron*4, gold ingot, glass*4]
-      shape: ir gl ir gl go gl ir gl ir
-  - hardened glass:
-      machine: induction smelter
-      ingredients: [pulverized lead, pulverized obsidian]
+- silver:
+    machine: furnace
+    ingredients: [silver ore]
+- silver:
+    machine: furnace
+    ingredients: [pulverized silver]
+- molten redstone:
+    machine: magma crucible
+    makes: 25 # 25mb
+    ingredients: [redstone] 
+- molten ender:
+    machine: magma crucible
+    makes: 250
+    ingredients: [ender pearl]
+- pulverized obsidian:
+    machine: pulverizer
+    ingredients: [obsidian]
+- pulverized silver:
+    machine: pulverizer
+    ingredients: [silver ore]
+    makes: 2
+- pulverized lead:
+    machine: pulverizer
+    ingredients: [lead ore]
+    makes: 2
+- lead ingot:
+    machine: furnace
+    ingredients: [lead ore]
+- lead ingot:
+    machine: furnace
+    ingredients: [pulverized lead]
+- electrum ingot:
+    machine: furnace
+    ingredients: [electrum blend]
+- electrum blend: 
+    ingredients: [pulverized gold, pulverized silver]
+    makes: 2
+- invar ingot:
+    machine: furnace
+    ingredients: [invar blend]
+- invar blend:
+    makes: 3
+    ingredients: [pulverized iron*2, pulverized ferrous metal]
+- pulverized ferrous metal: 
+    machine: pulverizer
+    ingredients: [ferrous ore]
+- pneumatic servo: [iron*2, glass*2, redstone]
+- redstone reception coil: [redstone*2, gold ingot]
+- redstone transmission coil: [redstone*2, silver]
+- redstone conductance coil: [redstone*2, electrum ingot]
+- copper gear: [copper ingot*4, iron]
+- tin gear: [tin ingot*4, iron]       
+- invar gear: [invar ingot*4, iron]
+- machine frame:
+    ingredients: [iron*4, gold ingot, glass*4]
+    shape: ir gl ir gl go gl ir gl ir
+- hardened glass:
+    machine: induction smelter
+    ingredients: [pulverized lead, pulverized obsidian]

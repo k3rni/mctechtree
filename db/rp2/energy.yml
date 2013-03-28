@@ -1,4 +1,4 @@
 cluster: redpower2
 
 crafts:
-    - BT battery: [copper ingot*2, tin ingot, nikolite*6]
+- BT battery: [copper ingot*2, tin ingot, nikolite*6]

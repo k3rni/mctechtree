@@ -1,56 +1,56 @@
 cluster: industrialcraft2
 
 crafts:
-  - rubber boots:
-    - wool
-    - rubber*6
-  - nano helmet:
-      - energy crystal
-      - glass
-      - carbon plate*4
-  - nano body armor:
-      - energy crystal
-      - carbon plate*7
-  - nano leggings:
-      - energy crystal
-      - carbon plate*6
-  - nano boots:
-      - energy crystal
-      - carbon plate*4
-  - quantum helmet:
-    - nano helmet
-    - iridium plate*2
-    - lapotron crystal
-    - advanced circuit*2
-    - reinforced glass
-  - quantum body armor:
-    - nano body armor
-    - iridium plate*4
-    - advanced alloy*3
-    - lapotron crystal
-  - quantum leggings:
-    - nano leggings
-    - glowstone*2
-    - machine*2
-    - iridium plate*2
-    - lapotron crystal
-  - quantum boots:
-    - nano boots
-    - rubber boots*2
-    - iridium plate*2
-    - lapotron crystal
-  - scuba helmet:
-    - orange dye
-    - rubber*4
+- rubber boots:
+  - wool
+  - rubber*6
+- nano helmet:
+    - energy crystal
     - glass
-    - iron bars
-  - hazmat suit:
-    - rubber*6
-    - orange dye*2
-  - hazmat suit leggings:
-    - rubber*6
-    - orange dye
-  - static boots:
-    - iron*4
-    - wool
-    - copper cable*3
+    - carbon plate*4
+- nano body armor:
+    - energy crystal
+    - carbon plate*7
+- nano leggings:
+    - energy crystal
+    - carbon plate*6
+- nano boots:
+    - energy crystal
+    - carbon plate*4
+- quantum helmet:
+  - nano helmet
+  - iridium plate*2
+  - lapotron crystal
+  - advanced circuit*2
+  - reinforced glass
+- quantum body armor:
+  - nano body armor
+  - iridium plate*4
+  - advanced alloy*3
+  - lapotron crystal
+- quantum leggings:
+  - nano leggings
+  - glowstone*2
+  - machine*2
+  - iridium plate*2
+  - lapotron crystal
+- quantum boots:
+  - nano boots
+  - rubber boots*2
+  - iridium plate*2
+  - lapotron crystal
+- scuba helmet:
+  - orange dye
+  - rubber*4
+  - glass
+  - iron bars
+- hazmat suit:
+  - rubber*6
+  - orange dye*2
+- hazmat suit leggings:
+  - rubber*6
+  - orange dye
+- static boots:
+  - iron*4
+  - wool
+  - copper cable*3

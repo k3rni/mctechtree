@@ -1,18 +1,31 @@
 cluster: redpower2
 
 crafts:
-    - screwdriver: [iron, stick]
-    - sonic screwdriver: [green sapphire, brass, BT battery]
-    - iron handsaw: [stick*3, iron*4]
-    - ruby handsaw: [stick*3, iron*2, ruby*2]
-    - sapphire handsaw: [stick*3, iron*2, sapphire*2]
-    - green sapphire handsaw: [stick*3, iron*2, green sapphire*2]
-    - diamond handsaw: [stick*3, iron*2, diamond*2]
-    - wool card: [fine iron wire, wood, stick]
-    - wood sickle: [stick, wood*3]
-    - stone sickle: [stick, stone*3]
-    - iron sickle: [stick, iron*3]
-    - ruby sickle: [stick, ruby*3]
-    - sapphire sickle: [stick, sapphire*3]
-    - green sapphire sickle: [stick, green sapphire*3]
-    - diamond sickle: [stick, diamond*3]
+- screwdriver: [iron, stick]
+- sonic screwdriver: [green sapphire, brass, BT battery]
+- wool card: [fine iron wire, wood, stick]
+- stone sickle: [stick, cobble*3]
+
+craft_templates:
+- $(material) handsaw:
+    ingredients: [stick*3, iron*2, $(material)*2]
+    material: [iron, ruby, sapphire, green sapphire, diamond]
+- $(material) sickle:
+    ingredients: [stick, $(material)*3]
+    material: [wood, iron, ruby, sapphire, green sapphire, diamond]
+- $(material) pickaxe:
+    ingredients: [stick*2, $(material)*3]
+    material: [ruby, sapphire, green sapphire, diamond]
+- $(material) axe:
+    ingredients: [stick*2, $(material)*3]
+    material: [ruby, sapphire, green sapphire, diamond]
+- $(material) shovel:
+    ingredients: [stick*2, $(material)]
+    material: [ruby, sapphire, green sapphire, diamond]
+- $(material) hoe:
+    ingredients: [stick*2, $(material)*2]
+    material: [ruby, sapphire, green sapphire, diamond]
+- $(material) sword:
+    ingredients: [stick, $(material)*2]
+    material: [ruby, sapphire, green sapphire, diamond]
+
