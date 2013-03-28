@@ -1,9 +1,9 @@
 .row
-  .span3
-    %form(action="/solve" method="POST")
+  .span12
+    %form(action="/solve" method="POST" style="margin: 0 auto; width: 40em")
       %fieldset
         %legend I want to craft...
-        %select.chzn-select{name: 'items[]', data: {placeholder: 'type item names'}, multiple: true}
+        %select.chzn-select{name: 'items[]', data: {placeholder: 'type item names'}, multiple: true}(style="width: 100%")
           - item_groups.each do |group, items|
             %optgroup{label: I18n.t("clusters.#{group}")}
               - items.each do |name|
@@ -13,6 +13,6 @@
           %i quantum body armor,
           %i induction furnace,
           %i retriever
-        %button.btn.btn-primary(type="submit") Explain!
+        %button.btn.btn-primary.btn-large.btn-block(type="submit" style="width: 10em; margin: 0 auto") Explain!
 
 

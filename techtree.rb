@@ -20,6 +20,7 @@ autoload :Solver, './lib/solver'
 
 DB = Database.new
 Dir.glob('db/**/*.yml').each do |filename|
+  puts filename
     DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending

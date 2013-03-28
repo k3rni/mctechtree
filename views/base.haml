@@ -7,7 +7,7 @@
   %body
     %a(href="http://github.com/k3rni/mctechtree")
       %img(style="position:absolute; top:0; right:0; border:0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub")
-    - container :fluid do
+    - container :fixed do
       .row
         .span4
           %h1 MCTechTree
@@ -15,8 +15,8 @@
           %h3 includes recipes from
           %dl
             - recipe_counters.each do |cluster, count|
-              %dt= I18n.t "clusters.#{cluster}"
-              %dd= count
+              %dt.span4= I18n.t "clusters.#{cluster}"
+              %dd.span2= count
       = yield
     :javascript
       $('.chzn-select').chosen()
