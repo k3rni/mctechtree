@@ -1,10 +1,17 @@
 cluster: redpower2
 
+colors: &colors
+    color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
+
 crafts:
 - screwdriver: [iron, stick]
 - sonic screwdriver: [green sapphire, brass, BT battery]
 - wool card: [fine iron wire, wood, stick]
-- stone sickle: [stick, cobble*3]
+- voltmeter: [wood*5, nikolite, copper ingot*3]
+- paint can: [tin plate*7]
+- paint brush: [stick, wool]
+- project table: [stone*3, planks*4, crafting table, chest]
+- athame: [stick, silver ingot]
 
 craft_templates:
 - $(material) handsaw:
@@ -12,7 +19,7 @@ craft_templates:
     material: [iron, ruby, sapphire, green sapphire, diamond]
 - $(material) sickle:
     ingredients: [stick, $(material)*3]
-    material: [wood, iron, ruby, sapphire, green sapphire, diamond]
+    material: [stone/cobble, wood, iron, ruby, sapphire, green sapphire, diamond]
 - $(material) pickaxe:
     ingredients: [stick*2, $(material)*3]
     material: [ruby, sapphire, green sapphire, diamond]
@@ -28,4 +35,6 @@ craft_templates:
 - $(material) sword:
     ingredients: [stick, $(material)*2]
     material: [ruby, sapphire, green sapphire, diamond]
-
+- $(color) paint:
+    ingredients: [$(color) dye, flax seeds*2, paint can]
+    <<: *colors
