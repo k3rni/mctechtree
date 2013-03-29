@@ -1,13 +1,18 @@
 require 'ostruct'
 
+class Counter < Hash
+  def initialize
+    super { |hash, key| hash[key] = 0 }
+  end
+end
 class Solver
     attr_accessor :raw, :crafts, :craft_seq
 
     def initialize(solutions)
         @solutions = solutions
-        @crafts = Hash.new { |h, key| h[key] = 0 }
-        @craft_seq = Hash.new { |h, key| h[key] = 0 }
-        @raw = Hash.new { |h, key| h[key] = 0 }
+        @crafts = Counter.new
+        @craft_seq = Counter.new
+        @raw = Counter.new
     end
 
     def process solution, depth, multiplier = 1
@@ -28,16 +33,43 @@ class Solver
         @craft_seq[recipe] = [@craft_seq[recipe] || 0, depth].max
         new_count = exact_craft(mul * count, recipe.makes)
         # puts "#{' '*depth}NUM #{@crafts[recipe]} + #{count} or #{new_count}"
-        @crafts[recipe] += [count, new_count].max
+        max_count = [count, new_count].max
+        @crafts[recipe] += max_count
         tail.each do |num, rule|
-            process rule, depth+1, new_count
+            process rule, depth+1, max_count
         end
+    end
+
+    def optimize
+      ordering = craft_seq.sort_by { |craft, i| i }
+      real_counts = Counter.new
+      ordering.reverse.each do |craft, order|
+        craft.ingredients.each do |ing, icnt|
+          icnt = 1 if icnt.nil?
+          real_counts[ing] += icnt * crafts[craft]
+        end
+      end
+      real_counts.each do |ing, count|
+        craft = crafts.select { |k, v| k.result == ing }.first[0] rescue nil
+        next if craft.nil? # raw
+        new_count = exact_craft(count, craft.makes)
+        crafts[craft] = [new_count, count].min
+      end
+
+      crafts.each do |craft, count|
+        craft.ingredients.each do |ing, icnt|
+          next unless ing.primitive
+          icnt = 1 if icnt.nil?
+          raw[ing] = [raw[ing], count*icnt].min
+        end
+      end
     end
 
     def solve
       @solutions.each do |sol|
         process sol, 0
       end
+      optimize
       self
     end
 
