@@ -5,6 +5,8 @@ primitives:
 - wood: 1
 - dirt: 1
 - sand: 1
+- sandstone: 2
+- gravel: 1
 - iron ore: 10
 - coal: 4
 - gold ore: 40
@@ -23,8 +25,10 @@ primitives:
 - clay: 15
 - string: 3
 - obsidian: 30
+- netherrack: 10
 - nether brick: 32
 - snowball: 1
+- emerald: 250
 
 
 crafts:
@@ -79,3 +83,6 @@ crafts:
 - gold nugget:
     makes: 9
     ingredients: [gold ingot]
+- paper:
+    makes: 3
+    ingredients: [sugar cane*3]

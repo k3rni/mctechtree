@@ -1,8 +1,10 @@
 cluster: vanilla
 
 crafts:
+- diamond block: [diamond*9]
 - lapis block: [lapis*9]
 - iron block: [iron*9]
+- clay block: [clay*4]
 - stone bricks:
     makes: 4
     ingredients: [stone*4]

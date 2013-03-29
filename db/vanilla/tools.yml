@@ -1,5 +1,9 @@
 cluster: vanilla
 
+crafts:
+- flint and steel: [flint, iron]
+- crafting table: [planks*4]
+
 craft_templates:
 - $(material) pickaxe:
     ingredients: [stick*2, $(material)*3]
