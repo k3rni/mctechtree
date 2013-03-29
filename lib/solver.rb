@@ -44,8 +44,7 @@ class Solver
       ordering = craft_seq.sort_by { |craft, i| i }
       real_counts = Counter.new
       ordering.reverse.each do |craft, order|
-        craft.ingredients.each do |ing, icnt|
-          icnt = 1 if icnt.nil?
+        craft.count_ingredients.each do |ing, icnt|
           real_counts[ing] += icnt * crafts[craft]
         end
       end
@@ -57,10 +56,10 @@ class Solver
       end
 
       crafts.each do |craft, count|
-        craft.ingredients.each do |ing, icnt|
+        craft.count_ingredients.each do |ing, icnt|
           next unless ing.primitive
-          icnt = 1 if icnt.nil?
-          raw[ing] = [raw[ing], count*icnt].min
+          # icnt = 1 if icnt.nil?
+          raw[ing] = count*icnt
         end
       end
     end
