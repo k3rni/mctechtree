@@ -15,6 +15,7 @@ autoload :Database, './lib/database'
 autoload :Graph, './lib/graph'
 autoload :ItemResolver, './lib/resolvers'
 autoload :CraftResolver, './lib/resolvers'
+autoload :Optimizer, './lib/optimizer'
 autoload :Solver, './lib/solver'
 
 
