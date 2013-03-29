@@ -1,0 +1,57 @@
+cluster: buildcraft
+
+crafts:
+- redstone chipset:
+    machine: assembly table
+    ingredients: [redstone]
+- redstone iron chipset:
+    machine: assembly table
+    ingredients: [redstone, iron]
+- redstone golden chipset:
+    machine: assembly table
+    ingredients: [redstone, gold ingot]
+- redstone diamond chipset:
+    machine: assembly table
+    ingredients: [redstone, diamond]
+- pulsating chipset:
+    machine: assembly table
+    ingredients: [redstone, ender pearl]
+    makes: 2
+- gate:
+    machine: assembly table
+    ingredients: [redstone chipset]
+- iron AND gate:
+    machine: assembly table
+    ingredients: [redstone iron chipset, red pipe wire]
+- iron OR gate:
+    machine: assembly table
+    ingredients: [redstone iron chipset, red pipe wire]
+- gold AND gate:
+    machine: assembly table
+    ingredients: [redstone golden chipset, red pipe wire, blue pipe wire]
+- gold OR gate:
+    machine: assembly table
+    ingredients: [redstone golden chipset, red pipe wire, blue pipe wire]
+- diamond AND gate:
+    machine: assembly table
+    ingredients: [redstone diamond chipset, red pipe wire, blue pipe wire, green pipe wire, yellow pipe wire]
+- diamond OR gate:
+    machine: assembly table
+    ingredients: [redstone diamond chipset, red pipe wire, blue pipe wire, green pipe wire, yellow pipe wire]
+- autarchic gate:
+    machine: assembly table
+    ingredients: [redstone iron chipset, gate, pulsating chipset]
+
+craft_templates:
+- autarchic $(metal) gate:
+    machine: assembly table
+    ingredients: [redstone iron chipset, $(metal) AND gate, pulsating chipset]
+    metal: [iron, gold, diamond]
+- autarchic $(metal) gate:
+    machine: assembly table
+    ingredients: [redstone iron chipset, $(metal) OR gate, pulsating chipset]
+    metal: [iron, gold, diamond]
+- $(color) pipe wire:
+    machine: assembly table
+    ingredients: [redstone, iron, $(color) dye]
+    color: [red, blue, green, yellow]

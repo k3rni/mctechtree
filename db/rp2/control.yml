@@ -1,0 +1,14 @@
+cluster: redpower2
+
+crafts:
+- 8K RAM module: [iron bars*4, red-doped wafer*4, diamond]
+- backplane: [iron bars*6, fine copper wire*2, gold ingot]
+- blank floppy: [planks*7, iron]
+- central processing unit: [wood*5, red-doped wafer*2, diamond block, ribbon cable]
+- disk drive: [wood*6, blulectric motor, red-doped wafer, ribbon cable]
+- FORTH boot disk: [blank floppy, redstone]
+- IO expander: [wood*6, red-doped wafer, bundled cable, ribbon cable]
+- monitor: [wood*3, green lumar, red-doped wafer, ribbon cable, glass*3]
+- ribbon cable: 
+    makes: 8
+    ingredients: [fine copper wire*3]
