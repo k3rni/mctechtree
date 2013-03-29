@@ -30,7 +30,7 @@
           %th From
       %tbody
         - crafts.each do |step|
-          %tr
+          %tr{class: [('success' if targets.include? step.result.to_s)]}
             %td= step.num
             %td
               = step.count if step.count > 1
@@ -39,4 +39,5 @@
               - else
                 = step.result.inspect
             %td= step.machine
-            %td= step.ingredients
+            %td
+              = step.ingredients
