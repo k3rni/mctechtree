@@ -5,6 +5,7 @@ crafts:
 - stone anode:
     makes: 3
     ingredients: [redstone*4, stone wafer*3]
+    shape: ~ r ~ r r r s s s
 - stone pointer: [stone, redstone torch, stone wafer]
 - stone cathode: [stone wafer, redstone torch]
 - sequencer: [stone wafer*4, stone pointer, stone cathode*4]
