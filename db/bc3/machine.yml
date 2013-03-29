@@ -1,20 +1,20 @@
 cluster: buildcraft
 
 primitives:
-- oil: 5
+- oil: 5 
 
 crafts:
 - wooden gear: [stick*4]
 - stone gear: [wooden gear, cobble*4]
 - iron gear: [stone gear, iron*4]
-- gold gear: [iron gear, gold*4]
+- gold gear: [iron gear, gold ingot*4]
 - diamond gear: [gold gear, diamond*4]
 - fuel: [oil]
 - redstone engine: # a.k.a. wooden engine
-    ingredients: [wood*3, glass, piston, wood gear*2]
+    ingredients: [wood*3, glass, piston, wooden gear*2]
 - stirling engine: # a.k.a. steam engine, stone engine
     ingredients: [cobble*3, glass, piston, stone gear*2]
-- combustion engine # iron engine
+- combustion engine: # iron engine
     ingredients: [iron*3, glass, piston, iron gear*2]
 - quarry: [redstone, iron gear*3, gold gear*2, diamond gear*2, diamond pickaxe]
 - mining well: [iron*6, redstone, iron gear, iron pickaxe]
