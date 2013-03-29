@@ -1,0 +1,12 @@
+cluster: buildcraft
+
+crafts:
+# - template drawing table: [ink sac*2, yellow dye*2, crafting table, diamond gear*2, blank template] # replaced by architect table
+- landmark: [redstone torch, lapis]
+- pathmark: [redstone torch, cactus green]
+- blank template: [paper*8, ink sac]
+- blueprint: [paper*8, lapis]
+- architect table: [ink sac*2, yellow dye*2, crafting table, diamond gear*2, landmark, blank template]
+- filler: [ink sac*2, yellow dye*2, gold gear*2, crafting table, chest]
+# - builder: [ink sac*2, yellow dye*2, diamond gear*2, crafting table, chest] # wiki states disabled due to bugs
+- blueprint library: [blueprint*8, bookcase]
