@@ -1,61 +1,61 @@
 cluster: industrialcraft2
 
 crafts:
-    - iron furnace: 
-        ingredients: [iron*8]
-        shape: i i i i ~ i i i i
-    - iron furnace: [iron*5, furnace]
-    - electric furnace:
-      - iron furnace
-      - redstone*2
-      - integrated circuit
-    - macerator:
-        ingredients:
-          - flint*3
-          - cobble*2
-          - machine
-          - integrated circuit
-        shape: f f f c m c ~ i ~
-    - extractor:
-      - machine
-      - treetap*4
-      - integrated circuit
-    - compressor:
-      - stone*6
+- iron furnace: 
+    ingredients: [iron*8]
+    shape: i i i i ~ i i i i
+- iron furnace: [iron*5, furnace]
+- electric furnace:
+  - iron furnace
+  - redstone*2
+  - integrated circuit
+- macerator:
+    ingredients:
+      - flint*3
+      - cobble*2
       - machine
       - integrated circuit
-    - recycler:
-      - glowstone
-      - compressor
-      - dirt*3
-      - refined iron*2
-    - canning machine:
-      - machine
-      - tin ingot*7
-      - integrated circuit
-    - induction furnace:
-      - electric furnace
-      - advanced machine
-      - copper ingot*7
-    - mass fabricator:
-      - glowstone*4
-      - advanced machine*2
-      - advanced circuit*2
-      - lapotron crystal
-    - machine: [refined iron*8]
-    - advanced machine: [machine, carbon plate*2, advanced alloy*2]
-    - overclocker upgrade: [coolant cell*3, copper cable*2, integrated circuit]
-    - transformer upgrade: [glass*5, 2ins gold cable*2, integrated circuit, MV transformer]
-    - energy storage upgrade: [wood*5, copper cable*2, RE battery, integrated circuit]
-    - integrated circuit: 
-      - copper cable*6
-      - redstone*2
-      - refined iron
-    - advanced circuit:
-      - integrated circuit
-      - redstone*4
-      - lapis*2
-      - glowstone*2
-    - miner: [machine, integrated circuit*2, mining pipe*2]
-    - pump: [cell*4, machine, integrated circuit, mining pipe*2, treetap]
-    - mining pipe: [refined iron*6, treetap]
+    shape: f f f c m c ~ i ~
+- extractor:
+  - machine
+  - treetap*4
+  - integrated circuit
+- compressor:
+  - stone*6
+  - machine
+  - integrated circuit
+- recycler:
+  - glowstone
+  - compressor
+  - dirt*3
+  - refined iron*2
+- canning machine:
+  - machine
+  - tin ingot*7
+  - integrated circuit
+- induction furnace:
+  - electric furnace
+  - advanced machine
+  - copper ingot*7
+- mass fabricator:
+  - glowstone*4
+  - advanced machine*2
+  - advanced circuit*2
+  - lapotron crystal
+- machine: [refined iron*8]
+- advanced machine: [machine, carbon plate*2, advanced alloy*2]
+- overclocker upgrade: [coolant cell*3, copper cable*2, integrated circuit]
+- transformer upgrade: [glass*5, 2ins gold cable*2, integrated circuit, MV transformer]
+- energy storage upgrade: [wood*5, copper cable*2, RE battery, integrated circuit]
+- integrated circuit: 
+  - copper cable*6
+  - redstone*2
+  - refined iron
+- advanced circuit:
+  - integrated circuit
+  - redstone*4
+  - lapis*2
+  - glowstone*2
+- miner: [machine, integrated circuit*2, mining pipe*2]
+- pump: [cell*4, machine, integrated circuit, mining pipe*2, treetap]
+- mining pipe: [refined iron*6, treetap]

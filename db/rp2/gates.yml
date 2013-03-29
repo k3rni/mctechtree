@@ -129,3 +129,5 @@ crafts:
   - stone anode
   - stone wire*2
   - stone wafer
+- light sensor: [stone wafer*7, blue-doped wafer, stone wire]
+- stone bundle: [bundled cable, stone wafer]

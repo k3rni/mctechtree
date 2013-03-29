@@ -2,3 +2,7 @@ cluster: redpower2
 
 crafts:
 - BT battery: [copper ingot*2, tin ingot, nikolite*6]
+- solar panel: [blue-doped wafer*8, blue alloy ingot]
+- battery box: [BT battery*4, wood, iron*3, blue alloy ingot]
+- thermopile: [copper ingot*4, iron*2, blue alloy ingot, blue-doped wafer*2]
+

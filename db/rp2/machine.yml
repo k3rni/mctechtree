@@ -2,11 +2,8 @@ cluster: redpower2
 
 crafts:
 - alloy furnace: [brick block*8]
-- block breaker:
-  - cobble*6
-  - iron pickaxe
-  - piston
-  - redstone
+- blulectric furnace: [clay block*8, iron*2, blue alloy ingot]
+- block breaker: [cobble*6, iron pickaxe, piston, redstone]
 - deployer:
   - cobble*6
   - chest
@@ -25,6 +22,14 @@ crafts:
 - pneumatic tube:
     makes: 8
     ingredients: [brass*2, glass]
+- redstone tube: [pneumatic tube, redstone]
+- restriction tube: [pneumatic tube, iron]
+- magtube: 
+    ingredients: [copper coil*6, obsidian*2, glass]
+    makes: 8
+- fluid pipe:
+    makes: 16
+    ingredients: [brass*6, glass]
 - item detector:
   - brass*2
   - pneumatic tube*2
@@ -51,4 +56,18 @@ crafts:
   - red-doped wafer*2
   - filter
   - blue alloy ingot
-
+- accelerator: [obsidian*4, blue alloy ingot*4]
+- igniter: [netherrack*2, flint and steel, cobble*4, deployer, redstone]
+- regulator: [brass*2, buffer*2, item detector, red-doped wafer*2, planks*2]
+- assembler: [brass*2, iron*3, deployer, red-doped wafer, bundled cable*2]
+- blulectric motor: [iron*6, blue alloy ingot, copper coil]
+- copper coil: [fine copper wire, iron bars*4, iron]
+- ejector: [wood*4, buffer, transposer, cobble*2, redstone]
+- relay: [wood*4, buffer, transposer, cobble*2, red-doped wafer]
+- frame motor: [iron*5, blue alloy ingot, brass*2, blulectric motor]
+- grate: [iron bars*7, fluid pipe]
+- pump: [iron*5, blulectric motor, fluid pipe*2, blue alloy ingot]
+- support frame: [stick*8, brass]
+- tube frame: [support frame, pneumatic tube]
+- redstone tube frame: [redstone tube, support frame]
+- redstone tube frame: [tube frame, redstone]
