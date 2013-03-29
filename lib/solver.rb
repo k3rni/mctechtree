@@ -74,6 +74,7 @@ class Solver
             num: (order < last ? j : nil),
             machine: craft.machine,
             result: craft.result,
+            shape: craft.shape,
             ingredients: craft.describe_ingredients(count)
           )
           j += 1 if order < last
