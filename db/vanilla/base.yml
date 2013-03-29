@@ -86,3 +86,5 @@ crafts:
 - paper:
     makes: 3
     ingredients: [sugar cane*3]
+- bookcase: [book*3, planks*6]
+- book: [leather, paper*3]
