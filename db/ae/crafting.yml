@@ -1,0 +1,10 @@
+cluster: ae
+
+crafts:
+- ME crafting terminal: [glass*2, iron*4, storage cell, ME access terminal]
+- ME crafting monitor: [glass*3, iron*4, ME basic processor, ME cable]
+- ME crafting CPU: [iron*4, quartz crystal*2, glowstone*2, ME advanced processor]
+- ME heat vent: [iron bars*4, iron, ME cable]
+- ME assembler containment wall: [iron*4, gold ingot*4, quartz crystal]
+- ME pattern provider: [iron*4, crafting table, ME advanced processor, ME conversion matrix*2, storage cell]
+- ME pattern encoder: [iron*7, ME conversion matrix, crafting table]
