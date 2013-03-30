@@ -20,8 +20,12 @@ crafts:
 - ME interface: [ME cable, ME conversion matrix, iron*4, glass*3]
 - ME wireless access terminal: [ME access terminal, wireless receiver]
 - ME wireless access point: [iron*4, glass*3, ME cable, wireless receiver]
-- ME controller: [iron*4, quartz crystal*4, ME advanced processor]
-- ME access terminal: [glass*3, iron*4, ME cable, ME conversion matrix]
+- ME controller: 
+    ingredients: [iron*4, quartz crystal*4, ME advanced processor]
+    shape: i q i q m q i q i
+- ME access terminal: 
+    ingredients: [glass*3, iron*4, ME cable, ME conversion matrix]
+# TODO: shape
 
 craft_templates:
 - ME cable - $(color):
