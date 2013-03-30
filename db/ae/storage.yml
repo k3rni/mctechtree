@@ -1,0 +1,17 @@
+cluster: ae
+
+crafts:
+- storage cell: [quartz crystal*4, redstone*4, ME basic processor]
+- storage segment: [redstone*4, ME basic processor, storage cell*3, glass]
+- storage block: [glowstone*4, ME advanced processor, storage segment*3, glass]
+- storage cluster: [glowstone*4, ME advanced processor, storage block*3, glass]
+- ME drive: [iron*4, ME basic processor*2, glass*2, chest]
+- ME chest: [iron*5, ME conversion matrix, chest, glass*2]
+- ME IO port: [glass*3, ME drive*2, ME cable, ME basic processor, iron*2]
+- ME storage monitor: [iron*4, ME cable, ME level emitter, glass*3]
+- ME preformatter: [iron*5, crafting table, glass*2, ME conversion matrix]
+- ME 1k storage: [redstone*3, glass*2, iron*3, storage cell]
+- ME 4k storage: [redstone*3, glass*2, iron*3, storage segment]
+- ME 16k storage: [redstone*3, glass*2, iron*3, storage block]
+- ME 64k storage: [redstone*3, glass*2, iron*3, storage cluster]
+

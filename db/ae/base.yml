@@ -1,0 +1,25 @@
+cluster: ae
+
+primitives:
+- quartz dust: 30
+
+crafts:
+- quartz crystal:
+    machine: compressor
+    ingredients: [quartz dust*4]
+    # NOTE: only available with ic2
+- silicon:
+    ingredients: [quartz dust]
+    machine: furnace
+- quartz fiber:
+    ingredients: [glass*6, quartz dust*3]
+    makes: 4
+- quartz cutting knife: [stick*2, quartz crystal*2, iron]
+- vibration catalyst: [lava, quartz crystal*2, iron, ME conversion matrix]
+- entropy accelerator: [lava, quartz crystal*2, iron, ME conversion matrix]
+- ME basic processor: 
+    ingredients: [redstone*2, gold ingot, silicon]
+    machine: quartz cutting knife
+- ME advanced processor:
+    ingredients: [redstone*2, diamond, silicon]
+- ME conversion matrix: [iron*4, quartz crystal*2, redstone*2, ME basic processor]
