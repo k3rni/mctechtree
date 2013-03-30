@@ -1,0 +1,79 @@
+cluster: applied energistics
+
+crafts:
+#processors
+- basic processor assembly:
+    machine: quartz cutting knife
+    ingredients: [redstone*2, gold ingot, silicon]
+    shape: ~ ~ ~ r g r ~ s ~ 
+- advanced processor assembly:
+    machine: quartz cutting knife
+    ingredients: [redstone*2, diamond, silicon]
+    shape: ~ ~ ~ r d r ~ s ~ 
+- me basic processor:
+    machine: furnace
+    ingredients: [basic processor assembly]
+- me advanced processor:
+    machine: furnace
+    ingredients: [advanced processor assembly]
+#other parts
+- me conversion matrix:
+    ingredients: [redstone*2, iron*4, quartz cristal*2, me basic processor]
+    shape: i c i r m r i c i 
+- storage cell:
+    ingredients: [redstone*4, quartz cristal*4, me basic processor]
+    shape: r q r q m q r q r 
+- storage segment:
+    ingredients: [redstone*4, storage cell*3, me basic processor, glass]
+    shape: r m r s g s r s r 
+- storage block:
+    ingredients: [glowstone*4, storage segment*3, me advanced processor, glass]
+    shape: glo me  glo sto gla sto glo sto glo 
+- storage cluster:
+    ingredients: [glowstone*4, storage block*3, me advanced processor, glass]
+    shape: glo me  glo sto gla sto glo sto glo
+- wireless receiver:
+    ingredients: [ender pearl, iron*3, quartz fiber]
+    shape: - e - i q i - i - 
+# cables
+- quartz fiberquartz fiber:
+    ingredients: [quartz dust*3, glass*6]
+    shape: g g g q q q g g g 
+- me cable:
+    ingredients: [redstone dust*2, quartz fiberquartz fiber]
+- me cable blue:
+    ingredients: [me cable*8, lapis]
+    shape: m m m m l m m m m 
+    makes: 8
+- me cable black:
+    ingredients: [me cable*8, ink sac]
+    shape: m m m m i m m m m 
+    makes: 8
+- me cable white:
+    ingredients: [me cable*8, bonemeal]
+    shape: m m m m b m m m m 
+    makes: 8
+- me cable green:
+    ingredients: [me cable*8, cactus green]
+    shape: m m m m c m m m m 
+    makes: 8
+- me cable red:
+    ingredients: [me cable*8, rose red]
+    shape: m m m m r m m m m 
+    makes: 8
+- me cable yellow:
+    ingredients: [me cable*8, dandelion yellow]
+    shape: m m m m d m m m m 
+    makes: 8
+- me cable brown:
+    ingredients: [me cable*8, cocoa beans]
+    shape: m m m m c m m m m 
+    makes: 8
+- me dark cable:
+    ingredients: [me cable*2, lever, redstone*2]
+    shape: - r - m l m - r - 
+# all colors to colorless cable [not shure of that!]
+#craft_templates:
+#- me cable:
+#    ingredients: [me cable $(color)]
+#    color: [blue, black, white, green, red, yellow, brown]

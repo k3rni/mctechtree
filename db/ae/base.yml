@@ -1,0 +1,47 @@
+cluster: applied energistics
+
+primitives:
+- quartz ore: 1
+- quartz cristal: 2
+- quartz dust: 2
+
+crafts:
+# 3 diferent machines can be used to grind quartz: macerator, pulverizer, quartz grind stone
+- quartz dust:
+    machine: macerator
+    makes: 10
+    ingredients: [quartz ore]
+- quartz dust:
+    machine: pulverizer
+    makes: 10
+    ingredients: [quartz ore]
+- quartz dust:
+    machine: quartz grind stone
+    makes: 10
+    ingredients: [quartz cristal]
+- quartz dust:
+    machine: quartz grind stone
+    makes: 4
+    ingredients: [quartz ore]
+- quartz dust:
+    machine: macerator
+    makes: 4
+    ingredients: [quartz cristal]
+- quartz dust:
+    machine: pulverizer
+    makes: 4
+    ingredients: [quartz ore]
+# with ic2 we can also compress dust back into cristal
+- quartz cristal:
+    machine: compressor
+    ingredients: [quartz dust*4]
+# - wooden gear: [stick*4]
+- quartz grind stone:
+    ingredients: [stone*3, cobblestone*2, quartz dust*3, wooden gear]
+    shape: s w s q s q c q c
+- wooden crank:
+    ingredients: [stick*5]
+    shape: s s s ~ ~ s ~ ~
+- silicon:
+    machine: furnace
+    ingredients: [quartz dust]

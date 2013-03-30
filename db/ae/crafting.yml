@@ -1,0 +1,42 @@
+cluster: applied energistics
+
+# not sure of shape's
+crafts:
+- me pattern provider:
+    ingredients: [iron*4, crafting table, me conversion matrix*2, me advanced processor, storage cell]
+    shape: |
+        iron craf iron
+        me c me a me c
+        iron stor iron
+- me crafting cpu:
+    ingredients: [iron*4, quartz cristal*2, me advanced processor, glowstone*2]
+    shape: i q i g m g i q i
+- me heat vent: # have no idea how shape should be defined here :)
+    ingredients: [iron*4, iron bars*4, me cable]
+- me assembler containment wall:
+    ingredients: [iron*4, gold ingot*4, quartz cristal]
+    shape: i g i g q g i g i
+- me crafting monitor:
+    ingredients: [iron*4, glass*3, me cable, me basic processor]
+    shape: |
+        iron iron glas
+        me c me b glas
+        iron iron glas
+- me crafting monitor:
+    ingredients: [iron*4, glass*3, me cable, me basic processor]
+    shape: |
+        iron iron glas
+        me c me b glas
+        iron iron glas
+- me crafting terminal:
+    ingredients: [iron*4, glass*2, crafting table, storage cell, me access terminal]
+    shape: i i g c s m i i g
+- me prattern encoder:
+    ingredients: [iron*7, crafting table, me conversion matrix]
+    shape: i m i i c i i i i  
+- me blank prattern:
+    ingredients: [iron*3, glass*2, quartz cristal, glowstone*3]
+    shape: |
+        gla glo gla
+        glo qua glo
+        iro iro iro

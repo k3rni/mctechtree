@@ -1,0 +1,30 @@
+cluster: applied energistics
+
+crafts:
+- me chest:
+    ingredients: [iron*5, glass*2, me conversion matrix, chest]
+    shape: g m g i c i i i i 
+- me drive:
+    ingredients: [iron*4, me basic processor*2, chest, glass*2]
+    shape: i m i g c g i m i 
+- me io port: # not sure if that shapeing is right
+    ingredients: [iron*2, glass*3, me drive*2, me cable, me basic processor]
+    shape: |
+        glas glas glas
+        me d me c me d
+        iron me b iron
+- me 1k storage:
+    ingredients: [iron*3, redstone*3, storage cell, glass*2]
+    shape: g r g r s r i i i 
+- me 4k storage:
+    ingredients: [iron*3, redstone*3, storage segment, glass*2]
+    shape: g r g r s r i i i 
+- me 16k storage:
+    ingredients: [iron*3, redstone*3, storage block, glass*2]
+    shape: g r g r s r i i i 
+- me 64k storage:
+    ingredients: [iron*3, redstone*3, storage cluster, glass*2]
+    shape: g r g r s r i i i 
+- me preformatter:
+    ingredients: [iron*5, crafting table, me conversion matrix, glass*2]
+    shape: g m g i c i i i i  
