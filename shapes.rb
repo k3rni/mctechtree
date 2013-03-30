@@ -24,6 +24,7 @@ puts DB.size
 
 DB.each_crafted.each do |item|
     item.crafts.each do |craft|
-	puts "Missing shape: #{craft}" if craft.grid.nil?
+	# machine processing does not need filled shapes, yet
+	puts "Missing shape: #{craft}" if craft.grid.nil? && craft.machine.nil?
     end
 end
