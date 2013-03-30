@@ -1,52 +1,50 @@
 cluster: applied energistics
 
-# TODO
-# me contoller
-# me access terminal
-# me import bus
-# me export bus
-# me level emiter
-# me storage bus
-# me interface
-# me wireless access point
-# me storage monitor
-# wireless booster
+
 crafts:
-- me pattern provider:
-    ingredients: [iron*4, crafting table, me conversion matrix*2, me advanced processor, storage cell]
+- me contoller:
+    ingredients: [iron*4, quartz cristal*4, me advanced processor]
+    shape: i q i q m q i q i
+- me access terminal: # have no idea how shape should be defined here :)
+    ingredients: [iron*4, glass*3, me cable, me conversion matrix]
+- me interface: # have no idea how shape should be defined here :)
+    ingredients: [iron*4, glass*3, me cable, me conversion matrix]
+- me import bus: # not shure shape
+    ingredients: [iron*2, me cable, me interface, sticky piston]
     shape: |
-        iron craf iron
-        me c me a me c
-        iron stor iron
-- me crafting cpu:
-    ingredients: [iron*4, quartz cristal*2, me advanced processor, glowstone*2]
-    shape: i q i g m g i q i
-- me heat vent: # have no idea how shape should be defined here :)
-    ingredients: [iron*4, iron bars*4, me cable]
-- me assembler containment wall:
-    ingredients: [iron*4, gold ingot*4, quartz cristal]
-    shape: i g i g q g i g i
-- me crafting monitor:
-    ingredients: [iron*4, glass*3, me cable, me basic processor]
+        ---- me c ----
+        iron me i iron
+        ---- stic ----
+- me me export bus: # not shure shape
+    ingredients: [iron*2, me cable, me interface, piston]
+    shape: |
+        ---- me c ----
+        iron me i iron
+        ---- pist ----
+- me level emiter: # not shure shape
+    ingredients: [iron*2, me cable, me basic processor, redstone torch]
+    shape: |
+        ---- iron ----
+        me c me b reds
+        ---- iron ----
+- me storage bus: # not shure shape
+    ingredients: [iron*3, me cable, me interface]
+    shape: |
+        ---- me c ----
+        ---- me i ----
+        iron iron iron
+- me wireless access point:
+    ingredients: [iron*4, glass*3, me cable, wireless receiver]
+    shape: i g i m w g i g i
+- wireless booster:
+    ingredients: [iron*2, quartz cristal*1, redstone]
+    shape: q r - i i - - - -
+- me wireless access terminal:
+    ingredients: [me access terminal, wireless receiver]
+    shape: - w - - m - - - -
+- me storage monitor: # not shure shape
+    ingredients: [iron*4, glass*3, me cable, me level emiter]
     shape: |
         iron iron glas
-        me c me b glas
+        me c me l glas
         iron iron glas
-- me crafting monitor:
-    ingredients: [iron*4, glass*3, me cable, me basic processor]
-    shape: |
-        iron iron glas
-        me c me b glas
-        iron iron glas
-- me crafting terminal:
-    ingredients: [iron*4, glass*2, crafting table, storage cell, me access terminal]
-    shape: i i g c s m i i g
-- me prattern encoder:
-    ingredients: [iron*7, crafting table, me conversion matrix]
-    shape: i m i i c i i i i  
-- me blank prattern:
-    ingredients: [iron*3, glass*2, quartz cristal, glowstone*3]
-    shape: |
-        gla glo gla
-        glo qua glo
-        iro iro iro
