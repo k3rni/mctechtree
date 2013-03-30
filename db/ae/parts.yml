@@ -1,0 +1,20 @@
+cluster: ae
+
+crafts:
+- basic processor assembly:
+    machine: quartz cutting knife
+    ingredients: [redstone*2, gold ingot, silicon]
+    shape: ~ ~ ~ r g r ~ s ~ 
+- advanced processor assembly:
+    machine: quartz cutting knife
+    ingredients: [redstone*2, diamond, silicon]
+    shape: ~ ~ ~ r d r ~ s ~ 
+- ME basic processor:
+    machine: furnace
+    ingredients: [basic processor assembly]
+- ME advanced processor:
+    machine: furnace
+    ingredients: [advanced processor assembly]
+- ME conversion matrix:
+    ingredients: [iron*4, quartz crystal*2, redstone*2, ME basic processor]
+    shape: i c i r M r i c i
