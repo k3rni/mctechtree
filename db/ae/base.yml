@@ -1,7 +1,9 @@
 cluster: ae
 
 primitives:
-- quartz dust: 30
+- quartz dust: 30 
+# NOTE: quartz dust is craftable from Quartz Ore (when mined with Silk Touch enchant, and macerated/pulverized/grinded from crystals. Adding those would introduce cycles.
+# - quartz ore: 60
 
 crafts:
 - quartz crystal:
