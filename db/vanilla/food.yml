@@ -18,8 +18,12 @@ primitives:
 
 crafts:
 - sugar: [sugar cane]
-- cake: [milk bucket*3, egg, sugar*2, wheat*3]
-- cookie: [wheat*2, cocoa beans]
+- cake: 
+    ingredients: [milk bucket*3, egg, sugar*2, wheat*3]
+    compatible: all
+- cookie: 
+    ingredients: [wheat*2, cocoa beans]
+    compatible: all
 - cooked pork:
     machine: furnace
     ingredients: [raw pork]

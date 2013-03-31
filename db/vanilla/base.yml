@@ -65,9 +65,11 @@ crafts:
 - iron:
     machine: furnace
     ingredients: [iron ore]
+    compatible: all
 - gold ingot:
     machine: furnace
     ingredients: [gold ore]
+    compatible: all
 - iron bars:
     makes: 16
     ingredients: [iron*6]

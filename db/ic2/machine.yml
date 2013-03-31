@@ -57,5 +57,5 @@ crafts:
   - lapis*2
   - glowstone*2
 - miner: [machine, integrated circuit*2, mining pipe*2]
-- pump: [cell*4, machine, integrated circuit, mining pipe*2, treetap]
+- electric pump: [cell*4, machine, integrated circuit, mining pipe*2, treetap]
 - mining pipe: [refined iron*6, treetap]
