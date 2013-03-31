@@ -3,6 +3,9 @@ cluster: redpower2
 colors: &colors
     color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
 
+gems: &gems
+    material: [ruby, sapphire, green sapphire]
+
 crafts:
 - screwdriver: [iron, stick]
 - sonic screwdriver: [green sapphire, brass, BT battery]
@@ -22,19 +25,19 @@ craft_templates:
     material: [stone/cobble, wood, iron, ruby, sapphire, green sapphire, diamond]
 - $(material) pickaxe:
     ingredients: [stick*2, $(material)*3]
-    material: [ruby, sapphire, green sapphire, diamond]
+    <<: *gems
 - $(material) axe:
     ingredients: [stick*2, $(material)*3]
-    material: [ruby, sapphire, green sapphire, diamond]
+    <<: *gems
 - $(material) shovel:
     ingredients: [stick*2, $(material)]
-    material: [ruby, sapphire, green sapphire, diamond]
+    <<: *gems
 - $(material) hoe:
     ingredients: [stick*2, $(material)*2]
-    material: [ruby, sapphire, green sapphire, diamond]
+    <<: *gems
 - $(material) sword:
     ingredients: [stick, $(material)*2]
-    material: [ruby, sapphire, green sapphire, diamond]
+    <<: *gems
 - $(color) paint:
     ingredients: [$(color) dye, flax seeds*2, paint can]
     <<: *colors
