@@ -1,0 +1,35 @@
+cluster: ae
+
+crafts:
+# basic tools
+- quartz axe:
+    ingredients: [stick*2, quartz crystal*3]
+    shape: q q ~ q s ~ ~ s ~ 
+- quartz pickaxe:
+    ingredients: [stick*2, quartz crystal*3]
+    shape: q q q ~ s ~ ~ s ~ 
+- quartz sword:
+    ingredients: [stick, quartz crystal*2]
+    shape: ~ q ~ ~ q ~ ~ s ~ 
+- quartz shovel:
+    ingredients: [stick*2, quartz crystal]
+    shape: ~ q ~ ~ s ~ ~ s ~ 
+- quartz hoe:
+    ingredients: [stick*2, quartz crystal*2]
+    shape: q q ~ ~ s ~ ~ s ~ 
+# AE specific tools
+- quartz wrench:
+    ingredients: [quartz crystal*5]
+    shape: q ~ q ~ q ~ q ~ q 
+- quartz cutting knife:
+    ingredients: [stick*2, quartz crystal*2, iron]
+    shape: ~ ~ s i s ~ q q ~ 
+- entropy accelerator:
+    ingredients: [ice, quartz crystal*2, iron, ME conversion matrix]
+    shape: |
+        ic qu --
+        qu ME --
+        -- -- ir
+- vibration catalyst:
+    ingredients: [lava bucket, quartz crystal*2, iron, ME conversion matrix]
+    shape: l q - q m - - - i

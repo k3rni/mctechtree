@@ -9,9 +9,11 @@ crafts:
 - silver:
     machine: furnace
     ingredients: [silver ore]
+    compatible: all
 - silver:
     machine: furnace
     ingredients: [pulverized silver]
+    compatible: all
 - molten redstone:
     machine: magma crucible
     makes: 25 # 25mb

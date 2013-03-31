@@ -2,12 +2,15 @@
 
 class UndefinedItemsError < StandardError; end
 class BadDefinitionError < StandardError; end
+class NamingConflictError < StandardError; end
+class DuplicatePrimitiveError < StandardError; end
 
 class Database < Set
     include Graph
     def initialize(*args)
         super(*args)
         @pending = Set.new
+	@conflicts = Set.new
         @equivalents = Hash.new { |h, key| h[key] = Set.new }
     end
 
@@ -27,14 +30,25 @@ class Database < Set
       self
     end
 
-
     def load_primitives definitions, group=nil
       definitions.each do |data|
         name, stacks, cost = parse_primitive(data)
         name = data.keys.first
-        item = Item.primitive(name, cost, stacks, group)
+	if (old = find(name))
+	    # no need to flag it, identically named primitives are always equivalent
+	    # @conflicts.add [:primitive, name, group, old.group] 
+	    next
+	else
+    	    item = Item.primitive(name, cost, stacks, group)
+	end
         self.add item
       end
+    end
+
+    def conflicts existing, extra, group
+	compatible = extra['compatible']
+	return false if compatible == 'all' || existing.compatible == 'all'
+	existing.group != group && (compatible.nil? || compatible != existing.group)
     end
 
     def load_crafts definitions, group=nil
@@ -42,12 +56,15 @@ class Database < Set
         definitions.each do |recipe|
           name, makes, machine, ingredients, extra = parse_recipe(recipe)
           item = find(name)
-          if item
+	
+	  if item && conflicts(item, extra, group)
+	    @conflicts.add [:craft, name, group, item.group]
+          elsif item
             item.add_craft do |craft|
               craft.makes(makes, machine, ingredients, extra)
             end
           else
-            item = Item.crafted name, group do |craft|
+            item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
               craft.makes(makes, machine, ingredients, extra)
             end
             self.add item
@@ -133,12 +150,12 @@ class Database < Set
         @pending.select! do |item|
             if (newitem = find(item.name))
                 replace_pending item, newitem
-                false # wywal z pending
+                false # drop pending item
             else
                 true
             end
         end
-        # zostało coś? podmień z equivalents
+        # anything left? try the equivalents list
         @pending.select! do |item|
           if (eq = @equivalents[item.name])
             new_item = eq.map { |name| find(name) }.compact.first
@@ -178,6 +195,14 @@ class Database < Set
           end
           [item] * count
         end.flatten
+    end
+
+    def detect_name_clashes
+	if @conflicts.size > 0
+	    raise NamingConflictError.new(@conflicts.sort_by { |v| v[1] }.map do |mode,name,cluster1,cluster2|
+		"#{mode}[#{name}]:#{cluster1},#{cluster2}" 
+	    end.join("\n"))
+	end
     end
 
 end
