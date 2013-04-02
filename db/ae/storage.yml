@@ -1,30 +1,41 @@
-cluster: applied energistics
+cluster: ae
 
 crafts:
-- me chest:
-    ingredients: [iron*5, glass*2, me conversion matrix, chest]
-    shape: g m g i c i i i i 
-- me drive:
-    ingredients: [iron*4, me basic processor*2, chest, glass*2]
-    shape: i m i g c g i m i 
-- me io port: # not sure if that shapeing is right
-    ingredients: [iron*2, glass*3, me drive*2, me cable, me basic processor]
-    shape: |
-        glas glas glas
-        me d me c me d
-        iron me b iron
-- me 1k storage:
-    ingredients: [iron*3, redstone*3, storage cell, glass*2]
-    shape: g r g r s r i i i 
-- me 4k storage:
-    ingredients: [iron*3, redstone*3, storage segment, glass*2]
-    shape: g r g r s r i i i 
-- me 16k storage:
-    ingredients: [iron*3, redstone*3, storage block, glass*2]
-    shape: g r g r s r i i i 
-- me 64k storage:
-    ingredients: [iron*3, redstone*3, storage cluster, glass*2]
-    shape: g r g r s r i i i 
-- me preformatter:
-    ingredients: [iron*5, crafting table, me conversion matrix, glass*2]
-    shape: g m g i c i i i i  
+- storage cell:
+    ingredients: [quartz crystal*4, redstone*4, ME basic processor]
+    shape: r q r q M q r q r
+- storage segment: 
+    ingredients: [redstone*4, ME basic processor, storage cell*3, glass]
+    shape: r M r s g s r s r
+- storage block: 
+    ingredients: [glowstone*4, ME advanced processor, storage segment*3, glass]
+    shape: glo M glo s gla s glo s glo
+- storage cluster: 
+    ingredients: [glowstone*4, ME advanced processor, storage block*3, glass]
+    shape: glo M glo s gla s glo s glo
+- ME drive:
+    ingredients: [iron*4, ME basic processor*2, glass*2, chest]
+    shape: i M i g c g i M i
+- ME chest:
+    ingredients: [iron*5, ME conversion matrix, chest, glass*2]
+    shape: g M g i c i i i i
+- ME IO port:
+    ingredients: [glass*3, ME drive*2, ME cable, ME basic processor, iron*2]
+    # TODO: shape; cannot express it properly atm
+- ME storage monitor: [iron*4, ME cable, ME level emitter, glass*3]
+- ME preformatter:
+    ingredients: [iron*5, crafting table, glass*2, ME conversion matrix]
+    shape: g M g i c i i i i
+- ME 1k storage: 
+    ingredients: [redstone*3, glass*2, iron*3, storage cell]
+    shape: g r g r s r i i i
+- ME 4k storage:
+    ingredients: [redstone*3, glass*2, iron*3, storage segment]
+    shape: g r g r s r i i i
+- ME 16k storage:
+    ingredients: [redstone*3, glass*2, iron*3, storage block]
+    shape: g r g r s r i i i
+- ME 64k storage:
+    ingredients: [redstone*3, glass*2, iron*3, storage cluster]
+    shape: g r g r s r i i i
+

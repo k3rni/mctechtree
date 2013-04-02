@@ -1,35 +1,35 @@
-cluster: applied energistics
+cluster: ae
 
 crafts:
 # basic tools
 - quartz axe:
-    ingredients: [stick*2, quartz cristal*3]
+    ingredients: [stick*2, quartz crystal*3]
     shape: q q ~ q s ~ ~ s ~ 
 - quartz pickaxe:
-    ingredients: [stick*2, quartz cristal*3]
+    ingredients: [stick*2, quartz crystal*3]
     shape: q q q ~ s ~ ~ s ~ 
 - quartz sword:
-    ingredients: [stick, quartz cristal*2]
+    ingredients: [stick, quartz crystal*2]
     shape: ~ q ~ ~ q ~ ~ s ~ 
 - quartz shovel:
-    ingredients: [stick*2, quartz cristal]
+    ingredients: [stick*2, quartz crystal]
     shape: ~ q ~ ~ s ~ ~ s ~ 
 - quartz hoe:
-    ingredients: [stick*2, quartz cristal*2]
+    ingredients: [stick*2, quartz crystal*2]
     shape: q q ~ ~ s ~ ~ s ~ 
 # AE specific tools
 - quartz wrench:
-    ingredients: [quartz cristal*5]
+    ingredients: [quartz crystal*5]
     shape: q ~ q ~ q ~ q ~ q 
 - quartz cutting knife:
-    ingredients: [stick*2, quartz cristal*2, iron]
+    ingredients: [stick*2, quartz crystal*2, iron]
     shape: ~ ~ s i s ~ q q ~ 
 - entropy accelerator:
-    ingredients: [ice, quartz cristal*2, iron, me conversion matrix]
+    ingredients: [ice, quartz crystal*2, iron, ME conversion matrix]
     shape: |
         ic qu --
-        qu me --
+        qu ME --
         -- -- ir
 - vibration catalyst:
-    ingredients: [lava bucket, quartz cristal*2, iron, me conversion matrix]
+    ingredients: [lava bucket, quartz crystal*2, iron, ME conversion matrix]
     shape: l q - q m - - - i

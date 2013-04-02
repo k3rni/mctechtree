@@ -1,47 +1,19 @@
-cluster: applied energistics
+cluster: ae
 
 primitives:
-- quartz ore: 1
-- quartz cristal: 2
-- quartz dust: 2
+- quartz dust: 30 
+# NOTE: quartz dust is craftable from Quartz Ore (when mined with Silk Touch enchant, and macerated/pulverized/grinded from crystals. Adding those would introduce cycles.
+# - quartz ore: 60
 
 crafts:
-# 3 diferent machines can be used to grind quartz: macerator, pulverizer, quartz grind stone
-- quartz dust:
-    machine: macerator
-    makes: 10
-    ingredients: [quartz ore]
-- quartz dust:
-    machine: pulverizer
-    makes: 10
-    ingredients: [quartz ore]
-- quartz dust:
-    machine: quartz grind stone
-    makes: 10
-    ingredients: [quartz cristal]
-- quartz dust:
-    machine: quartz grind stone
+- quartz fiber:
+    ingredients: [glass*6, quartz dust*3]
+    shape: g g g q q q g g g
     makes: 4
-    ingredients: [quartz ore]
-- quartz dust:
-    machine: macerator
-    makes: 4
-    ingredients: [quartz cristal]
-- quartz dust:
-    machine: pulverizer
-    makes: 4
-    ingredients: [quartz ore]
-# with ic2 we can also compress dust back into cristal
-- quartz cristal:
+- silicon:
+    ingredients: [quartz dust]
+    machine: furnace
+- quartz crystal:
     machine: compressor
     ingredients: [quartz dust*4]
-# - wooden gear: [stick*4]
-- quartz grind stone:
-    ingredients: [stone*3, cobblestone*2, quartz dust*3, wooden gear]
-    shape: s w s q s q c q c
-- wooden crank:
-    ingredients: [stick*5]
-    shape: s s s ~ ~ s ~ ~
-- silicon:
-    machine: furnace
-    ingredients: [quartz dust]
+    # NOTE: only available with ic2

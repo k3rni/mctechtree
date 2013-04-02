@@ -67,6 +67,6 @@ class Craft
     end
 
     def self.unsupported? key
-      %w(keeps).include? key
+      %w(keeps compatible).include? key
     end
 end

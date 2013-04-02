@@ -28,7 +28,7 @@ primitives:
 - netherrack: 10
 - nether brick: 32
 - snowball: 1
-- ice: 1
+- ice: 2
 - emerald: 250
 
 
@@ -65,9 +65,11 @@ crafts:
 - iron:
     machine: furnace
     ingredients: [iron ore]
+    compatible: all
 - gold ingot:
     machine: furnace
     ingredients: [gold ore]
+    compatible: all
 - iron bars:
     makes: 16
     ingredients: [iron*6]

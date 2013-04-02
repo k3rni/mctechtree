@@ -35,11 +35,13 @@ class PendingItem
 end
 
 class Item
-    attr_accessor :name, :primitive, :cost, :stacks, :group
+    attr_accessor :name, :primitive, :cost, :stacks, :group, :compatible
     attr_reader :crafts
 
     def initialize attrs={}
-        attrs.each { |key, val| self.send "#{key}=", val }
+        attrs.each do |key, val| 
+	  self.send "#{key}=", val
+	end
         @crafts = []
         stacks = 64 if stacks.nil?
     end
@@ -74,12 +76,12 @@ class Item
         self.name <=> other.name
     end
 
-    def self.primitive name, cost, stacks, group=nil
+    def self.primitive name, cost, stacks, group
         self.new(name: name, primitive: true, cost: cost, stacks: stacks, group: group)
     end
 
-    def self.crafted name, group=nil
-        self.new(name: name, primitive: false, group: group).tap do |obj|
+    def self.crafted name, group, extra={}
+        self.new({name: name, primitive: false, group: group}.merge(extra)).tap do |obj|
             crafts = CraftBuilder.new(obj)
             yield(crafts)
         end
