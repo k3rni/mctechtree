@@ -1,0 +1,33 @@
+cluster: ae
+
+colors: &colors
+  color: [blue, black, white, green, red, yellow, brown]
+
+crafts:
+- wireless receiver: 
+    ingredients: [iron*3, ender pearl, quartz fiber]
+    shape: ~ e ~ i q i ~ i ~
+- wireless booster: 
+    ingredients: [quartz crystal, iron*2, redstone]
+- ME cable: [quartz fiber, redstone*2]
+- ME dark cable: 
+    ingredients: [redstone*2, ME cable*2, lever]
+    shape: ~ r ~ M l M ~ r ~
+- ME import bus: [iron*2, ME interface, ME cable, sticky piston]
+- ME export bus: [iron*2, ME interface, ME cable, piston]
+- ME level emitter: [iron*2, ME cable, ME basic processor, redstone torch]
+- ME storage bus: [ME cable, ME interface, iron*3]
+- ME interface: [ME cable, ME conversion matrix, iron*4, glass*3]
+- ME wireless access terminal: [ME access terminal, wireless receiver]
+- ME wireless access point: [iron*4, glass*3, ME cable, wireless receiver]
+- ME controller: 
+    ingredients: [iron*4, quartz crystal*4, ME advanced processor]
+    shape: i q i q m q i q i
+- ME access terminal: 
+    ingredients: [glass*3, iron*4, ME cable, ME conversion matrix]
+# TODO: shape
+
+craft_templates:
+- ME cable - $(color):
+    ingredients: [ME cable, $(color) dye]
+    <<: *colors

@@ -72,6 +72,6 @@ crafts:
 - black pepper:
     machine: quern
     ingredients: [peppercorn]
-- string:
+- cotton string:
     ingredients: [cotton*2]
     shape: c ~ ~ c

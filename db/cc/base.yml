@@ -1,0 +1,32 @@
+cluster: cc
+
+crafts:
+- computer:
+    ingredients: [stone*7, redstone, glass pane]
+    shape: s s s s r s s g s
+- monitor:
+    ingredients: [stone*8, glass pane]
+    shape: s s s s g s s s s
+- disk drive:
+    ingredients: [stone*7, redstone*2]
+    shape: s s s s r s s r s
+- printer:
+    ingredients: [stone*7, redstone, ink sac]
+    shape: s s s s r s s i s
+- advanced computer:
+    ingredients: [gold ingot*7, redstone, glass pane]
+    shape: go go go go re go go gl go
+- advanced monitor:
+    ingredients: [gold ingot*8, glass pane]
+    shape: go go go go gl go go go go
+    makes: 4
+- floppy disk:
+    ingredients: [redstone, paper]
+
+colors: &colors
+  color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
+
+craft_templates:
+- floppy disk - $(color):
+    ingredients: [floppy disk, $(color) dye]
+    <<: *colors

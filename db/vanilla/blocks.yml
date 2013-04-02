@@ -2,6 +2,7 @@ cluster: vanilla
 
 crafts:
 - diamond block: [diamond*9]
+- block of gold: [gold ingot*9]
 - lapis block: [lapis*9]
 - iron block: [iron*9]
 - clay block: [clay*4]

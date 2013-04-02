@@ -28,6 +28,7 @@ primitives:
 - netherrack: 10
 - nether brick: 32
 - snowball: 1
+- ice: 2
 - emerald: 250
 
 
@@ -64,16 +65,20 @@ crafts:
 - iron:
     machine: furnace
     ingredients: [iron ore]
+    compatible: all
 - gold ingot:
     machine: furnace
     ingredients: [gold ore]
+    compatible: all
 - iron bars:
     makes: 16
     ingredients: [iron*6]
 - piston: [planks*3, cobble*4, iron, redstone]
+- sticky piston: [piston, slimeball]
 - lever: [cobble, stick]
 - bucket: [iron*3]
 - water bucket: [water, bucket]
+- lava bucket: [lava, bucket]
 - chest: [wood*8]
 - pressure plate: [wood*2]
 - bottle: [glass*3]
@@ -88,3 +93,11 @@ crafts:
     ingredients: [sugar cane*3]
 - bookcase: [book*3, planks*6]
 - book: [leather, paper*3]
+- redstone repeater: #shape naming problem
+    ingredients: [redstone torch*2, stone*3, redstone]
+- redstone lamp:
+    ingredients: [redstone*4, glowstone]
+    shape: - r - r g r - r -
+- note block:
+    ingredients: [planks*8, redstone]
+    shape: p p p p r p p p p
