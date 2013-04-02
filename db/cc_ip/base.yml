@@ -1,0 +1,40 @@
+cluster: cc_ip
+# require cc
+
+crafts:
+# rfid's
+- rfid card:
+    ingredients: [paper*3, redstone*6]
+    shape: r r r p p p r r r
+- rfid reader: #naming problem for recipe
+    ingredients: [stone*4, iron, redstone, redstone torch] 
+- rfid writer: #naming problem for recipe
+    ingredients: [block of gold*2, redstone repeater, stone*2, glass pane, redstone lamp*2]
+#mag-card's
+- mag-stripe card:
+    ingredients: [paper*3, redstone, iron*2]
+    shape: p p p i r i - - -
+- mag-card reader: #naming problem for recipe
+    ingredients: [stone*7, redstone, redstone torch] 
+# other
+- speaker:
+    ingredients: [stone*6, iron block, note block*2]
+    shape: s i s s n s s n s
+- lan-wire:
+    ingredients: [blue wool*6, redstone*3]
+    shape: b b b r r r b b b
+- lan modem:
+    ingredients: [stone*5, lan-wire*2, redstone torch*2]
+    shape: s l s r l r s s s
+- accelerator component:
+    ingredients: [computer]
+    machine: furnace
+- accelerator component 8k:
+    ingredients: [accelerator component*8]
+    shape: a a a a - a a a a
+- accelerator component 64k:
+    ingredients: [accelerator component 8k*8]
+    shape: a a a a - a a a a
+- cryptographic accelerator:
+    ingredients: [accelerator component 64k, iron*6, ink sac*2]
+    shape: ir in ir ir ac ir ir in ir
