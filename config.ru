@@ -18,6 +18,7 @@ DB = Database.new
 Dir.glob('db/**/*.yml').each do |filename|
     DB.load_definitions ::YAML.load_file(filename)
 end
+DB.detect_name_clashes
 DB.fixup_pending
 
 TechTreeApp.db = DB

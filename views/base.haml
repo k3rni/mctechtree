@@ -15,12 +15,15 @@
       .row
         .span4
           %h1 MCTechTree
-        .span8
+        .span8.hidden-phone
           %h3 includes recipes from
-          %dl
-            - recipe_counters.each do |cluster, count|
-              %dt.span4= I18n.t "clusters.#{cluster}"
-              %dd.span2= count
+          .row
+            - recipe_counters.in_groups_of((recipe_counters.size / 2).ceil).each do |grp|
+              .span4
+                %dl
+                  - grp.each do |cluster, count|
+                    %dt.span2= I18n.t "clusters.#{cluster}"
+                    %dd.span1= count
       = yield
     :javascript
-      $('.chzn-select').chosen()
+      $('.chzn-select').chosen({search_contains: true})
