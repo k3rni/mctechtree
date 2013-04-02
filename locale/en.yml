@@ -6,6 +6,7 @@ en:
       words_connector: ! ', '
   clusters:
     industrialcraft2: IndustrialCraft²
+    ic2_adv_sol: Advanced Solar Panels
     redpower2: RedPower 2
     vanilla: Minecraft
     thermalexpansion: Thermal Expansion
