@@ -1,0 +1,11 @@
+cluster: cc
+
+- wired modem:
+    ingredients: [stone*8, redstone]
+    shape: s s s s r s s s s
+- networking cable:
+    ingredients: [stone*4, redstone]
+    shape: - s - s r s - s -
+- wireless modem:
+    ingredients: [stone*8, ender pearl]
+    shape: s s s s e s s s s
