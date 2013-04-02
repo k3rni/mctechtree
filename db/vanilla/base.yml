@@ -97,7 +97,7 @@ crafts:
     ingredients: [redstone torch*2, stone*3, redstone]
 - redstone lamp:
     ingredients: [redstone*4, glowstone]
-    shape: - r - r g r - r -
+    shape: ~ r ~ r g r ~ r ~
 - note block:
     ingredients: [planks*8, redstone]
     shape: p p p p r p p p p
