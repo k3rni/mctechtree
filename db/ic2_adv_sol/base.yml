@@ -7,7 +7,7 @@ crafts:
     ingredients: [glowstone*3, UU-matter*6]
     shape: U U U g g g U U U
 - sunnarium alloy:
-    ingredients: [sunnarium, iridium plate**]
+    ingredients: [sunnarium, iridium plate*8]
     shape: i i i i s i i i i
 - advanced solar panel: # shape name conflict
     ingredients: [reinforced glass*3, solar panel, advanced alloy*2, advanced machine, advanced circuit*2]

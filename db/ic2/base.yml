@@ -108,6 +108,6 @@ crafts:
     ingredients: [compressed coal ball*8, bricks]
 - coal chunk:
     ingredients: [compressed coal ball*8, obsidian]
-- diamond:
+- industrial diamond: # NOTE: listed as equivalent to a regular diamond
     machine: compressor
     ingredients: [coal chunk]
