@@ -23,6 +23,7 @@ crafts:
 - lan-wire:
     ingredients: [blue wool*6, redstone*3]
     shape: b b b r r r b b b
+    makes: 16
 - lan modem:
     ingredients: [stone*5, lan-wire*2, redstone torch*2]
     shape: s l s r l r s s s
