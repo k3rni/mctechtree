@@ -13,14 +13,38 @@ crafts:
     ingredients: [reinforced glass*3, solar panel, advanced alloy*2, advanced machine, advanced circuit*2]
 - hybrid solar panel: # shape name conflict
     ingredients: [lapis block, carbon plate*2, iridium plate*2, advanced solar panel, advanced circuit*2, sunnarium]
-- hybrid solar panel:
-    ingredients: [ultimate hybrid solar panel]
-    makes: 8
+# Removed due to craft loop
+#- hybrid solar panel:
+#    ingredients: [ultimate hybrid solar panel]
+#    makes: 8
 - ultimate hybrid solar panel:
     ingredients: [hybrid solar panel*8, advanced circuit]
     shape: h h h h a h h h h
 - ultimate hybrid solar panel:
     ingredients: [lapis block, hybrid solar panel, coal chunk*3, sunnarium alloy]
     shape: ~ l ~ c h c s c s
-
-# TODO: think about implementation of expensive types of these
+# Expensive verions and their partials
+- irradiant uranium:
+    ingredients: [glowstone*4, uranium fuel ingot]
+    shape: ~ g ~ g u g ~ g ~
+- irradiant glass pane:
+    ingredients: [glowstone, irradiant uranium*2,reinforced glass*6]
+    shape: r r r i g i r r r
+    makes: 6
+- enriched sunnarium:
+    ingredients: [sunnarium, irradiant uranium*8]
+    shape: i i i i s i i i i
+- enriched sunnarium alloy:
+    ingredients: [sunnarium alloy, enriched sunnarium*4]
+    shape: ~ e ~ e s e ~ e ~ 
+- expensive advanced solar panel: # shape name conflict
+    ingredients: [irradiant glass pane*3, solar panel, advanced alloy*2, advanced machine, advanced circuit*2]
+- expensive hybrid solar panel:
+    ingredients: [lapis block, carbon plate*2, iridium plate*2, expensive advanced solar panel, advanced circuit*2, enriched sunnarium]
+    shape: ca la ca ir ex ir ad en ad 
+- expensive ultimate hybrid solar panel:
+    ingredients: [expensive hybrid solar panel*8, advanced circuit]
+    shape: e e e e a e e e e
+- expensive ultimate hybrid solar panel:
+    ingredients: [lapis block, expensive hybrid solar panel, coal chunk*3, enriched sunnarium alloy]
+    shape: ~ la ~ co ex co en co en
