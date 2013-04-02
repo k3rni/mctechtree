@@ -25,6 +25,7 @@ Dir.glob('db/**/*.yml').each do |filename|
     DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending
+DB.detect_name_clashes
 DB.dump_graph File.open('techtree.dot', 'w')
 
 def solve *names

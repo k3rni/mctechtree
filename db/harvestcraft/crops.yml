@@ -60,7 +60,7 @@ primitives:
 - zucchini: 1
 #
 # fruits, from trees
-- apple: 1
+#- apple: 1 # from vanilla minecraft
 - avocado: 1
 - banana: 1
 - cherry: 1

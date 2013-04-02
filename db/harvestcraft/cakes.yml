@@ -1,8 +1,10 @@
 cluster: harvestcraft
 
 crafts: 
-- cake: [milk bucket*3, egg, sugar*2, harvest wheat*3] # vanilla-cake with harvest wheat
-- cookie: [harvest wheat*2, cocoa beans] # vanilla-cookie
+- cake: 
+    ingredients: [milk bucket*3, egg, sugar*2, harvest wheat*3] # vanilla-cake with harvest wheat
+- cookie: 
+    ingredients: [harvest wheat*2, cocoa beans] # vanilla-cookie
 - donut: [dough, olive oil]
 - chocolate donut: [donut, chocolate bar]
 - powdered donut: [donut, powdered sugar]
