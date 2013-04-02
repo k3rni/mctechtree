@@ -96,3 +96,18 @@ crafts:
       - advanced alloy*2
     shape: g a g g g g g a g
 - iron fence: [refined iron*6]
+- coal ball:
+    ingredients: [coal dust*8, flint]
+    shape: c c c c f c c c c
+- compressed coal ball:
+    machine: compressor
+    ingredients: [coal ball]
+- coal chunk:
+    ingredients: [compressed coal ball*8, iron block]
+- coal chunk:
+    ingredients: [compressed coal ball*8, bricks]
+- coal chunk:
+    ingredients: [compressed coal ball*8, obsidian]
+- industrial diamond: # NOTE: listed as equivalent to a regular diamond
+    machine: compressor
+    ingredients: [coal chunk]
