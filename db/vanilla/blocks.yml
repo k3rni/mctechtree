@@ -14,4 +14,6 @@ crafts:
 - brick block: [brick*4]
 - nether brick block: [nether brick*4]
 - snow: [snowball*4]
-
+- bricks:
+    ingredients: [brick*4]
+    shape: b b - b b - - - -
