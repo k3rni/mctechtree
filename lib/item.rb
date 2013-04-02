@@ -30,7 +30,7 @@ class PendingItem
     end
 
     def safe_name
-        "!#{ActiveSupport::Inflector.underscore name}".gsub(' ', '_')
+        "!#{ActiveSupport::Inflector.underscore name}".gsub(/\W/, '_')
     end
 end
 
@@ -55,7 +55,7 @@ class Item
 
     def safe_name
         # ostatni gsub bo dot marudzi
-        ActiveSupport::Inflector.underscore(name).gsub(' ', '_').gsub(/(^[0-9])/, "n_\\1")
+        ActiveSupport::Inflector.underscore(name).gsub(/\W/, '_').gsub(/(^[0-9])/, "n_\\1")
     end
 
     def stack_info count
