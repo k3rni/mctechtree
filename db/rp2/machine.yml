@@ -1,7 +1,7 @@
 cluster: redpower2
 
 crafts:
-- alloy furnace: [brick block*8]
+- alloy furnace: [bricks*8]
 - blulectric furnace: [clay block*8, iron*2, blue alloy ingot]
 - block breaker: [cobble*6, iron pickaxe, piston, redstone]
 - deployer:
