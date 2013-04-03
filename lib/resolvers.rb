@@ -31,7 +31,7 @@ class ItemResolver
 
     def cost
       if primitive
-        count * item.cost
+        count * (item.cost || 1)
       else
         count * min_child_cost
       end
