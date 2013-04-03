@@ -9,13 +9,18 @@ end
 
 class ItemResolver
     attr_accessor :item, :count, :children
+    @@craft_constructor = Proc.new { |*args| CraftResolver.new(*args) }
     
-    def initialize(item, count=1)
+    def initialize(item, count)
       @item = item
       @count = count
       @children = item.crafts.map do |craft| 
-        CraftResolver.new(craft, count)
+        @@craft_constructor.call(craft, count)
       end
+    end
+
+    def craftable
+      item.primitive || craftable_children.size > 0
     end
 
     def cost
@@ -26,12 +31,16 @@ class ItemResolver
       end
     end
 
+    def craftable_children
+      children.select(&:craftable)
+    end
+
     def min_child_cost
-      @children.map(&:cost).min
+      craftable_children.map(&:cost).min
     end
     
     def best_craft
-      @children.select { |c| c.cost == min_child_cost }.first
+      craftable_children.select { |c| c.cost == min_child_cost }.first
     end
 
     def resolve
@@ -57,13 +66,18 @@ end
 
 class CraftResolver
     attr_accessor :craft, :count, :children
+    @@item_constructor = Proc.new { |*args| ItemResolver.new(*args) }
 
     def initialize(craft, count)
         @craft = craft
         @count = count
         @children = craft.count_ingredients.map do |item, needed|
-            ItemResolver.new(item, needed)
+          @@item_constructor.call(item, needed)
         end
+    end
+
+    def craftable
+      children.all?(&:craftable)
     end
 
     def cost
@@ -88,4 +102,3 @@ class CraftResolver
     end
 
 end
-
