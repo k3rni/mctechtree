@@ -37,4 +37,5 @@ crafts:
     machine: furnace
     ingredients: [raw fish]
 - golden apple: [apple, gold nugget*8]
+- mushroom stew: [red mushroom, brown mushroom, bowl]
  
