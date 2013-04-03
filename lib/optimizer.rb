@@ -12,7 +12,8 @@ module Optimizer
     end
   end
 
-  def optimize
+  def optimize options={}
+    min_tier = options[:min_tier] || 0
     ordering = craft_seq.sort_by { |craft, i| i }
 
     while true do
@@ -33,7 +34,8 @@ module Optimizer
       new_raw = Counter.new
       crafts.each do |craft, count|
         craft.count_ingredients.each do |ing, icnt|
-          next unless ing.primitive
+          # next unless (ing.primitive || ing.tier <= min_tier)
+          next unless raw.include? ing
           # puts "#{ing} #{raw[ing]} -> #{count*icnt}"
           new_raw[ing] += count * icnt
         end

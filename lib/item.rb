@@ -3,99 +3,99 @@
 class UndefinedItemError < StandardError; end
 
 class CraftBuilder < SimpleDelegator
-    def makes count, machine, ingredients, extra
-        craft = Craft.create(machine, __getobj__, count, ingredients, extra)
-        self.crafts << craft
-        craft
-    end
+  def makes count, machine, ingredients, group, extra
+    craft = Craft.create(machine, __getobj__, count, ingredients, group, extra)
+    self.crafts << craft
+    craft
+  end
 end
 
 class PendingItem
-    attr_accessor :name
+  attr_accessor :name
 
-    def initialize name
-        @name = name
-    end
+  def initialize name
+    @name = name
+  end
 
-    def hash
-        to_s.hash
-    end
+  def hash
+    to_s.hash
+  end
 
-    def <=> other
-        self.name <=> other.name
-    end
+  def <=> other
+    self.name <=> other.name
+  end
 
-    def to_s
-        "!#{name}"
-    end
+  def to_s
+    "!#{name}"
+  end
 
-    def safe_name
-        "!#{ActiveSupport::Inflector.underscore name}".gsub(/\W/, '_')
-    end
+  def safe_name
+    "!#{ActiveSupport::Inflector.underscore name}".gsub(/\W/, '_')
+  end
 end
 
 class Item
-    attr_accessor :name, :primitive, :cost, :stacks, :group, :compatible
-    attr_reader :crafts
+  attr_accessor :name, :primitive, :cost, :stacks, :group, :compatible, :tier
+  attr_reader :crafts
 
-    def initialize attrs={}
-        attrs.each do |key, val| 
-	  self.send "#{key}=", val
-	end
-        @crafts = []
-        stacks = 64 if stacks.nil?
+  def initialize attrs={}
+    attrs.each do |key, val| 
+      self.send "#{key}=", val
     end
+    @crafts = []
+    self.stacks = 64 if stacks.nil?
+  end
 
-    def to_s
-        [
-            (primitive ? name.upcase : name),
-            ("@#{cost}" unless cost.nil?)
-        ].join('')
-    end
+  def to_s
+    [
+      (primitive ? name.upcase : name),
+      ("@#{cost}" unless cost.nil?)
+    ].join('')
+  end
 
-    def safe_name
-        # ostatni gsub bo dot marudzi
-        ActiveSupport::Inflector.underscore(name).gsub(/\W/, '_').gsub(/(^[0-9])/, "n_\\1")
-    end
+  def safe_name
+    # ostatni gsub bo dot marudzi
+    ActiveSupport::Inflector.underscore(name).gsub(/\W/, '_').gsub(/(^[0-9])/, "n_\\1")
+  end
 
-    def stack_info count
-      return nil if @stacks == false
-      num, rem = count.divmod(@stacks)
-      plural = 's' if num > 1
-      if num == 0
-        nil
-      elsif rem == 0
-        # NOTE: marne i18n
-        "#{num} stack#{plural}"
-      else
-        "#{num} stack#{plural} + #{rem}"
-      end
+  def stack_info count
+    return nil if @stacks == false
+    num, rem = count.divmod(@stacks)
+    plural = 's' if num > 1
+    if num == 0
+      nil
+    elsif rem == 0
+      # NOTE: marne i18n
+      "#{num} stack#{plural}"
+    else
+      "#{num} stack#{plural} + #{rem}"
     end
+  end
 
-    def <=> other
-        self.name <=> other.name
-    end
+  def <=> other
+    self.name <=> other.name
+  end
 
-    def self.primitive name, cost, stacks, group
-        self.new(name: name, primitive: true, cost: cost, stacks: stacks, group: group)
-    end
+  def self.primitive name, cost, stacks, group
+    self.new(name: name, primitive: true, cost: cost, stacks: stacks, group: group)
+  end
 
-    def self.crafted name, group, extra={}
-        self.new({name: name, primitive: false, group: group}.merge(extra)).tap do |obj|
-            crafts = CraftBuilder.new(obj)
-            yield(crafts)
-        end
+  def self.crafted name, group, extra={}
+    self.new({name: name, primitive: false, group: group}.merge(extra)).tap do |obj|
+      crafts = CraftBuilder.new(obj)
+      yield(crafts)
     end
+  end
 
-    def self.pending name
-        PendingItem.new(name)
-    end
+  def self.pending name
+    PendingItem.new(name)
+  end
 
-    def add_craft
-        yield(CraftBuilder.new(self))
-    end
+  def add_craft
+    yield(CraftBuilder.new(self))
+  end
 
-    def resolver
-        ItemResolver.new(self)
-    end
+  def resolver
+    ItemResolver.new(self)
+  end
 end

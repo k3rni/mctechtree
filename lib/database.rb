@@ -5,6 +5,7 @@ class BadDefinitionError < StandardError; end
 class NamingConflictError < StandardError; end
 class DuplicatePrimitiveError < StandardError; end
 
+autoload :Graph, './lib/graph'
 class Database < Set
     include Graph
     def initialize(*args)
@@ -18,8 +19,12 @@ class Database < Set
         select { |obj| obj.name == name }.first
     end
 
-    def each_crafted
+    def crafted
       select { |item| item.crafts.size > 0 }
+    end
+
+    def primitives
+      select { |item| item.primitive }
     end
 
     def load_definitions data
@@ -34,13 +39,13 @@ class Database < Set
       definitions.each do |data|
         name, stacks, cost = parse_primitive(data)
         name = data.keys.first
-	if (old = find(name))
-	    # no need to flag it, identically named primitives are always equivalent
-	    # @conflicts.add [:primitive, name, group, old.group] 
-	    next
-	else
-    	    item = Item.primitive(name, cost, stacks, group)
-	end
+        if (old = find(name))
+          # no need to flag it, identically named primitives are always equivalent
+          # @conflicts.add [:primitive, name, group, old.group] 
+          next
+        else
+          item = Item.primitive(name, cost, stacks, group)
+        end
         self.add item
       end
     end
@@ -48,7 +53,10 @@ class Database < Set
     def conflicts existing, extra, group
       compatible = extra['compatible']
       return false if compatible == 'all' || existing.compatible == 'all'
-      existing.group != group && (compatible.nil? || compatible != existing.group)
+      if existing.group != group 
+        return false if compatible == existing.group || existing.compatible == group
+        return compatible != existing.group
+      end
     end
 
     def load_crafts definitions, group=nil
@@ -61,11 +69,11 @@ class Database < Set
           @conflicts.add [:craft, name, group, item.group]
         elsif item
           item.add_craft do |craft|
-            craft.makes(makes, machine, ingredients, extra)
+            craft.makes(makes, machine, ingredients, group, extra)
           end
         else
           item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
-            craft.makes(makes, machine, ingredients, extra)
+            craft.makes(makes, machine, ingredients, group, extra)
           end
           self.add item
         end
@@ -239,11 +247,36 @@ class Database < Set
     end
 
     def detect_name_clashes
-	if @conflicts.size > 0
-	    raise NamingConflictError.new(@conflicts.sort_by { |v| v[1] }.map do |mode,name,cluster1,cluster2|
-		"#{mode}[#{name}]:#{cluster1},#{cluster2}" 
-	    end.join("\n"))
-	end
+      if @conflicts.size > 0
+        raise NamingConflictError.new(@conflicts.sort_by { |v| v[1] }.map do |mode,name,cluster1,cluster2|
+          "#{mode}[#{name}]:#{cluster1},#{cluster2}" 
+        end.join("\n"))
+      end
     end
 
+    def classify_tiers
+      unsolved = Set.new(self)
+      primitives.each do |item|
+        unsolved -= [item]
+        item.tier = 0
+      end
+
+      while unsolved.size > 0
+        unsolved.each do |item|
+          craft_tiers = item.crafts.map do |craft| 
+            t = craft.count_ingredients.map { |ing, count| ing.tier }
+            if t.include? nil
+              nil
+            else
+              t.max
+            end
+          end
+          unless craft_tiers.include? nil
+            min_tier = craft_tiers.flatten.compact.min
+            item.tier = min_tier + 1
+            unsolved -= [item]
+          end
+        end
+      end
+    end
 end

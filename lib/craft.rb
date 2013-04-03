@@ -4,14 +4,15 @@ require 'zlib'
 require 'active_support/core_ext/array'
 
 class Craft
-    attr_accessor :machine, :result, :makes, :ingredients, :shape
+    attr_accessor :machine, :result, :makes, :ingredients, :shape, :group
 
     def to_s
         ["Craft(",
          "result=#{self.result},",
          ("machine=#{machine}," if machine),
          ("makes=#{self.makes}," if makes > 1),
-         "ingredients=#{count_ingredients.map{|k,v| "#{k}*#{v}"}.join('+')}",
+         "ingredients=#{count_ingredients.map{|k,v| "#{k}*#{v}"}.join('+')},",
+         "group=#{self.group}",
          ")"
         ].join('')
     end
@@ -26,8 +27,8 @@ class Craft
         end
     end
 
-    def self.create machine, result, makes, ingredients, extra={}
-        opts = {machine: machine, result: result, makes: makes, ingredients: ingredients}.merge extra
+    def self.create machine, result, makes, ingredients, group, extra={}
+        opts = {machine: machine, result: result, makes: makes, ingredients: ingredients, group: group}.merge extra
         if opts.delete('shapeless')
           opts[:shape] = :shapeless
         end

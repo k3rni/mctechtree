@@ -10,7 +10,8 @@ class Solver
     include Optimizer
     attr_accessor :raw, :crafts, :craft_seq
 
-    def initialize(solutions)
+    def initialize(solutions, options={})
+        @options = options
         @solutions = solutions
         @crafts = Counter.new
         @craft_seq = Counter.new
@@ -47,7 +48,7 @@ class Solver
       @solutions.each do |sol|
         process sol, 0
       end
-      optimize
+      optimize(min_tier: @options[:min_tier])
       self
     end
 
