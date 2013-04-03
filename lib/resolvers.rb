@@ -7,6 +7,8 @@ def exact_craft need, makes
   end
 end
 
+class UncraftableItemError < StandardError; end
+
 class ItemResolver
     attr_accessor :item, :count, :children
     @@craft_constructor = Proc.new { |*args| CraftResolver.new(*args) }
@@ -19,12 +21,16 @@ class ItemResolver
       end
     end
 
+    def primitive
+      item.primitive
+    end
+
     def craftable
-      item.primitive || craftable_children.size > 0
+      primitive || craftable_children.size > 0
     end
 
     def cost
-      if item.primitive
+      if primitive
         count * item.cost
       else
         count * min_child_cost
@@ -44,7 +50,8 @@ class ItemResolver
     end
 
     def resolve
-      if item.primitive
+      raise UncraftableItemError if !craftable
+      if primitive
         [:get, count, item]
       else
         # [:craft, (count.to_f / best_craft.craft.makes), best_craft.resolve]
@@ -54,7 +61,7 @@ class ItemResolver
     end
 
     def explain depth=0
-        if item.primitive
+        if primitive
             "#{' ' * depth}#{count} #{item.name}"
         else
             "#{' ' * depth}#{exact_craft(count, best_craft.makes)} #{best_craft.explain(depth+1)}"

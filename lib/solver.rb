@@ -24,7 +24,7 @@ class Solver
     end
 
     def get depth, mul, count, item
-        # puts "#{' '*depth}GET #{mul} #{count} #{item}"
+        puts "#{' '*depth}GET #{mul} #{count} #{item}"
         @raw[item] += (mul * count)
     end
 
