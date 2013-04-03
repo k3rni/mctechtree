@@ -3,8 +3,8 @@
 class UndefinedItemError < StandardError; end
 
 class CraftBuilder < SimpleDelegator
-  def makes count, machine, ingredients, extra
-    craft = Craft.create(machine, __getobj__, count, ingredients, extra)
+  def makes count, machine, ingredients, group, extra
+    craft = Craft.create(machine, __getobj__, count, ingredients, group, extra)
     self.crafts << craft
     craft
   end

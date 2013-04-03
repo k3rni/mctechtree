@@ -53,7 +53,10 @@ class Database < Set
     def conflicts existing, extra, group
       compatible = extra['compatible']
       return false if compatible == 'all' || existing.compatible == 'all'
-      existing.group != group && (compatible.nil? || compatible != existing.group)
+      if existing.group != group 
+        return false if compatible == existing.group || existing.compatible == group
+        return compatible != existing.group
+      end
     end
 
     def load_crafts definitions, group=nil
@@ -66,11 +69,11 @@ class Database < Set
           @conflicts.add [:craft, name, group, item.group]
         elsif item
           item.add_craft do |craft|
-            craft.makes(makes, machine, ingredients, extra)
+            craft.makes(makes, machine, ingredients, group, extra)
           end
         else
           item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
-            craft.makes(makes, machine, ingredients, extra)
+            craft.makes(makes, machine, ingredients, group, extra)
           end
           self.add item
         end
