@@ -43,7 +43,7 @@ class Item
       self.send "#{key}=", val
     end
     @crafts = []
-    stacks = 64 if stacks.nil?
+    self.stacks = 64 if stacks.nil?
   end
 
   def to_s
