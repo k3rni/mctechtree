@@ -3,7 +3,10 @@
     %form(action="/solve" method="POST" style="margin: 0 auto; width: 40em")
       %fieldset
         %legend I want to craft...
-        %select.chzn-select{name: 'items[]', data: {placeholder: 'type item names'}, multiple: true}(style="width: 100%")
+        %select(name="tier"){style:"width:20%; float:right"}
+          - (0..5).each do |lvl|
+            %option(value=lvl)= I18n.t("tiers.t#{lvl}")
+        %select.chzn-select{name: 'items[]', data: {placeholder: 'type item names'}, multiple: true}(style="width: 80%")
           - item_groups.each do |group, items|
             %optgroup{label: I18n.t("clusters.#{group}")}
               - items.each do |name|

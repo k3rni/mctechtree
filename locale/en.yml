@@ -23,3 +23,10 @@ en:
     chargepads: ChargePads
     abo: Additional Buildcraft Objects
     harvestcraft: Pam's Harvestcraft
+  tiers:
+    t0: raw items
+    t1: dusts, ingots
+    t2: basic components
+    t3: complex components
+    t4: advanced components
+    t5: hi-tech components

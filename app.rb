@@ -14,11 +14,11 @@ class TechTreeApp < Sinatra::Base
 
   helpers do
     def recipe_counters
-      @@db.each_crafted.group_by(&:group).map {|key, g| [key, g.size]}
+      @@db.crafted.group_by(&:group).map {|key, g| [key, g.size]}
     end
 
     def item_groups
-      @@db.each_crafted.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
+      @@db.crafted.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
     end
   end
   get '/' do
@@ -27,12 +27,45 @@ class TechTreeApp < Sinatra::Base
 
   post '/solve' do
     items = params[:items]
-    solutions = items.map do |name|
-      ItemResolver.new(@@db.find(name), 1).resolve
+    tier = params[:tier]
+    solveopts = {}
+    if tier
+      tier = tier.to_i
+      max_items_tier = items.map { |name| @@db.find(name).tier }.max
+      tier = [max_items_tier - 1, tier].min
+      solveopts[:min_tier] = tier
     end
-    solver = Solver.new(solutions).solve
+    item_resolver = make_item_resolver(solveopts)
+    solutions = items.map do |name|
+      item_resolver.new(@@db.find(name), 1).resolve
+    end
+    solver = Solver.new(solutions, solveopts).solve
 
     haml :solution, layout: :base, locals: {raw: solver.raw_resources,
-      crafts: solver.craft_sequence, targets: items}
+      crafts: solver.craft_sequence, targets: items, tier: tier}
   end
+end
+
+def make_item_resolver options
+  item_resolver_options = options.select { |key, val| Addons.item_resolver_modules.include? key.to_s }
+  craft_resolver_options = options.select { |key, val| Addons.craft_resolver_modules.include? key.to_s }
+  # analogicznie: wykluczanie clusterów - podmieniamy itemresolver na taki
+  # który nie znajdzie itemków z zakazanego clustera
+
+  mir, mcr = nil
+  mir = Class.new(ItemResolver) do
+    @@craft_constructor = Proc.new { |*args| mcr.new(*args) }
+  end
+  while item_resolver_options.size > 0
+    mir = Addons.build_resolver :item_resolver, mir, item_resolver_options
+  end
+
+  mcr = Class.new(CraftResolver) do
+    @@item_constructor = Proc.new { |*args| mir.new(*args) }
+  end
+  while craft_resolver_options.size > 0
+    mcr = Addons.build_resolver :craft_resolver, mcr, craft_resolver_options
+  end
+
+  mir
 end

@@ -2,6 +2,10 @@
   .span8
     %h3
       Crafting: #{targets.to_sentence}
+    - if tier > 0
+      %h4 
+        Solved to:
+        = I18n.t("tiers.t#{tier}")
   .span4
     %a.btn.btn-info(href="/") Craft something else
 .row
