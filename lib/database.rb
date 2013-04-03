@@ -5,6 +5,7 @@ class BadDefinitionError < StandardError; end
 class NamingConflictError < StandardError; end
 class DuplicatePrimitiveError < StandardError; end
 
+autoload :Graph, './lib/graph'
 class Database < Set
     include Graph
     def initialize(*args)
@@ -18,8 +19,12 @@ class Database < Set
         select { |obj| obj.name == name }.first
     end
 
-    def each_crafted
+    def crafted
       select { |item| item.crafts.size > 0 }
+    end
+
+    def primitives
+      select { |item| item.primitive }
     end
 
     def load_definitions data
@@ -239,11 +244,36 @@ class Database < Set
     end
 
     def detect_name_clashes
-	if @conflicts.size > 0
-	    raise NamingConflictError.new(@conflicts.sort_by { |v| v[1] }.map do |mode,name,cluster1,cluster2|
-		"#{mode}[#{name}]:#{cluster1},#{cluster2}" 
-	    end.join("\n"))
-	end
+      if @conflicts.size > 0
+        raise NamingConflictError.new(@conflicts.sort_by { |v| v[1] }.map do |mode,name,cluster1,cluster2|
+          "#{mode}[#{name}]:#{cluster1},#{cluster2}" 
+        end.join("\n"))
+      end
     end
 
+    def classify_tiers
+      unsolved = Set.new(self)
+      primitives.each do |item|
+        unsolved -= [item]
+        item.tier = 0
+      end
+
+      while unsolved.size > 0
+        unsolved.each do |item|
+          craft_tiers = item.crafts.map do |craft| 
+            t = craft.count_ingredients.map { |ing, count| ing.tier }
+            if t.include? nil
+              nil
+            else
+              t.max
+            end
+          end
+          unless craft_tiers.include? nil
+            min_tier = craft_tiers.flatten.compact.min
+            item.tier = min_tier + 1
+            unsolved -= [item]
+          end
+        end
+      end
+    end
 end
