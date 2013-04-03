@@ -17,7 +17,7 @@ autoload :ItemResolver, './lib/resolvers'
 autoload :CraftResolver, './lib/resolvers'
 autoload :Optimizer, './lib/optimizer'
 autoload :Solver, './lib/solver'
-
+autoload :Addons, './lib/addons'
 
 DB = Database.new
 Dir.glob('db/**/*.yml').each do |filename|
@@ -38,18 +38,20 @@ def build_solutions names
   end
 end
 
-IR_OPTIONS = %w(forbid_machine min_tier)
-CR_OPTIONS = %w()
 def solve *names
   if names.last.is_a? Hash
     options = names.pop 
   else
     options = {}
   end
-  item_resolver_options = options.select { |key, val| IR_OPTIONS.include? key.to_s }
-  craft_resolver_options = options.select { |key, val| CR_OPTIONS.include? key.to_s }
-  # TODO: wykluczanie maszyn - jeśli odpowiednia opcja podana,
-  # podmienić itemresolvera na używający craftresolvera wykluczającego podane maszyny
+  item_resolver = make_item_resolver(options)
+  solutions = build_solutions(names).map { |name, count| item_resolver.new(DB.find(name), count).resolve }
+  Solver.new(solutions, options).solve.describe
+end
+
+def make_item_resolver options
+  item_resolver_options = options.select { |key, val| Addons.item_resolver_modules.include? key.to_s }
+  craft_resolver_options = options.select { |key, val| Addons.craft_resolver_modules.include? key.to_s }
   # analogicznie: wykluczanie clusterów - podmieniamy itemresolver na taki
   # który nie znajdzie itemków z zakazanego clustera
 
@@ -58,48 +60,19 @@ def solve *names
     @@craft_constructor = Proc.new { |*args| mcr.new(*args) }
   end
   while item_resolver_options.size > 0
-    mir = build_resolver mir, item_resolver_options
+    mir = Addons.build_resolver :item_resolver, mir, item_resolver_options
   end
 
   mcr = Class.new(CraftResolver) do
     @@item_constructor = Proc.new { |*args| mir.new(*args) }
   end
   while craft_resolver_options.size > 0
-    mcr = build_resolver mir, craft_resolver_options
-  end
-  solutions = build_solutions(names).map { |name, count| mir.new(DB.find(name), count).resolve }
-  Solver.new(solutions).solve.describe
-end
-
-module ForbidMachine
-  def initialize *args
-    super(*args)
-    @children.select! { |c| c.craft.machine.nil? || !forbid_machine_params.include?(c.craft.machine) }
-  end
-end
-
-module MinTier
-  def primitive
-    item.primitive || item.tier <= min_tier_params
+    mcr = Addons.build_resolver :craft_resolver, mcr, craft_resolver_options
   end
 
-  def cost
-    if primitive
-      count # * 1 (not determining cost recursively)
-    else
-      super
-    end
-  end
+  mir
 end
 
-def build_resolver old, options
-  modname = options.keys.first
-  params = options.delete modname
-  Class.new(old) do
-    define_method "#{modname}_params".to_sym do params end
-    include modname.to_s.classify.constantize
-  end
-end
 
 solve 'molten redstone*1000'
 binding.pry
