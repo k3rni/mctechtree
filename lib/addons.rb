@@ -1,15 +1,10 @@
 module Addons
   module ForbidMachine
     module ItemResolver
-      def children
-        @children.map do |obj|
-          if forbid_machine_params.include? obj.craft.machine
-            nil
-            # TODO: replace this craftresolver with an itemresolver?
-          else
-            obj
-          end
-        end.compact
+      def primitive
+        item.crafts.any? do |craft|
+          forbid_machine_params.include? craft.machine
+        end || super
       end
     end
   end
@@ -17,20 +12,20 @@ module Addons
   module MinTier
     module ItemResolver
       def primitive
-        item.primitive || item.tier <= min_tier_params
+        item.tier <= min_tier_params || super
       end
 
-      def cost
-        if primitive
-          count # * 1 (not determining cost recursively)
-        else
-          super
-        end
-      end
     end
   end
 
   module ExcludeCluster
+    module ItemResolver
+      def children
+        super.reject do |cr|
+          exclude_cluster_params.include? cr.craft.group
+        end
+      end
+    end
   end
 
   def self.build_resolver mode, old, options
