@@ -34,7 +34,8 @@ module Optimizer
       new_raw = Counter.new
       crafts.each do |craft, count|
         craft.count_ingredients.each do |ing, icnt|
-          next unless (ing.primitive || ing.tier <= min_tier)
+          # next unless (ing.primitive || ing.tier <= min_tier)
+          next unless raw.include? ing
           # puts "#{ing} #{raw[ing]} -> #{count*icnt}"
           new_raw[ing] += count * icnt
         end
