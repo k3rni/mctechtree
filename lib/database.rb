@@ -27,6 +27,10 @@ class Database < Set
       select { |item| item.primitive }
     end
 
+    def machines
+      crafted.map { |item| item.crafts.map(&:machine) }.flatten.compact.uniq
+    end
+
     def load_definitions data
       group = data['cluster']
       %w(equivalents primitives craft_templates crafts).each do |key|
