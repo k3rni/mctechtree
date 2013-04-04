@@ -18,6 +18,7 @@ autoload :CraftResolver, './lib/resolvers'
 autoload :Optimizer, './lib/optimizer'
 autoload :Solver, './lib/solver'
 autoload :Addons, './lib/addons'
+require './lib/errors'
 
 DB = Database.new
 Dir.glob('db/**/*.yml').each do |filename|
