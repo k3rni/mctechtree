@@ -1,9 +1,5 @@
 # encoding: utf-8
 
-class UndefinedItemsError < StandardError; end
-class BadDefinitionError < StandardError; end
-class NamingConflictError < StandardError; end
-class DuplicatePrimitiveError < StandardError; end
 
 autoload :Graph, './lib/graph'
 class Database < Set

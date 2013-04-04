@@ -7,8 +7,6 @@ def exact_craft need, makes
   end
 end
 
-class UncraftableItemError < StandardError; end
-
 class ItemResolver
     attr_accessor :item, :count, :children
     @@craft_constructor = Proc.new { |*args| CraftResolver.new(*args) }
