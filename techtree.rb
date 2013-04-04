@@ -47,7 +47,12 @@ def solve *names
   end
   item_resolver = make_item_resolver(options)
   solutions = build_solutions(names).map { |name, count| item_resolver.new(DB.find(name), count).resolve }
-  Solver.new(solutions, options).solve.describe
+  result = Solver.new(solutions, options).solve
+  if result.valid
+    result.describe
+  else
+    false
+  end
 end
 
 def make_item_resolver options

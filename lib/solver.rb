@@ -58,6 +58,11 @@ class Solver
       nil
     end
 
+    def valid
+      # only after solving
+      @craft_seq.size > 0
+    end
+
     def raw_resources
       raw.sort_by { |item, count| item.name }.map do |item, count|
         stack_info = item.stack_info count.ceil
