@@ -11,14 +11,36 @@
             %optgroup{label: I18n.t("clusters.#{group}")}
               - items.each do |name|
                 %option(value=name)= name
-        %span.help-block
-          Examples:
-          %i.example quantum body armor,
-          %i.example induction furnace,
-          %i.example retriever
-        %button.btn.btn-primary.btn-large.btn-block(type="submit" style="width: 10em; margin: 0 auto") Explain!
+        %span.help-block(style="text-align: center")
+          %small
+            %a.toggle-more more options...
+      %fieldset.more-options(style="display:none")
+        .row
+          .span2
+            %label Exclude machines
+            - all_machines.sort.each do |name|
+              %label.checkbox
+                %input(name="forbid_machine[]" value=name type="checkbox")
+                = name
+          .span2
+            %label Exclude mods
+            - recipe_counters.each do |name, count|
+              %label.checkbox
+                %input(name="exclude_cluster[]" value=name type="checkbox")
+                = I18n.t("clusters.#{name}")
+
+      %span.help-block
+        Examples:
+        %i.example quantum body armor,
+        %i.example induction furnace,
+        %i.example retriever
+      %button.btn.btn-primary.btn-large.btn-block(type="submit" style="width: 10em; margin: 0 auto") Explain!
 :javascript
   $(function() {
+    $('.toggle-more').click(function() {
+      $('.more-options').show();
+      $(this).hide();
+    })
     $('.example').click(function() {
       var itemname = $(this).text().replace(',', '');
       $('option[value="'+itemname+'"]').attr('selected', true);

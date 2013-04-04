@@ -20,20 +20,30 @@ class TechTreeApp < Sinatra::Base
     def item_groups
       @@db.crafted.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
     end
+
+    def all_machines
+      @@db.machines
+    end
   end
   get '/' do
+    cache_control :public, max_age: 7200
     haml :index, layout: :base
   end
 
   post '/solve' do
     items = params[:items]
-    tier = params[:tier]
     solveopts = {}
-    if tier
+    if (tier = params[:tier])
       tier = tier.to_i
       max_items_tier = items.map { |name| @@db.find(name).tier }.max
       tier = [max_items_tier - 1, tier].min
       solveopts[:min_tier] = tier
+    end
+    if (fm = params[:forbid_machine])
+      solveopts[:forbid_machine] = fm
+    end
+    if (xmod = params[:exclude_cluster])
+      solveopts[:exclude_cluster] = xmod
     end
     item_resolver = make_item_resolver(solveopts)
     solutions = items.map do |name|
