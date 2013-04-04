@@ -6,6 +6,13 @@
       %h4 
         Solved to:
         = I18n.t("tiers.t#{tier}")
+    - unless forbidden_machines.blank?
+      %h4
+        Excluding: #{forbidden_machines.to_sentence}
+    - unless excluded_mods.blank?
+      %h4
+        Without:
+        = excluded_mods.map { |m| I18n.t("clusters.#{m}") }.to_sentence
   .span4
     %a.btn.btn-info(href="/") Craft something else
 .row
