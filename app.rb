@@ -1,5 +1,6 @@
 require 'i18n'
 require 'sinatra'
+require 'rack/cache'
 
 I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locale', '*.yml')]
 
@@ -7,6 +8,7 @@ class TechTreeApp < Sinatra::Base
   
   register Sinatra::Twitter::Bootstrap::Assets
   use Rack::CommonLogger
+  use Rack::Cache
 
   def self.db= value
     @@db = value
@@ -25,8 +27,13 @@ class TechTreeApp < Sinatra::Base
       @@db.machines
     end
   end
+
+  error UncraftableItemError do
+    haml :uncraftable, layout: :base
+  end
+
   get '/' do
-    cache_control :public, max_age: 7200
+    last_modified File.mtime(__FILE__)
     haml :index, layout: :base
   end
 
@@ -51,8 +58,14 @@ class TechTreeApp < Sinatra::Base
     end
     solver = Solver.new(solutions, solveopts).solve
 
-    haml :solution, layout: :base, locals: {raw: solver.raw_resources,
-      crafts: solver.craft_sequence, targets: items, tier: tier}
+    haml :solution, layout: :base, locals: {
+      raw: solver.raw_resources,
+      crafts: solver.craft_sequence, 
+      targets: items, 
+      tier: tier,
+      forbidden_machines: fm,
+      excluded_mods: xmod
+    }
   end
 end
 

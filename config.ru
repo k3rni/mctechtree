@@ -12,6 +12,7 @@ Object.autoload :CraftResolver, './lib/resolvers'
 Object.autoload :Optimizer, './lib/optimizer'
 Object.autoload :Solver, './lib/solver'
 Object.autoload :Addons, './lib/addons'
+require './lib/errors'
 require './app'
 require 'yaml'
 
