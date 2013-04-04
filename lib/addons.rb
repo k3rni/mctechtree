@@ -2,9 +2,15 @@ module Addons
   module ForbidMachine
     module ItemResolver
       def primitive
-        item.crafts.any? do |craft|
+        item.crafts.all? do |craft|
           forbid_machine_params.include? craft.machine
         end || super
+      end
+
+      def children
+        super.reject do |cr|
+          forbid_machine_params.include? cr.craft.machine
+        end
       end
     end
   end
