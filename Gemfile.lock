@@ -5,6 +5,7 @@ GEM
       activesupport (= 3.0.0)
     activesupport (3.0.0)
     coderay (1.0.9)
+    color (1.4.1)
     ffi (1.6.0-java)
     haml (4.0.0)
       tilt
@@ -42,6 +43,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_support
+  color
   haml
   i18n
   pry

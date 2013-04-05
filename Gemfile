@@ -7,6 +7,7 @@ gem 'rack-cache'
 gem 'sinatra', require: false
 gem 'sinatra-twitter-bootstrap', require: 'sinatra/twitter-bootstrap'
 gem 'haml'
+gem 'color'
 
 group :development do
   gem 'pry'
