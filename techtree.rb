@@ -36,6 +36,9 @@ OptionParser.new do |opts|
   opts.on('--sigma', 'Produce a HTML5 and sigma.js powered graph on stdout') do |v|
     options.sigma = v
   end
+  opts.on('--d3', 'Produce a HTML5 and d3.js powered graph on stdout') do |v|
+    options.d3 = v
+  end
   opts.on('--dot', 'Produce a graph in dotfile format') do |v|
     options.dot = v
   end
@@ -44,6 +47,11 @@ end.parse!
 if options.sigma
   require './lib/sigma_graph'
   Database.send :include, SigmaGraph
+  DB.dump_graph STDOUT
+  exit
+elsif options.d3
+  require './lib/d3_graph'
+  Database.send :include, D3Graph
   DB.dump_graph STDOUT
   exit
 elsif options.dot

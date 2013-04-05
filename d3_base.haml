@@ -1,0 +1,165 @@
+!!!5
+%html
+  %head
+    %script(type="text/javascript" src="/js/jquery.min.js")
+    %script(type="text/javascript" src="/d3/d3.v3.js")
+    -# %script(type="text/javascript" src="/d3/d3.geom.js")
+    -# %script(type="text/javascript" src="/d3/d3.layout.js")
+    :css
+      circle.node {
+        cursor: pointer;
+        stroke: #3182bd;
+        stroke-width: 1.5px;
+      }
+
+      rect.node {
+        cursor: pointer;
+        stroke: #3182bd;
+        fill: white;
+        stroke-width: 1.5px;
+      }
+
+      line.link {
+        fill: none;
+        stroke: #9ecae1;
+        stroke-width: 1.5px;
+      }
+  %body
+    #graph(style="position:absolute")
+    %button#startlayout(style="position:relative; top: 0.5em; left: 0.5em")
+      start layout
+    %button#stoplayout(style="position:relative; top: 0.5em; left: 0.5em")
+      stop layout
+    %ul(style="position:relative; top: 2em; left: 0.5em; width: 20em; list-style-type: none")
+      - cluster_colors.each do |name, color|
+        %li(style="color: #{color}")
+          %label
+            %input.toggle_cluster(type="checkbox" name="#{name}" value="on" checked=true)
+            = I18n.t("clusters.#{name}")
+    :javascript
+      $('#stoplayout').click(function() { force.stop(); })
+      $('#startlayout').click(function() { force.start(); })
+      $('.toggle_cluster').change(function() {
+        var nn = $(this).attr('name');
+        if (event.currentTarget.checked) {
+          vis.selectAll('line.link.'+nn)
+             .style('display', '');
+          vis.selectAll('circle.node.'+nn)
+            .style('display', '');
+          vis.selectAll('rect.node.'+nn)
+            .style('display', '');
+        }
+        else {
+          vis.selectAll('line.link.'+nn)
+             .style('display', 'none');
+          vis.selectAll('circle.node.'+nn)
+            .style('display', 'none');
+          vis.selectAll('rect.node.'+nn)
+            .style('display', 'none');
+        }
+        
+      })
+      function solve_links(nodes, raw_links) {
+        var node_dict = {};
+        nodes.forEach(function(node) {
+          var key = node.id;
+          if (!key) key = node.name;
+          node_dict[key] = node
+        });
+
+        var links = [];
+        raw_links.forEach(function(rl) {
+          links.push({source: node_dict[rl.source], target: node_dict[rl.target]});
+        });
+        return links;
+      }
+      var w = $(window).width();
+      var h = $(window).height();
+
+      var vis = d3.select('#graph').append('svg:svg')
+                .attr('width', w).attr('height', w);
+
+      // wczytaj nody
+      var data = #{yield};
+      var nodes = data[0];
+      var links = solve_links(nodes, data[1]);
+      var force = d3.layout.force()
+                  .nodes(nodes)
+                  .links(links)
+                  .on('tick', tick)
+                  .size([w, w]);
+
+
+      update();
+
+      function tick() {
+        link.attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        node.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+
+        rnode.attr("x", function(d) { return d.x - (d.size/2 || 5) })
+            .attr("y", function(d) { return d.y - (d.size/4 || 3) })
+      }
+      function color(node) { return node.color }
+      function select_crafts(node) { return node.craft; }
+      function reject_crafts(node) { return !node.craft; }
+      function update() {
+
+        // Restart the force layout.
+        force.start();
+
+        // Update the links…
+        link = vis.selectAll("line.link")
+            .data(links, function(d) { return d.target.id; });
+
+        // Enter any new links.
+        link.enter().insert("svg:line", ".node")
+            .attr("class", function(d) { return 'link ' + d.source.cluster + ' ' + d.target.cluster; })
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        // Exit any old links.
+        link.exit().remove();
+
+        // Update the nodes…
+        node = vis.selectAll("circle.node")
+            .data(nodes.filter(reject_crafts), function(d) { return d.id; })
+            .style("fill", color);
+
+        // Enter any new nodes.
+        node.enter().append("svg:circle")
+            .attr("class", function(d) { return 'node ' + d.cluster; })
+            .attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; })
+            .attr("r", function(d) { return Math.sqrt(d.size) / 10 || 4.5; })
+            .attr('name', function(d) { return d.name; })
+            .style("fill", color)
+            //.call(force.drag)
+
+        // Exit any old nodes.
+        node.exit().remove();
+
+
+        rnode = vis.selectAll('rect.node')
+          .data(nodes.filter(select_crafts), function(d) { return d.id; })
+          .style("fill", color);
+
+        rnode.enter().append('svg:rect')
+            .attr('class', 'node')
+            .attr("x", function(d) { return d.x - (d.size/2 || 5) })
+            .attr("y", function(d) { return d.y - (d.size/4 || 3) })
+            .attr('width', function(d) { return d.size*2 || 20; })
+            .attr('height', function(d) { return d.size || 10; })
+            .style('fill', color)
+            //.call(force.drag);
+        rnode.exit().remove();
+
+        vis.selectAll(node + rnode).enter().call(force.drag);
+
+      }
