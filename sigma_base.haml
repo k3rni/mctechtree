@@ -1,0 +1,50 @@
+!!!5
+%html
+  %head
+    %script(type="text/javascript" src="/js/jquery.min.js")
+    %script(type="text/javascript" src="/sigma/sigma.min.js")
+    %script(type="text/javascript" src="/sigma/sigma.forceatlas2.js")
+  %body
+    #sig(style="width:100%; height:100%; background: #222; position:absolute")
+    %button#startlayout(style="position:relative; top: 0.5em; left: 0.5em")
+      start layout
+    %button#stoplayout(style="position:relative; top: 0.5em; left: 0.5em")
+      stop layout
+    %ul(style="position:relative; top: 2em; left: 0.5em; width: 20em; list-style-type: none")
+      - cluster_colors.each do |name, color|
+        %li(style="color: #{color}")
+          %label
+            %input.toggle_cluster(type="checkbox" name="#{name}" value="on" checked=true)
+            = I18n.t("clusters.#{name}")
+    :javascript
+      $('#stoplayout').click(function() { sigInst.stopForceAtlas2(); })
+      $('#startlayout').click(function() { sigInst.startForceAtlas2(); })
+      $('.toggle_cluster').change(function() {
+        var nn = $(this).attr('name');
+        if (event.currentTarget.checked) {
+          sigInst.iterNodes(function(node) {
+            if (node.attr['cluster'] == nn)
+              node.hidden = 0;
+          });
+          sigInst.draw();
+        }
+        else {
+          sigInst.iterNodes(function(node) {
+            if (node.attr['cluster'] == nn)
+              node.hidden = 1;
+          });
+          sigInst.draw();
+        }
+        
+      })
+    :javascript
+      var sigRoot = document.getElementById('sig');
+      var sigInst = sigma.init(sigRoot);
+      sigInst.drawingProperties({
+        defaultLabelColor: '#fff',
+        defaultEdgeType: 'curve'
+      });
+      sigInst.bind('overnodes', function(event) {
+      });
+      #{yield}
+      sigInst.draw();
