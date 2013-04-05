@@ -6,7 +6,6 @@ $:.unshift File.dirname(__FILE__)
 Object.autoload :Item, './lib/item'
 Object.autoload :Craft, './lib/craft'
 Object.autoload :Database, 'lib/database'
-Object.autoload :Graph, './lib/graph'
 Object.autoload :ItemResolver, './lib/resolvers'
 Object.autoload :CraftResolver, './lib/resolvers'
 Object.autoload :Optimizer, './lib/optimizer'

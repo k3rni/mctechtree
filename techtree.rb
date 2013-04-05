@@ -8,11 +8,11 @@ require 'delegate'
 require 'yaml'
 require 'set'
 require 'pry'
+require 'optparse'
 
 autoload :Item, './lib/item'
 autoload :Craft, './lib/craft'
 autoload :Database, './lib/database'
-autoload :Graph, './lib/graph'
 autoload :ItemResolver, './lib/resolvers'
 autoload :CraftResolver, './lib/resolvers'
 autoload :Optimizer, './lib/optimizer'
@@ -20,15 +20,38 @@ autoload :Solver, './lib/solver'
 autoload :Addons, './lib/addons'
 require './lib/errors'
 
+I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locale', '*.yml')]
+
 DB = Database.new
 Dir.glob('db/**/*.yml').each do |filename|
-  puts filename
-    DB.load_definitions YAML.load_file(filename)
+  STDERR.puts filename
+  DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending
 DB.detect_name_clashes
 DB.classify_tiers
-DB.dump_graph File.open('techtree.dot', 'w')
+
+options = OpenStruct.new
+OptionParser.new do |opts|
+  opts.on('--sigma', 'Produce a HTML5 and sigma.js powered graph on stdout') do |v|
+    options.sigma = v
+  end
+  opts.on('--dot', 'Produce a graph in dotfile format') do |v|
+    options.dot = v
+  end
+end.parse!
+
+if options.sigma
+  require './lib/sigma_graph'
+  Database.send :include, SigmaGraph
+  DB.dump_graph STDOUT
+  exit
+elsif options.dot
+  require './lib/dot_graph'
+  Database.send :include, DotGraph
+  DB.dump_graph STDOUT
+  exit
+end
 
 def build_solutions names
   names.map do |name|

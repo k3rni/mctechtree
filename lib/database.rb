@@ -1,9 +1,6 @@
 # encoding: utf-8
 
-
-autoload :Graph, './lib/graph'
 class Database < Set
-    include Graph
     def initialize(*args)
         super(*args)
         @pending = Set.new
