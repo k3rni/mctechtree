@@ -26,14 +26,14 @@
             if (node.attr['cluster'] == nn)
               node.hidden = 0;
           });
-          sigInst.draw();
+          sigInst.draw(1,1,1);
         }
         else {
           sigInst.iterNodes(function(node) {
             if (node.attr['cluster'] == nn)
               node.hidden = 1;
           });
-          sigInst.draw();
+          sigInst.draw(1,1,1);
         }
         
       })
@@ -45,6 +45,7 @@
         defaultEdgeType: 'curve'
       });
       sigInst.bind('overnodes', function(event) {
+
       });
       #{yield}
       sigInst.draw();
