@@ -45,7 +45,22 @@
         defaultEdgeType: 'curve'
       });
       sigInst.bind('overnodes', function(event) {
-
+        var nodes = event.content;
+        var neighbors = {};
+        sigInst.iterEdges(function(e) {
+          if (nodes.indexOf(e.source) < 0 && nodes.indexOf(e.target) < 0) { // not in graph
+            if (!e.attr['grayed']) {
+              e.attr['prev_color'] = e.color;
+              e.color = '#777';
+              e.attr['grayed'] = 1;
+            } else {
+              e.color = e.attr['grayed'] ? e.attr['prev_color'] : e.color;
+              e.attr['grayed'] = 0;
+              neighbors[e.source] = 1; neighbors[e.target] = 1;
+            }
+         }
+        }).iterNodes(function(n) {
+        }).draw(2,2,2);
       });
       #{yield}
       sigInst.draw();
