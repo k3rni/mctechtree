@@ -103,3 +103,4 @@ crafts:
 - track:
     ingredients: [iron*6, stick]
     makes: 16
+    disabled: railcraft
