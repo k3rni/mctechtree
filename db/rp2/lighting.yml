@@ -5,7 +5,7 @@ colors: &colors
 
 craft_templates:
 - $(color) lumar:
-    ingredients: [redstone, glowstone, $(color) dye*2]
+    ingredients: [redstone, glowstone dust, $(color) dye*2]
     makes: 2
     <<: *colors
 - $(color) lamp:

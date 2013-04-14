@@ -8,7 +8,7 @@ crafts:
     ingredients: [glass*3, iron*4, ME basic processor, ME cable]
     # TODO: shape
 - ME crafting CPU:
-    ingredients: [iron*4, quartz crystal*2, glowstone*2, ME advanced processor]
+    ingredients: [iron*4, quartz crystal*2, glowstone dust*2, ME advanced processor]
     shape: i q i g M g i q i
 - ME heat vent:
     ingredients: [iron bars*4, iron, ME cable]
@@ -23,7 +23,7 @@ crafts:
     ingredients: [iron*7, ME conversion matrix, crafting table]
     shape: i M i i c i i i i
 - ME blank pattern:
-    ingredients: [iron*3, glass*2, quartz crystal, glowstone*3]
+    ingredients: [iron*3, glass*2, quartz crystal, glowstone dust*3]
     shape: |
         gla glo gla
         glo qua glo
