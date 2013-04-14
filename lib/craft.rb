@@ -5,6 +5,8 @@ require 'active_support/core_ext/array'
 
 class Craft
     attr_accessor :machine, :result, :makes, :ingredients, :shape
+		attr_accessor :requires
+		attr_accessor :disabled
 
     def to_s
         ["Craft(",
@@ -67,6 +69,6 @@ class Craft
     end
 
     def self.unsupported? key
-      %w(keeps compatible).include? key
+      %w(keeps compatible structure).include? key
     end
 end

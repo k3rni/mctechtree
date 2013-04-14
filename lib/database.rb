@@ -10,7 +10,7 @@ class Database < Set
     def initialize(*args)
         super(*args)
         @pending = Set.new
-	@conflicts = Set.new
+        @conflicts = Set.new
         @equivalents = Hash.new { |h, key| h[key] = Set.new }
     end
 
@@ -34,21 +34,32 @@ class Database < Set
       definitions.each do |data|
         name, stacks, cost = parse_primitive(data)
         name = data.keys.first
-	if (old = find(name))
-	    # no need to flag it, identically named primitives are always equivalent
-	    # @conflicts.add [:primitive, name, group, old.group] 
-	    next
-	else
-    	    item = Item.primitive(name, cost, stacks, group)
-	end
+        if (old = find(name))
+          # no need to flag it, identically named primitives are always equivalent
+          # @conflicts.add [:primitive, name, group, old.group] 
+          next
+        else
+          item = Item.primitive(name, cost, stacks, group)
+        end
         self.add item
       end
     end
 
-    def conflicts existing, extra, group
-	compatible = extra['compatible']
-	return false if compatible == 'all' || existing.compatible == 'all'
-	existing.group != group && (compatible.nil? || compatible != existing.group)
+    def conflicts? existing, extra, group
+        compatible = extra['compatible']
+        if compatible == 'all'
+            false
+        elsif [group, 'all'].include? existing.compatible 
+            false
+        elsif existing.group == group
+            false
+        elsif compatible.nil?
+            true
+        elsif compatible != existing.group
+            true
+        else
+            false
+        end
     end
 
     def load_crafts definitions, group=nil
@@ -57,17 +68,17 @@ class Database < Set
           name, makes, machine, ingredients, extra = parse_recipe(recipe)
           item = find(name)
 	
-	  if item && conflicts(item, extra, group)
-	    @conflicts.add [:craft, name, group, item.group]
-          elsif item
-            item.add_craft do |craft|
-              craft.makes(makes, machine, ingredients, extra)
-            end
-          else
+          if !item
             item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
               craft.makes(makes, machine, ingredients, extra)
             end
             self.add item
+	        elsif conflicts?(item, extra, group)
+	          @conflicts.add [:craft, name, group, item.group]
+          else
+            item.add_craft do |craft|
+              craft.makes(makes, machine, ingredients, extra)
+            end
           end
         end
     end
@@ -198,11 +209,11 @@ class Database < Set
     end
 
     def detect_name_clashes
-	if @conflicts.size > 0
-	    raise NamingConflictError.new(@conflicts.sort_by { |v| v[1] }.map do |mode,name,cluster1,cluster2|
-		"#{mode}[#{name}]:#{cluster1},#{cluster2}" 
-	    end.join("\n"))
-	end
+      if @conflicts.size > 0
+        raise NamingConflictError.new(@conflicts.sort_by { |v| v[1] }.map do |mode,name,cluster1,cluster2|
+          "#{mode}[#{name}]:#{cluster1},#{cluster2}" 
+        end.join("\n"))
+      end
     end
 
 end
