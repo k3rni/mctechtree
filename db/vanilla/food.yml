@@ -6,6 +6,8 @@ primitives:
 - cocoa beans: 10
 - sugar cane: 2
 - pumpkin: 2
+- carrot: 1
+- potato: 1
 - melon slice: 2
 - milk bucket: 2
 - egg: 3
@@ -37,4 +39,4 @@ crafts:
     machine: furnace
     ingredients: [raw fish]
 - golden apple: [apple, gold nugget*8]
- 
+- golden carrot: [carrot, gold nugget*8] 
