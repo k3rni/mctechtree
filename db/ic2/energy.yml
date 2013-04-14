@@ -75,6 +75,10 @@ crafts:
   - energy crystal*4
   - 2ins gold cable*4
   - machine
+- batbox:
+  - wood*5
+  - RE battery*3
+  - copper cable
 - generator:
   - RE battery
   - machine
