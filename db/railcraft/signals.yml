@@ -1,0 +1,17 @@
+cluster: railcraft
+
+crafts:
+- block signal:
+    ingredients: [signal lamp, controller circuit, black dye, iron*2]
+- distant signal:
+    ingredients: [signal lamp, receiver circuit, black dye, iron*2]
+- dual-head block signal:
+    ingredients: [signal lamp*2, controller circuit, receiver circuit, black dye, iron*3]
+- signal block relay box:
+    ingredients: [iron*4, signal circuit, redstone]
+- signal controller box:
+    ingredients: [iron*4, controller circuit, redstone]
+- signal receiver box:
+    ingredients: [iron*4, receiver circuit, redstone]
+- signal capacitor block:
+     ingredients: [iron*4, redstone repeater, redstone]

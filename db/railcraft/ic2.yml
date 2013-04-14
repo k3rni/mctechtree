@@ -1,0 +1,17 @@
+cluster: railcraft
+
+crafts:
+- detector - energy:
+    ingredients: [tin ingot*8, pressure plate]
+- energy loader:
+    ingredients: [RE battery*6, machine, detector - energy, dispenser]   
+- energy unloader:
+    ingredients: [RE battery*6, machine, detector - energy, dispenser]   
+- lapotron loader upgrade:
+    ingredients: [glass*5, 2ins gold cable, lapotron crystal, integrated circuit]
+
+craft_templates:
+- $(device) cart:
+    ingredients: [$(device), minecart]
+    device: [batbox, MFE, MFSU]
+

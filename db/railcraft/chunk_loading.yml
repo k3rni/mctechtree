@@ -1,0 +1,7 @@
+cluster: railcraft
+
+crafts:
+- world anchor: [obsidian*2, gold ingot*4, diamond*2, ender pearl]
+- personal anchor: [obsidian*2, gold ingot*4, emerald*2, ender pearl]
+- anchor sentinel: [ender pearl, obsidian*3, gold ingot]
+

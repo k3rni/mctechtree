@@ -1,0 +1,30 @@
+cluster: railcraft
+
+crafts:
+- creosote oil:
+    ingredients: [coal*2]
+    makes: 1000
+- creosote oil:
+    ingredients: [wood*4]
+    makes: 1000
+- blast furnace brick:
+    ingredients: [soul sand*4, nether brick*4, magma cream]
+    makes: 4
+- blast furnace brick:
+    ingredients: [infernal brick*4, magma cream]
+    makes: 4
+- blast furnace:
+    ingredients: [blast furnace brick*34]
+    structure: yes
+- rock crusher block:
+    ingredients: [diamond*4, piston*4, steel block]
+    makes: 4
+- rock crusher:
+    ingredients: [rock crusher block*12]
+    structure: yes
+- coal coke:
+    ingredients: [coal]
+    machine: coke oven
+- coke oven block:
+    ingredients: [sand*5, brick*4]
+- rolling machine: [crafting table, iron*4, piston*4]

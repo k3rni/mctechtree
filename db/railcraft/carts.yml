@@ -1,0 +1,14 @@
+cluster: railcraft
+
+crafts:
+- tank cart: [iron tank gauge, minecart]
+# NOTE: can't do filtered tank carts
+- anchor cart: [world anchor, minecart]
+- steam locomotive: [high pressure boiler tank*4, solid fueled firebox*2, minecart*2, iron bars]
+# NOTE: painting locomotives - too many combinations to care.
+- TNT cart: [TNT, minecart]
+- track relayer:
+    ingredients: [yellow dye*2, redstone lamp, steel block, blaze rod*2, diamond pickaxe*2, minecart]
+- undercutter:
+    ingredients: [yellow dye*2, redstone lamp, steel block, piston*2, diamond shovel*2, minecart]
+- work cart: [crafting table, minecart]

@@ -1,0 +1,16 @@
+cluster: railcraft
+
+crafts:
+- crowbar: [red dye*4, iron*3]
+- engineer's overalls: [blue wool*7]
+- iceman's backpack:
+    ingredients: [wool*4, string*4, chest]
+    requires: forestry
+- trackman's backpack:
+    ingredients: [wool*2, track*2, string*4, chest]
+    requires: forestry
+- magnifying glass: [stick, glass pane]
+- signal block surveyor: [compass, glass pane*2, button*2, redstone]
+- signal tuner: [redstone torch, receiver circuit, button*2]
+- trackman's goggles: [glass pane*2, receiver circuit, steel ingot*2, leather*3]
+- whistle tuner: [steel nugget*6]

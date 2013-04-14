@@ -1,0 +1,47 @@
+cluster: railcraft
+
+crafts:
+- steel ingot:
+    ingredients: [iron]
+    machine: blast furnace
+- steel block: [steel ingot*9]
+- steel nugget:
+    ingredients: [steel ingot]
+    makes: 9
+- iron plate:
+    ingredients: [iron*4]
+    makes: 3
+    machine: rolling machine
+- steel plate:
+    ingredients: [steel ingot*4]
+    makes: 3
+    machine: rolling machine
+- gold plate gear:
+    ingredients: [gold nugget*4, stone gear]
+    requires: buildcraft
+- gold plate gear:
+    ingredients: [gold nugget*4, cobble]
+    disabled: buildcraft
+- iron gear:
+    ingredients: [cobble, iron*4]
+    disabled: buildcraft # bc has its own recipe, this one should be disabled when bc is on
+    compatible: buildcraft
+- steel gear:
+    ingredients: [cobble, steel ingot*4]
+    disabled: buildcraft
+- steel gear:
+    ingredients: [stone gear, steel ingot*4]
+- controller circuit:
+    ingredients: [red wool*2, repeater, slimeball, gold ingot, redstone*2, lapis]
+- receiver circuit:
+    ingredients: [green wool*2, repeater, slimeball, gold ingot, redstone*2, lapis]
+- signal circuit:
+    ingredients: [yellow wool*2, repeater, slimeball, gold ingot, redstone*2, lapis]
+- obsidian dust:
+    ingredients: [obsidian]
+    machine: rock crusher
+- rebar:
+    ingredients: [iron*3]
+    makes: 6
+- signal lamp:
+    ingredients: [lime dye, yellow dye, red dye, glass pane*3, glowstone dust, redstone]
