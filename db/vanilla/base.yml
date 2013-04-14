@@ -96,10 +96,17 @@ crafts:
 - minecart: [iron*5]
 - chestcart: [minecart, chest]
 - dispenser: [cobble*6, bow, redstone]
-- redstone repeater: [stone*3, redstone torch*2, redstone]
 - fence gate: [stick*4, planks*2]
 - TNT: [gunpowder*5, sand*4]
 - button: [stone*2]
+- redstone repeater: #shape naming problem
+    ingredients: [redstone torch*2, stone*3, redstone]
+- redstone lamp:
+    ingredients: [redstone*4, glowstone]
+    shape: ~ r ~ r g r ~ r ~
+- note block:
+    ingredients: [planks*8, redstone]
+    shape: p p p p r p p p p
 - track:
     ingredients: [iron*6, stick]
     makes: 16

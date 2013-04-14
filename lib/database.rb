@@ -1,10 +1,7 @@
 # encoding: utf-8
 
-class UndefinedItemsError < StandardError; end
-class BadDefinitionError < StandardError; end
-class NamingConflictError < StandardError; end
-class DuplicatePrimitiveError < StandardError; end
 
+autoload :Graph, './lib/graph'
 class Database < Set
     include Graph
     def initialize(*args)
@@ -18,8 +15,16 @@ class Database < Set
         select { |obj| obj.name == name }.first
     end
 
-    def each_crafted
+    def crafted
       select { |item| item.crafts.size > 0 }
+    end
+
+    def primitives
+      select { |item| item.primitive }
+    end
+
+    def machines
+      crafted.map { |item| item.crafts.map(&:machine) }.flatten.compact.uniq
     end
 
     def load_definitions data
@@ -63,24 +68,24 @@ class Database < Set
     end
 
     def load_crafts definitions, group=nil
-        # TODO: nadpisywanie i kasowanie starych recept, po sygnaturkach
-        definitions.each do |recipe|
-          name, makes, machine, ingredients, extra = parse_recipe(recipe)
-          item = find(name)
-	
+      # TODO: disable and override other recipes, by signature
+      definitions.each do |recipe|
+        name, makes, machine, ingredients, extra = parse_recipe(recipe)
+        item = find(name)
+
           if !item
             item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
-              craft.makes(makes, machine, ingredients, extra)
+              craft.makes(makes, machine, ingredients, group, extra)
             end
             self.add item
-	        elsif conflicts?(item, extra, group)
-	          @conflicts.add [:craft, name, group, item.group]
-          else
+        elsif conflicts?(item, extra, group)
+          @conflicts.add [:craft, name, group, item.group]
+        else
             item.add_craft do |craft|
-              craft.makes(makes, machine, ingredients, extra)
-            end
+            craft.makes(makes, machine, ingredients, group, extra)
           end
         end
+      end
     end
 
     def load_equivalents definitions, group=nil
@@ -97,23 +102,64 @@ class Database < Set
       data.each do |recipe|
         name = recipe.keys.first
         definition = recipe.values.first
-        key = name[pat, 1]
-        substitutions = definition.delete key
-        sm = substitutions.map do |s|
-          if s.index('/')
+        keys = name.scan(pat).flatten
+        if keys.empty? # name doesn't contain substitutes
+          keys = definition.delete('vars')
+        end
+        substitutions = Hash[keys.map { |key| [key, definition.delete(key)] }]
+        all_crafts = []
+        build_substitutions(name, definition, substitutions, keys.first, keys[1..-1]) { |obj| all_crafts << obj }
+        load_crafts all_crafts, group
+      end
+    end
+
+    def build_substitutions name, definition, substitutions, key, rest, was_nil=false
+        substitutions[key].each do |s|
+          if s.nil?
+            label = ''
+            mat = nil
+          elsif s.index('/')
             label, mat = s.split('/')
           else
             label = mat = s
           end
-          new_name = name.gsub("$(#{key})", label)
-          { new_name => definition.merge({
-              'ingredients' => definition['ingredients'].map do |ing|
-                  ing.gsub("$(#{key})", mat)
-              end
-            })
-          }
+          # if there's no substitutions left (rest is nil), this creates a fully-solved recipe
+          # otherwise it will still contain $(substitutions), and get passed on
+          new_name = name.sub("$(#{key})", label).strip.gsub('  ', ' ')
+          new_def = definition.merge({
+            # TODO: this should probably replace all metadata, per type and not only ing and shape
+            'ingredients' => replace_list_names(definition['ingredients'], "$(#{key})", mat),
+            'shape' => replace_shape_names(definition['shape'], "$(#{key})", mat)
+          })
+          if rest.nil? || rest.size == 0
+            # avoid a combination that was all nils
+            if !(was_nil && mat.nil?) 
+              yield({new_name => new_def})
+            end
+          else
+            # recursively call with a partially solved recipe
+            build_substitutions(new_name, new_def, substitutions, rest.first, rest[1..-1], mat.nil?) { |obj| yield obj }
+          end
         end
-        load_crafts sm, group
+    end
+
+    def replace_list_names list, old, new
+      if list.nil?
+        nil
+      elsif new.nil?
+        list.reject { |el| el == old }
+      else
+        list.map { |el| el.gsub(old, new) }
+      end
+    end
+
+    def replace_shape_names shape, old, new
+      if shape.nil?
+        nil
+      elsif new.nil?
+        shape.gsub(old, '~') 
+      else
+        shape.gsub(old, new).gsub('  ', ' ')
       end
     end
 
@@ -216,4 +262,29 @@ class Database < Set
       end
     end
 
+    def classify_tiers
+      unsolved = Set.new(self)
+      primitives.each do |item|
+        unsolved -= [item]
+        item.tier = 0
+      end
+
+      while unsolved.size > 0
+        unsolved.each do |item|
+          craft_tiers = item.crafts.map do |craft| 
+            t = craft.count_ingredients.map { |ing, count| ing.tier }
+            if t.include? nil
+              nil
+            else
+              t.max
+            end
+          end
+          unless craft_tiers.include? nil
+            min_tier = craft_tiers.flatten.compact.min
+            item.tier = min_tier + 1
+            unsolved -= [item]
+          end
+        end
+      end
+    end
 end

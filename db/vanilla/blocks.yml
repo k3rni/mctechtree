@@ -6,6 +6,7 @@ primitives:
 
 crafts:
 - diamond block: [diamond*9]
+- block of gold: [gold ingot*9]
 - lapis block: [lapis*9]
 - iron block: [iron*9]
 - clay block: [clay*4]
@@ -18,7 +19,8 @@ crafts:
 - plank slab:
     makes: 6
     ingredients: [planks*3]
-- brick block: [brick*4]
 - nether brick block: [nether brick*4]
 - snow: [snowball*4]
-
+- bricks:
+    ingredients: [brick*4]
+    shape: b b - b b - - - -
