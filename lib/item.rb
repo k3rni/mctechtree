@@ -74,6 +74,10 @@ class Item
     self.name <=> other.name
   end
 
+  def groups
+    Set.new([group] + crafts.map(&:group)).to_a
+  end
+
   def self.primitive name, cost, stacks, group
     self.new(name: name, primitive: true, cost: cost, stacks: stacks, group: group)
   end
