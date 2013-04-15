@@ -23,8 +23,16 @@ class TechTreeApp < Sinatra::Base
       @@db.crafted.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
     end
 
+    def advanced_item_groups
+      @@db.crafted.group_by(&:groups).map { |key, g| [key, g.map(&:name)]}
+    end
+
     def all_machines
       @@db.machines
+    end
+
+    def multigroup_text groups
+      groups.map{ |group| I18n.t("clusters.#{group}") }.to_sentence
     end
   end
 
