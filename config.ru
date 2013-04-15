@@ -17,15 +17,12 @@ require './app'
 require 'yaml'
 
 DB = Database.new
-thread = Thread.new do
-  Dir.glob('db/**/*.yml').each do |filename|
-      DB.load_definitions ::YAML.load_file(filename)
-  end
-  DB.fixup_pending
-  DB.detect_name_clashes
-  DB.classify_tiers
+Dir.glob('db/**/*.yml').each do |filename|
+    DB.load_definitions ::YAML.load_file(filename)
 end
+DB.fixup_pending
+DB.detect_name_clashes
+DB.classify_tiers
 
 TechTreeApp.db = DB
-TechTreeApp.thread = thread
 run TechTreeApp

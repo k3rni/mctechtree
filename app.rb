@@ -14,10 +14,6 @@ class TechTreeApp < Sinatra::Base
     @@db = value
   end
 
-  def self.thread= value
-    @@thread = value
-  end
-
   helpers do
     def recipe_counters
       @@db.crafted.group_by(&:group).map {|key, g| [key, g.size]}
@@ -37,7 +33,6 @@ class TechTreeApp < Sinatra::Base
   end
 
   get '/' do
-    @@thread.join
     last_modified File.mtime(__FILE__)
     haml :index, layout: :base
   end
