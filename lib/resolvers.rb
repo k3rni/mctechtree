@@ -36,7 +36,14 @@ class ItemResolver
     end
 
     def craftable_children
-      children.select(&:craftable)
+      reject_overrides children.select(&:craftable)
+    end
+
+    def reject_overrides crafts
+      overrides = crafts.map { |c| c.craft.overrides }
+      crafts.reject do |c|
+        c.craft.matches_overrides overrides
+      end
     end
 
     def min_child_cost
