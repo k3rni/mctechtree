@@ -3,10 +3,11 @@ cluster: railcraft
 crafts:
 - wooden tie:
     ingredients: [plank slab*3, creosote oil*1000]
-    disabled: forestry
+    tag: without-forestry
 - wooden tie:
     ingredients: [plank slab*3, creosote oil*1000]
     machine: carpenter
+    overrides: railcraft/without-forestry
     requires: forestry
 - stone tie:
     ingredients: [rebar, stone slab*3]

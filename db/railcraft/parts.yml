@@ -17,20 +17,22 @@ crafts:
     makes: 3
     machine: rolling machine
 - gold plate gear:
+    # when buildcraft isn't available, this recipe will not be considered
+    # and will not override the other one.
     ingredients: [gold nugget*4, stone gear]
-    requires: buildcraft
+    overrides: railcraft/without-buildcraft
 - gold plate gear:
     ingredients: [gold nugget*4, cobble]
-    disabled: buildcraft
+    tag: without-buildcraft
 - iron gear:
     ingredients: [cobble, iron*4]
-    disabled: buildcraft # bc has its own recipe, this one should be disabled when bc is on
-    compatible: buildcraft
+    compatible: buildcraft # but used only with buildcraft disabled, see the source.
 - steel gear:
     ingredients: [cobble, steel ingot*4]
-    disabled: buildcraft
+    tag: without-buildcraft
 - steel gear:
     ingredients: [stone gear, steel ingot*4]
+    overrides: railcraft/without-buildcraft
 - controller circuit:
     ingredients: [red wool*2, repeater, slimeball, gold ingot, redstone*2, lapis]
 - receiver circuit:
