@@ -58,8 +58,6 @@ end
 def make_item_resolver options
   item_resolver_options = options.select { |key, val| Addons.item_resolver_modules.include? key.to_s }
   craft_resolver_options = options.select { |key, val| Addons.craft_resolver_modules.include? key.to_s }
-  # analogicznie: wykluczanie clusterów - podmieniamy itemresolver na taki
-  # który nie znajdzie itemków z zakazanego clustera
 
   mir, mcr = nil
   mir = Class.new(ItemResolver) do
