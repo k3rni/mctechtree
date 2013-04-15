@@ -104,3 +104,7 @@ crafts:
 - wind mill:
   - generator
   - iron*4
+- electrolyzer: [copper cable*4, integrated circuit, machine, cell*2]
+- electrolyzed water cell:
+    ingredients: [water cell]
+    machine: electrolyzer
