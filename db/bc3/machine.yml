@@ -6,10 +6,15 @@ primitives:
 crafts:
 - wooden gear: [stick*4]
 - stone gear: [wooden gear, cobble*4]
-- iron gear: [stone gear, iron*4]
+- iron gear: 
+    ingredients: [stone gear, iron*4]
+    compatible: railcraft
+    overrides: railcraft
 - gold gear: [iron gear, gold ingot*4]
 - diamond gear: [gold gear, diamond*4]
-- fuel: [oil]
+- fuel: 
+    ingredients: [oil]
+    machine: refinery
 - redstone engine: # a.k.a. wooden engine
     ingredients: [wood*3, glass, piston, wooden gear*2]
 - stirling engine: # a.k.a. steam engine, stone engine
