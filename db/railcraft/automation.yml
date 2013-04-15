@@ -1,0 +1,41 @@
+cluster: railcraft
+
+crafts:
+- item loader:
+    ingredients: [dispenser, storage detector]
+- item unloader:
+    ingredients: [dispenser, storage detector]
+- advanced item loader:
+    ingredients: [redstone*3, steel ingot*4, ender pearl, item loader]
+- advanced item unloader:
+    ingredients: [redstone*3, steel ingot*4, ender pearl, item unloader]
+- cart dispenser: [dispenser, minecart]
+- train dispenser: [cart dispenser, crowbar*4, redstone*4] 
+- tunnel bore: [minecart*2, furnace*2, steel block*2, chestcart]
+- iron bore head: [steel ingot*8, iron block]
+- steel bore head: [steel ingot*8, steel block]
+- diamond bore head: [steel ingot*8, diamond block]
+- feed station: [golden carrot*4, planks*4, steel plate]
+- switch lever: [white dye, black dye, red dye, piston, lever, iron]
+- switch motor: [white dye, black dye, red dye, piston, receiver circuit, iron]
+
+craft_templates:
+- $(type) detector: 
+    ingredients: [pressure plate, $(type)*8]
+    type:
+      - storage/planks
+      - powered/cobble
+      - any/stone
+      - player/stone slab
+      - empty/stone bricks
+      - mob/mossy stone bricks
+      - mob/mossy cobble
+      - animal/oak wood
+      - sheep/wool
+      - growth/spruce wood
+      - explosive/plank slab
+      - advanced/iron
+      - train/nether brick
+      - tank/brick
+
+

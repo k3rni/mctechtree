@@ -40,6 +40,9 @@ module Addons
     Class.new(old) do
       define_method "#{modname}_params".to_sym do params end
       include "addons/#{modname}/#{mode}".classify.constantize
+    end.tap do |cls|
+      new_classname = "#{modname.to_s.classify}#{(old.name || mode.to_s).classify.demodulize}"
+      Addons.const_set new_classname.to_sym, cls
     end
   end
 

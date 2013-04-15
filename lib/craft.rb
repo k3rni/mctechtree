@@ -5,16 +5,24 @@ require 'active_support/core_ext/array'
 
 class Craft
     attr_accessor :machine, :result, :makes, :ingredients, :shape, :group
+		attr_accessor :requires
+    attr_accessor :overrides
+    attr_accessor :tag
 
     def to_s
-        ["Craft(",
-         "result=#{self.result},",
-         ("machine=#{machine}," if machine),
-         ("makes=#{self.makes}," if makes > 1),
-         "ingredients=#{count_ingredients.map{|k,v| "#{k}*#{v}"}.join('+')},",
-         "group=#{self.group}",
-         ")"
-        ].join('')
+        "Craft(" + [
+         "result=#{self.result}",
+         ("makes=#{self.makes}" if makes > 1),
+         "ingredients=#{count_ingredients.map{|k,v| "#{k}*#{v}"}.join('+')}",
+         metadata.map{|k,v| "#{k}=#{v}"},
+        ].flatten.compact.join(' ') + ")"
+    end
+
+    def metadata
+       %w(machine group requires overrides tag).map do |key|
+         v = send(key)
+         v.nil? ? nil : [key, v]
+       end.compact
     end
 
     def hash
@@ -68,6 +76,17 @@ class Craft
     end
 
     def self.unsupported? key
-      %w(keeps compatible).include? key
+      %w(keeps compatible structure).include? key
+    end
+
+    # A craft is overriden when another craft for the same item (must be compatible)
+    # declares either of:
+    # * that it overrides all other crafts from a group(cluster)
+    # * overrides a specific recipe, by use of a tag
+    def matches_overrides keys
+      keys.any? do |key| 
+        key == "#{group}/#{tag}" ||
+        key == group
+      end
     end
 end

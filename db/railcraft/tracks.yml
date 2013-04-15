@@ -1,0 +1,144 @@
+cluster: railcraft
+
+crafts:
+- track:
+    ingredients: [standard rail*6, wooden railbed]
+    makes: 16
+    compatible: vanilla
+    overrides: vanilla
+- cart boarding track:
+    ingredients: [advanced rail*6, redstone, pressure plate, wooden railbed]
+    makes: 8
+- train boarding track:
+    ingredients: [advanced rail*6, redstone repeater, pressure plate, wooden railbed]
+    makes: 8
+- buffer stop track:
+    ingredients: [standard rail*6, wooden railbed, iron block]
+    makes: 8
+- control track:
+    ingredients: [standard rail*4, advanced rail*2, wooden railbed, redstone*2]
+    makes: 16
+- coupler track:
+    ingredients: [advanced rail*6, wooden railbed, crowbar]
+    makes: 8
+- decoupler track:
+    ingredients: [advanced rail*6, wooden railbed, crowbar]
+    makes: 8
+- detector track:
+    ingredients: [standard rail*6, wooden railbed, pressure plate, redstone]
+    makes: 8
+    compatible: vanilla
+    overrides: vanilla
+- directional detector track:
+    ingredients: [standard rail*6, wooden railbed, pressure plate, redstone]
+    makes: 8
+- disembarking track:
+    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone]
+    makes: 8
+- disposal track:
+    ingredients: [standard rail*6, wooden tie*2, steel plate]
+    makes: 8
+- elevator track:
+    ingredients: [advanced rail*6, standard rail, redstone*2]
+    makes: 8
+- embarking track:
+    ingredients: [advanced rail*6, ender pearl*2, wooden railbed]
+    makes: 8
+- gated track:
+    ingredients: [standard rail*6, fence gate*2, wooden railbed]
+    makes: 8
+- gated one-way track:
+    ingredients: [standard rail*4, advanced rail*2, fence gate*2, wooden railbed]
+    makes: 8
+- high-speed booster track:
+    ingredients: [high-speed rail*6, redstone*2, stone railbed]
+    makes: 8
+- high-speed track:
+    ingredients: [high-speed rail*6, stone railbed]
+    makes: 16
+- high-speed transition track:
+    ingredients: [high-speed rail*6, redstone*2, stone railbed]
+    makes: 8
+- high-speed switch track:
+    ingredients: [high-speed rail*8, stone railbed]
+    makes: 8
+- high-speed wye track:
+    ingredients: [high-speed rail*8, stone railbed]
+    makes: 8
+- cart holding track:
+    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone]
+    makes: 8
+- train holding track:
+    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone repeater]
+    makes: 8
+- junction track:
+    ingredients: [standard rail*8, wooden railbed]
+    makes: 4
+- launch track:
+    ingredients: [reinforced rail*4, stone railbed*2, steel block*2, piston]
+    makes: 1
+- limiter track:
+    ingredients: [standard rail*6, redstone repeater*2, wooden railbed]
+    makes: 8
+- cart lockdown track:
+    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone]
+    makes: 8
+- train lockdown track:
+    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone repeater]
+    makes: 8
+- locomotive track:
+    ingredients: [standard rail*6, signal lamp*2, wooden railbed]
+    makes: 8
+- powered track:
+    ingredients: [advanced rail*6, wooden railbed, redstone]
+    makes: 8
+    compatible: vanilla
+    overrides: vanilla
+- priming track:
+    ingredients: [reinforced rail*6, stone railbed, pressure plate, flint and steel]
+    makes: 8
+- reinforced track:
+    ingredients: [reinforced rail*6, stone railbed]
+    makes: 16
+- reinforced booster track:
+    ingredients: [reinforced rail*6, stone railbed, redstone]
+    makes: 8
+- reinforced junction track:
+    ingredients: [reinforced rail*8, stone railbed]
+    makes: 4
+- reinforced switch track:
+    ingredients: [reinforced rail*8, stone railbed]
+    makes: 8
+- reinforced wye track:
+    ingredients: [reinforced rail*8, stone railbed]
+    makes: 8
+- suspended track:
+    ingredients: [standard rail*6, wooden tie*3]
+    makes: 12
+- switch track:
+    ingredients: [standard rail*8, wooden railbed]
+    makes: 8
+- wye track:
+    ingredients: [standard rail*8, wooden railbed]
+    makes: 8
+- one-way track:
+    ingredients: [standard rail*6, piston, wooden railbed, pressure plate]
+    makes: 8
+- wooden track:
+    ingredients: [wooden rail*6, wooden railbed]
+    makes: 16
+- wooden switch track:
+    ingredients: [wooden rail*8, wooden railbed]
+    makes: 8
+- wooden junction track:
+    ingredients: [wooden rail*8, wooden railbed]
+    makes: 4
+- wooden wye track:
+    ingredients: [wooden rail*8, wooden railbed]
+    makes: 8
+- wooden booster track:
+    ingredients: [wooden rail*4, gold ingot*2, wooden railbed, redstone]
+    makes: 8
+- whistle track:
+    ingredients: [standard rail*6, yellow dye, black dye, wooden railbed]
+    makes: 8

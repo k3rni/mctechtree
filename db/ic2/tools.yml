@@ -4,7 +4,7 @@ crafts:
     - cutter: [refined iron*3, iron*2]
     - painter: [iron*2, wool*3]
     - EU meter:
-      - glowstone
+      - glowstone dust
       - copper cable*4
       - integrated circuit
     - drill:
@@ -22,7 +22,7 @@ crafts:
       - integrated circuit
       - wrench
     - nano saber:
-      - glowstone*2
+      - glowstone dust*2
       - advanced alloy*2
       - carbon plate*2
       - energy crystal

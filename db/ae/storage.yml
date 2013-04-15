@@ -8,10 +8,10 @@ crafts:
     ingredients: [redstone*4, ME basic processor, storage cell*3, glass]
     shape: r M r s g s r s r
 - storage block: 
-    ingredients: [glowstone*4, ME advanced processor, storage segment*3, glass]
+    ingredients: [glowstone dust*4, ME advanced processor, storage segment*3, glass]
     shape: glo M glo s gla s glo s glo
 - storage cluster: 
-    ingredients: [glowstone*4, ME advanced processor, storage block*3, glass]
+    ingredients: [glowstone dust*4, ME advanced processor, storage block*3, glass]
     shape: glo M glo s gla s glo s glo
 - ME drive:
     ingredients: [iron*4, ME basic processor*2, glass*2, chest]

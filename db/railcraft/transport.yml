@@ -1,0 +1,17 @@
+cluster: railcraft
+
+crafts:
+- iron tank wall: 
+    ingredients: [iron plate*4]
+    makes: 4
+- iron tank gauge: 
+    ingredients: [iron plate*4, glass pane*5]
+    makes: 4
+- iron tank valve: 
+    ingredients: [iron plate*4, iron bars*4, lever]
+    makes: 4
+- liquid loader: [dispenser, glass*6, tank detector]
+- liquid unloader: [dispenser, glass*6, tank detector]
+- water tank siding: [planks*6, iron*2, slimeball]
+
+

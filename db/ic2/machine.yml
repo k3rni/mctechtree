@@ -25,7 +25,7 @@ crafts:
   - machine
   - integrated circuit
 - recycler:
-  - glowstone
+  - glowstone dust
   - compressor
   - dirt*3
   - refined iron*2
@@ -38,7 +38,7 @@ crafts:
   - advanced machine
   - copper ingot*7
 - mass fabricator:
-  - glowstone*4
+  - glowstone dust*4
   - advanced machine*2
   - advanced circuit*2
   - lapotron crystal
@@ -55,7 +55,7 @@ crafts:
   - integrated circuit
   - redstone*4
   - lapis*2
-  - glowstone*2
+  - glowstone dust*2
 - miner: [machine, integrated circuit*2, mining pipe*2]
 - electric pump: [cell*4, machine, integrated circuit, mining pipe*2, treetap]
 - mining pipe: [refined iron*6, treetap]

@@ -1,5 +1,9 @@
 cluster: vanilla
 
+primitives:
+- mossy stone bricks: 40
+- mossy cobble: 20
+
 crafts:
 - diamond block: [diamond*9]
 - block of gold: [gold ingot*9]
@@ -12,6 +16,9 @@ crafts:
 - stone slab:
     makes: 6
     ingredients: [stone*3]
+- plank slab:
+    makes: 6
+    ingredients: [planks*3]
 - nether brick block: [nether brick*4]
 - snow: [snowball*4]
 - bricks:

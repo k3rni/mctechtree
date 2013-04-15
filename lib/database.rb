@@ -7,7 +7,7 @@ class Database < Set
     def initialize(*args)
         super(*args)
         @pending = Set.new
-	@conflicts = Set.new
+        @conflicts = Set.new
         @equivalents = Hash.new { |h, key| h[key] = Set.new }
     end
 
@@ -50,13 +50,21 @@ class Database < Set
       end
     end
 
-    def conflicts existing, extra, group
-      compatible = extra['compatible']
-      return false if compatible == 'all' || existing.compatible == 'all'
-      if existing.group != group 
-        return false if compatible == existing.group || existing.compatible == group
-        return compatible != existing.group
-      end
+    def conflicts? existing, extra, group
+        compatible = extra['compatible']
+        if compatible == 'all'
+            false
+        elsif [group, 'all'].include? existing.compatible 
+            false
+        elsif existing.group == group
+            false
+        elsif compatible.nil?
+            true
+        elsif compatible != existing.group
+            true
+        else
+            false
+        end
     end
 
     def load_crafts definitions, group=nil
@@ -65,17 +73,17 @@ class Database < Set
         name, makes, machine, ingredients, extra = parse_recipe(recipe)
         item = find(name)
 
-        if item && conflicts(item, extra, group)
+          if !item
+            item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
+              craft.makes(makes, machine, ingredients, group, extra)
+            end
+            self.add item
+        elsif conflicts?(item, extra, group)
           @conflicts.add [:craft, name, group, item.group]
-        elsif item
-          item.add_craft do |craft|
-            craft.makes(makes, machine, ingredients, group, extra)
-          end
         else
-          item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
+            item.add_craft do |craft|
             craft.makes(makes, machine, ingredients, group, extra)
           end
-          self.add item
         end
       end
     end

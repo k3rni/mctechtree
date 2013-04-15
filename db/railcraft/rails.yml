@@ -1,0 +1,52 @@
+cluster: railcraft
+
+crafts:
+- wooden tie:
+    ingredients: [plank slab*3, creosote oil*1000]
+    tag: without-forestry
+- wooden tie:
+    ingredients: [plank slab*3, creosote oil*1000]
+    machine: carpenter
+    overrides: railcraft/without-forestry
+    requires: forestry
+- stone tie:
+    ingredients: [rebar, stone slab*3]
+- wooden railbed: [wooden tie*4]
+- stone railbed: [stone tie*4]
+- standard rail:
+    ingredients: [iron*6]
+    makes: 8
+    machine: rolling machine
+- standard rail:
+    ingredients: [steel ingot*6]
+    makes: 16
+    machine: rolling machine
+#TODO: more of these forge recipes, extracted from game, also fix these
+- standard rail:
+    ingredients: [bronze*6]
+    makes: 4
+    machine: rolling machine
+- standard rail:
+    ingredients: [refined iron*6]
+    makes: 8
+    machine: rolling machine
+# NOTE: cykl, zakomentowane
+# - standard rail:
+#     ingredients: [track*8]
+#     makes: 2
+- advanced rail:
+    ingredients: [standard rail*3, redstone*3, gold ingot*3]
+    makes: 8
+    machine: rolling machine
+- wooden rail:
+    ingredients: [wooden tie*3, standard rail*3]
+    makes: 8
+    machine: rolling machine
+- reinforced rail:
+    ingredients: [steel ingot*6, obsidian dust*3]
+    makes: 8
+    machine: rolling machine
+- high-speed rail:
+    ingredients: [steel ingot*3, gold ingot*3, blaze powder*3]
+    makes: 8
+    machine: rolling machine
