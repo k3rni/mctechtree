@@ -5,6 +5,7 @@ crafts:
     ingredients: [standard rail*6, wooden railbed]
     makes: 16
     compatible: vanilla
+    overrides: vanilla
 - cart boarding track:
     ingredients: [advanced rail*6, redstone, pressure plate, wooden railbed]
     makes: 8
@@ -26,7 +27,8 @@ crafts:
 - detector track:
     ingredients: [standard rail*6, wooden railbed, pressure plate, redstone]
     makes: 8
-    # TODO: replaces vanilla detector track recipe
+    compatible: vanilla
+    overrides: vanilla
 - directional detector track:
     ingredients: [standard rail*6, wooden railbed, pressure plate, redstone]
     makes: 8
@@ -74,6 +76,7 @@ crafts:
     makes: 4
 - launch track:
     ingredients: [reinforced rail*4, stone railbed*2, steel block*2, piston]
+    makes: 1
 - limiter track:
     ingredients: [standard rail*6, redstone repeater*2, wooden railbed]
     makes: 8
@@ -89,7 +92,8 @@ crafts:
 - powered track:
     ingredients: [advanced rail*6, wooden railbed, redstone]
     makes: 8
-    #TODO: replaces vanilla powered track
+    compatible: vanilla
+    overrides: vanilla
 - priming track:
     ingredients: [reinforced rail*6, stone railbed, pressure plate, flint and steel]
     makes: 8
