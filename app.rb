@@ -16,18 +16,25 @@ class TechTreeApp < Sinatra::Base
 
   helpers do
     def count_all_recipes
-      recipe_counters.map(&:last).inject(0) { |a, b| a+b }
-    end
-    def recipe_counters
-      @@db.crafted.group_by(&:group).map {|key, g| [key, g.size]}
+      recipe_counters.map do |grp, count, subcount|
+        count + subcount
+      end.inject(0) { |a, b| a + b }
     end
 
-    def item_groups
-      @@db.crafted.group_by(&:group).map { |key, g| [key, g.map(&:name)]}
+    def recipe_counters
+      rc = Hash[@@db.crafted.group_by(&:group).map {|key, g| [key, g.size]}]
+      @@db.root_groups.map do |group|
+        subcount = @@db.submods(group).map { |sg| rc[sg] }.inject(0) { |a, b| a+b }
+        [group, rc[group], subcount]
+      end
     end
 
     def advanced_item_groups
       @@db.crafted.group_by(&:groups).map { |key, g| [key, g.map(&:name)]}
+    end
+
+    def submodules group
+      @@db.submods(group)
     end
 
     def all_machines

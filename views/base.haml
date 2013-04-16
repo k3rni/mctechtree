@@ -22,9 +22,12 @@
             - recipe_counters.in_groups_of((recipe_counters.size / 2).ceil).each do |grp|
               .span4
                 %dl
-                  - grp.compact.each do |cluster, count|
+                  - grp.compact.each do |cluster, count, subcount|
                     %dt.span2= I18n.t "clusters.#{cluster}"
-                    %dd.span1= count
+                    %dd.span1 
+                      = count
+                      - if subcount > 0
+                        %span{title: multigroup_text(submodules(cluster))}(style="text-decoration: underline") +#{subcount}
       = yield
     :javascript
       $('.chzn-select').chosen({search_contains: true})
