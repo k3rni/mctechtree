@@ -89,6 +89,9 @@ crafts:
   - iridium*4
   - advanced alloy*4
   - diamond
+- reinforced stone:
+    makes: 8
+    ingredients: [stone*8, advanced alloy]
 - reinforced glass:
     makes: 7
     ingredients:
