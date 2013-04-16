@@ -1,0 +1,16 @@
+cluster: logi
+parent: buildcraft
+
+crafts:
+# TODO: add forestry first.
+# - bee analyzer logistics pipe:
+#     machine: carpenter
+#     ingredients: [propolis*4, redstone*3, iron gear, basic logistics pipe, honey*1500]
+#     tag: bc2
+# - bee analyzer logistics pipe:
+#     machine: carpenter
+#     ingredients: [propolis*4, redstone*3, redstone iron chipset, basic logistics pipe, honey*1500]
+#     overrides: logipipes/bc2
+# - bee sink logistics pipe:
+#     machine: carpenter
+#     ingredients: [propolis*4, redstone*4, basic logistics pipe, honey*1500]
