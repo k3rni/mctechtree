@@ -30,6 +30,7 @@ en:
     biolock: BioLock
     apm: Advanced Power Management
     harvestcraft: Pam's Harvestcraft
+    iron_chests: Iron Chests
   tiers:
     t0: raw items
     t1: dusts, ingots
