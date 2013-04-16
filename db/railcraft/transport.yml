@@ -10,8 +10,8 @@ crafts:
 - iron tank valve: 
     ingredients: [iron plate*4, iron bars*4, lever]
     makes: 4
-- liquid loader: [dispenser, glass*6, tank detector]
-- liquid unloader: [dispenser, glass*6, tank detector]
+- liquid loader: [dispenser, glass*6, detector - tank]
+- liquid unloader: [dispenser, glass*6, detector - tank]
 - water tank siding: [planks*6, iron*2, slimeball]
 
 
