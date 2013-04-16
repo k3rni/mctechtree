@@ -22,6 +22,13 @@ en:
     gregtech: GregTech
     chargepads: ChargePads
     abo: Additional Buildcraft Objects
+    advanced_machines: Advanced Machines
+    additional_pipes: Additional Pipes
+    xfels_peripherals: Xfel's Peripherals
+    openccsensors: OpenCCSensors
+    cc_printer: Printer Peripheral
+    biolock: BioLock
+    apm: Advanced Power Management
     harvestcraft: Pam's Harvestcraft
   tiers:
     t0: raw items

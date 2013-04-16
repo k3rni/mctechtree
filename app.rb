@@ -15,6 +15,9 @@ class TechTreeApp < Sinatra::Base
   end
 
   helpers do
+    def count_all_recipes
+      recipe_counters.map(&:last).inject(0) { |a, b| a+b }
+    end
     def recipe_counters
       @@db.crafted.group_by(&:group).map {|key, g| [key, g.size]}
     end

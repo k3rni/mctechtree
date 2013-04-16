@@ -17,7 +17,7 @@
         .span4
           %h1 MCTechTree
         .span8.hidden-phone
-          %h3 includes recipes from
+          %h3 includes #{count_all_recipes} recipes from
           .row
             - recipe_counters.in_groups_of((recipe_counters.size / 2).ceil).each do |grp|
               .span4
