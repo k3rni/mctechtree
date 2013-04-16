@@ -31,6 +31,7 @@ en:
     apm: Advanced Power Management
     harvestcraft: Pam's Harvestcraft
     iron_chests: Iron Chests
+    misc_per: Misc Peripherals
   tiers:
     t0: raw items
     t1: dusts, ingots
