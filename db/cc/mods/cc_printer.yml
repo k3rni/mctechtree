@@ -1,0 +1,10 @@
+cluster: cc_printer
+
+crafts:
+- scanner: 
+    ingredients: [stone*6, redstone*2, redstone lamp]
+- color printer:
+    ingredients: [red dye, green dye, yellow dye, stone*4, chest, redstone]
+
+
+

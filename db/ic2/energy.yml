@@ -34,6 +34,9 @@ crafts:
 - 3ins HV cable: [rubber*2, insulated HV cable]
 - 3ins HV cable: [rubber*3, HV cable]
 - 3ins HV cable: [rubber, 2ins HV cable]
+- splitter cable: [redstone*2, lever, 3ins HV cable*2]
+- detector cable: [redstone*3, 3ins HV cable, integrated circuit]
+- charged RE battery: [RE battery]
 - RE battery:
   - tin ingot*4
   - redstone*2

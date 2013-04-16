@@ -1,0 +1,33 @@
+cluster: chargepads
+
+crafts:
+- static charge pad: [rubber*2, pressure plate, integrated circuit*2, batbox]
+- crystalizor charge pad: 
+    ingredients: [rubber*2, pressure plate, integrated circuit*2, MFE]
+- crystalizor charge pad:
+    ingredients: [static charge pad, crystalizor upgrade kit]
+- lapotronic charge pad:
+    ingredients: [rubber*2, pressure plate, advanced circuit*2, MFSU]
+- lapotronic charge pad:
+    ingredients: [crystalizor charge pad, lapotronic upgrade kit]
+- crystalizor upgrade kit: [electric wrench, integrated circuit, MFE]
+- MFS Unit upgrade: [lapotron crystal*6, wrench, advanced circuit, advanced machine]
+- MFS Unit upgrade: [MFSU, wrench]
+- lapotronic upgrade kit: [advanced circuit*2, electric wrench, carbon plate*2, MFS Unit upgrade]
+- efficiency upgrade: [charged RE battery*2, glass fibre cable, advanced circuit, 2ins gold cable*2]
+- proximity booster module:
+    ingredients: [advanced circuit*4, overclocker upgrade, splitter cable, 2ins gold cable*2]
+- wide-band booster module:
+    ingredients: [advanced circuit*4, proximity booster module*2, energy crystal*2, splitter cable]
+- field expansion module alpha:
+    ingredients: [neutron reflector*4, detector cable*2, splitter cable*2, wide-band booster module]
+- field expansion module delta:
+    ingredients: [field expansion module alpha, efficiency upgrade*2, splitter cable*2, advanced circuit]
+- field expansion module theta:
+    ingredients: [thick neutron reflector*2, overclocker upgrade, field expansion module delta*2, splitter cable, efficiency upgrade*2, advanced circuit]
+- armour priority module:
+    ingredients: [glowstone dust*2, ender pearl, 2ins gold cable*2, proximity booster module]
+- drain conversion module:
+    ingredients: [glowstone dust*3, advanced circuit, 2ins gold cable*2]
+- damage conversion module:
+    ingredients: [near-depleted uranium cell*3, advanced circuit, 2ins gold cable*2]
