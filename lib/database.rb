@@ -78,20 +78,20 @@ class Database < Set
     end
 
     def load_crafts definitions, group=nil
-      # TODO: disable and override other recipes, by signature
+      # TODO: disable other recipes, by signature
       definitions.each do |recipe|
         name, makes, machine, ingredients, extra = parse_recipe(recipe)
         item = find(name)
 
-          if !item
-            item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
-              craft.makes(makes, machine, ingredients, group, extra)
-            end
-            self.add item
+        if !item
+          item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
+            craft.makes(makes, machine, ingredients, group, extra)
+          end
+          self.add item
         elsif conflicts?(item, extra, group)
           @conflicts.add [:craft, name, group, item.group]
         else
-            item.add_craft do |craft|
+          item.add_craft do |craft|
             craft.makes(makes, machine, ingredients, group, extra)
           end
         end
