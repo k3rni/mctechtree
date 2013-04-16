@@ -1,6 +1,7 @@
 # Additional Pipes/Teleport Pipes
 # extracted from github:tcooc/AdditionalPipesBC
 cluster: additional_pipes
+parent: buildcraft
 
 crafts:
 - power switch pipe:

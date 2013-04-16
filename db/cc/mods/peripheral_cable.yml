@@ -1,4 +1,5 @@
 cluster: xfels_peripherals
+parent: cc
 
 crafts:
 - peripheral cable:

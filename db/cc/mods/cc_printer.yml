@@ -1,4 +1,5 @@
 cluster: cc_printer
+parent: cc
 
 crafts:
 - scanner: 
