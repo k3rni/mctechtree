@@ -9,6 +9,7 @@ class Database < Set
         @pending = Set.new
         @conflicts = Set.new
         @equivalents = Hash.new { |h, key| h[key] = Set.new }
+        @hierarchy = Hash.new { |h, key| h[key] = Set.new }
     end
 
     def find(name)
@@ -27,8 +28,17 @@ class Database < Set
       crafted.map { |item| item.crafts.map(&:machine) }.flatten.compact.uniq
     end
 
+    def root_groups
+      submods nil
+    end
+
+    def submods group
+      @hierarchy[group].to_a.compact
+    end
+
     def load_definitions data
       group = data['cluster']
+      @hierarchy[data['parent']].add group
       %w(equivalents primitives craft_templates crafts).each do |key|
         send "load_#{key}", data[key] || {}, group
       end
