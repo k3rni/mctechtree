@@ -1,4 +1,5 @@
 cluster: chargepads
+parent: industrialcraft2
 
 crafts:
 - static charge pad: [rubber*2, pressure plate, integrated circuit*2, batbox]
