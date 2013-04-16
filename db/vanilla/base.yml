@@ -79,8 +79,8 @@ crafts:
 - bucket: [iron*3]
 - water bucket: [water, bucket]
 - lava bucket: [lava, bucket]
-- chest: [wood*8]
-- pressure plate: [wood*2]
+- chest: [planks*8]
+- pressure plate: [planks*2]
 - bottle: [glass*3]
 - bowl: 
     ingredients: [wood*3]
