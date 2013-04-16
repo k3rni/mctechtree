@@ -116,3 +116,6 @@ crafts:
 - detector track:
     ingredients: [iron*6, pressure plate, redstone]
     makes: 6
+- sign:
+    ingredients: [planks*6, stick]
+    makes: 3
