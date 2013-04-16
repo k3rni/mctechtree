@@ -1,3 +1,9 @@
+## Using MCTechTree from inside Computercraft
+
+1. Get the code from https://gist.github.com/k3rni/5400291
+2. Upload, paste or type it into the Computercraft editor
+3. Run it: `mctechtree <item name>`
+
 ## Contributing
 
 1. Clone the repository
