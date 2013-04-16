@@ -1,6 +1,7 @@
 # from wiki and github:Cloudhunter/OpenCCSensors
 # version: 0.1.5.d
 cluster: openccsensors
+parent: cc
 
 crafts:
 - sensor peripheral:

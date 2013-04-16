@@ -1,4 +1,5 @@
 cluster: apm
+parent: industrialcraft2
 
 crafts:
 - LV charging bench: [copper cable*3, planks*4, batbox, integrated circuit]

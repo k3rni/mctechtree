@@ -1,5 +1,6 @@
 # Additional Buildcraft Objects
 cluster: abo
+parent: buildcraft
 
 crafts:
 - valve pipe: [wooden waterproof pipe, lever, wooden waterproof pipe]

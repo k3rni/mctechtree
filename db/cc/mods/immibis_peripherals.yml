@@ -1,5 +1,5 @@
 cluster: cc_ip
-# require cc
+parent: cc
 
 crafts:
 # rfid's
