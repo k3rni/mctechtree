@@ -1,0 +1,23 @@
+cluster: logi
+parent: buildcraft
+
+disabled_crafts:
+# TODO: add forestry first.
+- bee analyzer logistics pipe:
+    machine: carpenter
+    ingredients: [propolis*4, redstone*3, iron gear, basic logistics pipe, honey*1500]
+- bee analyzer logistics pipe:
+    machine: carpenter
+    ingredients: [propolis*4, redstone*3, redstone iron chipset, basic logistics pipe, honey*1500]
+- bee sink logistics pipe:
+    machine: carpenter
+    ingredients: [propolis*4, redstone*4, basic logistics pipe, honey*1500]
+- bee analyzer module:
+    machine: carpenter
+    ingredients: [propolis*4, redstone*3, iron gear, blank module, honey*1500]
+- bee analyzer module:
+    machine: carpenter
+    ingredients: [propolis*4, redstone*3, iron gear, blank module, honey*1500]
+- bee sink module:
+    machine: carpenter
+    ingredients: [propolis*4, redstone*4, blank module, honey*1500]

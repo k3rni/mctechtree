@@ -3,6 +3,9 @@ cluster: vanilla
 crafts:
 - flint and steel: [flint, iron]
 - crafting table: [planks*4]
+- enchantment table: [obsidian*4, diamond*2, book]
+- anvil: [iron*4, iron block*3]
+- shears: [iron*2]
 - bow: [stick*3, string*3]
 - compass: [iron*4, redstone]
 - map: [paper*8, compass]

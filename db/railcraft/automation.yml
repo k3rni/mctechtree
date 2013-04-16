@@ -2,9 +2,9 @@ cluster: railcraft
 
 crafts:
 - item loader:
-    ingredients: [dispenser, storage detector]
+    ingredients: [dispenser, detector - item]
 - item unloader:
-    ingredients: [dispenser, storage detector]
+    ingredients: [dispenser, detector - item]
 - advanced item loader:
     ingredients: [redstone*3, steel ingot*4, ender pearl, item loader]
 - advanced item unloader:
@@ -20,10 +20,10 @@ crafts:
 - switch motor: [white dye, black dye, red dye, piston, receiver circuit, iron]
 
 craft_templates:
-- $(type) detector: 
+- detector - $(type): 
     ingredients: [pressure plate, $(type)*8]
     type:
-      - storage/planks
+      - item/planks
       - powered/cobble
       - any/stone
       - player/stone slab
@@ -34,8 +34,11 @@ craft_templates:
       - sheep/wool
       - growth/spruce wood
       - explosive/plank slab
-      - advanced/iron
+      - advanced/steel ingot
       - train/nether brick
       - tank/brick
+      - villager/leather
+      - locomotive/infernal brick
+      - age/spruce wood
 
 

@@ -1,10 +1,24 @@
 module Addons
   module ForbidMachine
     module ItemResolver
-      def primitive
+      def all_crafts_forbidden?
         item.crafts.all? do |craft|
           forbid_machine_params.include? craft.machine
-        end || super
+        end 
+      end
+
+      def cost
+        if item.primitive
+          count * (item.cost || 1)
+        elsif all_crafts_forbidden?
+          (count * 1000000)
+        else
+          super
+        end
+      end
+
+      def primitive
+        all_crafts_forbidden? || super
       end
 
       def children
