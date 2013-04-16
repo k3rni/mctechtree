@@ -3,16 +3,13 @@ cluster: logi
 crafts:
 - basic logistics pipe:
     ingredients: [gold gear*2, glass*4, redstone torch*2, diamond transport pipe]
-    tag: bc2
 - basic logistics pipe:
     ingredients: [redstone golden chipset*2, glass*4, redstone torch*2, diamond transport pipe]
-    overrides: logipipes/bc2
+    # NOTE: this recipe is cheaper, and will be preferred by the solver unless assembly machine recipes are excluded
 - request logistics pipe:
     ingredients: [gold gear*2, basic logistics pipe]
-    tag: bc2
 - request logistics pipe:
     ingredients: [redstone golden chipset*2, basic logistics pipe]
-    overrides: logipipes/bc2
 - provider logistics pipe:
     ingredients: [basic logistics pipe, glowstone dust]
 - supplier logistics pipe:
@@ -37,7 +34,6 @@ crafts:
 craft_templates:
 - chassis $(tier):
     ingredients: [basic logistics pipe, $(tier)*8]
-    tag: bc2
     tier:
     - mk1/redstone
     - mk2/iron
@@ -45,7 +41,6 @@ craft_templates:
     - mk4/diamond
 - chassis $(tier):
     ingredients: [basic logistics pipe, $(tier)*3]
-    overrides: logipipes/bc2
     tier:
     - mk1/redstone chipset
     - mk2/redstone iron chipset

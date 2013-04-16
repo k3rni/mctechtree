@@ -3,30 +3,23 @@ cluster: logi
 crafts:
 - extractor module mk2:
     ingredients: [extractor module, gold gear]
-    tag: bc2
 - extractor module mk2:
     ingredients: [extractor module, redstone golden chipset]
-    overrides: logipipes/bc2
 - request logistics pipe mk2:
     ingredients: [diamond gear, request logistics pipe]
-    tag: bc2
 - request logistics pipe mk2:
     ingredients: [redstone diamond chipset, request logistics pipe]
-    overrides: logipipes/bc2
 - provider logistics pipe mk2:
     ingredients: [provider logistics pipe, diamond gear]
 - provider logistics pipe mk2:
     ingredients: [basic logistics pipe, redstone diamond chipset]
 - crafting logistics pipe mk2:
     ingredients: [crafting logistics pipe, gold gear]
-    tag: bc2
 - crafting logistics pipe mk2:
     ingredients: [crafting logistics pipe, redstone golden chipset]
-    overrides: logipipes/bc2
 - crafting logistics pipe mk3:
     machine: soldering station
     ingredients: [crafting logistics pipe mk2, redstone diamond chipset, nano hopper, iron]
-    overrides: logipipes/bc2
 - nano hopper:
     machine: soldering station
     ingredients: [hopper*8, iron]

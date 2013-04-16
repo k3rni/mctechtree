@@ -5,27 +5,20 @@ crafts:
     ingredients: [paper*6, redstone*2, gold nugget]
 - provider module:
     ingredients: [lapis*4, redstone*3, gold gear, blank module]
-    tag: bc2
 - provider module:
     ingredients: [lapis*2, redstone*3, redstone golden chipset, blank module]
-    overrides: logipipes/bc2
 - quicksort module:
     ingredients: [lapis*4, redstone*3, diamond gear, blank module]
-    tag: bc2
 - quicksort module:
     ingredients: [lapis*4, redstone*3, redstone diamond chipset, blank module]
-    overrides: logipipes/bc2
 - terminus module:
     ingredients: [ink sac*2, purple dye*2, redstone*3, iron gear, blank module]
-    tag: bc2
 - terminus module:
     ingredients: [ink sac, purple dye, redstone*3, redstone iron chipset, blank module]
-    overrides: logipipes/bc2
 
 craft_templates:
 - $(function) module:
     ingredients: [$(function)*4, redstone*3, iron gear, blank module]
-    tag: bc2
     function:
     - itemsink/cactus green
     - polymorphic itemsink/orange dye
@@ -33,7 +26,6 @@ craft_templates:
     - extractor/lapis
 - $(function) module:
     ingredients: [$(function)*4, redstone*3, redstone iron chipset, blank module]
-    overrides: logipipes/bc2
     function:
     - itemsink/cactus green
     - polymorphic itemsink/orange dye

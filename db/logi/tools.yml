@@ -3,10 +3,8 @@ cluster: logi
 crafts:
 - logistics power junction:
     ingredients: [iron*5, gold gear, basic logistics pipe, redstone*2]
-    tag: bc2
 - logistics power junction:
     ingredients: [iron*5, redstone golden chipset, basic logistics pipe, redstone*2]
-    overrides: logipipes/bc2
 - logistics inventory system connector:
     ingredients: [ender pearl*2, basic logistics pipe]
 - soldering station: [iron*6, crafting table, redstone]
