@@ -53,6 +53,7 @@ crafts:
   - RE battery*6
   - integrated circuit
   - tin ingot
+- LV transformer: [wood*4, copper cable, copper ingot*3]
 - MV transformer:
   - 2ins gold cable*2
   - machine

@@ -16,7 +16,7 @@ craft_templates:
 - $(material) transport pipe:
     ingredients: [$(material)*2, glass]
     makes: 8
-    material: [wooden/wood, stone, cobblestone/cobble, sandstone, iron, golden/gold ingot, obsidian, emerald]
+    material: [wooden/wood, stone, cobblestone/cobble, sandstone, iron, golden/gold ingot, obsidian, diamond, emerald]
 # NOTE: since these use properly named crafted pipes from above, no aliasing needed
 - $(material) waterproof pipe:
     ingredients: [$(material) transport pipe, pipe waterproof]
