@@ -1,53 +1,55 @@
 cluster: industrialcraft2
 
 primitives:
-    - re-enriched uranium cell: 200 # powstaje w reaktorze
+- re-enriched uranium cell: 200 # spawned in a reactor
 
 crafts:
-  - coolant cell:
-    - water cell
-    - tin ingot*4
-  - water cell: [cell, water]
-  - lava cell: [cell, lava]
-  - 30K coolant cell:
-    - coolant cell*3
-    - tin ingot*6
-  - 60K coolant cell:
-    - 30K coolant cell*2
-    - tin ingot*6
-    - dense copper plate
-  - heating cell:
-    - integrated circuit
-    - lava cell
-    - dense copper plate
-  - dense copper plate:
-      machine: compressor
-      ingredients:
-        - copper ingot*8
-  - heat-capacity reactor plating: [reactor plating, dense copper plate*2]
-  - reactor plating: [dense copper plate, advanced alloy]
-  - advanced heat exchanger:
-    - glass fibre cable*4
-    - integrated circuit*2
-    - heat exchanger*2
-    - dense copper plate
-  - heat exchanger:
-    - integrated circuit
-    - dense copper plate
-    - tin ingot*3
-  - nuclear reactor:
-    - advanced circuit
-    - reactor chamber*3
-    - generator
-  - reactor chamber:
-    - machine
-    - dense copper plate*4
-  - uranium fuel ingot:
-      machine: compressor
-      ingredients: [uranium ore]
-  - uranium cell: [cell, uranium fuel ingot]
-  - uranium cell: [re-enriched uranium cell, coal dust]
-  - near-depleted uranium cell:
-      makes: 8
-      ingredients: [cell*8, uranium fuel ingot]
-  - depleted isotope cell: [near-depleted uranium cell, coal dust]
+- coolant cell:
+  - water cell
+  - tin ingot*4
+- water cell: [cell, water]
+- lava cell: [cell, lava]
+- 30K coolant cell:
+  - coolant cell*3
+  - tin ingot*6
+- 60K coolant cell:
+  - 30K coolant cell*2
+  - tin ingot*6
+  - dense copper plate
+- heating cell:
+  - integrated circuit
+  - lava cell
+  - dense copper plate
+- dense copper plate:
+    machine: compressor
+    ingredients:
+      - copper ingot*8
+- heat-capacity reactor plating: [reactor plating, dense copper plate*2]
+- reactor plating: [dense copper plate, advanced alloy]
+- advanced heat exchanger:
+  - glass fibre cable*4
+  - integrated circuit*2
+  - heat exchanger*2
+  - dense copper plate
+- heat exchanger:
+  - integrated circuit
+  - dense copper plate
+  - tin ingot*3
+- neutron reflector: [tin dust*4, coal dust*4, dense copper plate]
+- thick neutron reflector: [neutron reflector*4, dense copper plate]
+- nuclear reactor:
+  - advanced circuit
+  - reactor chamber*3
+  - generator
+- reactor chamber:
+  - machine
+  - dense copper plate*4
+- uranium fuel ingot:
+    machine: compressor
+    ingredients: [uranium ore]
+- uranium cell: [cell, uranium fuel ingot]
+- uranium cell: [re-enriched uranium cell, coal dust]
+- near-depleted uranium cell:
+    makes: 8
+    ingredients: [cell*8, uranium fuel ingot]
+- depleted isotope cell: [near-depleted uranium cell, coal dust]

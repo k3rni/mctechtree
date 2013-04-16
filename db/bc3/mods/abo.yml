@@ -1,0 +1,17 @@
+# Additional Buildcraft Objects
+cluster: abo
+
+crafts:
+- valve pipe: [wooden waterproof pipe, lever, wooden waterproof pipe]
+- golden iron waterproof pipe: [golden waterproof pipe, iron waterproof pipe]
+- balancing waterproof pipe: [wooden waterproof pipe*2, iron OR gate]
+- round-robin item pipe: [stone transport pipe, gravel]
+- diamond waterproof pipe: [diamond transport pipe, pipe waterproof] 
+- insertion transport pipe: [cobblestone transport pipe, redstone]
+- extraction transport pipe: [wooden transport pipe, planks]
+- bounce transport pipe: [stone transport pipe, cobble]
+- crossover transport pipe: [stone transport pipe, iron transport pipe]
+- power switch pipe: [golden conductive pipe, lever]
+- iron power pipe: [iron transport pipe, redstone]
+- diamond power pipe: [diamond transport pipe, redstone]
+

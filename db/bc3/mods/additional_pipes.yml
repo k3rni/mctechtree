@@ -1,0 +1,41 @@
+# Additional Pipes/Teleport Pipes
+# extracted from github:tcooc/AdditionalPipesBC
+cluster: additional_pipes
+
+crafts:
+- power switch pipe:
+    compatible: abo # same concept, same item, identical recipe
+    ingredients: [golden conductive pipe, lever]
+- item teleport pipe: 
+    ingredients: [diamond gear*2, glass]
+    makes: 4
+    tag: without-assembly-table
+- item teleport pipe:
+    machine: assembly table
+    ingredients: [pulsating chipset, redstone diamond chipset, diamond transport pipe]
+    makes: 2
+    overrides: additional_pipes/without-assembly-table
+- liquid teleport pipe: [pipe waterproof, item teleport pipe]
+- power teleport pipe: [redstone, item teleport pipe]
+- distribution transport pipe: [redstone, iron*2, glass]
+- advanced wooden transport pipe: 
+    ingredients: [wooden gear*2, glass]
+    makes: 8
+- insertion transport pipe: 
+    compatible: abo
+    ingredients: [iron gear*2, glass] 
+    makes: 8
+- redstone transport pipe: 
+    ingredients: [redstone*2, glass]
+    makes: 8
+- redstone waterproof pipe: [redstone transport pipe, pipe waterproof]
+- closed transport pipe: [iron gear, void transport pipe]
+- switch transport pipe: [glass*2, gold gear]
+- switch conductive pipe:
+    # similar to abo/power switch pipe
+    ingredients: [switch transport pipe, redstone]
+- switch waterproof pipe: [switch transport pipe, pipe waterproof]
+- water pump pipe: [wooden waterproof pipe, golden waterproof pipe, redstone*2, iron gear]
+- teleport tether:
+    # chunk loader
+    ingredients: [iron*8, lapis]

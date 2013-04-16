@@ -1,0 +1,42 @@
+# from wiki and github:Cloudhunter/OpenCCSensors
+# version: 0.1.5.d
+cluster: openccsensors
+
+crafts:
+- sensor peripheral:
+    ingredients: [obsidian*4, redstone*2, stone*3]
+- gauge peripheral:
+    ingredients: [glass pane, redstone, scalable monitor]
+- range extension antenna:
+    ingredients: [redstone torch, redstone, iron, stone*4]
+- signal amplifier:
+    ingredients: [stone*4, redstone*3, gold ingot*2]
+- advanced amplifier:
+    ingredients: [iron*4, redstone*2, diamond, gold ingot*2]
+
+upgradable: &upgradable_sensors
+  sensor: [inventory, proximity, machine, power, tank, dropped item, sign, minecart, sonic]
+
+craft_templates:
+- $(detector) sensor card:
+    ingredients: [redstone*5, $(detector), paper*3]
+    detector:
+    - inventory/chest
+    - proximity/pressure plate
+    - machine/redstone
+    - power/coal
+    - tank/bucket
+    - world/ender pearl
+    - dropped item/slimeball
+    - sign
+    - minecart
+    - sonic/note block
+- $(sensor) sensor card mk2:
+    ingredients: [$(sensor) sensor card, range extension antenna]
+    <<: *upgradable_sensors
+- $(sensor) sensor card mk3:
+    ingredients: [$(sensor) sensor card, range extension antenna*2, signal amplifier]
+    <<: *upgradable_sensors
+- $(sensor) sensor card mk4:
+    ingredients: [$(sensor) sensor card, range extension antenna*3, signal amplifier*2, advanced amplifier]
+    <<: *upgradable_sensors
