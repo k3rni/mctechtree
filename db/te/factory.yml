@@ -1,4 +1,4 @@
-cluster: thermalexpansion
+cluster: te
 
 crafts:
 - powered furnace: [redstone, bricks*2, machine frame, copper ingot*2, redstone reception coil]

@@ -1,5 +1,5 @@
 cluster: advanced_machines
-parent: industrialcraft2
+parent: ic2
 
 crafts:
 - rotary macerator:
