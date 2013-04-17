@@ -79,11 +79,11 @@ craft_templates:
     - pistol ($(symbol))
     - shotgun ($(symbol))
     - rifle ($(symbol))
+    - sniper ($(symbol))
     - launcher ($(symbol))
     - grenade ($(symbol))
     - claymore ($(symbol))
     - C4 ($(symbol))
-    - pistol ($(symbol))
     - diamond
     <<: *symbols
 - armor rack ($(symbol)):
