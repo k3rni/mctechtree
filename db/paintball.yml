@@ -1,0 +1,94 @@
+# extracted from https://bitbucket.org/lKinx/paintball
+cluster: paintball
+
+paintball_colors: &colors
+  color: [R/red, O/orange, Y/yellow, G/green, B/blue, P/purple]
+
+paintball_letter: &symbols
+  symbol: [R, O, Y, G, B, P]
+
+equivalents: # workarounds, the template system isn't powerful enough
+- [wool (R), red wool]
+- [wool (O), orange wool]
+- [wool (Y), yellow wool]
+- [wool (G), green wool]
+- [wool (B), blue wool]
+- [wool (P), red wool]
+  
+craft_templates:
+- scanner ($(color)):
+    ingredients: [$(color) wool*2]
+    <<: *colors
+- insta-base ($(color)):
+    ingredients: [$(color) wool*6, iron door, diamond, chest]
+    <<: *colors
+- helmet ($(color)):
+    ingredients: [$(color) wool*5]
+    <<: *colors
+- chest ($(color)):
+    ingredients: [$(color) wool*8]
+    <<: *colors
+- pants ($(color)):
+    ingredients: [$(color) wool*7]
+    <<: *colors
+- shoes ($(color)):
+    ingredients: [$(color) wool*4]
+    <<: *colors
+- remote ($(color)):
+    ingredients: [$(color) dye*4, redstone torch, iron*3, button]
+    <<: *colors
+- paintbrush ($(color)):
+    ingredients: [$(color) wool, stick*2]
+    <<: *colors
+- pellet ($(color)):
+    ingredients: [glass*4, $(color) dye]
+    makes: 32
+    <<: *colors
+- pistol ($(color)):
+    ingredients: [iron, stick, $(color) dye]
+    <<: *colors
+- shotgun ($(color)):
+    ingredients: [iron*2, stick, $(color) dye]
+    <<: *colors
+- rifle ($(color)):
+    ingredients: [iron*3, stick, $(color) dye]
+    <<: *colors
+- sniper ($(color)):
+    ingredients: [iron*3, stick, $(color) dye, glass]
+    <<: *colors
+- launcher ($(color)):
+    ingredients: [iron*3, stick, $(color) dye, gunpowder]
+    <<: *colors
+- grenade ($(color)):
+    ingredients: [$(color) dye, iron*4]
+    <<: *colors
+- claymore ($(color)):
+    ingredients: [$(color) dye, iron*4, stick*2]
+    <<: *colors
+- C4 ($(color)):
+    ingredients: [$(color) dye, iron*4, redstone torch]
+    <<: *colors
+- flag ($(color)):
+    ingredients: [stone*3, stick*2, $(color) wool]
+    <<: *colors
+- pod ($(color)):
+    ingredients: [$(color) dye*4, glass*4, diamond]
+    <<: *colors
+- weapon rack ($(symbol)):
+    ingredients:
+    - pistol ($(symbol))
+    - shotgun ($(symbol))
+    - rifle ($(symbol))
+    - launcher ($(symbol))
+    - grenade ($(symbol))
+    - claymore ($(symbol))
+    - C4 ($(symbol))
+    - pistol ($(symbol))
+    - diamond
+    <<: *symbols
+- armor rack ($(symbol)):
+    ingredients: [wool ($(symbol))*4, helmet ($(symbol)), chest ($(symbol)), pants ($(symbol)), shoes ($(symbol))]
+    <<: *symbols
+- med kit ($(color)):
+    ingredients: [$(color) wool*6, apple]
+    <<: *colors

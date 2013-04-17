@@ -59,3 +59,5 @@ crafts:
 - miner: [machine, integrated circuit*2, mining pipe*2]
 - electric pump: [cell*4, machine, integrated circuit, mining pipe*2, treetap]
 - mining pipe: [refined iron*6, treetap]
+- teleporter: [advanced circuit*4, frequency transmitter, glass fibre cable*2, advanced machine, diamond]
+- frequency transmitter: [integrated circuit, copper cable]
