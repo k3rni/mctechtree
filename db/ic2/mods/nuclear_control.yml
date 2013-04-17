@@ -1,0 +1,69 @@
+# source: forum post and https://bitbucket.org/shedar/ic2-nuclear-control/
+cluster: nuclear
+parent: industrialcraft2
+
+crafts:
+- thermometer:
+    ingredients: [iron, glass*5, water cell]
+- digital thermometer:
+    ingredients: [refined iron*3, integrated circuit, glowstone dust]
+- thermal monitor:
+    ingredients: [reinforced glass*7, advanced circuit, redstone]
+- remote thermal monitor:
+    ingredients: [machine, frequency transmitter, thermal monitor]
+- remote sensor kit:
+    ingredients: [paper, digital thermometer, frequency transmitter]
+- energy sensor kit:
+    ingredients: [paper, EU reader, frequency transmitter]
+- time card:
+    ingredients: [clock, integrated circuit]
+- range upgrade:
+    ingredients: [copper cable*2, frequency transmitter]
+- color upgrade:
+    ingredients:
+    - copper cable
+    - red dye
+    - yellow dye
+    - green dye
+    - white dye
+    - magenta dye
+    - black dye
+    - cyan dye
+    - blue dye
+- industrial information panel:
+    ingredients: [glass pane*3, lime dye*2, integrated circuit, black dye*2, redstone]
+- information panel extender:
+    ingredients: [glass pane*3, lime dye, planks*5]
+- advanced information panel:
+    ingredients: [glass pane*3, lime dye, gold wire*2, advanced circuit, carbon plate*2]
+- advanced panel extender:
+    ingredients: [glass pane*3, lime dye, gold wire*4, carbon plate]
+- howler alarm:
+    ingredients: [note block*3, iron*4, integrated circuit, redstone]
+- industrial alarm:
+    ingredients: [reinforced glass*6, orange dye, howler alarm, redstone]
+- energy counter:
+    ingredients: [advanced circuit, MV transformer, glass fibre cable*2]
+- average counter:
+    ingredients: [advanced circuit, MV transformer, glass fibre cable*2]
+- counter sensor kit:
+    ingredients: [paper, integrated circuit, frequency transmitter]
+- liquid sensor kit:
+    ingredients: [paper, bucket, frequency transmitter]
+- range trigger:
+    ingredients: [detector cable*2, frequency transmitter, advanced circuit*2, machine, redstone]
+- text card:
+    ingredients: [integrated circuit*2, paper*2, copper cable]
+
+recycled_crafts:
+- integrated circuit:
+    # cards are obtained by using kits on reactors or energy storage unit, thus not really crafted.
+    ingredients: [sensor location card]
+    makes: 2
+- integrated circuit:
+    ingredients: [energy sensor location card]
+    makes: 2
+- energy array location card:
+    # join multiple sensor cards to display on one panel.
+    ingredients: [energy sensor location card*2] # upto 6
+    shapeless: yes

@@ -7,6 +7,7 @@ crafts:
 - anvil: [iron*4, iron block*3]
 - shears: [iron*2]
 - bow: [stick*3, string*3]
+- clock: [gold ingot*4, redstone]
 - compass: [iron*4, redstone]
 - map: [paper*8, compass]
 
