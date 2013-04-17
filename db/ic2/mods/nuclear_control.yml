@@ -1,6 +1,6 @@
 # source: forum post and https://bitbucket.org/shedar/ic2-nuclear-control/
 cluster: nuclear
-parent: industrialcraft2
+parent: ic2
 
 crafts:
 - thermometer:

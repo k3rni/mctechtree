@@ -1,4 +1,4 @@
-cluster: industrialcraft2
+cluster: ic2
 
 crafts:
 - cutter: [refined iron*3, iron*2]

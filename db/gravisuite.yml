@@ -1,5 +1,5 @@
 cluster: gravisuite
-parent: industrialcraft2
+parent: ic2
 
 crafts:
 - superconductor cover:
