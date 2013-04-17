@@ -97,6 +97,8 @@ crafts:
 - chestcart: [minecart, chest]
 - dispenser: [cobble*6, bow, redstone]
 - fence gate: [stick*4, planks*2]
+- door: [planks*6]
+- iron door: [iron*6]
 - TNT: [gunpowder*5, sand*4]
 - button: [stone*2]
 - redstone repeater: #shape naming problem
