@@ -5,11 +5,11 @@ en:
       two_words_connector: ! ' and '
       words_connector: ! ', '
   clusters:
-    industrialcraft2: IndustrialCraft²
+    ic2: IndustrialCraft²
     ic2_adv_sol: Advanced Solar Panels
     redpower2: RedPower 2
     vanilla: Minecraft
-    thermalexpansion: Thermal Expansion
+    te: Thermal Expansion
     ae: Applied Energistics
     cc: ComputerCraft
     cc_ip: Immibis' Peripherals
@@ -24,14 +24,17 @@ en:
     abo: Additional Buildcraft Objects
     advanced_machines: Advanced Machines
     additional_pipes: Additional Pipes
-    xfels_peripherals: Xfel's Peripherals
-    openccsensors: OpenCCSensors
+    xfels: Xfel's Peripherals
+    ocs: OpenCCSensors
     cc_printer: Printer Peripheral
     biolock: BioLock
     apm: Advanced Power Management
     harvestcraft: Pam's Harvestcraft
     iron_chests: Iron Chests
     misc_per: Misc Peripherals
+    paintball: Paintball
+    omni: OmniTools
+    nuclear: Nuclear Control
   tiers:
     t0: raw items
     t1: dusts, ingots
