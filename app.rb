@@ -55,7 +55,7 @@ class TechTreeApp < Sinatra::Base
     haml :index, layout: :base
   end
 
-  post '/solve' do
+  post '/solve.?:format?' do
     items = params[:items]
     solveopts = {}
     if (tier = params[:tier])
@@ -76,14 +76,44 @@ class TechTreeApp < Sinatra::Base
     end
     solver = Solver.new(solutions, solveopts).solve
 
-    haml :solution, layout: :base, locals: {
-      raw: solver.raw_resources,
-      crafts: solver.craft_sequence, 
-      targets: items, 
-      tier: tier,
-      forbidden_machines: fm,
-      excluded_mods: xmod
-    }
+    if params[:format] == 'lua'
+      mime_type 'application/lua'
+      "result=#{format_lua raw: solver.raw_resources, crafts: solver.craft_sequence}"
+    else
+      haml :solution, layout: :base, locals: {
+        raw: solver.raw_resources,
+        crafts: solver.craft_sequence, 
+        targets: items, 
+        tier: tier,
+        forbidden_machines: fm,
+        excluded_mods: xmod
+      }
+    end
+  end
+end
+
+def format_lua object
+  case object
+    when Numeric, true, false
+      object.to_s
+    when String, Symbol
+      object.to_s.dump
+    when nil
+      "null"
+    when OpenStruct
+      format_lua object.marshal_dump
+    when Item #specialcase
+      format_lua object.name
+    when Array
+      format_lua Hash[(1..object.size).zip(object)]
+    when Hash
+      ['{',
+        object.map do |key, value|
+          "[#{format_lua key}]=#{format_lua value}"
+        end.join(",\n"),
+       '}'].join('')
+    else
+      format_lua object.to_serializable_hash
   end
 end
 
