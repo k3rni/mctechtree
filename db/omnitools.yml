@@ -1,0 +1,9 @@
+cluster: omni
+
+crafts:
+- omniwrench:
+    ingredients: [diamond*2, gold ingot, cyan wool]
+- plinth:
+    ingredients: [obsidian*3, gold ingot*2, cyan wool]
+- lexicon:
+    ingredients: [book, gold ingot, iron, cyan wool]
