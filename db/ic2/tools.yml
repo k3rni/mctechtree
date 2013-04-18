@@ -58,3 +58,7 @@ crafts:
 - sticky dynamite:
     ingredients: [dynamite*8, sticky resin]
     makes: 8
+- dynamite-o-mote:
+    ingredients: [frequency transmitter, lapis, tin ingot*2, copper cable]
+- dynamite-o-mote:
+    ingredients: [industrial TNT*3, glowstone dust*2, integrated circuit, copper cable]

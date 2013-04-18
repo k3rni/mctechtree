@@ -3,6 +3,7 @@ cluster: ic2
 primitives:
 - copper ore: 4
 - tin ore: 4
+- rubber tree sapling: 12
 - sticky resin: 3
 - UU-matter: 500
 - uranium ore: 25
@@ -45,6 +46,8 @@ crafts:
       - glass*7
       - advanced alloy*2
     shape: g a g g g g g a g
+- reinforced door:
+    ingredients: [reinforced stone*6]
 - iron fence: [refined iron*6]
 - coal ball:
     ingredients: [coal dust*8, flint]
