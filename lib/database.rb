@@ -198,10 +198,15 @@ class Database < Set
       end
       # TODO: stacks dla przedmiotów craftowanych
       if definition.is_a? Hash
-        ingredients = resolve_items(definition.delete('ingredients'))
+        shape_map, ingredients = strip_shapes(definition.delete('ingredients'))
+        # turn ingredient list elements from names into items
+        ingredients = resolve_items(ingredients)
+        # and the shape map too
+        shape_map = resolve_shapes(shape_map, ingredients)
         makes = definition.delete('makes') || 1
         machine = definition.delete('machine')
         extra = definition
+        extra['shape_map'] = shape_map unless shape_map.empty?
       elsif definition.is_a? Array
         ingredients = resolve_items(definition)
         makes = 1
@@ -211,6 +216,27 @@ class Database < Set
         raise BadDefinitionError.new(name)
       end
       [name, makes, machine, ingredients, extra]
+    end
+
+    def strip_shapes ingredients
+      shapes = {}
+      new_ingredients = ingredients.map do |name|
+        match = name.match(/^(?:(.*)\|)?(.*)$/)
+        if match[1]
+          shapes[match[1]] = match[2]
+        end
+        match[2]
+      end
+      [shapes, new_ingredients]
+    end
+
+    def resolve_shapes shape_map, ingredients
+      Hash[shape_map.map do |key, name|
+        [key, ingredients.select do |item|
+                # prefix match
+                name[Regexp.new("^#{item.name}")]
+              end.first]
+      end]
     end
 
     def fixup_pending

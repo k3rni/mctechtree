@@ -17,6 +17,9 @@ primitives:
 - raw pork: 9
 - red mushroom: 2
 - brown mushroom: 2
+- sapling: 3
+- leaves: 3
+- seeds: 3
 
 crafts:
 - sugar: [sugar cane]

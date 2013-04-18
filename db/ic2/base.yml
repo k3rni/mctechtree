@@ -3,64 +3,12 @@ cluster: ic2
 primitives:
 - copper ore: 4
 - tin ore: 4
+- rubber tree sapling: 12
 - sticky resin: 3
 - UU-matter: 500
 - uranium ore: 25
 
 crafts: 
-- coal dust:
-    machine: macerator
-    ingredients: [coal]
-- iron dust:
-    machine: macerator
-    makes: 2
-    ingredients: [iron ore]
-- iron:
-    machine: furnace
-    ingredients: [iron dust]
-- refined iron:
-    machine: furnace
-    ingredients: [iron]
-- tin dust:
-    machine: macerator
-    makes: 2
-    ingredients: [tin ore]
-- copper dust:
-    machine: macerator
-    makes: 2
-    ingredients: [copper ore]
-- gold dust:
-    machine: macerator
-    makes: 2
-    ingredients: [gold ore]
-- gold ingot:
-    machine: furnace
-    ingredients: [gold dust]
-- tin ingot:
-    machine: furnace
-    ingredients: [tin ore]
-- tin ingot:
-    machine: furnace
-    ingredients: [tin dust]
-- copper ingot:
-    machine: furnace
-    ingredients: [copper dust]
-- copper ingot:
-    machine: furnace
-    ingredients: [copper ore]
-- bronze: # NOTE: forestry daje alternatywną
-    machine: furnace
-    ingredients: [bronze dust]
-- bronze dust: 
-    ingredients: [copper dust*3, tin dust]
-    makes: 2
-- rubber:
-    machine: furnace
-    ingredients: [sticky resin]
-- rubber:
-    machine: extractor
-    makes: 3
-    ingredients: [sticky resin]
 - cell:
     makes: 16
     ingredients: [tin ingot*4]
@@ -98,6 +46,8 @@ crafts:
       - glass*7
       - advanced alloy*2
     shape: g a g g g g g a g
+- reinforced door:
+    ingredients: [reinforced stone*6]
 - iron fence: [refined iron*6]
 - coal ball:
     ingredients: [coal dust*8, flint]
@@ -111,6 +61,8 @@ crafts:
     ingredients: [compressed coal ball*8, bricks]
 - coal chunk:
     ingredients: [compressed coal ball*8, obsidian]
-- industrial diamond: # NOTE: listed as equivalent to a regular diamond
+- industrial diamond: # TODO: equivalents?
     machine: compressor
     ingredients: [coal chunk]
+- luminator:
+    ingredients: [refined iron*2, copper cable, glass*5, tin wire]

@@ -1,6 +1,9 @@
 cluster: ic2
 
 crafts:
+- tin wire:
+    makes: 9
+    ingredients: [tin ingot*3]
 - copper wire:
     makes: 6
     ingredients: [copper ingot*3]

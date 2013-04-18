@@ -43,3 +43,22 @@ crafts:
 - scaffold: [wood*3, stick*3]
 - iron scaffold: [refined iron*3, iron fence*3]
 - CF sprayer: [stick, cobble*4]
+- CF pellet: [clay dust, redstone, coal dust, water bucket]
+- CF pellet: [clay dust, redstone, coal dust, water cell]
+- rubber trampoline:
+    ingredients: [rubber*6]
+    makes: 3
+- industrial TNT:
+    ingredients: [flint*6, TNT*3]
+    makes: 4
+    # shaped in rows or columns
+- dynamite:
+    ingredients: [industrial TNT, string]
+    makes: 8
+- sticky dynamite:
+    ingredients: [dynamite*8, sticky resin]
+    makes: 8
+- dynamite-o-mote:
+    ingredients: [frequency transmitter, lapis, tin ingot*2, copper cable]
+- dynamite-o-mote:
+    ingredients: [industrial TNT*3, glowstone dust*2, integrated circuit, copper cable]
