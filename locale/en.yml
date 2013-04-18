@@ -35,6 +35,8 @@ en:
     paintball: Paintball
     omni: OmniTools
     nuclear: Nuclear Control
+    flowerpot: Painter's Flower Pot
+    wrcbe: Wireless Redstone CBE
   tiers:
     t0: raw items
     t1: dusts, ingots
