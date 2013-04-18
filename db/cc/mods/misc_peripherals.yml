@@ -20,6 +20,8 @@ crafts:
 - RTG upgrade: [copper ingot*4, iron*2, nuclear reactor, generator, advanced circuit]
 - turtle teleporter: [ender pearl*6, eye of ender*2, obsidian]
 - advanced turtle teleporter: [turtle teleporter, eye of ender*4, emerald*2, redstone*2]
+- REther upgrade:
+    ingredients: [wireless transceiver, receiver dish, obsidian stick]
 - player detector:
     # NOT the Railcraft player detector
     ingredients: [gold ingot*4, redstone*2, eye of ender*2, diamond]
@@ -73,7 +75,7 @@ craft_templates:
     - treetap
     #- alchemist/minium stone
     - sign reader/sign
-    #- REther/REther upgrade
+    - REther/REther upgrade
     #- inventory/inventory upgrade
     - RTG/RTG upgrade
     #- thaum scanner/goggles of revealing
@@ -108,8 +110,6 @@ disabled_crafts:
 - bee analyzer:
     ingredients: [gold ingot*4, redstone*4, beealyzer]
 - tree analyzer: [gold ingot*4, redstone*4, treealyzer]
-- REther upgrade:
-    ingredients: [wireless transceiver, receiver dish, obsidian stick]
 - rail reader: [gold ingot*4, advanced detector rail*4, eye of ender] # NOTE: detector manager instead of eye ingame
 - nuclear information reader: ~ # TODO, also advanced reader
 - inventory upgrade: ~ # TODO
