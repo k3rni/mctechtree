@@ -4,7 +4,8 @@ require 'zlib'
 require 'active_support/core_ext/array'
 
 class Craft
-    attr_accessor :machine, :result, :makes, :ingredients, :shape, :group
+    attr_accessor :machine, :result, :makes, :ingredients, :group
+    attr_accessor :shape, :shape_map
 		attr_accessor :requires
     attr_accessor :overrides
     attr_accessor :tag
@@ -49,6 +50,7 @@ class Craft
 
     def replace_ingredients old, new
         ingredients.map! { |obj| (obj == old ? new : obj) }
+        self.shape_map = Hash[shape_map.map { |key, obj| [key, (obj == old ? new : obj)] }] unless shape_map.nil?
     end
 
     def describe_ingredients mul=1
@@ -62,7 +64,7 @@ class Craft
       # TODO: reprezentacja shapeless?
       return [ingredients] if shape == :shapeless
       items = shape.split.map do |prefix| 
-        prefix.nil? ? nil : find_ingredient_by_prefix(prefix) 
+        prefix.nil? ? nil : (shape_map[prefix] || find_ingredient_by_prefix(prefix))
       end
       if items.size == 9
         return items.in_groups_of 3
