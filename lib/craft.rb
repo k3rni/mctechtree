@@ -64,7 +64,7 @@ class Craft
       # TODO: reprezentacja shapeless?
       return [ingredients] if shape == :shapeless
       items = shape.split.map do |prefix| 
-        prefix.nil? ? nil : (shape_map[prefix] || find_ingredient_by_prefix(prefix))
+        prefix.nil? ? nil : ((shape_map && shape_map[prefix]) || find_ingredient_by_prefix(prefix))
       end
       if items.size == 9
         return items.in_groups_of 3

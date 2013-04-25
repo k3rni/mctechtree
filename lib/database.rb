@@ -154,10 +154,11 @@ class Database < Set
     end
 
     def replace_list_names list, old, new
+      oldrx = %r{^(\w+\|)?#{Regexp.escape old}$}
       if list.nil?
         nil
       elsif new.nil?
-        list.reject { |el| el == old }
+        list.reject { |el| el =~ oldrx }
       else
         list.map { |el| el.gsub(old, new) }
       end
