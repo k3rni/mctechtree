@@ -19,6 +19,6 @@ peripherals: &peripherals
 
 craft_templates:
 - $(peripheral) $(tool) turtle:
-    ingredients: [$(peripheral), turtle, $(tool)]
-    shape: ~ ~ ~ $(tool) turtle $(peripheral) ~ ~ ~
+    ingredients: [P|$(peripheral), turtle, T|$(tool)]
+    shape: ~ ~ ~ T t P ~ ~ ~
     <<: [*tools, *peripherals]
