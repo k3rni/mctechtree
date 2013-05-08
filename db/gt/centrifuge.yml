@@ -10,10 +10,167 @@ crafts:
     makes: 4
     outputs: [near-depleted uranium cell*3, thorium cell*4]
 
+processing:
+- machine: industrial centrifuge
+  inputs: [near-depleted uranium cell*2]
+  outputs: [cell, thorium cell]
+- machine: industrial centrifuge
+  inputs: [re-enriched uranium cell*8]
+  outputs: [near-depleted uranium cell*3, plutonium cell, thorium cell*4]
+- machine: industrial centrifuge
+  inputs: [enchanted golden apple, cell*2]
+  outputs: [gold ingot*64, methane cell*2]
+- machine: industrial centrifuge
+  inputs: [golden apple, cell]
+  outputs: [gold nugget*6, methane cell]
+- machine: industrial centrifuge
+  inputs: [golden carrot, cell]
+  outputs: [gold nugget*6, methane cell]
+- machine: industrial centrifuge
+  inputs: [glistering melon, cell]
+  outputs: [gold nugget*6, methane cell]
+- machine: industrial centrifuge
+  inputs: [$(food), cell]
+  outputs: [methane cell]
+  vars: [food]
+  food: 
+  - apple*32
+  - mushroom stew*32
+  - bread*64
+  - raw pork*12
+  - cooked pork*16
+  - raw beef*12
+  - cooked beef*16
+  - raw fish*12
+  - cooked fish*16
+  - raw chicken*12
+  - cooked chicken*16
+  - melon*64
+  - pumpkin*16
+  - rotten flesh*16
+  - spider eye*32
+  - carrot*16
+  - potato*16
+  - poisonous potato*12
+  - baked potato*24
+  - cookie*64
+  - cake*8
+  - mushroom block*12
+  - red mushroom*32
+  - brown mushroom*32
+  - nether wart*32
+  - terra wart*32
+- machine: industrial centrifuge
+  inputs: [sticky resin*4]
+  outputs: [rubber*14, plantball, compressed plants]
+- machine: industrial centrifuge
+  inputs: [cracked sand*16, fuel can]
+  outputs: [filled fuel can*10, sand, saltpeter*8]
+# TODO: Forge dust (pulverized xxx) versions of these
+- machine: industrial centrifuge
+  inputs: [bronze dust*2] # bronze blend
+  outputs: [tiny pile of copper dust*6, tiny pile of tin dust*2]
+- machine: industrial centrifuge
+  inputs: [copper dust*3] # pulverized copper
+  outputs: [tiny pile of gold dust, tiny pile of nickel dust]
+- machine: industrial centrifuge
+  inputs: [gold dust*3] # pulverized gold
+  outputs: [tiny pile of copper dust, tiny pile of nickel dust]
+- machine: industrial centrifuge
+  inputs: [iron dust*2] # pulverized iron
+  outputs: [tiny pile of tin dust, tiny pile of nickel dust]
+- machine: industrial centrifuge
+  inputs: [silver dust*2] # pulverized silver
+  outputs: [tiny pile of lead dust]
+- machine: industrial centrifuge
+  inputs: [tin dust*2] # pulverized tin
+  outputs: [tiny pile of zinc dust, tiny pile of iron dust]
+- machine: industrial centrifuge
+  inputs: [pulverized lead] # lead dust
+  outputs: [tiny pile of silver dust]
+- machine: industrial centrifuge
+  inputs: [pulverized ferrous metal*3] # nickel dust
+  ouputs: [tiny pile of gold dust, tiny pile of copper dust, tiny pile of iron dust]
+- machine: industrial centrifuge
+  inputs: [pulverized shiny metal] # platinum dust
+  outputs: [iridium nugget, tiny pile of nickel dust]
+- machine: industrial centrifuge
+  inputs: [electrum blend] # electrum dust
+  outputs: [tiny pile of silver dust*2, tiny pile of gold dust*2]
+- machine: industrial centrifuge
+  inputs: [invar blend*3] # invar dust
+  outputs: [pulverized iron*2, pulverized ferrous metal]
+- machine: industrial centrifuge
+  inputs: [brass blend*2] # brass dust
+  outputs: [tiny pile of copper dust*3, tiny pile of zinc dust]
+- machine: industrial centrifuge
+  inputs: [rubber wood*16, cell*5] # TODO: the other rubberwood
+  outputs: [sticky resin*8, plantball*6, methane cell, carbon cell*4]
+- machine: industrial centrifuge
+  inputs: [redstone*10, cell*4]
+  outputs: [silicon cell, pyrite dust*5, ruby dust, mercury cell*3]
+- machine: industrial centrifuge
+  inputs: [glowstone dust*16, cell]
+  outputs: [redstone*8, gold dust*8, helium cell]
+- machine: industrial centrifuge
+  inputs: [lapis*4]
+  outputs: [lazurite dust*3, tiny pile of sodalite dust*2, tiny pile of pyrite dust, tiny pile of calcite dust]
+- machine: industrial centrifuge
+  inputs: [netherrack dust]
+  outputs: [redstone, gold nugget, sulfur*4, coal dust]
+- machine: industrial centrifuge
+  inputs: [endstone dust, cell*2]
+  outputs: [sand*12, helium-3 cell, helium cell, tiny pile of tungsten dust]
+- machine: industrial centrifuge
+  inputs: [uranium dust*16, cell*21]
+  outputs: [uranium cell*16, tungsten dust, plutonium cell, thorium cell*4]
+- machine: industrial centrifuge
+  inputs: [zinc dust]
+  outputs: [tiny pile of tin dust]
+- machine: industrial centrifuge
+  inputs: [red garnet dust*16]
+  outputs: [pyrope dust*3, almandine dust*5, spessarite dust*8]
+- machine: industrial centrifuge
+  inputs: [yellow garnet dust*16]
+  outputs: [andradite dust*5, grossular dust*8, uvarovite dust*3]
+- machine: industrial centrifuge
+  inputs: [dark ashes*2]
+  outputs: [ash, slag]
+- machine: industrial centrifuge
+  inputs: [redrock dust*4]
+  outputs: [calcite dust*2, flint dust, clay dust]
+- machine: industrial centrifuge
+  inputs: [marble dust*8]
+  outputs: [magnesium dust, calcite dust*7]
+- machine: industrial centrifuge
+  inputs: [basalt dust*16]
+  outputs: [olivine dust, calcite dust*3, flint dust*8, dark ashes*4]
+- machine: industrial centrifuge
+  inputs: [hydrogen cell*4]
+  outputs: [deuterium cell, cell*3]
+- machine: industrial centrifuge
+  inputs: [deuterium cell*4]
+  outputs: [tritium cell, cell*3]
+- machine: industrial centrifuge
+  inputs: [helium cell*16]
+  outputs: [helium-3 cell, cell*15]
+- machine: industrial centrifuge
+  inputs: [mercury cell]
+  outputs: [quicksilver, cell]
+- machine: industrial centrifuge
+  inputs: [calcium carbonate cell]
+  outputs: [calcite dust, cell]
+- machine: industrial centrifuge
+  inputs: [sulfur cell]
+  outputs: [sulfur, cell]
+
 skip_crafts:
 - ice: [ice cell]
 - blaze powder:
     ingredients: [magma cream]
     outputs: [slimeball, cell]
+skip_processing:
+- machine: industrial centrifuge
+  inputs: [ender eye dust*2]
+  outputs: [ender pearl dust, blaze powder]
 
-processing
