@@ -48,7 +48,27 @@ processing:
   outputs: [mercury cell, sulfur]
 - inputs: [sphalerite dust*2]
   outputs: [zinc dust, sulfur]
-  # 24/45
+- inputs: [bauxite dust*12, cell*8]
+  outputs: [aluminium dust*8, tiny pile of titanium dust*2, hydrogen cell*5, compressed air cell*3]
+- inputs: [tungsten dust, cell]
+  outputs: [wolframium cell]
+- inputs: [ruby dust*9, cell*3]
+  outputs: [aluminium dust*2, chromium dust, compressed air cell*3]
+- inputs: [sapphire dust*8, cell*3]
+  outputs: [aluminium dust*2, compressed air cell*3]
+- inputs: [green sapphire dust]
+  outputs: [sapphire dust]
+- inputs: [emerald dust*29, cell*18]
+  outputs: [aluminium dust*2, berylium cell*3, silicon cell*6, compressed air cell*9]
+- inputs: [olivine dust*9, cell*3]
+  outputs: [magnesium dust*2, iron dust*2, silicon cell, compressed air cell]
+- inputs: [galena dust*2]
+  outputs: [tiny pile of silver dust*3, tiny pile of lead dust*3, tiny pile of sulfur dust*2]
+  # 32/45
+- inputs:
+  outputs:
+- inputs:
+  outputs:
 - inputs:
   outputs:
 - inputs:
