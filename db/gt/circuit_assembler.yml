@@ -1,83 +1,77 @@
 cluster: gt
 
-crafts:
-- advanced circuit:
-    ingredients: [advanced circuit board, advanced circuit parts*2]
-    machine: circuit assembler
-- data control circuit:
-    ingredients: [elite circuit board, data storage circuit]
-    machine: circuit assembler
-- energy flow circuit:
-    ingredients: [elite circuit board, lapotron crystal]
-    machine: circuit assembler
-- data orb:
-    ingredients: [data control circuit, data storage circuit*8]
-    makes: 4
-    machine: circuit assembler
-- sonictron 9001:
-    ingredients: [sonictron, data storage circuit*4]
-    machine: circuit assembler
-- copper cable:
-    ingredients: [copper wire, rubber]
-    machine: circuit assembler
-    compatible: ic2
-- 2ins gold cable:
-    ingredients: [gold wire, rubber*2]
-    machine: circuit assembler
-    compatible: ic2
-- 2ins gold cable:
-    ingredients: [insulated gold cable, rubber]
-    machine: circuit assembler
-    compatible: ic2
-- 3ins HV cable:
-    ingredients: [HV cable, rubber*3]
-    machine: circuit assembler
-    compatible: ic2
-- 3ins HV cable:
-    ingredients: [insulated HV cable, rubber*2]
-    machine: circuit assembler
-    compatible: ic2
-- 3ins HV cable:
-    ingredients: [2ins HV cable, rubber]
-    machine: circuit assembler
-    compatible: ic2
-- compass:
-    ingredients: [iron*4, redstone]
-    machine: circuit assembler
-    compatible: vanilla
-- clock:
-    ingredients: [gold ingot*4, redstone]
-    machine: circuit assembler
-    compatible: vanilla
-- advanced circuit parts:
-    makes: 2
-    machine: circuit assembler
-    ingredients: [lapis, glowstone dust]
-- advanced circuit parts:
-    makes: 2
-    machine: circuit assembler
-    ingredients: [lazurite dust, glowstone dust]
-- advanced circuit board:
-    makes: 2
-    machine: circuit assembler
-    ingredients: [silicon plate, electrum plate*4]
-- advanced circuit board:
-    machine: circuit assembler
-    ingredients: [integrated circuit, electrum plate*2]
-- basic circuit board:
-    makes: 2
-    machine: circuit assembler
-    ingredients: [refined iron plate, electrum plate*2]
-- basic circuit board:
-    makes: 2
-    machine: circuit assembler
-    ingredients: [aluminium plate, electrum plate*2]
-- elite circuit board:
-    ingredients: [platinum plate, advanced circuit]
-    machine: circuit assembler
-- integrated circuit:
-    ingredients: [basic circuit board, copper cable*3]
-    machine: circuit assembler
+processing:
+- machine: circuit assembler
+  inputs: [advanced circuit board, advanced circuit parts*2]
+  outputs: [advanced circuit] 
+- machine: circuit assembler
+  inputs: [elite circuit board, data storage circuit]
+  outputs: [data control circuit] 
+- machine: circuit assembler
+  inputs: [elite circuit board, lapotron crystal]
+  outputs: [energy flow circuit]   
+- machine: circuit assembler
+  outputs: [data orb*4]
+  inputs: [data control circuit, data storage circuit*8]
+- outputs: [sonictron 9001]
+  inputs: [sonictron, data storage circuit*4]
+  machine: circuit assembler
+- outputs: [copper cable]
+  inputs: [copper wire, rubber]
+  machine: circuit assembler
+  compatible: ic2
+- outputs: [2ins gold cable]
+  inputs: [gold wire, rubber*2]
+  machine: circuit assembler
+  compatible: ic2
+- outputs: [2ins gold cable]
+  inputs: [insulated gold cable, rubber]
+  machine: circuit assembler
+  compatible: ic2
+- outputs: [3ins HV cable]
+  inputs: [HV cable, rubber*3]
+  machine: circuit assembler
+  compatible: ic2
+- outputs: [3ins HV cable]
+  inputs: [insulated HV cable, rubber*2]
+  machine: circuit assembler
+  compatible: ic2
+- outputs: [3ins HV cable]
+  inputs: [2ins HV cable, rubber]
+  machine: circuit assembler
+  compatible: ic2
+- outputs: [compass]
+  inputs: [iron*4, redstone]
+  machine: circuit assembler
+  compatible: vanilla
+- outputs: [clock]
+  inputs: [gold ingot*4, redstone]
+  machine: circuit assembler
+  compatible: vanilla
+- outputs: [advanced circuit parts*2]
+  machine: circuit assembler
+  inputs: [lapis, glowstone dust]
+- outputs: [advanced circuit parts*2]
+  machine: circuit assembler
+  inputs: [lazurite dust, glowstone dust]
+- outputs: [advanced circuit board*2]
+  machine: circuit assembler
+  inputs: [silicon plate, electrum plate*4]
+- outputs: [advanced circuit board]
+  machine: circuit assembler
+  inputs: [integrated circuit, electrum plate*2]
+- outputs: [basic circuit board*2]
+  machine: circuit assembler
+  inputs: [refined iron plate, electrum plate*2]
+- outputs: [basic circuit board*2]
+  machine: circuit assembler
+  inputs: [aluminium plate, electrum plate*2]
+- outputs: [elite circuit board]
+  inputs: [platinum plate, advanced circuit]
+  machine: circuit assembler
+- outputs: [integrated circuit]
+  inputs: [basic circuit board, copper cable*3]
+  machine: circuit assembler
 
 craft_templates:
 - data storage circuit:

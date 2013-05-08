@@ -1,0 +1,36 @@
+cluster: gt
+
+processing:
+- machine: chemical reactor
+  inputs: [carbon cell, hydrogen cell*4]
+  outputs: [methane cell*5]
+- machine: chemical reactor
+  inputs: [hydrogen cell*4, compressed air cell]
+  outputs: [water cell*5]
+- machine: chemical reactor
+  inputs: [nitrogen cell, carbon cell]
+  outputs: [nitrocarbon cell*2]
+- machine: chemical reactor
+  inputs: [calcium cell, carbon cell]
+  outputs: [calcium carbonate cell*2]
+- machine: chemical reactor
+  inputs: [sulfur cell, sodium cell]
+  outputs: [sodium sulfide cell*2]
+- machine: chemical reactor
+  inputs: [nitrogen cell, compressed air cell]
+  outputs: [nitrogen dioxide cell*2]
+- machine: chemical reactor
+  inputs: [glyceryl cell, coalfuel cell*4]
+  outputs: [nitro-coalfuel cell*5]
+- machine: chemical reactor
+  inputs: [glyceryl cell, diesel cell*4]
+  outputs: [nitro-diesel cell*5]
+- machine: chemical reactor
+  inputs: [sulfur cell, water cell*2]
+  outputs: [sulfuric acid cell*3]
+- machine: chemical reactor
+  inputs: [sodium sulfide cell*2, compressed air cell*3]
+  outputs: [sodium persulfate cell*5]
+- machine: chemical reactor
+  inputs: [nitrocarbon cell*3, water cell*3]
+  outputs: [glyceryl cell*6]
