@@ -1,0 +1,63 @@
+cluster: gt
+
+defaults:
+  machine: industrial electrolyzer
+
+processing:
+- inputs: [water*6000, cell*5]
+  outputs: [hydrogen cell*4, compressed air cell]
+- inputs: [electrolyzed water cell*6]
+  outputs: [hydrogen cell*4, compressed air cell, cell]
+- inputs: [water cell]
+  outputs: [electrolyzed water cell]
+- inputs: [water bucket, cell]
+  outputs: [electrolyzed water cell, bucket]
+- inputs: [bonemeal*3]
+  outputs: [cell, calcium cell]
+- inputs: [sugar*32, cell*7]
+  outputs: [carbon cell*2, water cell*5]
+- inputs: [blaze powder*4]
+  outputs: [dark ashes, sulfur]
+- inputs: [sand*12, cell*2]
+  outputs: [silicon cell, compressed air cell]
+- inputs: [clay dust*8, cell*5]
+  outputs: [lithium cell, silicon cell*2, aluminium dust*2, sodium cell*2]
+- inputs: [coal dust, cell*2]
+  outputs: [carbon cell*2]
+- inputs: [ash*2, cell]
+  outputs: [carbon cell]
+- inputs: [pulverized obsidian, cell*3] # obsidian dust
+  outputs: [tiny pile of magnesium dust, tiny pile of iron dust, silicon cell, compressed air cell*2]
+- inputs: [saltpeter*10, cell*7] # saltpeter dust
+  outputs: [potassium cell*2, nitrogen cell*2, compressed air cell*3]
+- inputs: [charcoal dust, cell]
+  outputs: [carbon cell]
+- inputs: [ender pearl dust*16, cell*16]
+  outputs: [nitrogen cell*5, berylium cell, potassium cell*4, chlorite cell*6]
+- inputs: [lazurite dust*29, cell*11]
+  outputs: [aluminium dust*3, silicon cell*3, calcium cell*4, sodium cell*4]
+- inputs: [pyrite dust*3]
+  outputs: [iron dust, sulfur*2]
+- inputs: [calcite dust*10, cell*7]
+  outputs: [calcium cell*2, carbon cell*2, compressed air cell*3]
+- inputs: [sodalite dust*23, cell*8]
+  outputs: [sodium cell*4, alumiunium dust*3, silicon cell*3, chlorite cell]
+- inputs: [flint dust*8, cell*2]
+  outputs: [silicon cell, compressed air cell]
+- inputs: [cinnabar dust*2, cell]
+  outputs: [mercury cell, sulfur]
+- inputs: [sphalerite dust*2]
+  outputs: [zinc dust, sulfur]
+  # 24/45
+- inputs:
+  outputs:
+- inputs:
+  outputs:
+- inputs:
+  outputs:
+- inputs:
+  outputs:
+- inputs:
+  outputs:
+- inputs:
+  outputs:
