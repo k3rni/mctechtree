@@ -1,0 +1,58 @@
+cluster: gt
+
+crafts:
+- adjustable energy storage unit:
+    ingredients: [lapotronic energy orb*8, gregtech-computercube]
+    shape: l l l l g l l l l
+- interdimensional storage unit:
+    ingredients: [iridum plate*4, adjustable energy storage unit*4, ender chest]
+    shape: i a i a e a i a i
+- lapotronic energy storage unit:
+    ingredients: [V|LV transformer, LESU block, advanced circuit*2, MV transformer]
+    shape: ~ V ~ a L a ~ M ~
+- LESU block:
+    ingredients: [chunk of lazurite*8, integrated circuit]
+    shape: c c c c i c c c c
+- lightningrod:
+    ingredients: [energyflow circuit*4, highly advanced machine*4, supercondensator]
+    shape: e h e h s h e h e
+    structure: true
+- charge-o-mat:
+    ingredients: [energyflow circuit*4, chest*2, gregtech-computercube, lapotronic energy orb, advanced circuit]
+    shape: e g e c l c e a e
+
+disabled_crafts:
+# needs thaumcraft
+- magic energy converter:
+    ingredients: [advanced circuit*4, teleporter, I|thaumium ingot*2, beacon, lapotron crystal]
+    shape: a t a I b I a l a
+- magic energy absorber:
+    ingredients: [energy flow circuit*4, superconductor, iridium plate*2, beacon, magic energy converter]
+    shape: e s e i b i e m e
+
+
+craft_templates:
+- diesel generator:
+    vars: [plate]
+    ingredients: [P|plate*5, integrated circuit*2, generator]
+    shape: P P P P ~ P i g i
+    plate: [refined iron plate, aluminium plate]
+- thermal generator:
+    vars: [glass, plate]
+    ingredients: [P|$(plate)*5, integrated circuit*2, G|$(glass), geothermal generator]
+    shape: P P P P G P i g i
+    glass: [reinforced glass, hardened glass]
+    plate: [refined iron plate, aluminium plate]
+- semifluid generator:
+    vars: [glass, plate]
+    ingredients: [P|$(plate)*5, integrated circuit*2, G|$(glass), generator]
+    shape: P P P P G P i g i
+    glass: [reinforced glass, hardened glass]
+    plate: [refined iron plate, aluminium plate]
+- gas turbine:
+    vars: [glass, plate]
+    ingredients: [P|$(plate)*4, advanced circuit*2, G|$(glass), wind mill]
+    shape: P a P w G w P a P
+    glass: [reinforced glass, hardened glass]
+    plate: [invar plate, aluminium plate]
+

@@ -1,0 +1,19 @@
+cluster: gt
+
+crafts:
+# arbitrarily chosen most important output
+- thorium cell:
+    ingredients: [near-depleted uranium cell*2]
+    outputs: [cell]
+- plutonium cell:
+    ingredients: [re-enriched uranium cell*8]
+    makes: 4
+    outputs: [near-depleted uranium cell*3, thorium cell*4]
+
+skip_crafts:
+- ice: [ice cell]
+- blaze powder:
+    ingredients: [magma cream]
+    outputs: [slimeball, cell]
+
+processing

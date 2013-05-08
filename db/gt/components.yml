@@ -1,0 +1,121 @@
+cluster: gt
+
+crafts:
+- standard machine casing:
+    ingredients: [aluminum ingot*6, integrated circuit*2, machine]
+    makes: 4
+    shape: a a a i m i a a a
+- reinforced machine casing:
+    ingredients: [steel ingot*6, advanced circuit*2, M|advanced machine]
+    makes: 4
+    shape: s s s a M a s s s
+- advanced machine casing:
+    ingredients: [chrome ingot*6, datacontrol circuit*2, highly advanced machine]
+    makes: 4
+    shape: c c c d h d c c c
+- gregtech-computercube:
+    ingredients: [dataorb*2, computer monitor*4, energyflow circuit*2, M|advanced machine]
+    shape: d c e c M c e c d
+- supercondensator:
+    ingredients: [energyflow circuit*4, lapotronic energy orb*2, superconductor*2, highly advanced machine]
+    shape: e l e s h s e l e
+- superconductor wire:
+    ingredients: [M|advanced machine*4, energyflow circuit*2, superconductor*3]
+    makes: 4
+    shape: M e M s s s M e M
+- lapotronic energy orb:
+    ingredients: [lapotron crystal*8, iridium plate]
+    shape: l l l l i l l l l
+- data orb:
+    ingredients: [S|data storage circuit*8, data control circuit]
+    makes: 4
+    shape: S S S S d S S S S
+- cupronickel heating coil:
+    ingredients: [nickel ingot*4, copper ingot*4]
+    makes: 3
+    shape: n c n c ~ c n c n
+    tag: without-railcraft
+- cupronickel heating coil: # NOTE: validate this
+    ingredients: [nickel ingot*4, copper ingot*4]
+    makes: 3
+    shape: n c n c ~ c n c n
+    machine: rolling machine
+    overrides: gt/without-railcraft
+- kanthal heating coil:
+    ingredients: [refined iron*3, chrome ingot*3, aluminium ingot*3]
+    makes: 3
+    shape: r r r c a a c c a
+    tag: without-railcraft
+- kanthal heating coil:
+    ingredients: [refined iron*3, chrome ingot*3, aluminium ingot*3]
+    makes: 3
+    shape: r r r c a a c c a
+    machine: rolling machine
+    overrides: gt/without-railcraft
+- nichrome heating coil:
+    ingredients: [nickel ingot*3, chrome ingot]
+    shape: ~ n ~ n c n ~ n ~
+    makes: 3
+    tag: without-railcraft
+- nichrome heating coil:
+    ingredients: [nickel ingot*3, chrome ingot]
+    shape: ~ n ~ n c n ~ n ~
+    makes: 3
+    machine: rolling machine
+    overrides: gt/without-railcraft
+- lithium battery:
+    ingredients: [C|2ins gold cable, lithium cell*2, aluminium plate*4]
+    shape: ~ C ~ a l a a l a
+- energy flow circuit:
+    makes: 4
+    ingredients: [advanced circuit*4, lapotron crystal*2, tungsten plate*2, iridium plate]
+    shape: a t a l i l a t a
+- data control circuit:
+    makes: 4
+    ingredients: [advanced circuit*4, data storage circuit*4, iridium plate]
+    shape: a d a d i d a d a
+- diamond sawblade:
+    makes: 4
+    ingredients: [diamond dust*4, steel ingot*4]
+    shape: d s d s ~ s d s d
+- diamond grinder:
+    makes: 2
+    ingredients: [diamond dust*4, steel ingot*4, D|diamond]
+    shape: d s d s D s d s d
+- wolframium grinder:
+    makes: 2
+    ingredients: [tungsten plate*4, refined iron plate*4, block of steel]
+    shape: t r t r b r t r t
+- machine parts:
+    ingredients: [integrated circuit*5, refined iron*4]
+    makes: 16
+    shape: i r i r i r i r i
+- machine parts:
+    ingredients: [integrated circuit*5, r|aluminium iron*4]
+    makes: 12
+    shape: i r i r i r i r i
+
+craft_templates:
+# NOTE: Forge-compatible with Gravi superconductor
+- superconductor:
+    vars: [coolant]
+    ingredients: [C|$(coolant)*3, wolframium cell, iridium plate*2, energyflow circuit*3]
+    makes: 4
+    shape: C C C i w i e e e
+    coolant: [60K Coolant cell, 60K Helium Coolant cell, 60K NaK Coolant cell]
+# possibly overriden by circuit assembler recipe
+- data storage circuit:
+    makes: 4
+    vars: [gem]
+    ingredients: [G|$(gem)*8, advanced circuit]
+    shape: G G G G a G G G G
+    gem: [emerald, emerald dust]
+- $(metal) machine hull:
+    ingredients: [P|$(metal) plate*8, machine parts]
+    shape: P P P P m P P P P
+    metal: [aluminium, bronze, brass, steel, titanium]
+- highly advanced machine:
+    vars: [hull]
+    ingredients: [chrome plate*4, titanium plate*4, M|$(hull)] 
+    shape: c t c t M t c t c
+    hull: [advanced machine, steel machine hull, titanium machine hull]

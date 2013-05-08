@@ -1,0 +1,71 @@
+cluster: gt
+
+crafts:
+- quantum chest:
+    ingredients: [dataorb*4, highly advanced machine*2, m|computer monitor, c|digital chest, teleporter]
+    shape: d m d h t h d c d
+- quantum tank:
+    # NOTE: plate, not ingots?
+    ingredients: [energyflow circuit*4, quantum chest, platinum ingot*4]
+    shape: e p e p q p e p e
+- UUM assembler:
+    ingredients: [D|datacontrol circuit*2, dataorb*2, gregtech-computercube, quantum chest, teleporter, lithium battery, T|electric crafting table]
+    shape: D g D t q T d l d
+- UUM assembler:
+    ingredients: [D|datacontrol circuit*2, dataorb*2, gregtech-computercube, quantum chest, teleporter, l|energy crystal, T|electric crafting table]
+    shape: D g D t q T d l d
+- playerdetector:
+    ingredients: [data storage circuit*4, gregtech-computercube]
+    shape: ~ d ~ d g d ~ d ~
+- sonictron 9001:
+    ingredients: [data storage circuit*4, sonictron]
+    shape: ~ d ~ d s d ~ d ~
+- sonictron:
+    ingredients: [integrated circuit*4, music disk, advanced machine, note block*2, jukebox]
+    shape: i m i n a n i j i
+- crop harvestor:
+    ingredients: [I|electrum ingot*4, integrated circuit, sticky piston, advanced machine, diamond sawblade, C|electric item clearer]
+    shape: I C I d s a I i I
+- electric rock breaker:
+    ingredients: [obsidian*4, diamond, integrated circuit*2, mining drill, advanced machine]
+    shape: o d o i m i o a o
+- electric sorter:
+    ingredients: [I|electrum ingot*4, integrated circuit*2, RE-battery, T|electric translocator, computer monitor]
+    shape: I R I i T i I c I
+- electric type sorter:
+    ingredients: [P|electrum plate*4, RE-battery, advanced circuit*2, T|electric translocator, computer monitor]
+    shape: P R P a T a P c P
+- electric item clearer:
+    ingredients: [I|electrum ingot*4, integrated circuit, sticky piston, RE-battery, advanced machine, B|small electric buffer]
+    shape: I R I s a B I i I
+- scrapboxinator:
+    ingredients: [I|electrum ingot*4, integrated circuit, pressure plate, dispenser, advanced machine, C|electric item clearer]
+    shape: I C I d p a I i I
+- electric translocator:
+    ingredients: [I|electrum ingot*4, RE-battery, integrated circuit*2, piston, machine]
+    shape: I R I i p i I m I
+- advanced translocator:
+    ingredients: [I|electrum ingot*4, RE-battery, advanced circuit*2, piston, M|advanced machine]
+    shape: I R I a p a I M I
+- electric crafting table:
+    ingredients: [I|electrum ingot*4, RE-battery, advanced circuit*2, crafting table, M|advanced machine]
+    shape: I R I a c a I M I
+- large electric buffer:
+    ingredients: [I|electrum ingot*4, RE-battery, advanced circuit*2, chest, M|advanced machine]
+    shape:  I R I a c a I M I
+- small electric buffer:
+    makes: 8
+    ingredients: [large electric buffer]
+    shapeless: yes
+- advanced buffer:
+    ingredients: [I|electrum ingot*4, RE-battery, advanced circuit*2, small electric buffer, computer monitor]
+    shape: I R I a s a I c I
+- advanced regulator:
+    ingredients: [advanced circuit*4, B|advanced buffer*4, computer monitor]
+    shape: a B a B c B a B a
+- inventory manager:
+    ingredients: [data storage circuit*4, R|advanced regulator, electric sorter*2, gregtech-computercube, E|lithium battery]
+    shape: d R d e g e d E d
+- inventory manager:
+    ingredients: [data storage circuit*4, R|advanced regulator, electric sorter*2, gregtech-computercube, E|energy crystal]
+    shape: d R d e g e d E d

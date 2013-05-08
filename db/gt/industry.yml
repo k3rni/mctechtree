@@ -1,0 +1,54 @@
+cluster: gt
+
+crafts:
+# NOTE: many crafts here SHOULD use plates instead of ingots
+- industrial centrifuge:
+    ingredients: [aluminum ingot*4, C|advanced circuit*2, B|advanced machine*2, extractor]
+    shape: a C a B e B a C a
+- industrial centrifuge:
+    ingredients: [refined iron*4, C|advanced circuit*2, B|advanced machine*2, extractor]
+    shape: r C r B e B r C r
+- industrial grinder:
+    ingredients: [C|advanced circuit*3, diamond grinder*3, B|advanced machine, pump, industrial electrolyzer]
+    shape: i C p d d d C B C
+    structure: true
+- diamond grinder:
+    ingredients: [diamond dust*4, steel ingot*4, D|diamond]
+    makes: 2
+    shape: d s d s D s d s d
+- industrial electrolyzer:
+    ingredients: [r|aluminum ingot*4, advanced circuit*2, x|extractor, electrolyzer, magnetizer]
+    shape: r x r a e a r m r
+- industrial electrolyzer:
+    ingredients: [refined iron*4, advanced circuit*2, x|extractor, electrolyzer, magnetizer]
+    shape: r x r a e a r m r
+- industrial sawmill:
+    ingredients: [advanced circuit*3, diamond sawblade*3, pump*2, M|advanced machine]
+    shape: p a p d d d a M a
+    structure: true
+- industrial blast furnace:
+    ingredients: [cupronickel heating coil*4, integrated circuit*2, f|induction furnace*2, advanced machine]
+    shape: i c i c a c f c f
+    structure: true
+- implosion compressor:
+    ingredients: [advanced alloy*4, integrated circuit*2, M|advanced machine*2, compressor]
+    shape: a M a i c i a M a
+    structure: true
+- vacuum freezer:
+    ingredients: [refined iron*4, advanced circuit*2, pump*2, G|reinforced glass]
+    shape: r p r a G a r p r
+- vacuum freezer:
+    ingredients: [r|aluminum ingot*4, advanced circuit*2, pump*2, G|reinforced glass]
+    shape: r p r a G a r p r
+- matter fabricator:
+    ingredients: [energyflow circuit*4, teleporter*2, highly advanced machine*2, lapotronic energy orb]
+    shape: e t e h l h e t e
+- plate bending machine:
+    ingredients: [piston*4, integrated circuit*2, compressor*2, V|conveyor module]
+    shape: p i p c V c p i p
+- circuit assembler:
+    ingredients: [piston, integrated circuit*4, piston, P|refined iron plate, V|conveyor module]
+    shape: i p i P V P i P i
+- circuit assembler:
+    ingredients: [piston, integrated circuit*4, piston, P|aluminium plate, V|conveyor module]
+    shape: i p i P V P i P i

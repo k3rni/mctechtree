@@ -1,0 +1,44 @@
+cluster: gt
+
+crafts:
+- destructopack:
+    ingredients: [advanced circuit*4, P|aluminium plate*4, lava bucket]
+    shape: a P a P l P a P a
+- destructopack:
+    ingredients: [advanced circuit*4, P|refined iron plate*4, lava bucket]
+    shape: a P a P l P a P a
+- light helmet:
+    ingredients: [solar helmet, luminator]
+    shapeless: yes
+- cloaking device:
+    # plate?
+    ingredients: [chrome ingot*4, iridium plate*4, lapotronic energy orb]
+    shape: c i c i l i c i c
+- rockcutter:
+    ingredients: [diamond dust*3, steel ingot*2, integrated circuit, RE-battery]
+    shape: d s ~ d s ~ d i R
+- iron jack hammer:
+    ingredients: [refined iron*3, RE-battery, integrated circuit]
+    shape: r R r ~ i ~ ~ r ~
+- steel jack hammer:
+    ingredients: [steel ingot*3, RE-battery, integrated circuit]
+    shape: s R s ~ i ~ ~ s ~
+- diamond jack hammer:
+    ingredients: [titanium ingot*2, lithium battery, advanced circuit, diamond dust]
+    shape: t l t ~ a ~ ~ d ~
+# - teslastaff: ?
+- lithium pack:
+    ingredients: [lithium battery*6, aluminium plate, C|advanced circuit]
+    shape: l C l l a l l ~ l
+- lapotron pack:
+    ingredients: [energy flow circuit*4, superconductor*2, O|lapotronic energy orb, lappack, iridium plate]
+    shape: e O e s l s e i e
+- flint mortar:
+    ingredients: [wooden bowl, flint]
+    shapeless: yes
+- iron mortar:
+    ingredients: [refined iron*2, stone brick*5]
+    shape: ~ r ~ s r s s s s
+- gregtech sensor kit:
+    ingredients: [aluminium plate*2, frequency transmitter, integrated circuit, RE-battery]
+    shape: ~ f ~ a i a ~ R ~
