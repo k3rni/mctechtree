@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 
-%w(graph crafts primitives shapes templates).each do |mod|
+%w(graph crafts primitives shapes templates processing).each do |mod|
   autoload mod.capitalize.to_sym, "./lib/#{mod}"
 end
 class Database < Set
@@ -10,6 +10,7 @@ class Database < Set
   include Crafts
   include Shapes
   include Templates
+  include Processing
 
   def initialize(*args)
     super(*args)
@@ -17,6 +18,7 @@ class Database < Set
     @conflicts = Set.new
     @equivalents = Hash.new { |h, key| h[key] = Set.new }
     @hierarchy = Hash.new { |h, key| h[key] = Set.new }
+    @defaults = {}
   end
 
   def find(name)
@@ -42,14 +44,23 @@ class Database < Set
   def load_definitions data
     group = data['cluster']
     @hierarchy[data['parent']].add group
-    %w(equivalents primitives crafts craft_templates).each do |key|
+    # defaults has to go first
+    %w(defaults equivalents primitives crafts craft_templates processing).each do |key|
       # Legacy support
       action = ('crafts' if key == 'craft_templates') || key
       send "load_#{action}", data[key] || {}, group
     end
+    forget_defaults
     self
   end
 
+  def load_defaults defaults, group=nil
+    @defaults.merge! defaults
+  end
+
+  def forget_defaults
+    @defaults = {}
+  end
 
   def conflicts? existing, extra, group
     compatible = extra['compatible']
@@ -75,21 +86,6 @@ class Database < Set
         @equivalents[name].merge(nn - [name])
       end
     end
-  end
-
-  def parse_primitive data
-    if data.is_a? Hash
-      name = data.keys.first
-      definition = data.values.first
-    end
-    if definition.is_a? Numeric
-      cost = definition
-      stacks = 64
-    elsif definition.is_a? Hash
-      cost = definition['cost']
-      stacks = definition['stacks'] 
-    end
-    [name, stacks, cost]
   end
 
   def fixup_pending
