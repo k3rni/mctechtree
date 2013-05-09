@@ -1,0 +1,46 @@
+cluster: vanilla
+
+primitives:
+- apple: 1
+- wheat: 1
+- cocoa beans: 10
+- sugar cane: 2
+- pumpkin: 2
+- carrot: 1
+- potato: 1
+- melon slice: 2
+- milk bucket: 2
+- egg: 3
+- raw fish: 2
+- raw chicken: 6
+- raw beef: 9
+- raw pork: 9
+- red mushroom: 2
+- brown mushroom: 2
+- sapling: 3
+- leaves: 3
+- seeds: 3
+
+crafts:
+- sugar: [sugar cane]
+- cake: 
+    ingredients: [milk bucket*3, egg, sugar*2, wheat*3]
+    compatible: all
+- cookie: 
+    ingredients: [wheat*2, cocoa beans]
+    compatible: all
+- cooked pork:
+    machine: furnace
+    ingredients: [raw pork]
+- cooked chicken:
+    machine: furnace
+    ingredients: [raw chicken]
+- steak:
+    machine: furnace
+    ingredients: [raw beef]
+- cooked fish:
+    machine: furnace
+    ingredients: [raw fish]
+- golden apple: [apple, gold nugget*8]
+- golden carrot: [carrot, gold nugget*8] 
+- mushroom stew: [red mushroom, brown mushroom, bowl]

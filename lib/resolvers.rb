@@ -9,33 +9,54 @@ end
 
 class ItemResolver
     attr_accessor :item, :count, :children
+    @@craft_constructor = Proc.new { |*args| CraftResolver.new(*args) }
     
-    def initialize(item, count=1)
+    def initialize(item, count)
       @item = item
       @count = count
       @children = item.crafts.map do |craft| 
-        CraftResolver.new(craft, count)
+        @@craft_constructor.call(craft, count)
       end
     end
 
+    def primitive
+      item.primitive
+    end
+
+    def craftable
+      primitive || craftable_children.size > 0
+    end
+
     def cost
-      if item.primitive
-        count * item.cost
+      if primitive
+        count * (item.cost || 1)
       else
         count * min_child_cost
       end
     end
 
+    def craftable_children
+      reject_overrides children.select(&:craftable)
+    end
+
+    def reject_overrides crafts
+      overrides = crafts.map { |c| c.craft.overrides }
+      crafts.reject do |c|
+        c.craft.matches_overrides overrides
+      end
+    end
+
     def min_child_cost
-      @children.map(&:cost).min
+      craftable_children.map(&:cost).min
     end
     
     def best_craft
-      @children.select { |c| c.cost == min_child_cost }.first
+      craftable_children.select { |c| c.cost == min_child_cost }.first
     end
 
     def resolve
-      if item.primitive
+      raise UncraftableItemError if !craftable
+      if primitive
         [:get, count, item]
       else
         # [:craft, (count.to_f / best_craft.craft.makes), best_craft.resolve]
@@ -45,7 +66,7 @@ class ItemResolver
     end
 
     def explain depth=0
-        if item.primitive
+        if primitive
             "#{' ' * depth}#{count} #{item.name}"
         else
             "#{' ' * depth}#{exact_craft(count, best_craft.makes)} #{best_craft.explain(depth+1)}"
@@ -57,13 +78,18 @@ end
 
 class CraftResolver
     attr_accessor :craft, :count, :children
+    @@item_constructor = Proc.new { |*args| ItemResolver.new(*args) }
 
     def initialize(craft, count)
         @craft = craft
         @count = count
         @children = craft.count_ingredients.map do |item, needed|
-            ItemResolver.new(item, needed)
+          @@item_constructor.call(item, needed)
         end
+    end
+
+    def craftable
+      children.all?(&:craftable)
     end
 
     def cost
@@ -88,4 +114,3 @@ class CraftResolver
     end
 
 end
-

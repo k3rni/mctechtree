@@ -1,0 +1,19 @@
+cluster: ae
+
+primitives:
+- quartz dust: 30 
+# NOTE: quartz dust is craftable from Quartz Ore (when mined with Silk Touch enchant, and macerated/pulverized/grinded from crystals. Adding those would introduce cycles.
+# - quartz ore: 60
+
+crafts:
+- quartz fiber:
+    ingredients: [glass*6, quartz dust*3]
+    shape: g g g q q q g g g
+    makes: 4
+- silicon:
+    ingredients: [quartz dust]
+    machine: furnace
+- quartz crystal:
+    machine: compressor
+    ingredients: [quartz dust*4]
+    # NOTE: only available with ic2

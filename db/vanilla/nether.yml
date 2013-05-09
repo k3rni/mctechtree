@@ -1,0 +1,23 @@
+cluster: vanilla
+
+primitives:
+- glowstone dust: 30
+- netherrack: 10
+- nether brick: 32
+- soul sand: 25
+- blaze rod: 100
+
+crafts:
+- blaze powder:
+    ingredients: [blaze rod]
+    makes: 2
+- eye of ender: [ender pearl, blaze powder]
+- magma cream: [blaze powder, slimeball]
+- fire charge:
+    ingredients: [blaze powder, coal, gunpowder]
+    makes: 3
+- fire charge:
+    ingredients: [blaze powder, charcoal, gunpowder]
+    makes: 3
+- glowstone: [glowstone dust*4]
+- redstone lamp: [glowstone, redstone*4]

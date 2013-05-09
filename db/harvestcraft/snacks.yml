@@ -1,0 +1,26 @@
+cluster: harvestcraft
+
+crafts:
+- nachos: [bowl, tortilla, cheese, tomato]
+- fried onion rings: [onion, flour, milk bucket]
+- buttered popcorn: [popcorn, salt, butter]
+- corn on the cob: [corn, butter, salt]
+- salted peanuts: [peanuts, salt]
+- peanut brittle: [peanuts, butter, powdered sugar]
+- trailmix: [raisins, salted peanuts, chocolate bar, dried apple slices, dried strawberries]
+- ice cream: [bowl, milk bucket, snowball, salt]
+- chocolate ice cream: [ice cream, chocolate bar]
+- strawberry ice cream: [ice cream, strawberry]
+- chocolate covered fruit: [chocolate bar, raisins]
+- chocolate covered fruit: [chocolate bar, dried apple slices]
+- chocolate covered fruit: [chocolate bar, dried strawberries]
+- strawberry ice: [snowball, strawberry, bowl]
+
+- chocolate peanuts: [chocolate bar, salted peanuts]
+- banana split: [banana, chocolate ice cream, cherry, ice cream, strawberry ice cream]
+- mocha ice cream: [ice cream, coffee, chocolate bar]
+- candied ginger: [ginger, sugar]
+- salted sunflower seeds: [sunflower seeds, salt]
+- peppermint: [sugar, spice leaf, red dye]
+- jelly beans: [sugar, red dye, yellow dye] # would you like some jelly babies?
+

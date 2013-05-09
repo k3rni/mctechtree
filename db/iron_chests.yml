@@ -1,0 +1,49 @@
+cluster: iron_chests
+
+crafts:
+- iron chest: 
+    ingredients: [chest, iron*8]
+- iron chest: 
+    ingredients: [chest, refined iron*8]
+- iron chest: 
+    ingredients: [copper chest, glass*4, iron*4]
+- iron chest: 
+    ingredients: [copper chest, glass*4, refined iron*4]
+- gold chest:
+    ingredients: [iron chest, gold ingot*8]
+- gold chest:
+    ingredients: [silver chest, glass*4, iron chest]
+- diamond chest:
+    ingredients: [gold chest, diamond*2, glass*6]
+- diamond chest:
+    ingredients: [iron chest, diamond*3, glass*5]
+- copper chest:
+    ingredients: [copper ingot*8, chest]
+- silver chest:
+    ingredients: [silver ingot*8, copper chest]
+- silver chest:
+    ingredients: [silver ingot*4, glass*4, iron chest]
+- crystal chest:
+    ingredients: [glass*8, diamond chest]
+- iron to gold chest upgrade:
+    ingredients: [gold ingot*8, iron]
+- iron to gold chest upgrade:
+    ingredients: [gold ingot*8, refined iron]
+- gold to diamond chest upgrade:
+    ingredients: [glass*6, diamond*2, gold ingot]
+- copper to silver chest upgrade:
+    ingredients: [silver ingot*8, copper ingot]
+- silver to gold chest upgrade:
+    ingredients: [gold ingot*4, glass, silver ingot]
+- copper to iron chest upgrade:
+    ingredients: [iron*4, glass*4, copper ingot]
+- copper to iron chest upgrade:
+    ingredients: [refined iron*4, glass*4, copper ingot]
+- diamond to crystal chest upgrade:
+    ingredients: [glass*8, diamond chest] # NOTE: weird, verify this
+- chest to iron chest upgrade:
+    ingredients: [iron*8, planks]
+- chest to iron chest upgrade:
+    ingredients: [refined iron*8, planks]
+- chest to copper chest ugprade:
+    ingredients: [copper ingot*8, planks]

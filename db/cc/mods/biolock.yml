@@ -1,0 +1,5 @@
+cluster: biolock
+parent: cc
+
+crafts:
+- biometric lock: [stone*6, glass pane*2, redstone]

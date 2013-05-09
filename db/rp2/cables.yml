@@ -1,19 +1,36 @@
 cluster: redpower2
 
+colors: &colors
+    color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
+
+equivalents:
+- [any insulated wire, white insulated wire, black insulated wire, red insulated wire, green  insulated wire, brown insulated wire, blue insulated wire, purple insulated wire, cyan insulated wire, light gray insulated wire, gray insulated wire, pink insulated wire, lime insulated wire, yellow insulated wire, light blue insulated wire, magenta insulated wire, orange insulated wire]
+
 crafts:
-    - red alloy wire:
-        makes: 12
-        ingredients: [red alloy ingot*3]
-        shape: ~ r ~ ~ r ~ ~ r ~
-    - insulated wire: # kolorowe pomijamy
-        makes: 12
-        ingredients: [red alloy ingot*3, wool*6]
-        shape: w r w w r w w r w
-    - bundled cable: # kolorowe pomijamy
-        ingredients:
-          - insulated wire*5
-          - string*4
-        shape: s i s i i i s i s
-    - fine iron wire:
-        machine: diamond drawplate
-        ingredients: [iron]
+- red alloy wire:
+    makes: 12
+    ingredients: [red alloy ingot*3]
+    shape: ~ r ~ ~ r ~ ~ r ~
+- bundled cable:
+    ingredients:
+      - any insulated wire*5
+      - string*4
+    shape: s i s i i i s i s
+- fine iron wire:
+    machine: diamond drawplate
+    ingredients: [iron]
+- fine copper wire:
+    machine: diamond drawplate
+    ingredients: [copper ingot]
+- blue alloy wire:
+    ingredients: [wool*6, blue alloy ingot*3]
+    makes: 12
+- bus transceiver: [stone bundle*6, stone wafer, red-doped wafer*2]
+- $(color) insulated wire:
+    makes: 12
+    ingredients: [red alloy ingot*3, $(color) wool*6]
+    <<: *colors
+- $(color) bundled cable:
+    ingredients: [bundled cable, $(color) dye, paper]
+    <<: *colors
+# TODO: jacketed wire/cable

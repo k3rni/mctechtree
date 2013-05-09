@@ -1,0 +1,34 @@
+cluster: harvestcraft
+
+crafts:
+- baked potato:
+    machine: furnace
+    ingredients: [potato]
+- toast:
+    machine: furnace
+    ingredients: [bread]
+- popcorn:
+    machine: furnace
+    ingredients: [corn]
+- raisins:
+    machine: furnace
+    ingredients: [grape]
+- rice cake:
+    machine: furnace
+    ingredients: [rice]
+- dried strawberries:
+    machine: furnace
+    ingredients: [strawberry]
+- dried apple slices:
+    machine: furnace
+    ingredients: [apple]
+- toasted coconut:
+    machine: furnace
+    ingredients: [coconut]
+- corn bread muffins:
+    machine: furnace
+    ingredients: [corn muffin mix]
+- grilled $(plant):
+    machine: furnace
+    ingredients: [$(plant)]
+    plant: [sweet potato, eggplant, radish, asparagus]

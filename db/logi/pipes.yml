@@ -1,0 +1,46 @@
+cluster: logi
+
+crafts:
+- basic logistics pipe:
+    ingredients: [gold gear*2, glass*4, redstone torch*2, diamond transport pipe]
+- basic logistics pipe:
+    ingredients: [redstone golden chipset*2, glass*4, redstone torch*2, diamond transport pipe]
+    # NOTE: this recipe is cheaper, and will be preferred by the solver unless assembly machine recipes are excluded
+- request logistics pipe:
+    ingredients: [gold gear*2, basic logistics pipe]
+- request logistics pipe:
+    ingredients: [redstone golden chipset*2, basic logistics pipe]
+- provider logistics pipe:
+    ingredients: [basic logistics pipe, glowstone dust]
+- supplier logistics pipe:
+    ingredients: [basic logistics pipe, lapis*2]
+- liquid supplier logistics pipe:
+    ingredients: [basic logistics pipe, bucket*2, lapis*2]
+- builder supplier logistics pipe:
+    ingredients: [basic logistics pipe, ink sac, dandelion yellow]
+- crafting logistics pipe:
+    ingredients: [basic logistics pipe, glowstone dust*2]
+- satellite logistics pipe:
+    ingredients: [basic logistics pipe, redstone*2]
+- remote orderer logistics pipe: 
+    ingredients: [basic logistics pipe, ender pearl]
+- logistics system entrance pipe:
+    ingredients: [green dye, provider logistics pipe]
+- logistics system destination pipe:
+    ingredients: [red dye, provider logistics pipe]
+- chassis mk5:
+    ingredients: [diamond block*4, block of gold*4, basic logistics pipe]
+- chassis $(tier):
+    ingredients: [basic logistics pipe, $(tier)*8]
+    tier:
+    - mk1/redstone
+    - mk2/iron
+    - mk3/gold ingot
+    - mk4/diamond
+- chassis $(tier):
+    ingredients: [basic logistics pipe, $(tier)*3]
+    tier:
+    - mk1/redstone chipset
+    - mk2/redstone iron chipset
+    - mk3/redstone golden chipset
+    - mk4/redstone diamond chipset

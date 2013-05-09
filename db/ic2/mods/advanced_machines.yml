@@ -1,0 +1,17 @@
+cluster: advanced_machines
+parent: ic2
+
+crafts:
+- rotary macerator:
+    ingredients: [macerator, refined iron*7, advanced machine]
+- singularity compressor:
+    ingredients: [compressor, obsidian*7, advanced machine]
+- centrifuge extractor:
+    ingredients: [extractor, electrolyzed water cell*7, advanced machine]
+# TODO: fill/verify these
+- refined iron dust:
+    ingredients: [iron ore*7, coal]
+    makes: 8
+#- hydrated coal dust:
+#- bronze dust:
+

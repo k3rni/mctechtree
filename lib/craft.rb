@@ -4,16 +4,26 @@ require 'zlib'
 require 'active_support/core_ext/array'
 
 class Craft
-    attr_accessor :machine, :result, :makes, :ingredients, :shape
+    attr_accessor :machine, :result, :makes, :ingredients, :group
+    attr_accessor :shape, :shape_map
+		attr_accessor :requires
+    attr_accessor :overrides
+    attr_accessor :tag
 
     def to_s
-        ["Craft(",
-         "result=#{self.result},",
-         ("machine=#{machine}," if machine),
-         ("makes=#{self.makes}," if makes > 1),
+        "Craft(" + [
+         "result=#{self.result}",
+         ("makes=#{self.makes}" if makes > 1),
          "ingredients=#{count_ingredients.map{|k,v| "#{k}*#{v}"}.join('+')}",
-         ")"
-        ].join('')
+         metadata.map{|k,v| "#{k}=#{v}"},
+        ].flatten.compact.join(' ') + ")"
+    end
+
+    def metadata
+       %w(machine group requires overrides tag).map do |key|
+         v = send(key)
+         v.nil? ? nil : [key, v]
+       end.compact
     end
 
     def hash
@@ -21,11 +31,13 @@ class Craft
     end
 
     def initialize attrs={}
-        attrs.each { |key, val| self.send "#{key}=", val }
+        attrs.each do |key, val|
+          self.send "#{key}=", val unless Craft.unsupported? key
+        end
     end
 
-    def self.create machine, result, makes, ingredients, extra={}
-        opts = {machine: machine, result: result, makes: makes, ingredients: ingredients}.merge extra
+    def self.create machine, result, makes, ingredients, group, extra={}
+        opts = {machine: machine, result: result, makes: makes, ingredients: ingredients, group: group}.merge extra
         if opts.delete('shapeless')
           opts[:shape] = :shapeless
         end
@@ -38,6 +50,7 @@ class Craft
 
     def replace_ingredients old, new
         ingredients.map! { |obj| (obj == old ? new : obj) }
+        self.shape_map = Hash[shape_map.map { |key, obj| [key, (obj == old ? new : obj)] }] unless shape_map.nil?
     end
 
     def describe_ingredients mul=1
@@ -51,7 +64,7 @@ class Craft
       # TODO: reprezentacja shapeless?
       return [ingredients] if shape == :shapeless
       items = shape.split.map do |prefix| 
-        prefix.nil? ? nil : find_ingredient_by_prefix(prefix) 
+        prefix.nil? ? nil : ((shape_map && shape_map[prefix]) || find_ingredient_by_prefix(prefix))
       end
       if items.size == 9
         return items.in_groups_of 3
@@ -62,5 +75,20 @@ class Craft
 
     def find_ingredient_by_prefix prefix
       ingredients.select { |item| item.name =~ %r(^#{prefix}) }.first
+    end
+
+    def self.unsupported? key
+      %w(keeps compatible structure).include? key
+    end
+
+    # A craft is overriden when another craft for the same item (must be compatible)
+    # declares either of:
+    # * that it overrides all other crafts from a group(cluster)
+    # * overrides a specific recipe, by use of a tag
+    def matches_overrides keys
+      keys.any? do |key| 
+        key == "#{group}/#{tag}" ||
+        key == group
+      end
     end
 end

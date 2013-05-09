@@ -1,102 +1,117 @@
-cluster: industrialcraft2
+cluster: ic2
 
 crafts:
-    - copper wire:
-        makes: 6
-        ingredients: [copper ingot*3]
-    - copper cable:
-        ingredients: [copper wire, rubber]
-    - glass fibre cable:
-        makes: 4
-        ingredients:
-          - glass*6
-          - redstone*2
-          - diamond
-    - gold wire:
-        makes: 12
-        ingredients: [gold ingot*3]
-    - insulated gold cable:
-        makes: 4
-        ingredients: [gold ingot, rubber*4]
-    - insulated gold cable:
-        ingredients: [gold wire, rubber]
-    - 2ins gold cable: [insulated gold cable, rubber]
-    - 2ins gold cable: [gold wire, rubber*2]
-    - HV cable:
-        makes: 12
-        ingredients: [refined iron*3]
-    - insulated HV cable:
-        makes: 4
-        ingredients: [refined iron, rubber*4]
-    - insulated HV cable: [rubber, refined iron]
-    - 2ins HV cable: [insulated HV cable, rubber]
-    - 2ins HV cable: [HV cable, rubber*2]
-    - 3ins HV cable: [rubber*2, insulated HV cable]
-    - 3ins HV cable: [rubber*3, HV cable]
-    - 3ins HV cable: [rubber, 2ins HV cable]
-    - RE battery:
-      - tin ingot*4
+- tin wire:
+    makes: 9
+    ingredients: [tin ingot*3]
+- copper wire:
+    makes: 6
+    ingredients: [copper ingot*3]
+- copper cable:
+    ingredients: [copper wire, rubber]
+- glass fibre cable:
+    makes: 4
+    ingredients:
+      - glass*6
       - redstone*2
-      - copper cable
-    - energy crystal:
       - diamond
-      - redstone*8
-    - lapotron crystal:
-      - lapis*6
-      - advanced circuit*2
-      - energy crystal
-    - lappack:
-      - lapis block*6
-      - batpack
-      - advanced circuit
-    - batpack:
-      - RE battery*6
-      - integrated circuit
-      - tin ingot
-    - MV transformer:
-      - 2ins gold cable*2
-      - machine
-    - HV transformer:
-      - 3ins HV cable*2
-      - integrated circuit
-      - MV transformer
-      - energy crystal
-    - tesla coil:
-      - MV transformer
-      - integrated circuit
-      - refined iron*2
-      - redstone*4
-    - MFSU:
-      - MFE
-      - advanced machine
-      - advanced circuit
-      - lapotron crystal*6
-    - MFE:
-      - energy crystal*4
-      - 2ins gold cable*4
-      - machine
-    - generator:
-      - RE battery
-      - machine
-      - furnace
-    - generator:
-      - RE battery
-      - refined iron*3
-      - electric furnace
-    - geothermal generator:
-      - cell*2
-      - glass*4
-      - generator
-      - refined iron*2
-    - solar panel:
-      - coal dust*3
-      - glass*3
-      - generator
-      - integrated circuit*2
-    - water mill:
-      - wood*4
-      - stick*4
-      - generator
-    - wind mill:
-      - generator
-      - iron*4
+- gold wire:
+    makes: 12
+    ingredients: [gold ingot*3]
+- insulated gold cable:
+    makes: 4
+    ingredients: [gold ingot, rubber*4]
+- insulated gold cable:
+    ingredients: [gold wire, rubber]
+- 2ins gold cable: [insulated gold cable, rubber]
+- 2ins gold cable: [gold wire, rubber*2]
+- HV cable:
+    makes: 12
+    ingredients: [refined iron*3]
+- insulated HV cable:
+    makes: 4
+    ingredients: [refined iron, rubber*4]
+- insulated HV cable: [rubber, refined iron]
+- 2ins HV cable: [insulated HV cable, rubber]
+- 2ins HV cable: [HV cable, rubber*2]
+- 3ins HV cable: [rubber*2, insulated HV cable]
+- 3ins HV cable: [rubber*3, HV cable]
+- 3ins HV cable: [rubber, 2ins HV cable]
+- splitter cable: [redstone*2, lever, 3ins HV cable*2]
+- detector cable: [redstone*3, 3ins HV cable, integrated circuit]
+- charged RE battery: [RE battery]
+- RE battery:
+  - tin ingot*4
+  - redstone*2
+  - copper cable
+- energy crystal:
+  - diamond
+  - redstone*8
+- lapotron crystal:
+  - lapis*6
+  - advanced circuit*2
+  - energy crystal
+- lappack:
+  - lapis block*6
+  - batpack
+  - advanced circuit
+- batpack:
+  - RE battery*6
+  - integrated circuit
+  - tin ingot
+- LV transformer: [wood*4, copper cable, copper ingot*3]
+- MV transformer:
+  - 2ins gold cable*2
+  - machine
+- HV transformer:
+  - 3ins HV cable*2
+  - integrated circuit
+  - MV transformer
+  - energy crystal
+- tesla coil:
+  - MV transformer
+  - integrated circuit
+  - refined iron*2
+  - redstone*4
+- MFSU:
+  - MFE
+  - advanced machine
+  - advanced circuit
+  - lapotron crystal*6
+- MFE:
+  - energy crystal*4
+  - 2ins gold cable*4
+  - machine
+- batbox:
+  - wood*5
+  - RE battery*3
+  - copper cable
+- generator:
+  - RE battery
+  - machine
+  - furnace
+- generator:
+  - RE battery
+  - refined iron*3
+  - electric furnace
+- geothermal generator:
+  - cell*2
+  - glass*4
+  - generator
+  - refined iron*2
+- solar panel:
+  - coal dust*3
+  - glass*3
+  - generator
+  - integrated circuit*2
+- water mill:
+  - wood*4
+  - stick*4
+  - generator
+- wind mill:
+  - generator
+  - iron*4
+- electrolyzer: [copper cable*4, integrated circuit, machine, cell*2]
+- electrolyzed water cell:
+    ingredients: [water cell]
+    machine: electrolyzer

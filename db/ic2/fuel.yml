@@ -1,0 +1,40 @@
+cluster: ic2
+
+crafts:
+- bio cell: [cell, compressed plantclump]
+- biofuel cell:
+    ingredients: [bio cell]
+    machine: extractor
+- coalfuel cell:
+    ingredients: [hydrated coal cell]
+    machine: extractor
+- hydrated coal dust:
+    ingredients: [water bucket, coal dust]
+- hydrated coal dust:
+    makes: 8
+    ingredients: [water bucket, coal dust*8]
+- compressed hydrated coalclump:
+    machine: compressor
+    ingredients: [hydrated coal dust]
+- hydrated coal cell: [cell, compressed hydrated coalclump]
+- compressed plantclump:
+    ingredients: [plantball]
+    machine: compressor
+- fuel can:
+    ingredients: [tin ingot*7]
+- biofuel-filled fuel can:
+    ingredients: [fuel can, biofuel cell*6]
+    machine: canning machine
+- coalfuel-filled fuel can:
+    ingredients: [fuel can, coalfuel cell*6]
+    machine: canning machine
+- plantball:
+    vars: [source]
+    ingredients: [$(source)*8]
+    source:
+    - sapling
+    - rubber tree sapling
+    - sugar cane
+    - wheat
+    - seeds
+    - leaves

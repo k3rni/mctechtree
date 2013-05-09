@@ -1,0 +1,8 @@
+cluster: flowerpot
+
+crafts:
+- painter's flower pot:
+    ingredients: [unfired painter's flower pot]
+    machine: furnace
+- unfired painter's flower pot:
+    ingredients: [clay*3]

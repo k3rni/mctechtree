@@ -1,0 +1,7 @@
+cluster: xfels
+parent: cc
+
+crafts:
+- peripheral cable:
+    ingredients: [stone*4, redstone*4, iron]
+    makes: 6

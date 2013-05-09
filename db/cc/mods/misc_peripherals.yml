@@ -1,0 +1,113 @@
+cluster: misc_per
+
+crafts:
+- charge station: # ic2 ver
+    ingredients: [RE battery, machine, redstone]
+- charge station: # bc3 ver
+    ingredients: [golden conductive pipe, iron gear, redstone]
+- advanced charge station:
+    ingredients: [charge station, integrated circuit, 2ins gold cable*2, energy crystal]
+- lapotronic charge station:
+    ingredients: [advanced charge station, advanced circuit, glass fibre cable*2, lapotron crystal]
+- iron note block:
+    ingredients: [iron*4, gold ingot*2, redstone*2, note block]
+- feeding upgrade:
+    ingredients: [iron*4, wheat*4, eye of ender]
+- interactive sorter:
+    ingredients: [diamond*4, piston*4, eye of ender]
+# TODO: any gate and any pipe wire, without creating 2048 recipes (4**4 wire combos, 8 gates)
+- gate reader: [red pipe wire*4, redstone*4, gate]
+- RTG upgrade: [copper ingot*4, iron*2, nuclear reactor, generator, advanced circuit]
+- turtle teleporter: [ender pearl*6, eye of ender*2, obsidian]
+- advanced turtle teleporter: [turtle teleporter, eye of ender*4, emerald*2, redstone*2]
+- REther upgrade:
+    ingredients: [wireless transceiver, receiver dish, obsidian stick]
+- player detector:
+    # NOT the Railcraft player detector
+    ingredients: [gold ingot*4, redstone*2, eye of ender*2, diamond]
+- computer controlled crafter: [redstone*4, crafting table*4, interactive sorter]
+- electronic signal controller: [gold ingot*4, redstone*2, diamond, signal controller box, signal receiver box]
+- computer engineer's backpack: [wool*2, floppy disk*2, string*4, chest]
+- firework launcher: [iron*4, gunpowder*2, chest*2, dispenser]
+- hardware accelerator: [gold ingot*4, redstone*4, computer]
+- shielded turtle:
+    ingredients: [turtle, obsidian]
+    tag: non-ic2
+- tank turtle:
+    ingredients: [turtle, iron tank gauge]
+    overrides: misc_per/non-rc
+- tank turtle:
+    ingredients: [turtle, glass]
+    overrides: misc_per/non-mod
+    tag: non-rc
+- tank turtle:
+    ingredients: [turtle, tank]
+    overrides: misc_per/non-mod
+- chunk loader upgrade:
+    vars: [chunkloader]
+    ingredients: [wireless modem, $(chunkloader)]
+    chunkloader:
+    - world anchor # railcraft
+    - teleport tether # additional pipes
+    # NOTE: almost any chunkloader works here
+- $(peripheral) turtle:
+    ingredients: [$(peripheral), turtle]
+    peripheral:
+    - note/iron note block
+    - feeding/feeding upgrade
+    - chunk loader/chunk loader upgrade
+    - laser/mining laser
+    #- resupply/resupply upgrade
+    - solar/solar panel
+    - advanced solar/advanced solar panel
+    - hybrid solar/hybrid solar panel
+    - ultimate solar/ultimate hybrid solar panel
+    # TODO: CompactSolars versions?
+    - shearing/shears
+    - compass
+    - gate reader
+    - wrench
+    - wrench/pipe wrench
+    - wrench/crowbar
+    - treetap
+    #- alchemist/minium stone
+    - sign reader/sign
+    - REther/REther upgrade
+    #- inventory/inventory upgrade
+    - RTG/RTG upgrade
+    #- thaum scanner/goggles of revealing
+    #- MFFS/MFFS MultiTool
+    - XP/enchantment table
+    - anvil
+    - light/glowstone
+- shielded turtle:
+    vars: [shield]
+    ingredients: [$(shield), turtle]
+    overrides: misc_per/non-ic2
+    shield:
+    - reinforced stone
+    # requires GregTech
+    #- iridium block
+    #- tungsten steel block
+    #- iridium-reinforced tungsten steel block
+
+
+
+disabled_crafts:
+- charge station: # gregtech ver
+    ingredients: [RE battery, bronze machine hull, redstone]
+- charge station: # gregtech ver
+    ingredients: [RE battery, aluminium machine hull, redstone]
+- ultimate charge station:
+    ingredients: [lapotronic charge station, energy flow circuit, 3ins HV cable*2, lapotronic energy orb]
+- resupply upgrade:
+    ingredients: [gold ingot*4, redstone*4, ender chest]
+- resupply station:
+    ingredients: [iron*4, redstone*2, chest*2, resupply upgrade]
+- bee analyzer:
+    ingredients: [gold ingot*4, redstone*4, beealyzer]
+- tree analyzer: [gold ingot*4, redstone*4, treealyzer]
+- rail reader: [gold ingot*4, advanced detector rail*4, eye of ender] # NOTE: detector manager instead of eye ingame
+- nuclear information reader: ~ # TODO, also advanced reader
+- inventory upgrade: ~ # TODO
+- woven computer engineer's backpack: ~ # TODO

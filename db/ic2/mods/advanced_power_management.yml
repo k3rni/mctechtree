@@ -1,0 +1,17 @@
+cluster: apm
+parent: ic2
+
+crafts:
+- LV charging bench: [copper cable*3, planks*4, batbox, integrated circuit]
+- MV charging bench: [2ins gold cable*3, planks*4, MFE, integrated circuit]
+- HV charging bench: [3ins HV cable, planks*4, MFSU, integrated circuit]
+- upgrade toolkit: [stick*2, iron]
+- LV battery station: [copper cable*3, planks*4, LV transformer, integrated circuit]
+- MV battery station: [2ins gold cable*3, planks*4, MV transformer, integrated circuit]
+- HV battery station: [3ins HV cable*3, planks*4, HV transformer, integrated circuit]
+- storage monitor: [gold wire, planks*4, glass*2, integrated circuit]
+- link card creator: [copper cable, integrated circuit, paper]
+# and the adjustable emitter, which is not craftable
+- $(tier) component kit:
+    ingredients: [$(tier) charging bench, upgrade toolkit]
+    tier: [LV, MV, HV]

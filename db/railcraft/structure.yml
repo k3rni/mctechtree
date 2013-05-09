@@ -1,0 +1,29 @@
+cluster: railcraftz
+
+crafts:
+- concrete block:
+    ingredients: [stone*5, rebar*4]
+    makes: 5
+- infernal brick:
+    ingredients: [soul sand*5, nether brick*4]
+    makes: 4
+- metal post:
+    ingredients: [iron*7]
+    machine: rolling machine
+    makes: 21
+- metal post:
+    ingredients: [bronze*7]
+    machine: rolling machine
+    makes: 16
+- metal post:
+    ingredients: [refined iron*7]
+    machine: rolling machine
+    makes: 24
+    requires: ic2
+# TODO: painted metal post recipes
+- stone post:
+    ingredients: [stone*6, rebar*3]
+    makes: 6
+- wooden post:
+    ingredients: [wooden tie]
+    makes: 3

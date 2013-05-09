@@ -1,0 +1,24 @@
+cluster: buildcraft
+
+crafts:
+- hopper: [iron*5, stone gear, chest]
+- void transport pipe:
+    makes: 8
+    ingredients: [ink sac, redstone, glass]
+# NOTE: wiki states removed from BC3.2.0
+# - stripe pipe:
+#     makes: 8
+#     ingredients: [ink sac, yellow dye, glass]
+- structure pipe: [cobblestone transport pipe, gravel]
+- pipe waterproof: [cactus green]
+- $(material) transport pipe:
+    ingredients: [$(material)*2, glass]
+    makes: 8
+    material: [wooden/wood, stone, cobblestone/cobble, sandstone, iron, golden/gold ingot, obsidian, diamond, emerald]
+# NOTE: since these use properly named crafted pipes from above, no aliasing needed
+- $(material) waterproof pipe:
+    ingredients: [$(material) transport pipe, pipe waterproof]
+    material: [wooden, cobblestone, stone, sandstone, iron, golden, emerald, void]
+- $(material) conductive pipe:
+    ingredients: [$(material) transport pipe, redstone]
+    material: [wooden, stone, golden]

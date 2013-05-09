@@ -1,13 +1,13 @@
-cluster: thermalexpansion
+cluster: te
 
 crafts:
-  - powered furnace: [redstone, brick block*2, machine frame, copper ingot*2, redstone reception coil]
-  - pulverizer: [piston, flint*2, machine frame, copper ingot*2, redstone reception coil]
-  - sawmill: [iron axe, planks*2, machine frame, copper ingot*2, redstone reception coil]
-  - induction smelter: [bucket, invar ingot*2, machine frame, copper ingot*2, redstone reception coil]
-  - magma crucible: [bucket, nether brick block*2, machine frame, copper ingot*2, redstone reception coil]
-  - liquid transposer: [bucket, glass*2,machine frame, copper ingot*2, redstone reception coil]
-  - glacial precipitator: [piston, snow*2, machine frame, copper ingot*2, redstone reception coil]
-  - igneous extruder: [piston, glass*2, machine frame, tin ingot*2, pneumatic servo]
-  - aqueous accumulator: [bucket, glass*2, machine frame, tin ingot*2, pneumatic servo]
-  - portable tank: [hardened glass*4, tin ingot]
+- powered furnace: [redstone, bricks*2, machine frame, copper ingot*2, redstone reception coil]
+- pulverizer: [piston, flint*2, machine frame, copper ingot*2, redstone reception coil]
+- sawmill: [iron axe, planks*2, machine frame, copper ingot*2, redstone reception coil]
+- induction smelter: [bucket, invar ingot*2, machine frame, copper ingot*2, redstone reception coil]
+- magma crucible: [bucket, nether brick*2, machine frame, copper ingot*2, redstone reception coil]
+- liquid transposer: [bucket, glass*2,machine frame, copper ingot*2, redstone reception coil]
+- glacial precipitator: [piston, snow*2, machine frame, copper ingot*2, redstone reception coil]
+- igneous extruder: [piston, glass*2, machine frame, tin ingot*2, pneumatic servo]
+- aqueous accumulator: [bucket, glass*2, machine frame, tin ingot*2, pneumatic servo]
+- portable tank: [hardened glass*4, tin ingot]

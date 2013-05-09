@@ -1,0 +1,25 @@
+cluster: logi
+
+crafts:
+- logistics power junction:
+    ingredients: [iron*5, gold gear, basic logistics pipe, redstone*2]
+- logistics power junction:
+    ingredients: [iron*5, redstone golden chipset, basic logistics pipe, redstone*2]
+- logistics inventory system connector:
+    ingredients: [ender pearl*2, basic logistics pipe]
+- soldering station: [iron*6, crafting table, redstone]
+# all soldering station crafts use one iron ingot.
+- logistics HUD bow:
+    ingredients: [diamond*3, redstone diamond chipset, iron]
+    machine: soldering station
+- logistics HUD glass:
+    ingredients: [glowstone dust*7, glass, redstone diamond chipset, iron]
+    machine: soldering station
+- logistics HUD nose bridge:
+    ingredients: [diamond*2, redstone diamond chipset, iron]
+    machine: soldering station
+- logistics HUD glasses:
+    machine: soldering station
+    ingredients: [logistics HUD bow*2, logistics HUD nose bridge, logistics HUD glass*2, iron]
+- remote orderer: [glass*4, diamond gear*2]
+- network monitor: [gold gear, gold ingot*3]

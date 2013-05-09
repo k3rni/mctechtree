@@ -1,0 +1,44 @@
+# source: Tekkit wiki
+cluster: wrcbe
+
+crafts:
+# core
+- obsidian stick:
+    ingredients: [obsidian*2]
+- wireless transceiver:
+    ingredients: [REther pearl, obsidian stick]
+- stone bowl:
+    ingredients: [stone*3]
+- REther pearl:
+    ingredients: [redstone*4, glowstone dust*4, ender pearl]
+    # two shapes: redstone in corners or glowstone in corners
+- blaze transceiver:
+    ingredients: [REther pearl, blaze rod]
+- receiver dish:
+    ingredients: [wireless transceiver, stone bowl]
+- blaze receiver dish:
+    ingredients: [blaze transceiver, stone bowl]
+#i=iron B=button S=stone r=redstone p=paper/pearl O=obsidian s=slimeball
+# addons
+- triangulator:
+    ingredients: [wireless transceiver, iron*4]
+- wireless remote:
+    ingredients: [wireless transceiver, button]
+- wireless sniffer:
+    ingredients: [receiver dish*2, wireless transceiver, redstone*2, button, stone*3]
+- wireless map:
+    ingredients: [paper*8, triangulator]
+- REP:
+    ingredients: [obsidian*4, REther pearl, blaze transceiver]
+- wireless tracker:
+    ingredients: [REther pearl, obsidian*3, slimeball]
+- private sniffer:
+    ingredients: [receiver dish*2, blaze transceiver, redstone*2, button, stone*3]
+# rp2
+- wireless redstone receiver:
+    ingredients: [receiver dish, obsidian stick, stone wafer, stone wire*2]
+- wireless transmitter:
+    ingredients: [wireless transceiver, obsidian stick, stone wafer, stone wire*2]
+- wireless jammer:
+    ingredients: [blaze transceiver, blaze rod, stone wafer, stone wire*2]
+

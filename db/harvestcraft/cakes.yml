@@ -1,0 +1,27 @@
+cluster: harvestcraft
+
+crafts: 
+- cake: 
+    ingredients: [milk bucket*3, egg, sugar*2, harvest wheat*3] # vanilla-cake with harvest wheat
+- cookie: 
+    ingredients: [harvest wheat*2, cocoa beans] # vanilla-cookie
+- donut: [dough, olive oil]
+- chocolate donut: [donut, chocolate bar]
+- powdered donut: [donut, powdered sugar]
+- jelly donut: [donut, grape jelly]
+- jelly donut: [donut, strawberry jam]
+- frosted donut: [donut, sugar, red dye, yellow dye, green dye]
+- waffles: [batter, butter, syrup]
+- fancy waffles: [waffles, berry syrup, banana, cherry, peach]
+- pancakes: [batter, butter, syrup]
+- fancy pancakes: [pancakes, berry syrup, banana, cherry, peach]
+- chocolate bar: [cocoa beans, milk bucket, powdered sugar]
+- topping cheese cake: [cheese cake, blueberry]
+- topping cheese cake: [cheese cake, blackberry]
+- topping cheese cake: [cheese cake, strawberry]
+- topping cheese cake: [cheese cake, grape]
+- topping cheese cake: [cheese cake, apple]
+- topping cheese cake: [cheese cake, peanuts]
+- topping cheese cake: [cheese cake, peach] # TODO: jest tego więcej
+- chocolate cheese cake: [cheese cake, chocolate bar]
+- pumpkin cheese cake: [cheese cake, pumpkin]

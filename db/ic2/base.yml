@@ -1,98 +1,68 @@
-cluster: industrialcraft2
+cluster: ic2
 
 primitives:
-    - copper ore: 4
-    - tin ore: 4
-    - sticky resin: 3
-    - UU-matter: 500
-    - uranium ore: 25
+- copper ore: 4
+- tin ore: 4
+- rubber tree sapling: 12
+- sticky resin: 3
+- UU-matter: 500
+- uranium ore: 25
 
 crafts: 
-    - coal dust:
-        machine: macerator
-        ingredients: [coal]
-    - iron dust:
-        machine: macerator
-        makes: 2
-        ingredients: [iron ore]
-    - iron:
-        machine: furnace
-        ingredients: [iron dust]
-    - refined iron:
-        machine: furnace
-        ingredients: [iron]
-    - tin dust:
-        machine: macerator
-        makes: 2
-        ingredients: [tin ore]
-    - copper dust:
-        machine: macerator
-        makes: 2
-        ingredients: [copper ore]
-    - gold dust:
-        machine: macerator
-        makes: 2
-        ingredients: [gold ore]
-    - gold ingot:
-        machine: furnace
-        ingredients: [gold dust]
-    - tin ingot:
-        machine: furnace
-        ingredients: [tin ore]
-    - tin ingot:
-        machine: furnace
-        ingredients: [tin dust]
-    - copper ingot:
-        machine: furnace
-        ingredients: [copper dust]
-    - copper ingot:
-        machine: furnace
-        ingredients: [copper ore]
-    - bronze: # NOTE: forestry daje alternatywną
-        machine: furnace
-        ingredients: [bronze dust]
-    - bronze dust: 
-        ingredients: [copper dust*3, tin dust]
-        makes: 2
-    - rubber:
-        machine: furnace
-        ingredients: [sticky resin]
-    - rubber:
-        machine: extractor
-        makes: 3
-        ingredients: [sticky resin]
-    - cell:
-        makes: 16
-        ingredients: [tin ingot*4]
-        shape: |
-          ~ t ~
-          t ~ t
-          ~ t ~
-    - carbon fibers: 
-        ingredients: [coal dust*4]
-        shape: c c c c
-    - combined carbon fibers: [carbon fibers, carbon fibers]
-    - carbon plate:
-        machine: compressor
-        ingredients:
-          - combined carbon fibers
-    - mixed metal ingot:
-        makes: 2
-        ingredients:
-          - refined iron*3
-          - bronze*3
-          - tin ingot*3
-    - advanced alloy:
-        machine: compressor
-        ingredients: [mixed metal ingot]
-    - iridium plate:
-      - iridium*4
-      - advanced alloy*4
-      - diamond
-    - reinforced glass:
-        makes: 7
-        ingredients:
-          - glass*7
-          - advanced alloy*2
-        shape: g a g g g g g a g
-    - iron fence: [refined iron*6]
+- cell:
+    makes: 16
+    ingredients: [tin ingot*4]
+    shape: |
+      ~ t ~
+      t ~ t
+      ~ t ~
+- carbon fibers: 
+    ingredients: [coal dust*4]
+    shape: c c c c
+- combined carbon fibers: [carbon fibers, carbon fibers]
+- carbon plate:
+    machine: compressor
+    ingredients:
+      - combined carbon fibers
+- mixed metal ingot:
+    makes: 2
+    ingredients:
+      - refined iron*3
+      - bronze*3
+      - tin ingot*3
+- advanced alloy:
+    machine: compressor
+    ingredients: [mixed metal ingot]
+- iridium plate:
+  - iridium*4
+  - advanced alloy*4
+  - diamond
+- reinforced stone:
+    makes: 8
+    ingredients: [stone*8, advanced alloy]
+- reinforced glass:
+    makes: 7
+    ingredients:
+      - glass*7
+      - advanced alloy*2
+    shape: g a g g g g g a g
+- reinforced door:
+    ingredients: [reinforced stone*6]
+- iron fence: [refined iron*6]
+- coal ball:
+    ingredients: [coal dust*8, flint]
+    shape: c c c c f c c c c
+- compressed coal ball:
+    machine: compressor
+    ingredients: [coal ball]
+- coal chunk:
+    ingredients: [compressed coal ball*8, iron block]
+- coal chunk:
+    ingredients: [compressed coal ball*8, bricks]
+- coal chunk:
+    ingredients: [compressed coal ball*8, obsidian]
+- industrial diamond: # TODO: equivalents?
+    machine: compressor
+    ingredients: [coal chunk]
+- luminator:
+    ingredients: [refined iron*2, copper cable, glass*5, tin wire]

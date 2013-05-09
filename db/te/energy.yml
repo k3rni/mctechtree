@@ -1,18 +1,18 @@
-cluster: thermalexpansion
+cluster: te
 
 crafts:
-  - empty energy cell frame:
-      ingredients: [electrum ingot*4, hardened glass*4, diamond]
-  - full energy cell frame:
-      ingredients: [empty energy cell frame, molten redstone*1000]
-      machine: liquid transposer
-  - redstone energy cell:
-      ingredients: [electrum ingot*3, full energy cell frame, lead ingot*2, redstone conductance coil]
-  - empty energy conduit:
-      ingredients: [electrum ingot*2, hardened glass]
-      shape: e h e ~ ~ ~ ~ ~ ~
-  - redstone energy conduit:
-      machine: liquid transposer
-      ingredients: [empty energy conduit, molten redstone*25]
-  - steam engine: [copper ingot*3, redstone transmission coil, copper gear*2, piston]
-  - magmatic engine: [invar ingot*3, redstone transmission coil, invar gear*2, piston]
+- empty energy cell frame:
+    ingredients: [electrum ingot*4, hardened glass*4, diamond]
+- full energy cell frame:
+    ingredients: [empty energy cell frame, molten redstone*1000]
+    machine: liquid transposer
+- redstone energy cell:
+    ingredients: [electrum ingot*3, full energy cell frame, lead ingot*2, redstone conductance coil]
+- empty energy conduit:
+    ingredients: [electrum ingot*2, hardened glass]
+    shape: e h e ~ ~ ~ ~ ~ ~
+- redstone energy conduit:
+    machine: liquid transposer
+    ingredients: [empty energy conduit, molten redstone*25]
+- steam engine: [copper ingot*3, redstone transmission coil, copper gear*2, piston]
+- magmatic engine: [invar ingot*3, redstone transmission coil, invar gear*2, piston]
