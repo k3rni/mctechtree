@@ -23,8 +23,8 @@ module Templates
   end
 
   def find_keys name, definition
-    keys = name.scan(KEY_PAT).flatten
-    if keys.empty?
+    keys = name.scan(KEY_PAT).flatten if name
+    if keys.nil? || keys.empty?
       keys = definition.delete('vars')
     end
     return keys
