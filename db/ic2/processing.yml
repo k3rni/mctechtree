@@ -1,9 +1,0 @@
-cluster: ic2
-
-crafts:
-- bronze dust: 
-    ingredients: [copper dust*3, tin dust]
-    makes: 2
-- clay dust:
-    ingredients: [clay block]
-    makes: 2
