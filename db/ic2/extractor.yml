@@ -1,0 +1,6 @@
+cluster: ic2
+
+processing:
+- outputs: [rubber*3]
+  machine: extractor
+  inputs: [sticky resin]

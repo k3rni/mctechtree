@@ -1,0 +1,17 @@
+cluster: ic2
+
+defaults:
+  machine: macerator
+
+processing:
+- inputs: [coal]
+  outputs: [coal dust]
+- outputs: [tin dust*2]
+  inputs: [tin ore]
+- outputs: [copper dust*2]
+  inputs: [copper ore]
+- outputs: [gold dust*2]
+  inputs: [gold ore]
+- outputs: [iron dust*2]
+  inputs: [iron ore]
+
