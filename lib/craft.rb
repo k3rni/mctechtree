@@ -59,6 +59,10 @@ class Craft
         end.join(', ')
     end
 
+    def needs? item
+        count_ingredients.keys.include? item
+    end
+
     def grid
       return nil if shape.nil?
       # TODO: reprezentacja shapeless?
