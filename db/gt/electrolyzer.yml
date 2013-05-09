@@ -24,7 +24,7 @@ processing:
   outputs: [lithium cell, silicon cell*2, aluminium dust*2, sodium cell*2]
 - inputs: [coal dust, cell*2]
   outputs: [carbon cell*2]
-- inputs: [ash*2, cell]
+- inputs: [ash*2, cell] # ashes
   outputs: [carbon cell]
 - inputs: [pulverized obsidian, cell*3] # obsidian dust
   outputs: [tiny pile of magnesium dust, tiny pile of iron dust, silicon cell, compressed air cell*2]
@@ -64,20 +64,19 @@ processing:
   outputs: [magnesium dust*2, iron dust*2, silicon cell, compressed air cell]
 - inputs: [galena dust*2]
   outputs: [tiny pile of silver dust*3, tiny pile of lead dust*3, tiny pile of sulfur dust*2]
-  # 32/45
-- inputs:
-  outputs:
-- inputs:
-  outputs:
-- inputs:
-  outputs:
-- inputs:
-  outputs:
-- inputs:
-  outputs:
-- inputs:
-  outputs:
-- inputs:
-  outputs:
-- inputs:
-  outputs:
+- inputs: [pyrope dust*20, cell*9]
+  outputs: [magnesium dust*3, aluminium dust*2, silicon cell*3, compressed air cell*6]
+- inputs: [almandite dust*20, cell*9]
+  outputs: [iron dust*3, aluminium dust*2, silicon cell*3, compressed air cell*6]
+- inputs: [spessarite dust*20, cell*9]
+  outputs: [aluminium dust*2, manganese dust*3, silicon cell*3, compressed air cell*6]
+- inputs: [andradite dust*20, cell*12]
+  outputs: [calcium cell*3, iron dust*2, silicon cell*3, compressed air cell*6]
+- inputs: [grossular dust*20, cell*12]
+  outputs: [calcium cell*3, aluminium dust*2, silicon cell*3, compressed air cell*6]
+- inputs: [uvarovite dust*20, cell*12]
+  outputs: [calcium cell*3, chrome dust*2, silicon cell*3, compressed air cell*6]
+- inputs: [methane cell*5]
+  outputs: [hydrogen cell*4, carbon cell]
+- inputs: [sulfuric acid cell*7]
+  outputs: [hydrogen cell*2, sulfur cell, compressed air cell*2, cell*2]
