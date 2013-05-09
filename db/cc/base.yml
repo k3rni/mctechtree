@@ -1,5 +1,8 @@
 cluster: cc
 
+colors: &colors
+  color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
+
 crafts:
 - computer:
     ingredients: [stone*7, redstone, glass pane]
@@ -22,11 +25,6 @@ crafts:
     makes: 4
 - floppy disk:
     ingredients: [redstone, paper]
-
-colors: &colors
-  color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
-
-craft_templates:
 - floppy disk - $(color):
     ingredients: [floppy disk, $(color) dye]
     <<: *colors

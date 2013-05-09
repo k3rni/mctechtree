@@ -11,8 +11,6 @@ crafts:
 #     ingredients: [ink sac, yellow dye, glass]
 - structure pipe: [cobblestone transport pipe, gravel]
 - pipe waterproof: [cactus green]
-
-craft_templates:
 - $(material) transport pipe:
     ingredients: [$(material)*2, glass]
     makes: 8

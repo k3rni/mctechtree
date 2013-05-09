@@ -15,8 +15,6 @@ crafts:
 - paint brush: [stick, wool]
 - project table: [stone*3, planks*4, crafting table, chest]
 - athame: [stick, silver ingot]
-
-craft_templates:
 - $(material) handsaw:
     ingredients: [stick*3, iron*2, $(material)*2]
     material: [iron, ruby, sapphire, green sapphire, diamond]

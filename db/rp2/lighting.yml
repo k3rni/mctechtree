@@ -3,7 +3,7 @@ cluster: redpower2
 colors: &colors
     color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
 
-craft_templates:
+crafts:
 - $(color) lumar:
     ingredients: [redstone, glowstone dust, $(color) dye*2]
     makes: 2

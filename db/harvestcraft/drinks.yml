@@ -13,8 +13,6 @@ crafts:
     ingredients: [ground coffee]
 - espresso: [ground coffee*3, sugar]
 - coffee con leche: [espresso, milk bucket, cinnamon]
-
-craft_templates:
 - $(fruit) juice:
     ingredients: [$(fruit), bottle]
     fruit: [apple, melon/melon slice*2, carrot, strawberry, grape, blueberry, cherry]

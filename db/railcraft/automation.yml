@@ -18,8 +18,6 @@ crafts:
 - feed station: [golden carrot*4, planks*4, steel plate]
 - switch lever: [white dye, black dye, red dye, piston, lever, iron]
 - switch motor: [white dye, black dye, red dye, piston, receiver circuit, iron]
-
-craft_templates:
 - detector - $(type): 
     ingredients: [pressure plate, $(type)*8]
     type:

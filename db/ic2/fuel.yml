@@ -28,8 +28,6 @@ crafts:
 - coalfuel-filled fuel can:
     ingredients: [fuel can, coalfuel cell*6]
     machine: canning machine
-
-craft_templates:
 - plantball:
     vars: [source]
     ingredients: [$(source)*8]

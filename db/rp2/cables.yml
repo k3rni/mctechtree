@@ -3,6 +3,9 @@ cluster: redpower2
 colors: &colors
     color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
 
+equivalents:
+- [any insulated wire, white insulated wire, black insulated wire, red insulated wire, green  insulated wire, brown insulated wire, blue insulated wire, purple insulated wire, cyan insulated wire, light gray insulated wire, gray insulated wire, pink insulated wire, lime insulated wire, yellow insulated wire, light blue insulated wire, magenta insulated wire, orange insulated wire]
+
 crafts:
 - red alloy wire:
     makes: 12
@@ -23,11 +26,6 @@ crafts:
     ingredients: [wool*6, blue alloy ingot*3]
     makes: 12
 - bus transceiver: [stone bundle*6, stone wafer, red-doped wafer*2]
-
-equivalents:
-- [any insulated wire, white insulated wire, black insulated wire, red insulated wire, green  insulated wire, brown insulated wire, blue insulated wire, purple insulated wire, cyan insulated wire, light gray insulated wire, gray insulated wire, pink insulated wire, lime insulated wire, yellow insulated wire, light blue insulated wire, magenta insulated wire, orange insulated wire]
-
-craft_templates:
 - $(color) insulated wire:
     makes: 12
     ingredients: [red alloy ingot*3, $(color) wool*6]

@@ -52,8 +52,6 @@ crafts:
 - magenta dye:
     makes: 3
     ingredients: [lapis, red dye, pink dye]
-
-craft_templates:
 - $(color) wool:
     ingredients: [wool, $(color) dye]
     color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]

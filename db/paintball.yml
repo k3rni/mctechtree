@@ -15,7 +15,7 @@ equivalents: # workarounds, the template system isn't powerful enough
 - [wool (B), blue wool]
 - [wool (P), red wool]
   
-craft_templates:
+crafts:
 - scanner ($(color)):
     ingredients: [$(color) wool*2]
     <<: *colors

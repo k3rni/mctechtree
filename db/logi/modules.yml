@@ -15,8 +15,6 @@ crafts:
     ingredients: [ink sac*2, purple dye*2, redstone*3, iron gear, blank module]
 - terminus module:
     ingredients: [ink sac, purple dye, redstone*3, redstone iron chipset, blank module]
-
-craft_templates:
 - $(function) module:
     ingredients: [$(function)*4, redstone*3, iron gear, blank module]
     function:

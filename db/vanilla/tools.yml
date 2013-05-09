@@ -10,8 +10,6 @@ crafts:
 - clock: [gold ingot*4, redstone]
 - compass: [iron*4, redstone]
 - map: [paper*8, compass]
-
-craft_templates:
 - $(material) pickaxe:
     ingredients: [stick*2, $(material)*3]
     material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]

@@ -28,8 +28,6 @@ crafts:
 - corn bread muffins:
     machine: furnace
     ingredients: [corn muffin mix]
-
-craft_templates:
 - grilled $(plant):
     machine: furnace
     ingredients: [$(plant)]

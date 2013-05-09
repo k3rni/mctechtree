@@ -43,8 +43,6 @@ crafts:
 - ME access terminal: 
     ingredients: [glass*3, iron*4, C|ME cable, M|ME conversion matrix]
     shape: i i g C M g i i g
-
-craft_templates:
 - ME cable - $(color):
     ingredients: [ME cable*8, D|$(color) dye]
     makes: 8
