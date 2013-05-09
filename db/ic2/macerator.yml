@@ -15,3 +15,11 @@ processing:
 - outputs: [iron dust*2]
   inputs: [iron ore]
 
+ignore_processing:
+- inputs: [gravel]
+  outputs: [flint]
+- inputs: [stone]
+  outputs: [cobble]
+- inputs: [cobble]
+  outputs: [sand]
+
