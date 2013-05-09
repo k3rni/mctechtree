@@ -45,10 +45,8 @@ class Database < Set
     group = data['cluster']
     @hierarchy[data['parent']].add group
     # defaults has to go first
-    %w(defaults equivalents primitives crafts craft_templates processing).each do |key|
-      # Legacy support
-      action = ('crafts' if key == 'craft_templates') || key
-      send "load_#{action}", data[key] || {}, group
+    %w(defaults equivalents primitives crafts processing).each do |key|
+      send "load_#{key}", data[key] || {}, group
     end
     forget_defaults
     self
