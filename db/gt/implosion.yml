@@ -1,0 +1,17 @@
+cluster: gt
+
+defaults:
+  machine: implosion compressor
+
+processing:
+- inputs: [iridium alloy ingot, industrial TNT*8]
+  outputs: [iridium plate, dark ashes*4]
+- inputs: [diamond dust*4, industrial TNT*32]
+  outputs: [diamond*3, dark ashes*16]
+- inputs: [red garnet dust*4, industrial TNT*16]
+  outputs: [red garnet*3, dark ashes*8]
+- inputs: [yellow garnet dust*4, industrial TNT*16]
+  outputs: [yellow garnet*3, dark ashes*8]
+- inputs: [$(gem) dust*4, industrial TNT*24]
+  outputs: [$(gem)*3, dark ashes*12]
+  gem: [ruby, sapphire, green sapphire, emerald, olivine]

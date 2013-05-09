@@ -1,0 +1,28 @@
+cluster: gt
+
+defaults:
+  machine: industrial blast furnace
+
+processing:
+- inputs: [coal dust*2, refined iron]
+  outputs: [steel ingot, dark ashes] # TODO: disables RC recipe?
+- inputs: [tungsten ingot, steel ingot]
+  outputs: [hot tungstensteel ingot*2, dark ashes*4]
+- inputs: [iron ore, calcium carbonate cell]
+  outputs: [refined iron*3, cell]
+- inputs: [pyrite ore, calcium carbonate]
+  outputs: [refined iron*2, cell]
+- inputs: [aluminium dust]
+  outputs: [aluminium ingot]
+- inputs: [titanium dust]
+  outputs: [titanium ingot]
+- inputs: [chrome dust]
+  outputs: [chrome ingot]
+- inputs: [tungsten dust]
+  outputs: [tungsten ingot]
+- inputs: [steel dust]
+  outputs: [steel ingot]
+- inputs: [galena dust*2]
+  outputs: [silver ingot, lead ingot]
+- inputs: [silicon cell*2]
+  outputs: [silicon plate, cell*2]

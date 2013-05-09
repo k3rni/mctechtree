@@ -1,0 +1,12 @@
+cluster: gt
+
+defaults:
+  machine: vacuum freezer
+
+processing:
+- inputs: [hot tungstensteel ingot]
+  outputs: [tungstensteel ingot]
+- inputs: [water cell]
+  outputs: [ice cell]
+- inputs: [helium plasma cell]
+  outputs: [helium cell]
