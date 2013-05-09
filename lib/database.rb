@@ -152,9 +152,11 @@ class Database < Set
       item.tier = 0
     end
 
+    gen = 0
     while unsolved.size > 0
       unsolved.each do |item|
-        craft_tiers = item.crafts.map do |craft| 
+        puts "#{item} -> #{item.crafts.reject { |c| c.deep_needs? item }}"
+        craft_tiers = item.crafts.reject { |craft| craft.deep_needs? item }.map do |craft| 
           t = craft.count_ingredients.map { |ing, count| ing.tier }
           if t.include? nil
             nil
@@ -167,6 +169,11 @@ class Database < Set
           item.tier = min_tier + 1
           unsolved -= [item]
         end
+      end
+      gen += 1
+      if gen > 1000
+          puts unsolved.to_a.sort.inspect
+          exit
       end
     end
   end
