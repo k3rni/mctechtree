@@ -39,4 +39,5 @@ crafts:
 - tin plate:
     machine: alloy furnace
     ingredients: [iron*2, tin ingot]
-# recept na odzysk metalu nie wpisujemy bo generują cykle
+# NOTE: add recycling recipes? now that cycles are harmless
+
