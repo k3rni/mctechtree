@@ -145,57 +145,51 @@ class Database < Set
     end
   end
 
+  def select_unsolved
+    select { |item| item.tier == nil || item.tier > 20 }
+  end
+
   def classify_tiers
-    unsolved = self.to_a
-    gen = 0
-    last_s = -9000
-    while unsolved.size > 0
-      s = unsolved.size
-      s1 = self.select{|item| item.tier==nil || item.tier < 0}.size
-      puts "#{gen} #{s} #{s1}"
-      unsolved = iterate_tiers unsolved
-      gen += 1
-      if last_s == s
-        puts unsolved.inspect
-        binding.pry
-        exit
+    unsolved = select_unsolved
+    while select_unsolved.size > 0
+      unsolved = select_unsolved
+      changed = true
+      while changed
+        # keep running until nothing changes
+        unsolved, changed = iterate_tiers unsolved
       end
-      last_s = s
     end
   end
 
   def iterate_tiers subset
     unsolved = Set.new(subset)
+    visited = Set.new()
+    changed = false
     primitives.each do |item|
       unsolved -= [item]
       item.tier = 0
     end
 
-    unsolved.each do |item|
+    unsolved.sort_by{|item| -item.crafts.size}.each do |item|
+      visited.add item
       craft_tiers = item.crafts.map do |craft| 
-        t = craft.count_ingredients.map { |ing, count| ing.tier }
+        t = craft.count_ingredients.keys.reject{ |k| visited.include? k }.map { |ing| ing.tier }
         if t.include? nil
           nil
         else
           t.max
         end
       end.flatten
-      puts "#{item.crafts} #{craft_tiers}" if item.name =~ /^(iron|refined iron|iron dust)$/
-      if craft_tiers.compact.empty? # all-nils
-        item.tier = nil
-      elsif craft_tiers.compact.any?{ |t| t < 0 } || craft_tiers.include?(nil)
-        # tentative rating
+      unless craft_tiers.include? nil
         min_tier = craft_tiers.compact.min
-        item.tier = nil
-      else
-        min_tier = craft_tiers.compact.min
+        prev = item.tier
         item.tier = min_tier + 1
+        changed = (item.tier != prev)
         unsolved -= [item]
       end
-      puts "-> #{item.tier}" if item.name =~ /^(iron|refined iron|iron dust)$/
-      # puts "#{item.name} T#{item.tier}"
     end
 
-    return unsolved
+    unsolved.each { |item| item.tier = 100 }
+    return [unsolved, changed]
   end
 end
