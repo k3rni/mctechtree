@@ -146,35 +146,56 @@ class Database < Set
   end
 
   def classify_tiers
-    unsolved = Set.new(self)
+    unsolved = self.to_a
+    gen = 0
+    last_s = -9000
+    while unsolved.size > 0
+      s = unsolved.size
+      s1 = self.select{|item| item.tier==nil || item.tier < 0}.size
+      puts "#{gen} #{s} #{s1}"
+      unsolved = iterate_tiers unsolved
+      gen += 1
+      if last_s == s
+        puts unsolved.inspect
+        binding.pry
+        exit
+      end
+      last_s = s
+    end
+  end
+
+  def iterate_tiers subset
+    unsolved = Set.new(subset)
     primitives.each do |item|
       unsolved -= [item]
       item.tier = 0
     end
 
-    gen = 0
-    while unsolved.size > 0
-      unsolved.each do |item|
-        puts "#{item} -> #{item.crafts.reject { |c| c.deep_needs? item }}"
-        craft_tiers = item.crafts.reject { |craft| craft.deep_needs? item }.map do |craft| 
-          t = craft.count_ingredients.map { |ing, count| ing.tier }
-          if t.include? nil
-            nil
-          else
-            t.max
-          end
+    unsolved.each do |item|
+      craft_tiers = item.crafts.map do |craft| 
+        t = craft.count_ingredients.map { |ing, count| ing.tier }
+        if t.include? nil
+          nil
+        else
+          t.max
         end
-        unless craft_tiers.include? nil
-          min_tier = craft_tiers.flatten.compact.min
-          item.tier = min_tier + 1
-          unsolved -= [item]
-        end
+      end.flatten
+      puts "#{item.crafts} #{craft_tiers}" if item.name =~ /^(iron|refined iron|iron dust)$/
+      if craft_tiers.compact.empty? # all-nils
+        item.tier = nil
+      elsif craft_tiers.compact.any?{ |t| t < 0 } || craft_tiers.include?(nil)
+        # tentative rating
+        min_tier = craft_tiers.compact.min
+        item.tier = nil
+      else
+        min_tier = craft_tiers.compact.min
+        item.tier = min_tier + 1
+        unsolved -= [item]
       end
-      gen += 1
-      if gen > 1000
-          puts unsolved.to_a.sort.inspect
-          exit
-      end
+      puts "-> #{item.tier}" if item.name =~ /^(iron|refined iron|iron dust)$/
+      # puts "#{item.name} T#{item.tier}"
     end
+
+    return unsolved
   end
 end
