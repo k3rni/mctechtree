@@ -1,6 +1,12 @@
 cluster: ic2
 
+defaults:
+  machine: extractor
+
 processing:
 - outputs: [rubber*3]
-  machine: extractor
   inputs: [sticky resin]
+- outputs: [biofuel cell]
+  inputs: [bio cell]
+- outputs: [coalfuel cell]
+  inputs: [hydrated coal cell]

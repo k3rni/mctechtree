@@ -14,16 +14,15 @@ processing:
   inputs: [gold ore]
 - outputs: [iron dust*2]
   inputs: [iron ore]
-- inputs: [iron]
-  outputs: [iron dust]
-- inputs: [tin ingot]
-  outputs: [tin dust]
-- inputs: [copper ingot]
-  outputs: [copper dust]
-- inputs: [bronze]
-  outputs: [bronze dust]
-- inputs: [gold ingot]
-  outputs: [gold dust]
+- vars: [metal]
+  inputs: [$(metal)]
+  outputs: [$(metal) dust]
+  metal:
+    - iron
+    - copper/copper ingot
+    - tin/tin ingot
+    - gold/gold ingot
+    - bronze
 
 ignore_processing:
 - inputs: [gravel]
