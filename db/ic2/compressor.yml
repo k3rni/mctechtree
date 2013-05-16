@@ -14,14 +14,15 @@ processing:
   outputs: [carbon plate]
 - inputs: [coal ball]
   outputs: [compressed coal ball]
-- inputs: [clay dust]
-  outputs: [clay]
 - inputs: [coal chunk]
   outputs: [industrial diamond]
 - inputs: [iridium]
   outputs: [iridium ingot]
 
 ignore_processing:
+- inputs: [clay dust]
+  outputs: [clay]
+  compatible: all
 - inputs: [netherrack*3]
   outputs: [nether brick]
 - inputs: [snowball]

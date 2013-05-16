@@ -24,8 +24,11 @@ module Templates
 
   def find_keys name, definition
     keys = name.scan(KEY_PAT).flatten if name
-    if keys.nil? || keys.empty?
-      keys = definition.delete('vars')
+    vars = definition.delete('vars')
+    if keys.nil? 
+      keys = vars
+    else
+      keys = (Set.new(keys) + Set.new(vars)).to_a
     end
     return keys
   end
@@ -35,6 +38,8 @@ module Templates
       if s.nil?
         label = ''
         expansion = nil
+      elsif s.is_a? Hash
+        label, expansion = [s.keys.first, s.values.first]
       elsif s.index('/')
         label, expansion = s.split('/')
       else
@@ -73,18 +78,26 @@ module Templates
   end
 
   def replace_string text, old, new
-    text.sub(old, new).strip.gsub('  ', ' ')
+    text.sub(old, new.to_s).strip.gsub('  ', ' ')
   end
 
   def replace_list_names list, old, new
     oldrx = %r{^(\w+\|)?#{Regexp.escape old}$}
-      if list.nil?
-        nil
-      elsif new.nil?
-        list.reject { |el| el =~ oldrx }
-      else
-        list.map { |el| el.gsub(old, new) }
-      end
+    if list.nil?
+      nil
+    elsif new.nil?
+      list.reject { |el| el =~ oldrx }
+    elsif new.is_a? Array
+      list.map do |el|
+        if el != old
+          el
+        else
+          new
+        end
+      end.flatten
+    else
+      list.map { |el| el.gsub(old, new) }.flatten
+    end
   end
 
   def replace_shape shape, old, new
@@ -92,6 +105,10 @@ module Templates
       nil
     elsif new.nil?
       shape.gsub(old, '~') 
+    elsif new.is_a? Array
+      # no semantics defined here. shape should be using prefix letters
+      # leaving shape as-is
+      shape
     else
       shape.gsub(old, new).gsub('  ', ' ')
     end
