@@ -1,0 +1,29 @@
+cluster: vanilla
+
+# looted from minecraft wiki
+sprite-sheet: 
+  filename: ItemCSS.png
+  rows: 16
+  cols: 16
+  
+columns:
+  0: [~, ~, ~, ~, wooden sword, wooden shovel, wooden pickaxe, wooden axe, wooden hoe]
+  1: [~, ~, ~, ~, stone sword, stone shovel, stone pickaxe, stone axe, stone hoe]
+  2: [iron helmet, iron chestplate, iron leggings, iron boots, iron sword, iron shovel, iron pickaxe, iron axe, iron hoe]
+  2: [diamond helmet, diamond chestplate, diamond leggings, diamond boots, diamond sword, diamond shovel, diamond pickaxe, diamond axe, diamond hoe]
+  4: [golden helmet, golden chestplate, golden leggings, golden boots, golden sword, golden shovel, golden pickaxe, golden axe, golden hoe]
+  5: [flint and steel, bow, arrow, stick, fishing rod, ~, ~, ~, ~, redstone comparator, nether brick]
+  6: [flint, brick, quiver, compass, clock, redstone repeater, carrot on a stick, baked potato, poisonous potato, golden carrot]
+  7: [coal, iron, gold ingot, diamond, bowl, raw pork, leather, potato, minecart, chestcart, furnace cart, TNT cart, hopper cart]
+  8: [string, feather, gunpowder, redstone, mushroom stew, cooked pork, saddle, carrot, boat, pumpkin pie]
+  9: [seeds, wheat, bread, clay, glowstone dust, raw fish, raw steak, raw chicken, glistering melon, ~, ~, nether star, firework rocket]
+  10: [apple, painting, sign, paper, bucket, cooked fish, steak, cooked chicken, ~, ~, emerald, ~]
+  11: [golden apple, sugar cane, door, book, water bucket, zombie flesh, ender pearl, ghast tear, spider eye, eye of ender, ~, book and quill, ~]
+  12: [egg, bone, iron door, map, lava bucket, cookie, blaze rod, golden nugget, empty bottle, cauldron, brewing stand, written book, ~]
+  13: [sugar, cake, bed, pumpkin seeds, milk bucket, shears, melon slice, nether wart, ~, blaze powder, magma cream, flower pot, empty map]
+  14: [snowball, slimeball, fire charge, melon seeds, ink sac, rose red, cactus green, cocoa beans, lapis, purple dye, cyan dye, light gray dye, item frame]
+  15: [~, ~, ~, ~, gray dye, pink dye, lime dye, dandelion yellow, light blue dye, magenta dye, orange dye, bonemeal, 
+
+sprites:
+  # X,Y zero-based
+  charcoal: [7, 0] # left here because it shares its sprite with coal
