@@ -1,8 +1,6 @@
-cluster: vanilla
-
 # looted from minecraft wiki
 sprite-sheet: 
-  filename: ItemCSS.png
+  filename: vanilla/ItemCSS.png
   rows: 16
   cols: 16
   
@@ -22,7 +20,7 @@ columns:
   12: [egg, bone, iron door, map, lava bucket, cookie, blaze rod, golden nugget, empty bottle, cauldron, brewing stand, written book, ~]
   13: [sugar, cake, bed, pumpkin seeds, milk bucket, shears, melon slice, nether wart, ~, blaze powder, magma cream, flower pot, empty map]
   14: [snowball, slimeball, fire charge, melon seeds, ink sac, rose red, cactus green, cocoa beans, lapis, purple dye, cyan dye, light gray dye, item frame]
-  15: [~, ~, ~, ~, gray dye, pink dye, lime dye, dandelion yellow, light blue dye, magenta dye, orange dye, bonemeal, 
+  15: [~, ~, ~, ~, gray dye, pink dye, lime dye, dandelion yellow, light blue dye, magenta dye, orange dye, bonemeal] 
 
 sprites:
   # X,Y zero-based
