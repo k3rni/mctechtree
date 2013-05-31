@@ -9,11 +9,13 @@ crafts:
 - peanut brittle: [peanuts, butter, powdered sugar]
 - trailmix: [raisins, salted peanuts, chocolate bar, dried apple slices, dried strawberries]
 - ice cream: [bowl, milk bucket, snowball, salt]
-- chocolate ice cream: [ice cream, chocolate bar]
-- strawberry ice cream: [ice cream, strawberry]
-- chocolate covered fruit: [chocolate bar, raisins]
-- chocolate covered fruit: [chocolate bar, dried apple slices]
-- chocolate covered fruit: [chocolate bar, dried strawberries]
+- $(flavor) ice cream:
+    ingredients: [$(flavor), ice cream]
+    flavor: [chocolate/chocolate bar, strawberry]
+- chocolate covered fruit:
+    ingredients: [chocolate bar, $(fruit)]
+    vars: [fruit]
+    fruit: [raisins, dried apple slices, dried strawberries]
 - strawberry ice: [snowball, strawberry, bowl]
 
 - chocolate peanuts: [chocolate bar, salted peanuts]
