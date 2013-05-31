@@ -34,13 +34,14 @@ end
 
 class Item
   attr_accessor :name, :primitive, :cost, :stacks, :group, :compatible, :tier
-  attr_reader :crafts
+  attr_reader :crafts, :crafts_into
 
   def initialize attrs={}
     attrs.each do |key, val| 
       self.send "#{key}=", val
     end
     @crafts = []
+    @crafts_into = Set.new
     self.stacks = 64 if stacks.nil?
   end
 
@@ -91,6 +92,16 @@ class Item
 
   def self.pending name
     PendingItem.new(name)
+  end
+
+  def crafted_from
+    Set.new(crafts.map { |cr| cr.count_ingredients.keys }.flatten)
+  end
+
+  def max_tier
+    crafts.map do |cr|
+      cr.count_ingredients.keys.map(&:tier)
+    end.map(&:max).min
   end
 
   def add_craft
