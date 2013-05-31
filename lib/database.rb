@@ -68,6 +68,8 @@ class Database < Set
       false
     elsif existing.group == group
       false
+    elsif existing.primitive
+      false
     elsif compatible.nil?
       true
     elsif compatible != existing.group
