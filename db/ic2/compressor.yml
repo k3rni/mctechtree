@@ -20,8 +20,6 @@ processing:
   outputs: [industrial diamond]
 - inputs: [iridium]
   outputs: [iridium ingot]
-
-ignore_processing:
 - inputs: [netherrack*3]
   outputs: [nether brick]
 - inputs: [snowball]
