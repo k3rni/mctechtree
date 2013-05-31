@@ -10,8 +10,9 @@ crafts:
     ingredients: [extractor, electrolyzed water cell*7, advanced machine]
 # TODO: fill/verify these
 - refined iron dust:
+    machine: rotary macerator
     ingredients: [iron ore*7, coal]
-    makes: 8
+    makes: 14
 #- hydrated coal dust:
 #- bronze dust:
 
