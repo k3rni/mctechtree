@@ -1,0 +1,32 @@
+cluster: ic2
+
+sprite-sheet:
+  filename: ic2/item_0.png
+  rows: 16
+  cols: 16
+
+rows:
+  0: [coal dust, iron dust, gold dust, copper dust, tin dust, bronze dust, ~, refined iron, copper ingot, tin ingot, bronze ingot, mixed metal ingot, uranium fuel ingot, uranium, clay dust, food can]
+  1: [RE battery, ~, ~, ~, charged RE battery, energy crystal, ~, ~, ~, charged energy crystal, lapotron crystal, ~, ~, ~, charged lapotron crystal, single-use battery]
+  2: [cell, lava cell, coalfuel cell, bio cell, coal cell, water cell, uranium cell, 10K coolant cell, depleted isotope cell, ~, near-depleted uranium cell, ~, CF pellet, CF sprayer, CF backpack, ~]
+  3: [drill, diamond drill, chainsaw, fuel can, filled fuel can, hydrated coal dust, hydrated coal clump, plantball, compressed plants, can, food can, OD scanner, OV scanner, TNT remote, dynamite, sticky dynamite]
+  4: [sticky resin, rubber, treetap, rubber boots, jetpack, electric jetpack, mining laser, reactor plating advanced heat vent, batpack, raw carbon fibers, raw carbon mesh, carbon plate, nano saber, ~, ~]
+  5: [bronze pickaxe, bronze axe, bronze sword, bronze shovel, bronze hoe, bronze helmet, bronze body armor, bronze leggings, bronze boots, wrench, EU reader, painter, cutter, iridium plate, electric wrench, frequency transmitter]
+  6: [integrated circuit, advanced circuit, scrap, UU-matter, advanced alloy, industrial credit, reinforced door, alloy chest, nano helmet, nano body armor, nano leggings, nano boots, quantum helmet, quantum body armor, quantum leggings, quantum boots]
+  7: [copper cable, copper wire, gold wire, 2ins gold cable, insulated gold cable, HV cable, insulated HV cable, 2ins HV cable, 3ins HV cable, glass fibre cable, tin cable, detector cable, splitter cable, ~, ~, ~]
+  # 8: coloured painters
+  # 9: terraforming modules
+  9: [~, ~, ~, ~, ~, ~, lappack, iridium, crop seeds, cropnalyzer, electric hoe, industrial diamond, coal chunk, compressed coal ball, coal ball, scrapbox]
+  # missing coffee, tea
+  10: [fertilizer, ~, toolbox, ~, solar helmet, electric treetap, ~, ~, ~, ~, ~, ~, ~, ~, ~]
+  11: [overclocker upgrade, transformer upgrade, energy storage upgrade]
+  # 11: beer and something
+  12: [~, ~, ~, ~, ~, ~, grin powder, Weed-EX]
+  13: [dual uranium cell, quad uranium cell, 30K coolant cell, 60K coolant cell, heat-capacity reactor plating, containment reactor plating, heat exchanger, core heat exchanger, component heat exchanger, advanced heat exchanger, heat vent, reactor heat vent, overclocked heat vent, ~, heating cell, neutron reflector]
+  14: [thick neutron reflector, RSH-Condensator, dense copper plate, LZH-Condensator, scuba helmet, hazmat body armor, hazmat leggings, compressed air cell]
+  # 15: ?
+
+
+# same icons:
+# coalfuel cell, hydrated coal cell
+# bio cell, biofuel cell

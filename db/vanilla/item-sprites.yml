@@ -1,4 +1,6 @@
 # looted from minecraft wiki
+cluster: vanilla
+
 sprite-sheet: 
   filename: vanilla/ItemCSS.png
   rows: 16
