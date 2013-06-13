@@ -2,6 +2,7 @@ cluster: gt
 
 defaults:
   machine: industrial electrolyzer
+  skip-output: [cell]
 
 processing:
 - inputs: [water*6000, cell*5]
