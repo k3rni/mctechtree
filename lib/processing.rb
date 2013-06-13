@@ -22,7 +22,11 @@ module Processing
     if outputs.size == 1
       load_single_craft craft_process(inputs, outputs, process), group
     else
-      raise
+      skip = process.delete('skip-output') || @defaults['skip-output']
+      outputs.each do |output|
+        next if skip.include? output
+        load_single_craft craft_process(inputs, [output], process.dup)
+      end
     end
   end
 
