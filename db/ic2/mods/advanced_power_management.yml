@@ -12,8 +12,6 @@ crafts:
 - storage monitor: [gold wire, planks*4, glass*2, integrated circuit]
 - link card creator: [copper cable, integrated circuit, paper]
 # and the adjustable emitter, which is not craftable
-
-craft_templates:
 - $(tier) component kit:
     ingredients: [$(tier) charging bench, upgrade toolkit]
     tier: [LV, MV, HV]

@@ -43,9 +43,6 @@ crafts:
 - tank turtle:
     ingredients: [turtle, tank]
     overrides: misc_per/non-mod
-
-
-craft_templates:
 - chunk loader upgrade:
     vars: [chunkloader]
     ingredients: [wireless modem, $(chunkloader)]

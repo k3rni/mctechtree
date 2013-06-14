@@ -24,8 +24,6 @@ crafts:
 - ginger snaps: [flour, sugar, ginger]
 - sunflower wheat rolls: [sunflower seeds, flour, egg, salt, olive oil]
 - garlic toast: [toast, butter, garlic]
- 
-craft_templates:
 - $(stuffing) pie:
     ingredients: [dough, $(stuffing), sugar]
     stuffing: [apple, pumpkin, strawberry, cherry, lemon]

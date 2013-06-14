@@ -28,8 +28,6 @@ crafts:
 - cactus soup: [cactus, stock]
 - celery soup: [celery, onion, carrot, stock]
 - asparagus soup: [asparagus, onion, butter, stock]
-
-craft_templates:
 - mushroom stew:
     vars: [mushroom]
     ingredients: [white mushroom, $(mushroom), bowl]

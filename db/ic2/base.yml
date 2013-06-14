@@ -9,6 +9,12 @@ primitives:
 - uranium ore: 25
 
 crafts: 
+- bronze dust: 
+    ingredients: [copper dust*3, tin dust]
+    makes: 2
+- clay dust:
+    ingredients: [clay block]
+    makes: 2
 - cell:
     makes: 16
     ingredients: [tin ingot*4]
@@ -16,27 +22,22 @@ crafts:
       ~ t ~
       t ~ t
       ~ t ~
-- carbon fibers: 
+- raw carbon fibers: 
     ingredients: [coal dust*4]
     shape: c c c c
-- combined carbon fibers: [carbon fibers, carbon fibers]
-- carbon plate:
-    machine: compressor
-    ingredients:
-      - combined carbon fibers
+- raw carbon mesh: [raw carbon fibers*2]
 - mixed metal ingot:
     makes: 2
     ingredients:
       - refined iron*3
       - bronze*3
       - tin ingot*3
-- advanced alloy:
-    machine: compressor
-    ingredients: [mixed metal ingot]
 - iridium plate:
-  - iridium*4
-  - advanced alloy*4
-  - diamond
+    ingredients:
+    - iridium*4
+    - advanced alloy*4
+    - diamond
+    tag: plain
 - reinforced stone:
     makes: 8
     ingredients: [stone*8, advanced alloy]
@@ -52,17 +53,10 @@ crafts:
 - coal ball:
     ingredients: [coal dust*8, flint]
     shape: c c c c f c c c c
-- compressed coal ball:
-    machine: compressor
-    ingredients: [coal ball]
 - coal chunk:
-    ingredients: [compressed coal ball*8, iron block]
-- coal chunk:
-    ingredients: [compressed coal ball*8, bricks]
-- coal chunk:
-    ingredients: [compressed coal ball*8, obsidian]
-- industrial diamond: # TODO: equivalents?
-    machine: compressor
-    ingredients: [coal chunk]
+    vars: [center]
+    ingredients: [compressed coal ball*8, C|$(center)]
+    shape: c c c c C c c c c
+    center: [iron block, bricks, obsidian]
 - luminator:
     ingredients: [refined iron*2, copper cable, glass*5, tin wire]

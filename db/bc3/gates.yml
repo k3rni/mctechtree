@@ -41,8 +41,6 @@ crafts:
 - autarchic gate:
     machine: assembly table
     ingredients: [redstone iron chipset, gate, pulsating chipset]
-
-craft_templates:
 - autarchic $(metal) gate:
     machine: assembly table
     ingredients: [redstone iron chipset, $(metal) AND gate, pulsating chipset]

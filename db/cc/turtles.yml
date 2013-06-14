@@ -1,5 +1,10 @@
 cluster: cc
 
+tools: &tools
+    tool: [~, mining/diamond pickaxe, farming/diamond hoe, melee/diamond sword, felling/diamond axe, digging/diamond shovel]
+peripherals: &peripherals
+    peripheral: [~, crafty/crafting table, wireless/wireless modem]
+
 crafts:
 - turtle:
     ingredients: [iron*7, chest, computer]
@@ -10,14 +15,6 @@ crafts:
 - wireless crafty turtle:
     ingredients: [turtle, crafting table, wireless modem]
     shape: ~ ~ ~ w t c ~ ~ ~
-
-
-tools: &tools
-    tool: [~, mining/diamond pickaxe, farming/diamond hoe, melee/diamond sword, felling/diamond axe, digging/diamond shovel]
-peripherals: &peripherals
-    peripheral: [~, crafty/crafting table, wireless/wireless modem]
-
-craft_templates:
 - $(peripheral) $(tool) turtle:
     ingredients: [P|$(peripheral), turtle, T|$(tool)]
     shape: ~ ~ ~ T t P ~ ~ ~

@@ -3,6 +3,9 @@
 cluster: ocs
 parent: cc
 
+upgradable: &upgradable_sensors
+  sensor: [inventory, proximity, machine, power, tank, dropped item, sign, minecart, sonic]
+
 crafts:
 - sensor peripheral:
     ingredients: [obsidian*4, redstone*2, stone*3]
@@ -14,11 +17,6 @@ crafts:
     ingredients: [stone*4, redstone*3, gold ingot*2]
 - advanced amplifier:
     ingredients: [iron*4, redstone*2, diamond, gold ingot*2]
-
-upgradable: &upgradable_sensors
-  sensor: [inventory, proximity, machine, power, tank, dropped item, sign, minecart, sonic]
-
-craft_templates:
 - $(detector) sensor card:
     ingredients: [redstone*5, $(detector), paper*3]
     detector:

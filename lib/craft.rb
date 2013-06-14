@@ -59,6 +59,20 @@ class Craft
         end.join(', ')
     end
 
+    def needs? item
+        count_ingredients.keys.include? item
+    end
+
+    def deep_needs? item
+        needs?(item) || count_ingredients.keys.any? do |ing|
+          if ing.primitive
+            false
+          else
+            ing.crafts.any? { |cr| cr.deep_needs?(item) }
+          end
+        end
+    end
+
     def grid
       return nil if shape.nil?
       # TODO: reprezentacja shapeless?
