@@ -1,0 +1,27 @@
+cluster: gt
+
+defaults:
+  machine: macerator
+
+processing:
+- outputs: [$(material) dust]
+  inputs: [$(material)]
+  vars: [material]
+  material:
+  - titanium/titanium ingot
+  - steel/steel ingot
+  - emerald
+  - charcoal
+  - ender pearl
+  - ender eye
+  - green sapphire
+  - sapphire
+  - almandite
+  - diamond
+  - red garnet
+  - yellow garnet
+  - endstone
+  #- redrock # EBXL
+  - marble
+  - basalt
+

@@ -1,0 +1,5 @@
+cluster: ic2
+
+primitives:
+# STUB
+- terra wart: 50

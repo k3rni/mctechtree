@@ -7,11 +7,11 @@ crafts:
   - glowstone dust
   - copper cable*4
   - integrated circuit
-- drill:
+- mining drill:
   - RE battery
   - integrated circuit
   - refined iron*5
-- diamond drill: [drill, diamond*3]
+- diamond drill: [mining drill, diamond*3]
 - chainsaw:
   - RE battery
   - integrated circuit

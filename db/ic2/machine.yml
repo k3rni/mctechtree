@@ -44,7 +44,7 @@ crafts:
   - lapotron crystal
 - machine: [refined iron*8]
 - advanced machine: [machine, carbon plate*2, advanced alloy*2]
-- overclocker upgrade: [10K cooling cell*3, copper cable*2, integrated circuit]
+- overclocker upgrade: [10K Coolant cell*3, copper cable*2, integrated circuit]
 - transformer upgrade: [glass*5, 2ins gold cable*2, integrated circuit, MV transformer]
 - energy storage upgrade: [wood*5, copper cable*2, RE battery, integrated circuit]
 - integrated circuit: 
@@ -61,3 +61,6 @@ crafts:
 - mining pipe: [refined iron*6, treetap]
 - teleporter: [advanced circuit*4, frequency transmitter, glass fibre cable*2, advanced machine, diamond]
 - frequency transmitter: [integrated circuit, copper cable]
+- magnetizer:
+    ingredients: [redstone*6, iron fence*2, machine]
+    shape: r i r r m r r i r

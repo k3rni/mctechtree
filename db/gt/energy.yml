@@ -5,7 +5,7 @@ crafts:
     ingredients: [lapotronic energy orb*8, gregtech-computercube]
     shape: l l l l g l l l l
 - interdimensional storage unit:
-    ingredients: [iridum plate*4, adjustable energy storage unit*4, ender chest]
+    ingredients: [iridium plate*4, adjustable energy storage unit*4, ender chest]
     shape: i a i a e a i a i
 - lapotronic energy storage unit:
     ingredients: [V|LV transformer, LESU block, advanced circuit*2, MV transformer]
@@ -20,21 +20,9 @@ crafts:
 - charge-o-mat:
     ingredients: [energyflow circuit*4, chest*2, gregtech-computercube, lapotronic energy orb, advanced circuit]
     shape: e g e c l c e a e
-
-disabled_crafts:
-# needs thaumcraft
-- magic energy converter:
-    ingredients: [advanced circuit*4, teleporter, I|thaumium ingot*2, beacon, lapotron crystal]
-    shape: a t a I b I a l a
-- magic energy absorber:
-    ingredients: [energy flow circuit*4, superconductor, iridium plate*2, beacon, magic energy converter]
-    shape: e s e i b i e m e
-
-
-craft_templates:
 - diesel generator:
     vars: [plate]
-    ingredients: [P|plate*5, integrated circuit*2, generator]
+    ingredients: [P|$(plate)*5, integrated circuit*2, generator]
     shape: P P P P ~ P i g i
     plate: [refined iron plate, aluminium plate]
 - thermal generator:
@@ -55,4 +43,15 @@ craft_templates:
     shape: P a P w G w P a P
     glass: [reinforced glass, hardened glass]
     plate: [invar plate, aluminium plate]
+
+
+disabled_crafts:
+# needs thaumcraft
+- magic energy converter:
+    ingredients: [advanced circuit*4, teleporter, I|thaumium ingot*2, beacon, lapotron crystal]
+    shape: a t a I b I a l a
+- magic energy absorber:
+    ingredients: [energy flow circuit*4, superconductor, iridium plate*2, beacon, magic energy converter]
+    shape: e s e i b i e m e
+
 

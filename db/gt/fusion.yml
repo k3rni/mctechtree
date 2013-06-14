@@ -3,9 +3,12 @@ cluster: gt
 # WARNING! This page describes the fusion reactor for GT 2.82c and older. As of MC 1.5 the fusion reactor is much more complicated, and outputs plasmified helium which must be piped into plasma generators to generate energy, and basically everything below is wrong.
 
 crafts: 
+- iridium neutron reflector:
+    ingredients: [thick neutron reflector*8, iridium plate]
+    shape: t t t t i t t t t
 - fusion reactor:
     ingredients: [energyflow circuit*4, lapotronic energy orb*2, supercondensator*2, gregtech-computercube]
     shape: e s e l g l e s e
 - fusion coil:
-    ingredients: [tesla coil*2, highly advanced machine*4, energyflow circuit, superconductor, iridum neutron reflector]
+    ingredients: [tesla coil*2, highly advanced machine*4, energyflow circuit, superconductor, iridium neutron reflector]
     shape: t h e h i h s h t

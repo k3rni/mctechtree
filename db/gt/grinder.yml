@@ -8,7 +8,7 @@ processing:
 - inputs: [netherrack*16, water cell]
   outputs: [gold nugget, netherrack dust*16, cell]
 - inputs: [netherrack*8, mercury cell]
-  outputs: [gold nugget, netherrack dust*8, cell)
+  outputs: [gold nugget, netherrack dust*8, cell]
 - inputs: [copper ore, water cell]
   outputs: [copper dust*2, tiny pile of gold dust, tiny pile of nickel dust, cell]
 - inputs: [copper ore, sodium persulfate cell]
@@ -81,8 +81,6 @@ processing:
   outputs: [bauxite dust*4, aluminium dust, cell]
 - inputs: [pyrite ore, water cell]
   outputs: [pyrite dust*5, sulfur*2, cell]
-- inputs: [cinnabar ore, water cell]
-  outputs: [cinnabar dust*5, tiny pile of redstone dust, tiny pile of glowstone dust, cell]
 - inputs: [sphalerite ore, water cell]
   outputs: [sphalerite dust*5, zinc dust, tiny pile of yellow garnet dust, cell]
 - inputs: [sphalerite ore, sodium persulfate cell]
@@ -97,3 +95,7 @@ processing:
   outputs: [olivine, tiny pile of olivine dust*6, tiny pile of emerald dust*2, cell]
 - inputs: [sodalite ore, water cell]
   outputs: [sodalite dust*12, aluminium dust*3, cell]
+
+thaumcraft_processing:
+- inputs: [cinnabar ore, water cell]
+  outputs: [cinnabar dust*5, tiny pile of redstone dust, tiny pile of glowstone dust, cell]

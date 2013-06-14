@@ -4,15 +4,15 @@ primitives:
 - re-enriched uranium cell: 200 # spawned in a reactor
 
 crafts:
-- 10K cooling cell:
+- 10K Coolant cell:
     ingredients: [water bucket, tin ingot*4]
 - water cell: [cell, water]
 - lava cell: [cell, lava]
 - heating cell: [integrated circuit, lava cell, dense copper plate]
-- 30K cooling cell:
-    ingredients: [10K cooling cell*3, tin ingot*6]
-- 60K cooling cell:
-    ingredients: [30K cooling cell*2, tin ingot*6, dense copper plate]
+- 30K Coolant cell:
+    ingredients: [10K Coolant cell*3, tin ingot*6]
+- 60K Coolant cell:
+    ingredients: [30K Coolant cell*2, tin ingot*6, dense copper plate]
 - heating cell:
     ingredients: [integrated circuit, lava cell, dense copper plate]
 - dense copper plate:
@@ -43,7 +43,7 @@ crafts:
 - component heat vent:
     ingredients: [heat vent, tin ingot*4, iron bars*4]
 - integrated heat dispenser:
-    ingredients: [copper ingot*2, advanced circuit, 10K cooling cell*2, integrated reactor plating]
+    ingredients: [copper ingot*2, advanced circuit, 10K Coolant cell*2, integrated reactor plating]
 - neutron reflector: 
     ingredients: [tin dust*4, coal dust*4, dense copper plate]
 - thick neutron reflector: 

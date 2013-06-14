@@ -16,7 +16,7 @@ crafts:
       - gold ingot
 - cooling core:
     ingredients:
-      - 60K cooling cell*4
+      - 60K Coolant cell*4
       - heat-capacity reactor plating*2
       - iridium plate
       - advanced heat exchanger*2

@@ -73,7 +73,7 @@ processing:
   inputs: [basic circuit board, copper cable*3]
   machine: circuit assembler
 
-craft_templates:
+crafts:
 - data storage circuit:
     vars: [gem]
     makes: 4

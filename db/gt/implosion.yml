@@ -14,4 +14,5 @@ processing:
   outputs: [yellow garnet*3, dark ashes*8]
 - inputs: [$(gem) dust*4, industrial TNT*24]
   outputs: [$(gem)*3, dark ashes*12]
+  vars: [gem]
   gem: [ruby, sapphire, green sapphire, emerald, olivine]

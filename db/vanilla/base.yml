@@ -11,10 +11,14 @@ primitives:
 - sandstone: 2
 - gravel: 1
 - iron ore: 10
-- coal: 4
+- coal: 8
+- coal ore: 8
 - gold ore: 40
+- diamond ore: 100
 - diamond: 100
-- redstone: 70
+- redstone ore: 60
+- redstone: 60
+- lapis lazuli ore: 75
 - lapis: 75
 - flint: 3
 - wool: 5
@@ -29,6 +33,7 @@ primitives:
 - obsidian: 30
 - snowball: 1
 - ice: 2
+- emerald ore: 250
 - emerald: 250
 
 

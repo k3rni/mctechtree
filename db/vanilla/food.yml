@@ -8,6 +8,7 @@ primitives:
 - pumpkin: 2
 - carrot: 1
 - potato: 1
+- poisonous potato: 25
 - melon slice: 2
 - milk bucket: 2
 - egg: 3
@@ -44,3 +45,4 @@ crafts:
 - golden apple: [apple, gold nugget*8]
 - golden carrot: [carrot, gold nugget*8] 
 - mushroom stew: [red mushroom, brown mushroom, bowl]
+- glistering melon: [melon slice, gold nugget]

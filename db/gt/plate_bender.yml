@@ -1,0 +1,35 @@
+cluster: gt
+
+defaults:
+  machine: plate bending machine
+
+processing:
+- inputs: [$(metal) ingot]
+  outputs: [$(metal) plate]
+  vars: [metal]
+  metal:
+  - silver
+  - lead
+  - gold
+  - copper
+  - tin
+  - nickel # also ferrous
+  - platinum # also shiny
+  - electrum
+  - invar
+  - steel
+  - tungstensteel
+  - aluminium
+  - titanium
+  - chrome
+  - tungsten
+  - zinc
+  #- osmium
+- inputs: [$(metal)]
+  outputs: [$(metal) plate]
+  vars: [metal]
+  metal:
+  - iron
+  - refined iron
+  - brass
+  - bronze

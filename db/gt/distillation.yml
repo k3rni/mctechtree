@@ -1,0 +1,10 @@
+cluster: gt
+
+defaults:
+  machine: distillation tower
+
+processing:
+- inputs: [oil cell*16, cell*17]
+  outputs: [diesel cell*16, sulfuric acid cell*16, glyceryl cell]
+- inputs: [biomass cell*16]
+  outputs: [bio diesel cell*8, cell*8]

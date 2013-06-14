@@ -27,7 +27,7 @@ processing:
   - raw pork*12
   - cooked pork*16
   - raw beef*12
-  - cooked beef*16
+  - steak*16
   - raw fish*12
   - cooked fish*16
   - raw chicken*12
@@ -49,8 +49,6 @@ processing:
   - terra wart*32
 - inputs: [sticky resin*4]
   outputs: [rubber*14, plantball, compressed plants]
-- inputs: [cracked sand*16, fuel can]
-  outputs: [filled fuel can*10, sand, saltpeter*8]
 # TODO: Forge dust (pulverized xxx) versions of these
 - inputs: [bronze dust*2] # bronze blend
   outputs: [tiny pile of copper dust*6, tiny pile of tin dust*2]
@@ -67,7 +65,7 @@ processing:
 - inputs: [pulverized lead] # lead dust
   outputs: [tiny pile of silver dust]
 - inputs: [pulverized ferrous metal*3] # nickel dust
-  ouputs: [tiny pile of gold dust, tiny pile of copper dust, tiny pile of iron dust]
+  outputs: [tiny pile of gold dust, tiny pile of copper dust, tiny pile of iron dust]
 - inputs: [pulverized shiny metal] # platinum dust
   outputs: [iridium nugget, tiny pile of nickel dust]
 - inputs: [electrum blend] # electrum dust
@@ -98,8 +96,6 @@ processing:
   outputs: [andradite dust*5, grossular dust*8, uvarovite dust*3]
 - inputs: [dark ashes*2]
   outputs: [ash, slag]
-- inputs: [redrock dust*4]
-  outputs: [calcite dust*2, flint dust, clay dust]
 - inputs: [marble dust*8]
   outputs: [magnesium dust, calcite dust*7]
 - inputs: [basalt dust*16]
@@ -116,6 +112,8 @@ processing:
   outputs: [calcite dust, cell]
 - inputs: [sulfur cell]
   outputs: [sulfur, cell]
+- inputs: [ender eye dust*2]
+  outputs: [ender pearl dust, blaze powder]
 
 skip_crafts:
 - ice: [ice cell]
@@ -123,7 +121,8 @@ skip_crafts:
     ingredients: [magma cream]
     outputs: [slimeball, cell]
 skip_processing:
-- machine: industrial centrifuge
-  inputs: [ender eye dust*2]
-  outputs: [ender pearl dust, blaze powder]
+- inputs: [redrock dust*4] # EBXL
+  outputs: [calcite dust*2, flint dust, clay dust]
+- inputs: [cracked sand*16, fuel can] # EBXL
+  outputs: [filled fuel can*10, sand, saltpeter*8]
 

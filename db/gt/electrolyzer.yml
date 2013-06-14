@@ -45,8 +45,6 @@ processing:
   outputs: [sodium cell*4, alumiunium dust*3, silicon cell*3, chlorite cell]
 - inputs: [flint dust*8, cell*2]
   outputs: [silicon cell, compressed air cell]
-- inputs: [cinnabar dust*2, cell]
-  outputs: [mercury cell, sulfur]
 - inputs: [sphalerite dust*2]
   outputs: [zinc dust, sulfur]
 - inputs: [bauxite dust*12, cell*8]
@@ -81,3 +79,7 @@ processing:
   outputs: [hydrogen cell*4, carbon cell]
 - inputs: [sulfuric acid cell*7]
   outputs: [hydrogen cell*2, sulfur cell, compressed air cell*2, cell*2]
+
+thaumcraft_processing:
+- inputs: [cinnabar dust*2, cell]
+  outputs: [mercury cell, sulfur]

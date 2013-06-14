@@ -2,7 +2,7 @@ cluster: gt
 
 crafts:
 - standard machine casing:
-    ingredients: [aluminum ingot*6, integrated circuit*2, machine]
+    ingredients: [aluminium ingot*6, integrated circuit*2, machine]
     makes: 4
     shape: a a a i m i a a a
 - reinforced machine casing:
@@ -13,8 +13,11 @@ crafts:
     ingredients: [chrome ingot*6, datacontrol circuit*2, highly advanced machine]
     makes: 4
     shape: c c c d h d c c c
+- computer monitor:
+    ingredients: [aluminium plate*4, lime dye, red dye, glass, blue dye, G|glowstone dust]
+    shape: a l a r g b a G a
 - gregtech-computercube:
-    ingredients: [dataorb*2, computer monitor*4, energyflow circuit*2, M|advanced machine]
+    ingredients: [data orb*2, computer monitor*4, energyflow circuit*2, M|advanced machine]
     shape: d c e c M c e c d
 - supercondensator:
     ingredients: [energyflow circuit*4, lapotronic energy orb*2, superconductor*2, highly advanced machine]
@@ -84,7 +87,7 @@ crafts:
     shape: d s d s D s d s d
 - wolframium grinder:
     makes: 2
-    ingredients: [tungsten plate*4, refined iron plate*4, block of steel]
+    ingredients: [tungsten plate*4, refined iron plate*4, steel block]
     shape: t r t r b r t r t
 - machine parts:
     ingredients: [integrated circuit*5, refined iron*4]
@@ -94,8 +97,6 @@ crafts:
     ingredients: [integrated circuit*5, r|aluminium iron*4]
     makes: 12
     shape: i r i r i r i r i
-
-craft_templates:
 # NOTE: Forge-compatible with Gravi superconductor
 - superconductor:
     vars: [coolant]
@@ -119,3 +120,8 @@ craft_templates:
     ingredients: [chrome plate*4, titanium plate*4, M|$(hull)] 
     shape: c t c t M t c t c
     hull: [advanced machine, steel machine hull, titanium machine hull]
+- conveyor module:
+    vars: [metal]
+    ingredients: [glass*3, M|$(metal)*3, integrated circuit*2, RE battery]
+    shape: g g g M M M i R i
+    metal: [aluminium plate, refined iron plate, aluminium ingot, refined iron]

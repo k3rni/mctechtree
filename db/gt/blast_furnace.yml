@@ -10,7 +10,7 @@ processing:
   outputs: [hot tungstensteel ingot*2, dark ashes*4]
 - inputs: [iron ore, calcium carbonate cell]
   outputs: [refined iron*3, cell]
-- inputs: [pyrite ore, calcium carbonate]
+- inputs: [pyrite ore, calcium carbonate cell]
   outputs: [refined iron*2, cell]
 - inputs: [aluminium dust]
   outputs: [aluminium ingot]

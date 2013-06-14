@@ -5,18 +5,18 @@ crafts:
   - wool
   - rubber*6
 - nano helmet:
-    - energy crystal
-    - glass
-    - carbon plate*4
+  - energy crystal
+  - glass
+  - carbon plate*4
 - nano body armor:
-    - energy crystal
-    - carbon plate*7
+  - energy crystal
+  - carbon plate*7
 - nano leggings:
-    - energy crystal
-    - carbon plate*6
+  - energy crystal
+  - carbon plate*6
 - nano boots:
-    - energy crystal
-    - carbon plate*4
+  - energy crystal
+  - carbon plate*4
 - quantum helmet:
   - nano helmet
   - iridium plate*2
@@ -54,3 +54,9 @@ crafts:
   - iron*4
   - wool
   - copper cable*3
+- solar helmet:
+    ingredients: [iron*5, solar panel, copper cable*3]
+    shape: i i i i s i c c c
+- solar helmet:
+    ingredients: [iron helmet, solar panel, copper cable*3]
+    shape: ~ i ~ ~ s ~ c c c

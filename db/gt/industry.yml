@@ -3,7 +3,7 @@ cluster: gt
 crafts:
 # NOTE: many crafts here SHOULD use plates instead of ingots
 - industrial centrifuge:
-    ingredients: [aluminum ingot*4, C|advanced circuit*2, B|advanced machine*2, extractor]
+    ingredients: [aluminium ingot*4, C|advanced circuit*2, B|advanced machine*2, extractor]
     shape: a C a B e B a C a
 - industrial centrifuge:
     ingredients: [refined iron*4, C|advanced circuit*2, B|advanced machine*2, extractor]
@@ -17,7 +17,7 @@ crafts:
     makes: 2
     shape: d s d s D s d s d
 - industrial electrolyzer:
-    ingredients: [r|aluminum ingot*4, advanced circuit*2, x|extractor, electrolyzer, magnetizer]
+    ingredients: [r|aluminium ingot*4, advanced circuit*2, x|extractor, electrolyzer, magnetizer]
     shape: r x r a e a r m r
 - industrial electrolyzer:
     ingredients: [refined iron*4, advanced circuit*2, x|extractor, electrolyzer, magnetizer]
@@ -38,7 +38,7 @@ crafts:
     ingredients: [refined iron*4, advanced circuit*2, pump*2, G|reinforced glass]
     shape: r p r a G a r p r
 - vacuum freezer:
-    ingredients: [r|aluminum ingot*4, advanced circuit*2, pump*2, G|reinforced glass]
+    ingredients: [r|aluminium ingot*4, advanced circuit*2, pump*2, G|reinforced glass]
     shape: r p r a G a r p r
 - matter fabricator:
     ingredients: [energyflow circuit*4, teleporter*2, highly advanced machine*2, lapotronic energy orb]

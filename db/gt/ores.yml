@@ -1,0 +1,15 @@
+cluster: gt
+
+primitives:
+- pyrite ore: 20
+- ruby ore: 40
+- green sapphire ore: 40
+- sapphire ore: 40
+- galena ore: 30
+- iridium ore: 120
+- bauxite ore: 30
+- sphalerite ore: 60
+- tungstate ore: 90
+- sheldonite ore: 100
+- olivine ore: 90
+- sodalite ore: 85
