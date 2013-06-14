@@ -16,6 +16,7 @@ processing:
   outputs: [compressed coal ball]
 - inputs: [clay dust]
   outputs: [clay]
+  compatible: vanilla
 - inputs: [coal chunk]
   outputs: [industrial diamond]
 - inputs: [iridium]
