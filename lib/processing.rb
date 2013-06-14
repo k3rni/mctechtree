@@ -20,18 +20,21 @@ module Processing
     inputs = process.delete('inputs')
     outputs = process.delete('outputs')
     if outputs.size == 1
-      load_single_craft craft_process(inputs, outputs, process), group
+      load_single_craft craft_process(inputs, outputs.first, process), group
     else
-      raise
+      skip = (process.delete('skip-output') || @defaults['skip-output']).to_a
+      outputs.each do |name|
+        next if skip.include? name
+        load_single_craft craft_process(inputs, name, process.dup), group
+      end
     end
   end
 
-  def craft_process inputs, outputs, extra
-     name = outputs.first
-     if name =~ /(.+?)\*(\d+)/
+  def craft_process inputs, output, extra
+     if output =~ /(.+?)\*(\d+)/
        name, makes = $1, $2.to_i
      else
-       makes = 1
+       name, makes = output, 1
      end
      machine = extra.delete('machine') || @defaults['machine']
      # NOTE: code duplication with parse_recipe
