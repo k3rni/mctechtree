@@ -13,10 +13,15 @@ module Shapes
 
   def resolve_shapes shape_map, ingredients
     Hash[shape_map.map do |key, name|
-      [key, ingredients.select do |item|
-        # prefix match
-        name[Regexp.new("^#{item.name}")]
-      end.first]
+      [ key, 
+        ingredients.map do |item|
+          # longest prefix match
+          match = name[Regexp.new("^#{item.name}")]
+          [item, match.nil? ? 0 : match.size]
+        end
+        .max{ |pair| pair[1] }
+        .first
+      ]
     end]
   end
 end

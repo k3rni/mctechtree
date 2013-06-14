@@ -23,10 +23,10 @@ processing:
     - tin/tin ingot
     - gold/gold ingot
     - bronze
-
-ignore_processing:
 - inputs: [gravel]
   outputs: [flint]
+
+ignore_processing:
 - inputs: [stone]
   outputs: [cobble]
 - inputs: [cobble]
