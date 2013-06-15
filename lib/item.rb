@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'forwardable'
+
 class CraftBuilder < SimpleDelegator
   def makes count, machine, ingredients, group, extra
     craft = Craft.create(machine, __getobj__, count, ingredients, group, extra)
@@ -99,5 +101,14 @@ class Item
 
   def resolver
     ItemResolver.new(self)
+  end
+end
+
+# NOTE: delegate everything to first item, expose rest in a method 
+class ForgeItem < SimpleDelegator
+  attr_accessor :items
+  def initialize srcitems
+    @items = srcitems
+    @delegate_sd_obj = @items.first
   end
 end
