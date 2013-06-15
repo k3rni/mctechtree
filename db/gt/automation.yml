@@ -6,13 +6,13 @@ crafts:
     shape: d m d h t h d c d
 - quantum tank:
     # NOTE: plate, not ingots?
-    ingredients: [energyflow circuit*4, quantum chest, platinum ingot*4]
+    ingredients: [energy flow circuit*4, quantum chest, platinum ingot*4]
     shape: e p e p q p e p e
 - UUM assembler:
-    ingredients: [D|datacontrol circuit*2, data orb*2, gregtech-computercube, quantum chest, teleporter, lithium battery, T|electric crafting table]
+    ingredients: [D|data control circuit*2, data orb*2, gregtech-computercube, quantum chest, teleporter, lithium battery, T|electric crafting table]
     shape: D g D t q T d l d
 - UUM assembler:
-    ingredients: [D|datacontrol circuit*2, data orb*2, gregtech-computercube, quantum chest, teleporter, l|energy crystal, T|electric crafting table]
+    ingredients: [D|data control circuit*2, data orb*2, gregtech-computercube, quantum chest, teleporter, l|energy crystal, T|electric crafting table]
     shape: D g D t q T d l d
 - playerdetector:
     ingredients: [data storage circuit*4, gregtech-computercube]

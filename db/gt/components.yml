@@ -10,20 +10,20 @@ crafts:
     makes: 4
     shape: s s s a M a s s s
 - advanced machine casing:
-    ingredients: [chrome ingot*6, datacontrol circuit*2, highly advanced machine]
+    ingredients: [chrome ingot*6, data control circuit*2, highly advanced machine]
     makes: 4
     shape: c c c d h d c c c
 - computer monitor:
     ingredients: [aluminium plate*4, lime dye, red dye, glass, blue dye, G|glowstone dust]
     shape: a l a r g b a G a
 - gregtech-computercube:
-    ingredients: [data orb*2, computer monitor*4, energyflow circuit*2, M|advanced machine]
+    ingredients: [data orb*2, computer monitor*4, energy flow circuit*2, M|advanced machine]
     shape: d c e c M c e c d
 - supercondensator:
-    ingredients: [energyflow circuit*4, lapotronic energy orb*2, superconductor*2, highly advanced machine]
+    ingredients: [energy flow circuit*4, lapotronic energy orb*2, superconductor*2, highly advanced machine]
     shape: e l e s h s e l e
 - superconductor wire:
-    ingredients: [M|advanced machine*4, energyflow circuit*2, superconductor*3]
+    ingredients: [M|advanced machine*4, energy flow circuit*2, superconductor*3]
     makes: 4
     shape: M e M s s s M e M
 - lapotronic energy orb:
@@ -100,7 +100,7 @@ crafts:
 # NOTE: Forge-compatible with Gravi superconductor
 - superconductor:
     vars: [coolant]
-    ingredients: [C|$(coolant)*3, wolframium cell, iridium plate*2, energyflow circuit*3]
+    ingredients: [C|$(coolant)*3, wolframium cell, iridium plate*2, energy flow circuit*3]
     makes: 4
     shape: C C C i w i e e e
     coolant: [60K Coolant cell, 60K Helium Coolant cell, 60K NaK Coolant cell]

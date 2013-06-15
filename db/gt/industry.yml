@@ -41,7 +41,7 @@ crafts:
     ingredients: [r|aluminium ingot*4, advanced circuit*2, pump*2, G|reinforced glass]
     shape: r p r a G a r p r
 - matter fabricator:
-    ingredients: [energyflow circuit*4, teleporter*2, highly advanced machine*2, lapotronic energy orb]
+    ingredients: [energy flow circuit*4, teleporter*2, highly advanced machine*2, lapotronic energy orb]
     shape: e t e h l h e t e
 - plate bending machine:
     ingredients: [piston*4, integrated circuit*2, compressor*2, V|conveyor module]
