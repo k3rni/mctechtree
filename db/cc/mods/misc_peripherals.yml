@@ -1,4 +1,5 @@
 cluster: misc_per
+parent: cc
 
 crafts:
 - charge station: # ic2 ver
