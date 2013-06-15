@@ -90,11 +90,11 @@ crafts:
     ingredients: [tungsten plate*4, refined iron plate*4, steel block]
     shape: t r t r b r t r t
 - machine parts:
-    ingredients: [integrated circuit*5, refined iron*4]
+    ingredients: [integrated circuit*5, refined iron plate*4]
     makes: 16
     shape: i r i r i r i r i
 - machine parts:
-    ingredients: [integrated circuit*5, r|aluminium iron*4]
+    ingredients: [integrated circuit*5, r|aluminium plate*4]
     makes: 12
     shape: i r i r i r i r i
 # NOTE: Forge-compatible with Gravi superconductor

@@ -27,3 +27,8 @@ processing:
   inputs: [steel ingot]
 - outputs: [ender eye dust]
   inputs: [eye of ender]
+- outputs: [platinum dust]
+  inputs: [sheldonite ore]
+- outputs: [tiny pile of flint dust*2]
+  inputs: [flint]
+

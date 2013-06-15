@@ -1,0 +1,96 @@
+cluster: gt
+
+metal_list: &metals
+  metal:
+  - platinum
+  - nickel
+  - zinc
+
+
+crafts:
+- $(metal) ingot:
+    ingredients: [$(metal) dust]
+    machine: furnace
+    <<: *metals
+- $(metal) ingot:
+    ingredients: [$(metal) plate]
+    machine: furnace
+    <<: *metals
+- iridium alloy ingot:
+    ingredients: [iridium ingot*4, diamond dust, advanced alloy]
+    shape: i a i a d a i a i
+- tiny pile of invar dust:
+    makes: 3
+    ingredients: [tiny pile of nickel dust, tiny pile of iron dust*2]
+- tiny pile of bronze dust:
+    makes: 2
+    ingredients: [tiny pile of copper dust*3, tiny pile of tin dust]
+- brass dust:
+    ingredients: [copper dust*3, zinc dust]
+    makes: 2
+- $(mineral) dust:
+    ingredients: [tiny pile of $(mineral) dust*4]
+    mineral:
+    # NOTE: many excluded due to having no other recipe except dust->tiny dust
+    # - ender pearl
+    # - ender eye
+    # - lazurite
+    - pyrite
+    - calcite
+    - sodalite
+    # - netherrack
+    - flint
+    # - sulfur
+    # - saltpeter
+    # - endstone
+    # - cinnabar # thaumcraft
+    - manganese
+    - magnesium
+    # - sphalerite
+    # - uranium
+    # - bauxite
+    # - aluminium
+    - titanium
+    # - chrome
+    # - electrum
+    - tungsten
+    - lead
+    - zinc
+    # - brass
+    # - steel
+    - platinum
+    - nickel
+    - invar
+    - osmium
+    - ruby
+    - sapphire
+    - green sapphire
+    - emerald
+    - diamond
+    - olivine
+    # - galena
+    # - phosphor # made from Forestry apatite
+    # - obsidian
+    # - charcoal
+    - red garnet
+    - yellow garnet
+    # - pyrope
+    # - almandine
+    # - spessartine
+    # - andradite
+    # - grossular
+    # - uvarovite
+    # - redrock # EBXL
+    # - marble
+    # - basalt
+    - thorium
+    - plutonium
+    # - coal
+    - iron
+    - gold
+    - copper
+    - tin
+    - bronze
+    - silver
+    # - refined iron
+

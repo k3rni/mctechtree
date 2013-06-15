@@ -1,0 +1,6 @@
+cluster: gt
+
+crafts:
+- tiny pile of osmium dust:
+    ingredients: [UU-matter*7]
+    shape: U ~ U U U U U ~ U

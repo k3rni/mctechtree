@@ -12,3 +12,7 @@ equivalents:
     lead: [pulverized lead]
     nickel: [pulverized ferrous metal]
     platinum: [pulverized shiny metal]
+    obsidian: [pulverized obsidian]
+  ingot:
+    platinum: [shiny ingot]
+    nickel: [ferrous ingot]
