@@ -1,0 +1,12 @@
+cluster: gt
+
+crafts:
+- 60K Helium Coolant cell:
+    ingredients: [tin ingot*4, helium cell]
+    shape: ~ t ~ t h t ~ t ~
+- 180K Helium Coolant cell:
+    ingredients: [tin ingot*6, C|60K Helium Coolant cell]
+    shape: t t t C C C t t t
+- 360K Helium Coolant cell:
+    ingredients: [tin ingot*6, dense copper plate, C|180K Helium Coolant cell]
+    shape: t C t t d t t C t
