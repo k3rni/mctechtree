@@ -21,8 +21,6 @@ processing:
   outputs: [tin dust*2, tiny pile of iron dust, zinc dust, cell]
 - inputs: [uranium ore, water cell]
   outputs: [uranium dust*2, tiny pile of plutonium dust*2, cell]
-- inputs: [apatite ore, water cell]
-  outputs: [apatite*12, phosphor dust, cell]
 - inputs: [tin ore, sodium persulfate cell]
   outputs: [tin dust*2, tiny pile of iron dust, zinc dust, cell]
 - inputs: [silver ore, water cell]
@@ -99,3 +97,7 @@ processing:
 thaumcraft_processing:
 - inputs: [cinnabar ore, water cell]
   outputs: [cinnabar dust*5, tiny pile of redstone dust, tiny pile of glowstone dust, cell]
+
+forestry_processing:
+- inputs: [apatite ore, water cell]
+  outputs: [apatite*12, phosphor dust, cell]

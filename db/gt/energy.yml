@@ -14,11 +14,11 @@ crafts:
     ingredients: [chunk of lazurite*8, integrated circuit]
     shape: c c c c i c c c c
 - lightningrod:
-    ingredients: [energyflow circuit*4, highly advanced machine*4, supercondensator]
+    ingredients: [energy flow circuit*4, highly advanced machine*4, supercondensator]
     shape: e h e h s h e h e
     structure: true
 - charge-o-mat:
-    ingredients: [energyflow circuit*4, chest*2, gregtech-computercube, lapotronic energy orb, advanced circuit]
+    ingredients: [energy flow circuit*4, chest*2, gregtech-computercube, lapotronic energy orb, advanced circuit]
     shape: e g e c l c e a e
 - diesel generator:
     vars: [plate]
