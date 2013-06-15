@@ -6,4 +6,7 @@ primitives:
 
 crafts:
 - eye of ender: [ender pearl, blaze powder]
+- ender chest:
+    ingredients: [obsidian*8, eye of ender]
+    shape: o o o o e o o o o
 
