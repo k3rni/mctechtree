@@ -8,5 +8,7 @@ processing:
   outputs: [tungstensteel ingot]
 - inputs: [water cell]
   outputs: [ice cell]
+
+new_fusion_reactor_processing:
 - inputs: [helium plasma cell]
   outputs: [helium cell]
