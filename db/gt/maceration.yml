@@ -8,15 +8,12 @@ processing:
   inputs: [$(material)]
   vars: [material]
   material:
-  - titanium/titanium ingot
-  - steel/steel ingot
+  # processing templates can't do two-part expansions
   - emerald
   - charcoal
   - ender pearl
-  - ender eye/eye of ender
   - green sapphire
   - sapphire
-  #- almandite # XXX: which mod is this?
   - diamond
   - red garnet
   - yellow garnet
@@ -24,4 +21,9 @@ processing:
   #- redrock # EBXL
   - marble
   - basalt
-
+- outputs: [titanium dust]
+  inputs: [titanium ingot]
+- outputs: [steel dust]
+  inputs: [steel ingot]
+- outputs: [ender eye dust]
+  inputs: [eye of ender]

@@ -3,6 +3,7 @@ cluster: vanilla
 primitives:
 - mossy stone bricks: 40
 - mossy cobble: 20
+- mushroom block: 20
 
 crafts:
 - diamond block: [diamond*9]

@@ -65,7 +65,7 @@ processing:
   outputs: [tiny pile of silver dust*3, tiny pile of lead dust*3, tiny pile of sulfur dust*2]
 - inputs: [pyrope dust*20, cell*9]
   outputs: [magnesium dust*3, aluminium dust*2, silicon cell*3, compressed air cell*6]
-- inputs: [almandite dust*20, cell*9]
+- inputs: [almandine dust*20, cell*9]
   outputs: [iron dust*3, aluminium dust*2, silicon cell*3, compressed air cell*6]
 - inputs: [spessarite dust*20, cell*9]
   outputs: [aluminium dust*2, manganese dust*3, silicon cell*3, compressed air cell*6]

@@ -1,6 +1,11 @@
 cluster: gt
 
 crafts:
+- digital chest:
+    ingredients: [P|$(plate)*7, data orb, computer monitor]
+    shape: P P P P d P P c P
+    vars: [plate]
+    plate: [refined iron plate, aluminium plate]
 - quantum chest:
     ingredients: [data orb*4, highly advanced machine*2, m|computer monitor, c|digital chest, teleporter]
     shape: d m d h t h d c d
