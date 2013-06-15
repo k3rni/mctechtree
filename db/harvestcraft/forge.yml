@@ -1,5 +1,7 @@
 cluster: harvestcraft
 
 equivalents:
-- [any seed, tomato seed, broccoli seed, carrot seed, lettuce seed, cucumber seed, onion seed, bellpepper seed, chili pepper seed] # TODO
-- [any mushroom, brown mushroom, red mushroom, white mushroom]
+  seed:
+    any: [any seed, tomato seed, broccoli seed, carrot seed, lettuce seed, cucumber seed, onion seed, bellpepper seed, chili pepper seed] # TODO
+  mushroom:
+    any: [any mushroom, brown mushroom, red mushroom, white mushroom]
