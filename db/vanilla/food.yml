@@ -42,7 +42,19 @@ crafts:
 - cooked fish:
     machine: furnace
     ingredients: [raw fish]
-- golden apple: [apple, gold nugget*8]
+- golden apple: 
+    ingredients: [apple, gold nugget*8]
+    shape: g g g g a g g g g
+- enchanted golden apple:
+    ingredients: [apple, g|block of gold*8]
+    shape: g g g g a g g g g
 - golden carrot: [carrot, gold nugget*8] 
 - mushroom stew: [red mushroom, brown mushroom, bowl]
 - glistering melon: [melon slice, gold nugget]
+- bread:
+    ingredients: [wheat*3]
+    shape: ~ ~ ~ ~ ~ ~ w w w
+    compatible: all
+- baked potato:
+    machine: furnace
+    ingredients: [potato]
