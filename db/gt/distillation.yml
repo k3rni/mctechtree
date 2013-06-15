@@ -6,5 +6,17 @@ defaults:
 processing:
 - inputs: [oil cell*16, cell*17]
   outputs: [diesel cell*16, sulfuric acid cell*16, glyceryl cell]
+
+forestry_processing:
 - inputs: [biomass cell*16]
   outputs: [bio diesel cell*8, cell*8]
+
+crafts:
+- oil cell:
+    ingredients: [cell, oil*1000]
+    machine: ~ # some kind of pump
+
+forestry_crafts:
+- biomass cell:
+    ingredients: [cell, biomass*1000]
+    machine: ~
