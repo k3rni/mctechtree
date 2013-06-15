@@ -25,7 +25,7 @@ crafts:
       - powered/cobble
       - any/stone
       - player/stone slab
-      - empty/stone bricks
+      - empty/stone brick
       - mob/mossy stone bricks
       - mob/mossy cobble
       - animal/oak wood
