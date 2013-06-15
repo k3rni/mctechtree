@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'forwardable'
+
 class CraftBuilder < SimpleDelegator
   def makes count, machine, ingredients, group, extra
     craft = Craft.create(machine, __getobj__, count, ingredients, group, extra)
@@ -34,13 +36,14 @@ end
 
 class Item
   attr_accessor :name, :primitive, :cost, :stacks, :group, :compatible, :tier
-  attr_reader :crafts
+  attr_reader :crafts, :crafts_into
 
   def initialize attrs={}
     attrs.each do |key, val| 
       self.send "#{key}=", val
     end
     @crafts = []
+    @crafts_into = Set.new
     self.stacks = 64 if stacks.nil?
   end
 
@@ -93,11 +96,30 @@ class Item
     PendingItem.new(name)
   end
 
+  def crafted_from
+    Set.new(crafts.map { |cr| cr.count_ingredients.keys }.flatten)
+  end
+
+  def max_tier
+    crafts.map do |cr|
+      cr.count_ingredients.keys.map(&:tier)
+    end.map(&:max).min
+  end
+
   def add_craft
     yield(CraftBuilder.new(self))
   end
 
   def resolver
     ItemResolver.new(self)
+  end
+end
+
+# NOTE: delegate everything to first item, expose rest in a method 
+class ForgeItem < SimpleDelegator
+  attr_accessor :items
+  def initialize srcitems
+    @items = srcitems
+    @delegate_sd_obj = @items.first
   end
 end

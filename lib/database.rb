@@ -1,15 +1,16 @@
 # encoding: utf-8
 
-
-%w(graph crafts primitives shapes templates processing).each do |mod|
+%w(graph crafts primitives shapes templates processing forge).each do |mod|
   autoload mod.capitalize.to_sym, "./lib/#{mod}"
 end
+
 class Database < Set
   include Graph
   include Primitives
   include Crafts
   include Shapes
   include Templates
+  include Forge
   include Processing
 
   def initialize(*args)
@@ -17,6 +18,7 @@ class Database < Set
     @pending = Set.new
     @conflicts = Set.new
     @equivalents = Hash.new { |h, key| h[key] = Set.new }
+    @equivalent_categories = Hash.new { |h, key| h[key] = Set.new }
     @hierarchy = Hash.new { |h, key| h[key] = Set.new }
     @defaults = {}
   end
@@ -68,21 +70,14 @@ class Database < Set
       false
     elsif existing.group == group
       false
+    elsif existing.primitive
+      false
     elsif compatible.nil?
       true
     elsif compatible != existing.group
       true
     else
       false
-    end
-  end
-
-  def load_equivalents definitions, group=nil
-    definitions.each do |names|
-      nn = Set.new(names)
-      nn.each do |name|
-        @equivalents[name].merge(nn - [name])
-      end
     end
   end
 
@@ -95,20 +90,7 @@ class Database < Set
         true
       end
     end
-    # anything left? try the equivalents list
-    @pending.select! do |item|
-      if (eq = @equivalents[item.name])
-        new_item = eq.map { |name| find(name) }.compact.first
-        if new_item.nil?
-          true
-        else
-          replace_pending item, new_item
-          false
-        end
-      else
-        true
-      end
-    end
+    pending_from_dictionary
     if @pending.size > 0
       raise UndefinedItemsError.new(@pending.to_a.join(','))
     end
@@ -129,12 +111,17 @@ class Database < Set
       else
         count = 1
       end
-      item = self.find(name) 
-      if item.nil?
-        item = @pending.select { |obj| obj.name == name }.first || Item.pending(name).tap { |obj| @pending.add obj }
-      end
+      item = self.find(name) || already_pending(name) || add_pending_item(name)
       [item] * count
     end.flatten
+  end
+  
+  def already_pending name
+    item = @pending.select { |obj| obj.name == name }.first 
+  end
+
+  def add_pending_item name
+    Item.pending(name).tap { |obj| @pending.add obj }
   end
 
   def detect_name_clashes
@@ -144,52 +131,53 @@ class Database < Set
       end.join("\n"))
     end
   end
+  
+  def fill_reverse
+    each do |item|
+      item.crafted_from.each do |src|
+        src.crafts_into.add item
+      end
+    end
+  end
 
   def select_unsolved
     select { |item| item.tier == nil || item.tier > 20 }
   end
 
+  def tier_histogram
+    tiers = map(&:tier)
+    Hash[tiers.uniq.map { |t| [t, tiers.select{|r| r == t}.size] }]
+  end
+
   def classify_tiers
-    unsolved = select_unsolved
-    while select_unsolved.size > 0
-      unsolved = select_unsolved
-      changed = true
-      while changed
-        # keep running until nothing changes
-        unsolved, changed = iterate_tiers unsolved
-      end
-    end
-  end
-
-  def iterate_tiers subset
-    unsolved = Set.new(subset)
-    visited = Set.new()
-    changed = false
-    primitives.each do |item|
-      unsolved -= [item]
-      item.tier = 0
-    end
-
-    unsolved.sort_by{|item| -item.crafts.size}.each do |item|
-      visited.add item
-      craft_tiers = item.crafts.map do |craft| 
-        t = craft.count_ingredients.keys.reject{ |k| visited.include? k }.map { |ing| ing.tier }
-        if t.include? nil
-          nil
-        else
-          t.max
+    primitives.each { |item| item.tier = 0 }
+    fan_out(primitives, 1)
+    changed = true
+    while changed do
+      changed = false
+      crafted.each do |item|
+        max_tier = item.max_tier
+        if item.tier != max_tier + 1
+          item.tier = max_tier + 1
+          changed = true
         end
-      end.flatten
-      unless craft_tiers.include? nil
-        min_tier = craft_tiers.compact.min
-        prev = item.tier
-        item.tier = min_tier + 1
-        changed = (item.tier != prev)
-        unsolved -= [item]
       end
     end
-
-    unsolved.each { |item| item.tier = 100 }
-    return [unsolved, changed]
   end
+
+  def fan_out items, tier
+    next_set = Set.new
+    items.each do |item|
+      item.crafts_into.each do |dst|
+        if dst.tier == nil 
+          dst.tier = tier
+          next_set.add dst
+        elsif dst.tier < tier
+          dst.tier = tier
+        end
+      end
+    end
+    fan_out next_set, tier+1 if next_set.size > 0
+  end
+
 end
