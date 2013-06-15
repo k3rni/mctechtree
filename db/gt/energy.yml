@@ -11,7 +11,7 @@ crafts:
     ingredients: [V|LV transformer, LESU block, advanced circuit*2, MV transformer]
     shape: ~ V ~ a L a ~ M ~
 - LESU block:
-    ingredients: [chunk of lazurite*8, integrated circuit]
+    ingredients: [lapis block*8, integrated circuit] # NOTE: chunk of lazurite?
     shape: c c c c i c c c c
 - lightningrod:
     ingredients: [energy flow circuit*4, highly advanced machine*4, supercondensator]
