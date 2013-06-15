@@ -1,0 +1,34 @@
+cluster: ic2
+
+defaults:
+  machine: macerator
+
+processing:
+- inputs: [coal]
+  outputs: [coal dust]
+- outputs: [tin dust*2]
+  inputs: [tin ore]
+- outputs: [copper dust*2]
+  inputs: [copper ore]
+- outputs: [gold dust*2]
+  inputs: [gold ore]
+- outputs: [iron dust*2]
+  inputs: [iron ore]
+- vars: [metal]
+  inputs: [$(metal)]
+  outputs: [$(metal) dust]
+  metal:
+    - iron
+    - copper/copper ingot
+    - tin/tin ingot
+    - gold/gold ingot
+    - bronze
+- inputs: [gravel]
+  outputs: [flint]
+
+ignore_processing:
+- inputs: [stone]
+  outputs: [cobble]
+- inputs: [cobble]
+  outputs: [sand]
+

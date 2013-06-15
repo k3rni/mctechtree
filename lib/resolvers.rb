@@ -11,12 +11,15 @@ class ItemResolver
     attr_accessor :item, :count, :children
     @@craft_constructor = Proc.new { |*args| CraftResolver.new(*args) }
     
-    def initialize(item, count)
+    def initialize(item, count, ancestors=nil)
       @item = item
       @count = count
+      @ancestors = Set.new(ancestors || []) + [item]
       @children = item.crafts.map do |craft| 
-        @@craft_constructor.call(craft, count)
-      end
+        unless @ancestors.any? { |a| craft.needs? a }
+            @@craft_constructor.call(craft, count, @ancestors)
+        end
+      end.compact
     end
 
     def primitive
@@ -36,7 +39,7 @@ class ItemResolver
     end
 
     def craftable_children
-      reject_overrides children.select(&:craftable)
+      reject_overrides(children.select(&:craftable))
     end
 
     def reject_overrides crafts
@@ -80,11 +83,12 @@ class CraftResolver
     attr_accessor :craft, :count, :children
     @@item_constructor = Proc.new { |*args| ItemResolver.new(*args) }
 
-    def initialize(craft, count)
+    def initialize(craft, count, ancestors=nil)
         @craft = craft
         @count = count
+        @ancestor_items = ancestors
         @children = craft.count_ingredients.map do |item, needed|
-          @@item_constructor.call(item, needed)
+          @@item_constructor.call(item, needed, ancestors)
         end
     end
 

@@ -1,0 +1,30 @@
+digraph G {
+  rankdir=BT;
+
+  iron_ore[label="iron ore [0]"];
+  iron_dust[label="iron dust [1]"];
+  iron_ingot[label="iron ingot [1]"];
+  iron_armor[label="iron armor [2]"];
+  refined_iron[label="refined iron[2]"];
+  steel[label="steel ingot [2]"];
+  minecart[label="minecart [3]"];
+
+
+  iron_dust -> iron_ore;
+  iron_ingot -> iron_dust;
+  iron_ingot -> iron_ore;
+  iron_dust -> iron_ingot [style=dashed]; 
+  iron_armor -> iron_ingot;
+  refined_iron -> iron_ingot;
+
+  minecart -> steel;
+  steel -> iron_ingot;
+  iron_ingot -> minecart [style=dashed];
+
+  /* iron_dust_2 [style=dashed];
+  iron_dust_2 -> iron_ingot;
+
+  iron_ingot_2 [style=dashed];
+  iron_ingot_2 -> minecart; */
+  
+}

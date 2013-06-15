@@ -1,9 +1,9 @@
 # encoding: utf-8
 
-
-%w(graph crafts primitives shapes templates forge).each do |mod|
+%w(graph crafts primitives shapes templates processing forge).each do |mod|
   autoload mod.capitalize.to_sym, "./lib/#{mod}"
 end
+
 class Database < Set
   include Graph
   include Primitives
@@ -11,6 +11,7 @@ class Database < Set
   include Shapes
   include Templates
   include Forge
+  include Processing
 
   def initialize(*args)
     super(*args)
@@ -19,6 +20,7 @@ class Database < Set
     @equivalents = Hash.new { |h, key| h[key] = Set.new }
     @equivalent_categories = Hash.new { |h, key| h[key] = Set.new }
     @hierarchy = Hash.new { |h, key| h[key] = Set.new }
+    @defaults = {}
   end
 
   def find(name)
@@ -44,14 +46,21 @@ class Database < Set
   def load_definitions data
     group = data['cluster']
     @hierarchy[data['parent']].add group
-    %w(equivalents primitives crafts craft_templates).each do |key|
-      # Legacy support
-      action = ('crafts' if key == 'craft_templates') || key
-      send "load_#{action}", data[key] || {}, group
+    # defaults has to go first
+    %w(defaults equivalents primitives crafts processing).each do |key|
+      send "load_#{key}", data[key] || {}, group
     end
+    forget_defaults
     self
   end
 
+  def load_defaults defaults, group=nil
+    @defaults.merge! defaults
+  end
+
+  def forget_defaults
+    @defaults = {}
+  end
 
   def conflicts? existing, extra, group
     compatible = extra['compatible']
@@ -61,6 +70,8 @@ class Database < Set
       false
     elsif existing.group == group
       false
+    elsif existing.primitive
+      false
     elsif compatible.nil?
       true
     elsif compatible != existing.group
@@ -68,21 +79,6 @@ class Database < Set
     else
       false
     end
-  end
-
-  def parse_primitive data
-    if data.is_a? Hash
-      name = data.keys.first
-      definition = data.values.first
-    end
-    if definition.is_a? Numeric
-      cost = definition
-      stacks = 64
-    elsif definition.is_a? Hash
-      cost = definition['cost']
-      stacks = definition['stacks'] 
-    end
-    [name, stacks, cost]
   end
 
   def fixup_pending
@@ -135,30 +131,53 @@ class Database < Set
       end.join("\n"))
     end
   end
+  
+  def fill_reverse
+    each do |item|
+      item.crafted_from.each do |src|
+        src.crafts_into.add item
+      end
+    end
+  end
+
+  def select_unsolved
+    select { |item| item.tier == nil || item.tier > 20 }
+  end
+
+  def tier_histogram
+    tiers = map(&:tier)
+    Hash[tiers.uniq.map { |t| [t, tiers.select{|r| r == t}.size] }]
+  end
 
   def classify_tiers
-    unsolved = Set.new(self)
-    primitives.each do |item|
-      unsolved -= [item]
-      item.tier = 0
-    end
-
-    while unsolved.size > 0
-      unsolved.each do |item|
-        craft_tiers = item.crafts.map do |craft| 
-          t = craft.count_ingredients.map { |ing, count| ing.tier }
-          if t.include? nil
-            nil
-          else
-            t.max
-          end
-        end
-        unless craft_tiers.include? nil
-          min_tier = craft_tiers.flatten.compact.min
-          item.tier = min_tier + 1
-          unsolved -= [item]
+    primitives.each { |item| item.tier = 0 }
+    fan_out(primitives, 1)
+    changed = true
+    while changed do
+      changed = false
+      crafted.each do |item|
+        max_tier = item.max_tier
+        if item.tier != max_tier + 1
+          item.tier = max_tier + 1
+          changed = true
         end
       end
     end
   end
+
+  def fan_out items, tier
+    next_set = Set.new
+    items.each do |item|
+      item.crafts_into.each do |dst|
+        if dst.tier == nil 
+          dst.tier = tier
+          next_set.add dst
+        elsif dst.tier < tier
+          dst.tier = tier
+        end
+      end
+    end
+    fan_out next_set, tier+1 if next_set.size > 0
+  end
+
 end

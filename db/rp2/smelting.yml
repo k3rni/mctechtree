@@ -1,42 +1,45 @@
 cluster: redpower2
 
 crafts:
-- basalt:
-    machine: furnace
-    ingredients: [basalt cobblestone]
-- stone wafer:
-    machine: furnace
-    makes: 2
-    ingredients: [stone]
-- red alloy ingot:
-    machine: alloy furnace
-    ingredients: [redstone*4, copper ingot]
-- red alloy ingot:
-    machine: alloy furnace
-    ingredients: [redstone*4, iron]
-- blue alloy ingot:
-    machine: alloy furnace
-    ingredients: [nikolite*4, silver]
-- silver:
-    machine: furnace
-    ingredients: [silver ore]
-- brass:
-    machine: alloy furnace
-    ingredients: [tin ingot, copper ingot*3]
-- silicon boule:
-    machine: alloy furnace
-    ingredients: [coal*8, sand*8]
 - silicon wafer:
     machine: handsaw
     ingredients: [silicon boule]
     makes: 16
-- red-doped wafer:
-    machine: alloy furnace
-    ingredients: [silicon wafer, redstone*4]
-- blue-doped wafer:
-    machine: alloy furnace
-    ingredients: [silicon wafer, nikolite*4]
-- tin plate:
-    machine: alloy furnace
-    ingredients: [iron*2, tin ingot]
-# recept na odzysk metalu nie wpisujemy bo generują cykle
+
+processing:
+- outputs: [basalt]
+  machine: furnace
+  inputs: [basalt cobblestone]
+- outputs: [stone wafer]
+  machine: furnace
+  makes: 2
+  inputs: [stone]
+- outputs: [red alloy ingot]
+  machine: alloy furnace
+  inputs: [redstone*4, copper ingot]
+- outputs: [red alloy ingot]
+  machine: alloy furnace
+  inputs: [redstone*4, iron]
+- outputs: [blue alloy ingot]
+  machine: alloy furnace
+  inputs: [nikolite*4, silver]
+- outputs: [silver]
+  machine: furnace
+  inputs: [silver ore]
+- outputs: [brass]
+  machine: alloy furnace
+  inputs: [tin ingot, copper ingot*3]
+- outputs: [silicon boule]
+  machine: alloy furnace
+  inputs: [coal*8, sand*8]
+- outputs: [red-doped wafer]
+  machine: alloy furnace
+  inputs: [silicon wafer, redstone*4]
+- outputs: [blue-doped wafer]
+  machine: alloy furnace
+  inputs: [silicon wafer, nikolite*4]
+- outputs: [tin plate]
+  machine: alloy furnace
+  inputs: [iron*2, tin ingot]
+# NOTE: add recycling recipes? now that cycles are harmless
+

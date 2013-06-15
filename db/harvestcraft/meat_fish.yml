@@ -8,10 +8,10 @@ crafts:
 - omelet: [scrambled egg, chili pepper, cooked pork, onion]
 - pork fried rice: [cooked pork, onion, egg, rice, bowl]
 - pork fried rice: [cooked pork, peas, egg, rice, bowl]
-- chili: [cooked pork, beans, bellpepper, bowl]
-- chili: [cooked pork, beans, chili pepper, bowl]
-- chili: [cooked pork, beans, black pepper, bowl]
-- chili: [cooked pork, beans, garlic, bowl]
+- chili:
+    ingredients: [cooked pork, beans, $(vegetable), bowl]
+    vars: [vegetable]
+    vegetable: [bellpepper, chili pepper, black pepper, garlic]
 - baked beans: [cooked pork, beans, sugar, bowl]
 - pineapple ham: [cooked pork, pineapple, sugar]
 - sunflower broccoli salad: [sunflower seeds, broccoli, mayo, sugar, cooked pork, bowl]
@@ -27,7 +27,7 @@ crafts:
 - hot wings: [cooked chicken, chili pepper, butter]
 - fried egg:
     ingredients: [skillet, egg]
-    keeps: [egg]
+    keeps: [skillet]
 - scrambled egg:
     ingredients: [saucepan, egg]
     keeps: [saucepan]

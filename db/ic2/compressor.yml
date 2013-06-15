@@ -1,0 +1,34 @@
+cluster: ic2
+
+defaults:
+  machine: compressor
+
+processing:
+- outputs: [compressed plantclump]
+  inputs: [plantball]
+- outputs: [compressed hydrated coalclump]
+  inputs: [hydrated coal dust]
+- inputs: [mixed metal ingot]
+  outputs: [advanced alloy]
+- inputs: [raw carbon mesh]
+  outputs: [carbon plate]
+- inputs: [coal ball]
+  outputs: [compressed coal ball]
+- inputs: [coal chunk]
+  outputs: [industrial diamond]
+- inputs: [iridium]
+  outputs: [iridium ingot]
+- inputs: [clay dust]
+  outputs: [clay]
+- inputs: [netherrack*3]
+  outputs: [nether brick]
+- inputs: [snowball]
+  outputs: [ice]
+- inputs: [water cell]
+  outputs: [snowball]
+- inputs: [coal dust]
+  outputs: [coal]
+- inputs: [sand*4]
+  outputs: [sandstone]
+
+

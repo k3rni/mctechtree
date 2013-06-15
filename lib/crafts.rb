@@ -37,9 +37,12 @@ module Crafts
     if recipe.is_a? Hash
       name = recipe.keys.first # YAMLowy format tak ma
       definition = recipe.values.first
-    elsif recipe.is_a? Array # para nazwa, ingredients ze skróconej definicji
+    elsif recipe.is_a?(Array) && recipe.size == 2 # para nazwa, ingredients ze skróconej definicji
       name = recipe.first
       definition = recipe.last
+    elsif recipe.is_a?(Array) && recipe.size == 5 && recipe.last.is_a?(Hash)
+      # gotowy recipe (np. z craft_process)
+      return recipe
     end
     # TODO: stacks dla przedmiotów craftowanych
     if definition.is_a? Hash

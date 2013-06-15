@@ -38,40 +38,38 @@ crafts:
 - stone mug:
     ingredients: [stone*7]
     shape: s s ~ s s s s s ~
-- flour:
-    machine: quern
-    ingredients: [wheat]
-- flour:
-    machine: quern
-    ingredients: [harvest wheat]
-- flour:
-    machine: quern
-    ingredients: [rice]
-- nutmeg spice:
-    machine: quern
-    ingredients: [nutmeg]
-- cocoa powder:
-    machine: quern
-    ingredients: [cocoa beans]
-- powdered sugar:
-    machine: quern
-    ingredients: [sugar]
-- table salt:
-    makes: 2
-    machine: quern
-    ingredients: [salt]
-- cornmeal:
-    machine: quern
-    ingredients: [corn]
-- cinnamon spice:
-    machine: quern
-    ingredients: [cinnamon]
-- ground coffee:
-    machine: quern
-    ingredients: [coffee bean]
-- black pepper:
-    machine: quern
-    ingredients: [peppercorn]
 - cotton string:
     ingredients: [cotton*2]
     shape: c ~ ~ c
+
+processing:
+- outputs: [flour]
+  vars: [grain]
+  machine: quern
+  inputs: [$(grain)]
+  grain: [wheat, harvest wheat, rice]
+- outputs: [nutmeg spice]
+  machine: quern
+  inputs: [nutmeg]
+- outputs: [cocoa powder]
+  machine: quern
+  inputs: [cocoa beans]
+- outputs: [powdered sugar]
+  machine: quern
+  inputs: [sugar]
+- outputs: [table salt]
+  makes: 2
+  machine: quern
+  inputs: [salt]
+- outputs: [cornmeal]
+  machine: quern
+  inputs: [corn]
+- outputs: [cinnamon spice]
+  machine: quern
+  inputs: [cinnamon]
+- outputs: [ground coffee]
+  machine: quern
+  inputs: [coffee bean]
+- outputs: [black pepper]
+  machine: quern
+  inputs: [peppercorn]
