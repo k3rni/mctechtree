@@ -12,7 +12,6 @@ crafts:
 - blaze powder:
     ingredients: [blaze rod]
     makes: 2
-- eye of ender: [ender pearl, blaze powder]
 - magma cream: [blaze powder, slimeball]
 - fire charge:
     ingredients: [blaze powder, coal, gunpowder]

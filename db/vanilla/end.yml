@@ -1,0 +1,9 @@
+cluster: vanilla
+
+primitives:
+- ender pearl: 40
+- endstone: 30
+
+crafts:
+- eye of ender: [ender pearl, blaze powder]
+

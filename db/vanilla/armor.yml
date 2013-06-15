@@ -1,0 +1,23 @@
+cluster: vanila
+
+materials: &materials
+  material: [leather, iron, gold/gold ingot, diamond]
+
+crafts:
+- $(material) body armor:
+    ingredients: [M|$(material)*8]
+    shape: M ~ M M M M M M M
+    <<: *materials
+- $(material) helmet:
+    ingredients: [M|$(material)*5]
+    shape: M M M M ~ M ~ ~ ~
+    <<: *materials
+- $(material) leggings:
+    ingredients: [M|$(material)*7]
+    shape: M M M M ~ M M ~ M
+    <<: *materials
+- $(material) boots:
+    ingredients: [M|$(material)*7]
+    shape: ~ ~ ~ M ~ M M ~ M
+    <<: *materials
+
