@@ -77,7 +77,10 @@ crafts:
 - iron bars:
     makes: 16
     ingredients: [iron*6]
-- piston: [planks*3, cobble*4, iron, redstone]
+    shape: i i i i i i ~ ~ ~
+- piston: 
+    ingredients: [planks*3, cobble*4, iron, redstone]
+    shape: p p p c i c c r c
 - sticky piston: [piston, slimeball]
 - lever: [cobble, stick]
 - bucket: [iron*3]
@@ -97,13 +100,24 @@ crafts:
     ingredients: [sugar cane*3]
 - bookcase: [book*3, planks*6]
 - book: [leather, paper*3]
-- minecart: [iron*5]
+- minecart: 
+    ingredients: [iron*5]
+    shape: i ~ i i i i ~ ~ ~
 - chestcart: [minecart, chest]
-- dispenser: [cobble*6, bow, redstone]
-- fence gate: [stick*4, planks*2]
-- door: [planks*6]
-- iron door: [iron*6]
-- TNT: [gunpowder*5, sand*4]
+- dispenser: 
+    ingredients: [cobble*6, bow, redstone]
+- fence gate: 
+    ingredients: [stick*4, planks*2]
+    shape: ~ ~ ~ s p s s p s
+- door: 
+    ingredients: [planks*6]
+    shape: p p ~ p p ~ p p ~
+- iron door: 
+    ingredients: [iron*6]
+    shape: i i ~ i i ~ i i ~
+- TNT:
+    ingredients: [gunpowder*5, sand*4]
+    shape: g s g s g s g s g
 - button: [stone*2]
 - redstone repeater: #shape naming problem
     ingredients: [redstone torch*2, stone*3, redstone]
@@ -115,13 +129,19 @@ crafts:
     shape: p p p p r p p p p
 - track:
     ingredients: [iron*6, stick]
+    shape: i ~ i i s i i ~ i
     makes: 16
 - powered track:
-    ingredients: [gold ingot*6, redstone,stick]
+    ingredients: [gold ingot*6, redstone, stick]
+    shape: g ~ g g s g g r g
     makes: 6
 - detector track:
     ingredients: [iron*6, pressure plate, redstone]
     makes: 6
 - sign:
     ingredients: [planks*6, stick]
+    shape: p p p p p ~ s ~
     makes: 3
+- jukebox:
+    ingredients: [planks*8, diamond]
+    shape: p p p p d p p p p
