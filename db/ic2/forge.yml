@@ -1,0 +1,12 @@
+equivalents:
+  dust:
+    iron: [iron dust]
+    gold: [gold dust]
+    copper: [copper dust]
+    tin: [tin dust]
+    silver: [silver dust]
+  ingot:
+    refined iron: [refined iron ingot, refined iron]
+  ore:
+    diamond: [industrial diamond]
+    
