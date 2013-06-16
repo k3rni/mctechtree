@@ -87,14 +87,14 @@ def make_item_resolver options
 
   mir, mcr = nil
   mir = Class.new(ItemResolver) do
-    @@craft_constructor = Proc.new { |*args| mcr.new(*args) }
+    @@craft_constructor = Proc.new { |*args| mcr.cached(*args) }
   end
   while item_resolver_options.size > 0
     mir = Addons.build_resolver :item_resolver, mir, item_resolver_options
   end
 
   mcr = Class.new(CraftResolver) do
-    @@item_constructor = Proc.new { |*args| mir.new(*args) }
+    @@item_constructor = Proc.new { |*args| mir.cached(*args) }
   end
   while craft_resolver_options.size > 0
     mcr = Addons.build_resolver :craft_resolver, mcr, craft_resolver_options
@@ -104,5 +104,5 @@ def make_item_resolver options
 end
 
 
-solve 'molten redstone*1000'
+# solve 'molten redstone*1000'
 binding.pry

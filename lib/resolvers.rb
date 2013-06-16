@@ -9,18 +9,32 @@ end
 
 class ItemResolver
     attr_accessor :item, :count, :children
-    @@craft_constructor = Proc.new { |*args| CraftResolver.new(*args) }
+    @@craft_constructor = Proc.new { |*args| CraftResolver.cached(*args) }
+    @@solution_cache = {}
     
+    def self.cached item, count, ancestors=nil
+        key = "#{item.name}*#{count}"
+        if @@solution_cache[key]
+          puts "#{ancestors ? ('  ' * ancestors.length) : ''}!IR #{item}*#{count}"
+          @@solution_cache[key]
+        else
+          @@solution_cache[key] = ItemResolver.new(item, count, ancestors)
+        end
+    end
+
     def initialize(item, count, ancestors=nil)
+      puts "#{ancestors ? ('  ' * ancestors.length) : ''}IR #{item}*#{count}"
       @item = item
       @count = count
       @ancestors = Set.new(ancestors || []) + [item]
-      @children = item.crafts.map do |craft| 
-        # TODO: cache or even precalculate this info
-        unless @ancestors.any? { |a| craft.needs? a }
+      unless item.primitive
+        @children = item.crafts.map do |craft| 
+          # TODO: cache or even precalculate this info
+          unless @ancestors.any? { |a| craft.needs? a }
             @@craft_constructor.call(craft, count, @ancestors)
-        end
-      end.compact
+          end
+        end.compact
+      end
     end
 
     def primitive
@@ -78,13 +92,26 @@ class ItemResolver
         end
     end
 
+    def self.clear_cache
+        @@solution_cache = {}
+    end
+
+    def self.cache_keys
+        @@solution_cache.keys
+    end
+
 end
 
 class CraftResolver
     attr_accessor :craft, :count, :children
-    @@item_constructor = Proc.new { |*args| ItemResolver.new(*args) }
+    @@item_constructor = Proc.new { |*args| ItemResolver.cached(*args) }
+
+    def self.cached *args
+        new(*args)
+    end
 
     def initialize(craft, count, ancestors=nil)
+        puts "#{ancestors ? ('  ' * ancestors.length) : ''}CR #{craft} #{count}"
         @craft = craft
         @count = count
         @ancestor_items = ancestors
