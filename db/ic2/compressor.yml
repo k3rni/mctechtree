@@ -31,5 +31,6 @@ processing:
   outputs: [coal]
 - inputs: [sand*4]
   outputs: [sandstone]
-
+- inputs: [cell]
+  outputs: [compressed air cell]
 
