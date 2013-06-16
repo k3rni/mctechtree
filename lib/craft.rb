@@ -6,7 +6,7 @@ require 'active_support/core_ext/array'
 class Craft
     attr_accessor :machine, :result, :makes, :ingredients, :group
     attr_accessor :shape, :shape_map
-		attr_accessor :requires
+    attr_accessor :requires
     attr_accessor :overrides
     attr_accessor :tag
 

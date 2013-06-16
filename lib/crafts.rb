@@ -18,9 +18,10 @@ module Crafts
   def load_single_craft recipe, group=nil
     name, makes, machine, ingredients, extra = parse_recipe(recipe)
     item = find(name)
+    compat = extra['compatible'] || @defaults['compatible']
 
     if !item
-      item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
+      item = Item.crafted name, group, compatible: compat do |craft|
         craft.makes(makes, machine, ingredients, group, extra)
       end
       self.add item

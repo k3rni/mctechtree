@@ -63,7 +63,7 @@ class Database < Set
   end
 
   def conflicts? existing, extra, group
-    compatible = extra['compatible']
+    compatible = extra['compatible'] || @defaults['compatible']
     if compatible == 'all'
       false
     elsif [group, 'all'].include? existing.compatible 
