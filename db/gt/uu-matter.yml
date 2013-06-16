@@ -4,3 +4,69 @@ crafts:
 - tiny pile of osmium dust:
     ingredients: [UU-matter*7]
     shape: U ~ U U U U U ~ U
+- ruby:
+    ingredients: [UU-matter*8]
+    shape: ~ U U U U U U U ~
+- sapphire:
+    shape: U U ~ U U U ~ U U
+- green sapphire:
+    shape: ~ U U U U U ~ U U
+- olivine:
+    shape: U U ~ U U U U U ~
+- ender pearl:
+    shape: U U U U ~ U U U U
+- zinc dust:
+    makes: 10
+    shape: ~ ~ ~ U ~ U U ~ ~
+- nickel dust:
+    makes: 10
+    shape: U ~ ~ U ~ U ~ ~ ~
+- lead dust:
+    makes: 14
+    shape: U U U U U U U ~ ~
+- silver dust:
+    makes: 14
+    shape: ~ U ~ U U U U U U
+- platinum dust:
+    shape: ~ ~ U U U U U U U
+- tungsten dust:
+    makes: 6
+    shape: U ~ ~ U U U U U U
+- blaze rod:
+    makes: 4
+    shape: U ~ U U U ~ U ~ U
+- bauxite dust:
+    makes: 24
+    shape: U ~ U ~ U U U ~ U
+- titanium dust:
+    makes: 2
+    shape: U U U ~ U ~ ~ U ~
+- aluminium dust:
+    makes: 16
+    shape: ~ U ~ ~ U ~ U U U
+- nikolite:
+    makes: 12
+    shape: U U U ~ U ~ ~ ~ ~
+- tiny pile of osmium dust:
+    shape: U ~ U U U U U ~ U
+# - plutonium dust: # disabled when matter fabricator is enabled
+#     ingredients: [UU-matter*8, uranium dust]
+#     shape: U U U U u U U U U
+- lily pad:
+    makes: 32
+    shape: U ~ U U U U ~ U ~
+- leather:
+    makes: 32
+    shape: U ~ U ~ U ~ U U U
+- tin dust:
+    makes: 10
+    shape: ~ ~ ~ U ~ U ~ ~ U
+- copper dust:
+    makes: 10
+    shape: ~ ~ U U ~ U ~ ~ ~
+- iron dust:
+    makes: 4
+    shape: U ~ U ~ U ~ U ~ U
+- gold dust:
+    makes: 2
+    shape: ~ U ~ U U U ~ U ~
