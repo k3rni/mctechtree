@@ -20,10 +20,10 @@ crafts:
     ingredients: [data orb*2, computer monitor*4, energy flow circuit*2, M|advanced machine]
     shape: d c e c M c e c d
 - supercondensator:
-    ingredients: [energy flow circuit*4, lapotronic energy orb*2, superconductor*2, highly advanced machine]
+    ingredients: [energy flow circuit*4, lapotronic energy orb*2, GT superconductor*2, highly advanced machine]
     shape: e l e s h s e l e
 - superconductor wire:
-    ingredients: [M|advanced machine*4, energy flow circuit*2, superconductor*3]
+    ingredients: [M|advanced machine*4, energy flow circuit*2, GT superconductor*3]
     makes: 4
     shape: M e M s s s M e M
 - lapotronic energy orb:
@@ -98,7 +98,7 @@ crafts:
     makes: 12
     shape: i r i r i r i r i
 # NOTE: Forge-compatible with Gravi superconductor
-- superconductor:
+- GT superconductor:
     vars: [coolant]
     ingredients: [C|$(coolant)*3, wolframium cell, iridium plate*2, energy flow circuit*3]
     makes: 4

@@ -1,5 +1,8 @@
 cluster: gt
 
+defaults:
+  compatible: ic2
+
 processing:
 - machine: circuit assembler
   inputs: [advanced circuit board, advanced circuit parts*2]
@@ -19,27 +22,21 @@ processing:
 - outputs: [copper cable]
   inputs: [copper wire, rubber]
   machine: circuit assembler
-  compatible: ic2
 - outputs: [2ins gold cable]
   inputs: [gold wire, rubber*2]
   machine: circuit assembler
-  compatible: ic2
 - outputs: [2ins gold cable]
   inputs: [insulated gold cable, rubber]
   machine: circuit assembler
-  compatible: ic2
 - outputs: [3ins HV cable]
   inputs: [HV cable, rubber*3]
   machine: circuit assembler
-  compatible: ic2
 - outputs: [3ins HV cable]
   inputs: [insulated HV cable, rubber*2]
   machine: circuit assembler
-  compatible: ic2
 - outputs: [3ins HV cable]
   inputs: [2ins HV cable, rubber]
   machine: circuit assembler
-  compatible: ic2
 - outputs: [compass]
   inputs: [iron*4, redstone]
   machine: circuit assembler

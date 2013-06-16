@@ -2,13 +2,16 @@ cluster: gt
 
 defaults:
   machine: industrial sawmill
+  skip-output: [cell]
 
 processing:
 # NOTE: same as grinder, any recipe using water cells can also take buckets
 - inputs: [silicon boule, water cell]
   outputs: [silicon wafer*16, cell]
+  compatible: redpower2
 # TODO: different wood types? EBXL adds many
 - inputs: [wood, water cell]
   outputs: [planks*6, sawdust, cell]
+  compatible: vanilla
 - inputs: [rubber wood, water cell]
   outputs: [sticky resin, sawdust*16, cell]

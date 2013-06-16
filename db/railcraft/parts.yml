@@ -8,11 +8,11 @@ crafts:
 - steel nugget:
     ingredients: [steel ingot]
     makes: 9
-- iron plate:
+- rolled iron plate:
     ingredients: [iron*4]
     makes: 3
     machine: rolling machine
-- steel plate:
+- rolled steel plate:
     ingredients: [steel ingot*4]
     makes: 3
     machine: rolling machine

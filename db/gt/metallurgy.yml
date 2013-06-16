@@ -28,6 +28,12 @@ crafts:
 - brass dust:
     ingredients: [copper dust*3, zinc dust]
     makes: 2
+- electrum dust: # might properly belong to TE
+    ingredients: [gold dust, silver dust]
+    makes: 2
+- bronze dust:
+    ingredients: [tiny pile of bronze dust*4]
+    compatible: ic2
 - $(mineral) dust:
     ingredients: [tiny pile of $(mineral) dust*4]
     mineral:
@@ -90,7 +96,6 @@ crafts:
     - gold
     - copper
     - tin
-    - bronze
     - silver
     # - refined iron
 

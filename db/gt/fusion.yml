@@ -10,5 +10,5 @@ crafts:
     ingredients: [energy flow circuit*4, lapotronic energy orb*2, supercondensator*2, gregtech-computercube]
     shape: e s e l g l e s e
 - fusion coil:
-    ingredients: [tesla coil*2, highly advanced machine*4, energy flow circuit, superconductor, iridium neutron reflector]
+    ingredients: [tesla coil*2, highly advanced machine*4, energy flow circuit, GT superconductor, iridium neutron reflector]
     shape: t h e h i h s h t

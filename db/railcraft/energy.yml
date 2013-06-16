@@ -4,14 +4,14 @@ crafts:
 - hobbyist's steam engine:
     ingredients: [piston, glass, gold nugget*3, gold plate gear*2]
 - commercial steam engine:
-    ingredients: [piston, glass, iron plate*3, iron gear*2]
+    ingredients: [piston, glass, rolled iron plate*3, iron gear*2]
 - industrial steam engine:
-    ingredients: [piston, glass, steel plate*3, steel gear*2]
+    ingredients: [piston, glass, rolled steel plate*3, steel gear*2]
 - solid fueled firebox: [brick*7, fire charge, furnace]
 - liquid fueled firebox: [steel plate*4, iron bars*2, fire charge, bucket, furnace]
-- low pressure boiler tank: [iron plate*2]
-- high pressure boiler tank: [steel plate*2]
-- turbine casing: [steel block*4, steel plate*4]
+- low pressure boiler tank: [rolled iron plate*2]
+- high pressure boiler tank: [rolled steel plate*2]
+- turbine casing: [steel block*4, rolled steel plate*4]
 - turbine blade: [steel ingot*3]
 - turbine disk: [turbine blade*8, steel block]
 - turbine rotor: [turbine disk*3]

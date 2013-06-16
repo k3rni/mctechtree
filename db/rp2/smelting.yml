@@ -38,7 +38,7 @@ processing:
 - outputs: [blue-doped wafer]
   machine: alloy furnace
   inputs: [silicon wafer, nikolite*4]
-- outputs: [tin plate]
+- outputs: [tinplate]
   machine: alloy furnace
   inputs: [iron*2, tin ingot]
 # NOTE: add recycling recipes? now that cycles are harmless

@@ -6,6 +6,7 @@ defaults:
 processing:
 - outputs: [baked potato]
   inputs: [potato]
+  compatible: vanilla
 - outputs: [toast]
   inputs: [bread]
 - outputs: [popcorn]

@@ -9,6 +9,7 @@ crafts:
 - bread: 
     ingredients: [dough]
     machine: furnace
+    compatible: vanilla
 - pasta: [flour, butter]
 - cornmeal dough: [cornmeal, water bucket, salt]
 - corn muffin mix: [cornmeal dough, egg]

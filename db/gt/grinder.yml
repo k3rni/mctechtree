@@ -2,6 +2,7 @@ cluster: gt
 
 defaults:
   machine: industrial grinder
+  compatible: ic2
 
 processing:
 # TODO: every recipe with water cells can also use a bucket

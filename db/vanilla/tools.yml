@@ -7,8 +7,14 @@ crafts:
 - anvil: [iron*4, iron block*3]
 - shears: [iron*2]
 - bow: [stick*3, string*3]
-- clock: [gold ingot*4, redstone]
-- compass: [iron*4, redstone]
+- clock: 
+    ingredients: [gold ingot*4, redstone]
+    shape: ~ g ~ g r g ~ g ~
+    compatible: all
+- compass: 
+    ingredients: [iron*4, redstone]
+    shape: ~ i ~ i r i ~ i ~
+    compatible: all
 - map: [paper*8, compass]
 - $(material) pickaxe:
     ingredients: [stick*2, $(material)*3]

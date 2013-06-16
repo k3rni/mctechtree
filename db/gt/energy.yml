@@ -51,7 +51,7 @@ disabled_crafts:
     ingredients: [advanced circuit*4, teleporter, I|thaumium ingot*2, beacon, lapotron crystal]
     shape: a t a I b I a l a
 - magic energy absorber:
-    ingredients: [energy flow circuit*4, superconductor, iridium plate*2, beacon, magic energy converter]
+    ingredients: [energy flow circuit*4, GT superconductor, iridium plate*2, beacon, magic energy converter]
     shape: e s e i b i e m e
 
 

@@ -95,6 +95,7 @@ crafts:
 - gold nugget:
     makes: 9
     ingredients: [gold ingot]
+    compatible: all
 - paper:
     makes: 3
     ingredients: [sugar cane*3]

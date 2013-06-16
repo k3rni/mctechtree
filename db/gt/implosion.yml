@@ -6,6 +6,8 @@ defaults:
 processing:
 - inputs: [iridium alloy ingot, industrial TNT*8]
   outputs: [iridium plate, dark ashes*4]
+  compatible: ic2
+  overrides: ic2
 - inputs: [diamond dust*4, industrial TNT*32]
   outputs: [diamond*3, dark ashes*16]
 - inputs: [red garnet dust*4, industrial TNT*16]

@@ -2,6 +2,7 @@ cluster: gt
 
 defaults:
   machine: industrial centrifuge
+  compatible: ic2
   skip-output: [cell]
 
 processing:
@@ -62,16 +63,16 @@ processing:
   outputs: [tiny pile of lead dust]
 - inputs: [tin dust*2] # pulverized tin
   outputs: [tiny pile of zinc dust, tiny pile of iron dust]
-- inputs: [pulverized lead] # lead dust
+- inputs: [lead dust*2] # lead dust
   outputs: [tiny pile of silver dust]
-- inputs: [pulverized ferrous metal*3] # nickel dust
+- inputs: [nickel dust*3] # nickel dust
   outputs: [tiny pile of gold dust, tiny pile of copper dust, tiny pile of iron dust]
-- inputs: [pulverized shiny metal] # platinum dust
+- inputs: [platinum dust] # platinum dust
   outputs: [iridium nugget, tiny pile of nickel dust]
-- inputs: [electrum blend] # electrum dust
+- inputs: [electrum dust] # electrum dust
   outputs: [tiny pile of silver dust*2, tiny pile of gold dust*2]
-- inputs: [invar blend*3] # invar dust
-  outputs: [pulverized iron*2, pulverized ferrous metal]
+- inputs: [invar dust*3] # invar dust
+  outputs: [pulverized iron*2, nickel dust]
 - inputs: [brass blend*2] # brass dust
   outputs: [tiny pile of copper dust*3, tiny pile of zinc dust]
 - inputs: [rubber wood*16, cell*5] # TODO: the other rubberwood
