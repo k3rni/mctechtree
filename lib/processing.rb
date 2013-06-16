@@ -16,15 +16,19 @@ module Processing
     end
   end
 
+  def make_skip_expr items
+      %r(^#{Regexp.union(items)})
+  end
+
   def load_single_process process, group
     inputs = process.delete('inputs')
     outputs = process.delete('outputs')
     if outputs.size == 1
       load_single_craft craft_process(inputs, outputs.first, process), group
     else
-      skip = (process.delete('skip-output') || @defaults['skip-output']).to_a
+      skip = make_skip_expr (process.delete('skip-output') || @defaults['skip-output']).to_a
       outputs.each do |name|
-        next if skip.include? name
+        next if skip =~ name
         load_single_craft craft_process(inputs, name, process.dup), group
       end
     end
