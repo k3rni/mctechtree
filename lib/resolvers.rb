@@ -16,6 +16,7 @@ class ItemResolver
       @count = count
       @ancestors = Set.new(ancestors || []) + [item]
       @children = item.crafts.map do |craft| 
+        # TODO: cache or even precalculate this info
         unless @ancestors.any? { |a| craft.needs? a }
             @@craft_constructor.call(craft, count, @ancestors)
         end
