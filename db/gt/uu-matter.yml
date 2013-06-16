@@ -5,68 +5,90 @@ crafts:
     ingredients: [UU-matter*7]
     shape: U ~ U U U U U ~ U
 - ruby:
-    ingredients: [UU-matter*8]
+    ingredients: [UU-matter*7]
     shape: ~ U U U U U U U ~
 - sapphire:
+    ingredients: [UU-matter*7]
     shape: U U ~ U U U ~ U U
 - green sapphire:
+    ingredients: [UU-matter*7]
     shape: ~ U U U U U ~ U U
 - olivine:
+    ingredients: [UU-matter*7]
     shape: U U ~ U U U U U ~
 - ender pearl:
+    ingredients: [UU-matter*7]
     shape: U U U U ~ U U U U
 - zinc dust:
     makes: 10
+    ingredients: [UU-matter*3]
     shape: ~ ~ ~ U ~ U U ~ ~
 - nickel dust:
     makes: 10
+    ingredients: [UU-matter*3]
     shape: U ~ ~ U ~ U ~ ~ ~
 - lead dust:
     makes: 14
+    ingredients: [UU-matter*7]
     shape: U U U U U U U ~ ~
 - silver dust:
     makes: 14
+    ingredients: [UU-matter*7]
     shape: ~ U ~ U U U U U U
 - platinum dust:
+    ingredients: [UU-matter*7]
     shape: ~ ~ U U U U U U U
 - tungsten dust:
     makes: 6
+    ingredients: [UU-matter*7]
     shape: U ~ ~ U U U U U U
 - blaze rod:
     makes: 4
+    ingredients: [UU-matter*6]
     shape: U ~ U U U ~ U ~ U
 - bauxite dust:
     makes: 24
+    ingredients: [UU-matter*6]
     shape: U ~ U ~ U U U ~ U
 - titanium dust:
     makes: 2
+    ingredients: [UU-matter*5]
     shape: U U U ~ U ~ ~ U ~
 - aluminium dust:
     makes: 16
+    ingredients: [UU-matter*5]
     shape: ~ U ~ ~ U ~ U U U
 - nikolite:
     makes: 12
+    ingredients: [UU-matter*4]
     shape: U U U ~ U ~ ~ ~ ~
 - tiny pile of osmium dust:
+    ingredients: [UU-matter*7]
     shape: U ~ U U U U U ~ U
 # - plutonium dust: # disabled when matter fabricator is enabled
 #     ingredients: [UU-matter*8, uranium dust]
 #     shape: U U U U u U U U U
 - lily pad:
     makes: 32
+    ingredients: [UU-matter*6]
     shape: U ~ U U U U ~ U ~
 - leather:
     makes: 32
+    ingredients: [UU-matter*6]
     shape: U ~ U ~ U ~ U U U
 - tin dust:
     makes: 10
+    ingredients: [UU-matter*3]
     shape: ~ ~ ~ U ~ U ~ ~ U
 - copper dust:
     makes: 10
+    ingredients: [UU-matter*3]
     shape: ~ ~ U U ~ U ~ ~ ~
 - iron dust:
     makes: 4
+    ingredients: [UU-matter*5]
     shape: U ~ U ~ U ~ U ~ U
 - gold dust:
     makes: 2
+    ingredients: [UU-matter*5]
     shape: ~ U ~ U U U ~ U ~
