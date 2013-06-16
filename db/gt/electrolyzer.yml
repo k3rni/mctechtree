@@ -3,7 +3,7 @@ cluster: gt
 defaults:
   machine: industrial electrolyzer
   compatible: ic2
-  skip-output: [cell, bucket]
+  skip-output: [cell, bucket, water cell, compressed air cell]
 
 processing:
 - inputs: [water*6000, cell*5]

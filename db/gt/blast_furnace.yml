@@ -2,6 +2,7 @@ cluster: gt
 
 defaults:
   machine: industrial blast furnace
+  skip-output: [cell]
 
 processing:
 - inputs: [coal dust*2, refined iron]
