@@ -77,18 +77,22 @@ crafts:
     ingredients: [UU-matter*6]
     shape: U ~ U ~ U ~ U U U
 - tin dust:
+    compatible: ic2
     makes: 10
     ingredients: [UU-matter*3]
     shape: ~ ~ ~ U ~ U ~ ~ U
 - copper dust:
+    compatible: ic2
     makes: 10
     ingredients: [UU-matter*3]
     shape: ~ ~ U U ~ U ~ ~ ~
 - iron dust:
+    compatible: ic2
     makes: 4
     ingredients: [UU-matter*5]
     shape: U ~ U ~ U ~ U ~ U
 - gold dust:
+    compatible: ic2
     makes: 2
     ingredients: [UU-matter*5]
     shape: ~ U ~ U U U ~ U ~

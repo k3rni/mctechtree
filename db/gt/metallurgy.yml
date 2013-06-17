@@ -35,6 +35,7 @@ crafts:
     ingredients: [tiny pile of bronze dust*4]
     compatible: ic2
 - $(mineral) dust:
+    compatible: ic2
     ingredients: [tiny pile of $(mineral) dust*4]
     mineral:
     # NOTE: many excluded due to having no other recipe except dust->tiny dust
