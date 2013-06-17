@@ -1,0 +1,45 @@
+# railcraft
+sulfur: "458:0"
+saltpeter: "458:1"
+# te
+lead: "2001:3"
+ferrous: "2001:4"
+# thaum
+cinnabar: "2402:0"
+air infused stone: "2402:1"
+fire infused stone: "2402:2"
+water infused stone: "2402:3"
+earth infused stone: "2402:4"
+vis infused stone: "2402:5"
+dull infused stone: "2402:6"
+amber: "2402:7"
+silver: 3052
+#harvest
+salt: 3903
+# forestry
+apatite: "4054:0"
+copper: "4054:1"
+tin: "4054:2"
+# gt
+galena: "4060:1"
+iridium: "4060:2"
+ruby: "4060:3"
+sapphire: "4060:4"
+bauxite: "4060:5"
+pyrite: "4060:6"
+cinnabar: "4060:7"
+sphalerite: "4060:8"
+tungstate: "4060:9"
+sheldonite: "4060:10"
+olivine: "4060:11"
+sodalite: "4060:12"
+# ic2
+uranium: "4093"
+tin: "4094"
+copper: "4095"
+# bc
+oil: "1521"
+# rp2
+ruby: "242"
+marble: "244:0"
+basalt: "244:1"

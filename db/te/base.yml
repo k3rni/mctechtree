@@ -1,9 +1,9 @@
 cluster: te
 
 primitives:
-- lead ore: 10
-- silver ore: 10
-- ferrous ore: 40
+- lead ore: 50
+- silver ore: 30
+- ferrous ore: 200
 
 crafts:
 - silver:

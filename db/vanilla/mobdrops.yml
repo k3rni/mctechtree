@@ -1,9 +1,9 @@
 cluster: vanilla
 
 primitives:
-- bone: 2
+- bone: 1 # easily renewable
 - ink sac: 2
-- spider eye: 3
+- spider eye: 2
 - rotten flesh: 1
 - slimeball: 7
 - gunpowder: 5

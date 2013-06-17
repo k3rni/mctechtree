@@ -1,7 +1,7 @@
 cluster: vanilla
 
 primitives:
-- cobble: 1
+- cobble: 0 # omnipresent, easily generated.
 - wood: 1
 # NOTE: wood should be moved to equivalents.
 - oak wood: 1
@@ -10,30 +10,30 @@ primitives:
 - sand: 1
 - sandstone: 2
 - gravel: 1
-- iron ore: 10
+- iron ore: 16
 - coal: 8
 - coal ore: 8
-- gold ore: 40
-- diamond ore: 100
-- diamond: 100
-- redstone ore: 60
-- redstone: 60
-- lapis lazuli ore: 75
-- lapis: 75
+- gold ore: 90 # 3 times less numerous than redstone
+- diamond ore: 250 # 25x less than iron
+- diamond: 250
+- emerald ore: 2500 # 10x less than diamond
+- emerald: 2500
+- redstone ore: 48 # 3x less than iron
+- redstone: 12 # 4-5 per ore
+- lapis lazuli ore: 200 # 23x less than iron
+- lapis: 32 # 4-8 per ore
 - flint: 3
 - wool: 5
 - water:
     cost: 1
     stacks: false
-- lava: 30
+- lava: 11 # 1.4x more than iron
 - leather: 10
 - clay: 15
 - string: 3
 - obsidian: 30
 - snowball: 1
 - ice: 2
-- emerald ore: 250
-- emerald: 250
 
 
 crafts:
