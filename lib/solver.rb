@@ -89,11 +89,12 @@ class Solver
     end
 
     def show_raw
-        puts "Resources required:"
-        raw_resources.each do |name, count, stack_info|
-          puts [name, '*', count,
-                (" (#{stack_info})" if stack_info)].join ''
-        end
+      puts "Resources required:"
+      raw_resources.each do |name, count, stack_info|
+        puts [name, '*', count,
+          (" (#{stack_info})" if stack_info)
+        ].join ''
+      end
     end
 
     def show_crafts
@@ -108,6 +109,17 @@ class Solver
         last_num = row.num
         puts msg
       end
+    end
+
+    def invoice
+      puts "Costs:"
+      total_cost = 0
+      raw.each do |item, count|
+        cost = item.cost * count
+        puts "#{item.name}(#{item.cost}) * #{count} = #{cost}"
+        total_cost += cost
+      end
+      puts "Total cost: #{total_cost}"
     end
 
 end

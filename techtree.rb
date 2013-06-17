@@ -76,9 +76,11 @@ def solve *names
   result = Solver.new(solutions, options).solve
   if result.valid
     result.describe
+    result.invoice
   else
     false
   end
+  ItemResolver.clear_cache
 end
 
 def make_item_resolver options

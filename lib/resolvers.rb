@@ -11,11 +11,13 @@ class ItemResolver
     attr_accessor :item, :count, :children
     @@craft_constructor = Proc.new { |*args| CraftResolver.cached(*args) }
     @@solution_cache = {}
+    @@access_counters = Hash.new { |h, key| h[key] = 0 }
     
     def self.cached item, count, ancestors=nil
         key = "#{item.name}*#{count}"
         if @@solution_cache[key]
           puts "#{ancestors ? ('  ' * ancestors.length) : ''}!IR #{item}*#{count}"
+          @@access_counters[key] += 1
           @@solution_cache[key]
         else
           @@solution_cache[key] = ItemResolver.new(item, count, ancestors)
@@ -27,14 +29,14 @@ class ItemResolver
       @item = item
       @count = count
       @ancestors = Set.new(ancestors || []) + [item]
-      unless item.primitive
+      # unless item.primitive
         @children = item.crafts.map do |craft| 
           # TODO: cache or even precalculate this info
           unless @ancestors.any? { |a| craft.needs? a }
             @@craft_constructor.call(craft, count, @ancestors)
           end
         end.compact
-      end
+      # end
     end
 
     def primitive
@@ -93,13 +95,19 @@ class ItemResolver
     end
 
     def self.clear_cache
-        @@solution_cache = {}
+      puts "Cached items: #{@@solution_cache.size}"
+      # show_access_counters
+      @@solution_cache = {}
+      @@access_counters = Hash.new { |h, k| h[k] = 0 }
     end
 
     def self.cache_keys
-        @@solution_cache.keys
+      @@solution_cache.keys
     end
 
+    def self.show_access_counters
+      puts @@access_counters.to_a.group_by { |pair| pair[1] }.to_a.sort_by { |k, v| -k }.inspect
+    end
 end
 
 class CraftResolver
