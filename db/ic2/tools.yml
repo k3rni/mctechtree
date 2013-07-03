@@ -4,42 +4,24 @@ crafts:
 - cutter: [refined iron*3, iron*2]
 - painter: [iron*2, wool*3]
 - EU reader:
-  - glowstone dust
-  - copper cable*4
-  - integrated circuit
+    ingredients: [glowstone dust, copper cable*4, integrated circuit]
 - drill:
-  - RE battery
-  - integrated circuit
-  - refined iron*5
+    ingredients: [RE battery, integrated circuit, refined iron*5]
 - diamond drill: [drill, diamond*3]
 - chainsaw:
-  - RE battery
-  - integrated circuit
-  - refined iron*5
+    ingredients: [RE battery, integrated circuit, refined iron*5]
 - wrench: [bronze*6]
 - electric wrench:
-  - RE battery
-  - integrated circuit
-  - wrench
+    ingredients: [RE battery, integrated circuit, wrench]
 - nano saber:
-  - glowstone dust*2
-  - advanced alloy*2
-  - carbon plate*2
-  - energy crystal
+    ingredients: [glowstone dust*2, advanced alloy*2, carbon plate*2, energy crystal]
 - treetap: [wood*5]
 - electric treetap:
-  - treetap
-  - integrated circuit
-  - RE battery
+    ingredients: [treetap, integrated circuit, RE battery]
 - mining laser:
-  - redstone
-  - energy crystal*2
-  - advanced alloy*4
-  - advanced circuit
+    ingredients: [redstone, energy crystal*2, advanced alloy*4, advanced circuit]
 - electric hoe:
-  - refined iron*2
-  - integrated circuit
-  - RE battery
+    ingredients: [refined iron*2, integrated circuit, RE battery]
 - scaffold: [wood*3, stick*3]
 - iron scaffold: [refined iron*3, iron fence*3]
 - CF sprayer: [stick, cobble*4]

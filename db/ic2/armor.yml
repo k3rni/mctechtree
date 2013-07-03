@@ -2,55 +2,33 @@ cluster: ic2
 
 crafts:
 - rubber boots:
-  - wool
-  - rubber*6
+    ingredients: [wool, rubber*6]
+    shape: r ~ r r ~ r r w r
 - nano helmet:
-    - energy crystal
-    - glass
-    - carbon plate*4
+    ingredients: [energy crystal, glass, carbon plate*4]
+    shape: c e c c g c ~ ~ ~
 - nano body armor:
-    - energy crystal
-    - carbon plate*7
+    ingredients: [energy crystal, carbon plate*7]
+    shape: c ~ c c e c c c c
 - nano leggings:
-    - energy crystal
-    - carbon plate*6
+    ingredients: [energy crystal, carbon plate*6]
+    shape: c e c c ~ c c ~ c
 - nano boots:
-    - energy crystal
-    - carbon plate*4
+    ingredients: [energy crystal, carbon plate*4]
+    shape: ~ ~ ~ c ~ c c e c
 - quantum helmet:
-  - nano helmet
-  - iridium plate*2
-  - lapotron crystal
-  - advanced circuit*2
-  - reinforced glass
+    ingredients: [nano helmet, iridium plate*2, lapotron crystal, advanced circuit*2, reinforced glass]
 - quantum body armor:
-  - nano body armor
-  - iridium plate*4
-  - advanced alloy*3
-  - lapotron crystal
+    ingredients: [nano body armor, iridium plate*4, advanced alloy*3, lapotron crystal]
 - quantum leggings:
-  - nano leggings
-  - glowstone dust*2
-  - machine*2
-  - iridium plate*2
-  - lapotron crystal
+    ingredients: [nano leggings, glowstone dust*2, machine*2, iridium plate*2, lapotron crystal]
 - quantum boots:
-  - nano boots
-  - rubber boots*2
-  - iridium plate*2
-  - lapotron crystal
+    ingredients: [nano boots, rubber boots*2, iridium plate*2, lapotron crystal]
 - scuba helmet:
-  - orange dye
-  - rubber*4
-  - glass
-  - iron bars
+    ingredients: [orange dye, rubber*4, glass, iron bars]
 - hazmat suit:
-  - rubber*6
-  - orange dye*2
+   ingredients: [rubber*6, orange dye*2]
 - hazmat suit leggings:
-  - rubber*6
-  - orange dye
+   ingredients: [rubber*6, orange dye]
 - static boots:
-  - iron*4
-  - wool
-  - copper cable*3
+   ingredients: [iron*4, wool, copper cable*3]
