@@ -8,7 +8,7 @@ crafts:
 - industrial steam engine:
     ingredients: [piston, glass, rolled steel plate*3, steel gear*2]
 - solid fueled firebox: [brick*7, fire charge, furnace]
-- liquid fueled firebox: [steel plate*4, iron bars*2, fire charge, bucket, furnace]
+- liquid fueled firebox: [rolled steel plate*4, iron bars*2, fire charge, bucket, furnace]
 - low pressure boiler tank: [rolled iron plate*2]
 - high pressure boiler tank: [rolled steel plate*2]
 - turbine casing: [steel block*4, rolled steel plate*4]

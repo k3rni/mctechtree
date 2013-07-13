@@ -1,0 +1,282 @@
+(0)       Air                           : 446432047 
+(1)       Stone                         : 101697315 
+(2)       Grass                         : 972645    
+(3)       Dirt                          : 12376236  
+(4)       Cobblestone                   : 34415     
+(5:0)     Wood Planks                   : 101011    
+(5:1)     Wood Planks                   : 84        
+(7)       Bedrock                       : 7026675   
+(8)       Water (active)                : 15964     
+(9)       Water                         : 13684674  
+(10)      Lava (active)                 : 954830    
+(11)      Lava                          : 149039    
+(12)      Sand                          : 1792703   
+(13)      Gravel                        : 3368775   
+(14)      Gold Ore                      : 71070     
+(15)      Iron Ore                      : 675984    
+(16)      Coal Ore                      : 1266342   
+(17:0)    Wood                          : 31494     
+(17:1)    Pine Wood                     : 23701     
+(17:2)    Birch Wood                    : 7801      
+(17:3)    Jungle Wood                   : 52039     
+(17:4)    Wood                          : 1949      
+(17:8)    Wood                          : 1210      
+(18:0)    Leaves                        : 324793    
+(18:1)    Pine Leaves                   : 65976     
+(18:2)    Birch Leaves                  : 35188     
+(18:3)    Jungle Leaves                 : 134019    
+(18:8)    Leaves (Decaying)             : 171593    
+(18:9)    Pine Leaves (Decaying)        : 51603     
+(18:10)   Birch Leaves (Decaying)       : 35252     
+(18:11)   Jungle Leaves (Decaying)      : 55114     
+(21)      Lapis Lazuli Ore              : 29383     
+(24:0)    Sandstone                     : 201389    
+(30)      Web                           : 27869     
+(31:1)    Tall Grass                    : 79125     
+(31:2)    Fern                          : 3250      
+(32)      Dead Shrub                    : 24        
+(35:15)   Black Wool                    : 3         
+(37)      Flower                        : 3270      
+(38)      Rose                          : 767       
+(39)      Brown Mushroom                : 978       
+(40)      Red Mushroom                  : 456       
+(43:0)    Double Stone Slab             : 57        
+(44:0)    Stone Slab                    : 166       
+(44:5)    Stone Brick Slab              : 24        
+(47)      Bookshelf                     : 408       
+(48)      Moss Stone                    : 8395      
+(49)      Obsidian                      : 10581     
+(50)      Torch                         : 1625      
+(51)      Fire                          : 140       
+(52)      Monster Spawner               : 393       
+(53)      Wooden Stairs                 : 659       
+(54)      Chest                         : 655       
+(56)      Diamond Ore                   : 26549     
+(58)      Crafting Table                : 3         
+(59:2)    Crops                         : 38        
+(59:3)    Crops                         : 42        
+(59:4)    Crops                         : 36        
+(59:5)    Crops                         : 38        
+(59:6)    Crops                         : 38        
+(59:7)    Crops                         : 46        
+(60)      Farmland                      : 364       
+(61)      Furnace                       : 2         
+(64)      Wooden Door                   : 82        
+(65)      Ladder                        : 36        
+(66)      Rail                          : 18624     
+(67)      Stone Stairs                  : 104       
+(71)      Iron Door                     : 56        
+(72)      Wooden Pressure Plate         : 9         
+(73)      Redstone Ore                  : 213008    
+(74)      Redstone Ore (glowing)        : 1         
+(77)      Button                        : 35        
+(78)      Snow Layer                    : 135652    
+(79)      Ice                           : 155486    
+(80)      Snow                          : 16608     
+(81)      Cactus                        : 5         
+(82)      Clay                          : 51399     
+(83)      Sugar Cane                    : 351       
+(85)      Fence                         : 69560     
+(86)      Pumpkin                       : 24        
+(97:0)    Hidden Silverfish (Smooth Stone): 17860     
+(97:2)    Hidden Silverfish (Stone Brick): 840       
+(98:0)    Stone Bricks                  : 8537      
+(98:1)    Mossy Stone Bricks            : 5076      
+(98:2)    Cracked Stone Bricks          : 3271      
+(101)     Iron Bars                     : 316       
+(102)     Glass Pane                    : 160       
+(106)     Vines                         : 129420    
+(109)     Stone Brick Stairs            : 8         
+(111)     Lilypad                       : 819       
+(118)     Cauldron                      : 1         
+(120)     Portal Frame                  : 12        
+(127)     Cocoa Plant                   : 470       
+(129)     Emerald Ore                   : 2483      
+(134)     Spruce-Wood Stairs            : 26        
+(140)     Flower Pot                    : 1         
+(141:2)   Carrots                       : 11        
+(141:3)   Carrots                       : 9         
+(141:4)   Carrots                       : 9         
+(141:5)   Carrots                       : 17        
+(141:6)   Carrots                       : 4         
+(141:7)   Carrots                       : 6         
+(142:2)   Potatoes                      : 6         
+(142:3)   Potatoes                      : 14        
+(142:4)   Potatoes                      : 10        
+(142:5)   Potatoes                      : 14        
+(142:6)   Potatoes                      : 13        
+(142:7)   Potatoes                      : 13        
+(144)     Mob Head                      : 2871      
+(241:0)   Future Block!                 : 192       
+(242:0)   Future Block!                 : 68269     
+(242:1)   Future Block!                 : 67926     
+(242:2)   Future Block!                 : 68318     
+(242:3)   Future Block!                 : 156331    
+(242:6)   Future Block!                 : 15798     
+(242:7)   Future Block!                 : 236048    
+(244:0)   Future Block!                 : 1973510   
+(244:1)   Future Block!                 : 123009    
+(255:0)   Future Block!                 : 275690    
+(458:0)   Future Block!                 : 10885     
+(458:1)   Future Block!                 : 6         
+(462:0)   Future Block!                 : 6         
+(600:0)   Future Block!                 : 2967      
+(600:1)   Future Block!                 : 13006     
+(600:2)   Future Block!                 : 13191     
+(600:3)   Future Block!                 : 26271     
+(600:4)   Future Block!                 : 7273      
+(600:5)   Future Block!                 : 7232      
+(600:6)   Future Block!                 : 2486      
+(600:7)   Future Block!                 : 8469      
+(600:8)   Future Block!                 : 11520     
+(600:9)   Future Block!                 : 11365     
+(600:10)  Future Block!                 : 11466     
+(600:11)  Future Block!                 : 8527      
+(600:12)  Future Block!                 : 2484      
+(601:0)   Future Block!                 : 345       
+(601:1)   Future Block!                 : 94        
+(601:2)   Future Block!                 : 111       
+(601:3)   Future Block!                 : 200       
+(601:4)   Future Block!                 : 68        
+(601:5)   Future Block!                 : 65        
+(601:6)   Future Block!                 : 27        
+(601:7)   Future Block!                 : 80        
+(601:8)   Future Block!                 : 92        
+(601:9)   Future Block!                 : 93        
+(601:10)  Future Block!                 : 82        
+(601:11)  Future Block!                 : 60        
+(601:12)  Future Block!                 : 12        
+(602:0)   Future Block!                 : 2025      
+(602:1)   Future Block!                 : 1904      
+(602:2)   Future Block!                 : 2124      
+(602:3)   Future Block!                 : 2093      
+(602:4)   Future Block!                 : 1832      
+(602:5)   Future Block!                 : 2         
+(602:6)   Future Block!                 : 309       
+(602:7)   Future Block!                 : 309       
+(602:8)   Future Block!                 : 309       
+(602:9)   Future Block!                 : 322       
+(603:0)   Future Block!                 : 265       
+(603:1)   Future Block!                 : 228       
+(603:2)   Future Block!                 : 265       
+(902:0)   Future Block!                 : 103020    
+(1238:0)  Future Block!                 : 20        
+(1240:0)  Future Block!                 : 41        
+(1241:0)  Future Block!                 : 171       
+(1242:0)  Future Block!                 : 3         
+(1243:0)  Future Block!                 : 2         
+(1247:0)  Future Block!                 : 2         
+(1249:0)  Future Block!                 : 157       
+(1252:0)  Future Block!                 : 298       
+(1255:0)  Future Block!                 : 2637      
+(1378:3)  Future Block!                 : 2         
+(1378:4)  Future Block!                 : 2         
+(1380:15) Future Block!                 : 63        
+(1520:0)  Future Block!                 : 4040      
+(1520:1)  Future Block!                 : 62        
+(1520:2)  Future Block!                 : 9         
+(1520:3)  Future Block!                 : 9         
+(1520:4)  Future Block!                 : 4         
+(1520:8)  Future Block!                 : 17        
+(1520:9)  Future Block!                 : 27        
+(1520:10) Future Block!                 : 1         
+(1521:0)  Future Block!                 : 20419     
+(1521:1)  Future Block!                 : 471       
+(1521:2)  Future Block!                 : 137       
+(1521:3)  Future Block!                 : 99        
+(1521:4)  Future Block!                 : 69        
+(1521:5)  Future Block!                 : 52        
+(1521:6)  Future Block!                 : 35        
+(1521:7)  Future Block!                 : 21        
+(1521:8)  Future Block!                 : 241       
+(1521:9)  Future Block!                 : 460       
+(1521:10) Future Block!                 : 97        
+(1521:11) Future Block!                 : 13        
+(1521:12) Future Block!                 : 4         
+(1521:13) Future Block!                 : 4         
+(1521:14) Future Block!                 : 8         
+(1522:0)  Future Block!                 : 212       
+(2001:3)  Future Block!                 : 143821    
+(2001:4)  Future Block!                 : 32488     
+(2200:0)  Future Block!                 : 26235     
+(2200:1)  Future Block!                 : 12080     
+(2200:2)  Future Block!                 : 12626     
+(2200:3)  Future Block!                 : 33541     
+(2200:8)  Future Block!                 : 16757     
+(2200:9)  Future Block!                 : 10670     
+(2200:10) Future Block!                 : 10386     
+(2200:11) Future Block!                 : 20035     
+(2201:0)  Future Block!                 : 1217      
+(2202:1)  Future Block!                 : 169       
+(2202:2)  Future Block!                 : 1         
+(2202:3)  Future Block!                 : 2         
+(2202:5)  Future Block!                 : 155       
+(2202:7)  Future Block!                 : 1         
+(2203:2)  Future Block!                 : 1088      
+(2203:3)  Future Block!                 : 260       
+(2203:4)  Future Block!                 : 780       
+(2204:2)  Future Block!                 : 634       
+(2204:10) Future Block!                 : 121       
+(2205:0)  Future Block!                 : 10963     
+(2208:1)  Future Block!                 : 39        
+(2209:2)  Future Block!                 : 13        
+(2211:2)  Future Block!                 : 13        
+(2212:2)  Future Block!                 : 13        
+(2213:2)  Future Block!                 : 11        
+(2214:0)  Future Block!                 : 2268      
+(2402:0)  Future Block!                 : 94355     
+(2402:1)  Future Block!                 : 20421     
+(2402:2)  Future Block!                 : 14731     
+(2402:3)  Future Block!                 : 28754     
+(2402:4)  Future Block!                 : 30600     
+(2402:5)  Future Block!                 : 14921     
+(2402:6)  Future Block!                 : 1538      
+(2402:7)  Future Block!                 : 79835     
+(2403:2)  Future Block!                 : 17        
+(2403:3)  Future Block!                 : 5         
+(2404:0)  Future Block!                 : 837       
+(2404:1)  Future Block!                 : 96        
+(2404:4)  Future Block!                 : 425       
+(2404:5)  Future Block!                 : 19        
+(2404:8)  Future Block!                 : 315       
+(2404:9)  Future Block!                 : 3         
+(2405:0)  Future Block!                 : 3002      
+(2405:1)  Future Block!                 : 1041      
+(2405:8)  Future Block!                 : 8462      
+(2405:9)  Future Block!                 : 678       
+(2422:0)  Future Block!                 : 185       
+(2422:1)  Future Block!                 : 159       
+(3000:0)  Future Block!                 : 881202    
+(3015:0)  Future Block!                 : 76984     
+(3016:1)  Future Block!                 : 3996      
+(3690:0)  Future Block!                 : 16        
+(3730:0)  Future Block!                 : 807       
+(3731:0)  Future Block!                 : 61        
+(3768:0)  Future Block!                 : 782       
+(3771:0)  Future Block!                 : 796       
+(3789:0)  Future Block!                 : 766       
+(3902:0)  Future Block!                 : 798       
+(3903:0)  Future Block!                 : 718623    
+(4000:0)  Future Block!                 : 85        
+(4000:1)  Future Block!                 : 10269     
+(4000:3)  Future Block!                 : 54        
+(4050:1)  Future Block!                 : 22        
+(4050:2)  Future Block!                 : 31        
+(4050:4)  Future Block!                 : 4         
+(4050:6)  Future Block!                 : 36        
+(4050:7)  Future Block!                 : 16        
+(4053:7)  Future Block!                 : 1         
+(4054:0)  Future Block!                 : 13875     
+(4060:1)  Future Block!                 : 72794     
+(4060:2)  Future Block!                 : 792       
+(4060:5)  Future Block!                 : 56663     
+(4091:0)  Future Block!                 : 4194      
+(4091:8)  Future Block!                 : 60        
+(4092:1)  Future Block!                 : 343       
+(4092:2)  Future Block!                 : 21        
+(4092:3)  Future Block!                 : 27        
+(4092:4)  Future Block!                 : 27        
+(4092:5)  Future Block!                 : 27        
+(4093:0)  Future Block!                 : 50304     
+(4094:0)  Future Block!                 : 662114    
+(4095:0)  Future Block!                 : 809635    

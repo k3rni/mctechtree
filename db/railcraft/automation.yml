@@ -15,7 +15,7 @@ crafts:
 - iron bore head: [steel ingot*8, iron block]
 - steel bore head: [steel ingot*8, steel block]
 - diamond bore head: [steel ingot*8, diamond block]
-- feed station: [golden carrot*4, planks*4, steel plate]
+- feed station: [golden carrot*4, planks*4, rolled steel plate]
 - switch lever: [white dye, black dye, red dye, piston, lever, iron]
 - switch motor: [white dye, black dye, red dye, piston, receiver circuit, iron]
 - detector - $(type): 

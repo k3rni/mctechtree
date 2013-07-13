@@ -1,7 +1,7 @@
 cluster: redpower2
 
 primitives:
-- silver ore: 20
+- silver ore: 30
 - tungsten ore: 90
 - nikolite ore: 50
 - nikolite: 50
@@ -9,7 +9,7 @@ primitives:
 - ruby: 40
 # NOTE: associated gem ores are listed in GT, as it also defines those
 - green sapphire: 40
-- basalt cobblestone: 1
+- basalt cobblestone: 16 # 16x less common than marble
 - marble: 1
 - indigo flower: 1
 - rubber wood: 16
