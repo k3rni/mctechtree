@@ -52,7 +52,7 @@ end
 DB.fixup_pending
 DB.detect_name_clashes
 DB.fill_reverse
-DB.classify_tiers if ARGV.include? '--tiers'
+DB.classify_tiers unless options.skip_tiers
 DB.dump_graph File.open('techtree.dot', 'w')
 
 def build_solutions names
