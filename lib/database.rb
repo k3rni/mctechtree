@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require 'digest/md5'
 
 autoload :Graph, './lib/graph'
 class Database < Set
@@ -322,5 +322,9 @@ class Database < Set
           end
         end
       end
+    end
+
+    def signature
+      @signature ||= Digest::MD5.new.update(self.map(&:name).join(';'))
     end
 end

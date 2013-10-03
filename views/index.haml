@@ -6,11 +6,12 @@
         %select(name="tier"){style:"width:20%; float:right"}
           - (0..5).each do |lvl|
             %option(value=lvl)= I18n.t("tiers.t#{lvl}")
-        %select.chzn-select{name: 'items[]', data: {placeholder: 'type item names'}, multiple: true}(style="width: 80%")
-          - advanced_item_groups.each do |groups, items|
-            %optgroup{label: multigroup_text(groups)}
-              - items.each do |name|
-                %option(value=name)= name
+        -# %select.chzn-select{name: 'items[]', data: {placeholder: 'type item names'}, multiple: true}(style="width: 80%")
+        -#   - advanced_item_groups.each do |groups, items|
+        -#     %optgroup{label: multigroup_text(groups)}
+        -#       - items.each do |name|
+        -#         %option(value=name)= name
+        %input#craft(name="items" style="width: 80%")
         %span.help-block(style="text-align: center")
           %small
             %a.toggle-more more options...
@@ -37,14 +38,26 @@
       %button.btn.btn-primary.btn-large.btn-block(type="submit" style="width: 10em; margin: 0 auto") Explain!
 :javascript
   $(function() {
+    $('#craft').selectize({
+      delimiter: ',',
+      create: true,
+      dropdownParent: 'body',
+      preload: 'focus',
+      load: function(query, callback) {
+        // tylko preload
+        if (query != '') return;
+        $.get('/items.json', function(data, xhr, status) {
+          callback(data);
+          });
+        }
+    });
     $('.toggle-more').click(function() {
       $('.more-options').show();
       $(this).hide();
-    })
+    });
     $('.example').click(function() {
       var itemname = $(this).text().replace(',', '');
       $('option[value="'+itemname+'"]').attr('selected', true);
-      $('select').trigger('liszt:updated');
     });
   })
 

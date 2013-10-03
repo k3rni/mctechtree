@@ -1,6 +1,8 @@
 require 'i18n'
 require 'sinatra'
 require 'rack/cache'
+require 'json'
+require 'digest/md5'
 
 I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locale', '*.yml')]
 
@@ -33,6 +35,14 @@ class TechTreeApp < Sinatra::Base
       @@db.crafted.group_by(&:groups).map { |key, g| [key, g.map(&:name)]}
     end
 
+    def flat_item_list
+      @@db.crafted.map do |item|
+        { optgroup: item.groups.join(','),
+          value: item.name,
+          text: item.name }
+      end
+    end
+
     def submodules group
       @@db.submods(group)
     end
@@ -52,15 +62,32 @@ class TechTreeApp < Sinatra::Base
 
   get '/' do
     last_modified File.mtime(__FILE__)
+    etag Digest::MD5.new.update(File.read(__FILE__)).hexdigest
     haml :index, layout: :base
+  end
+  
+  get '/items.json' do
+    content_type :json
+    etag @@db.signature
+    JSON.dump flat_item_list
+  end
+
+  def parse_items_query items
+    if items.is_a? Array
+      items.map { |name| [name, 1] }
+    elsif items.is_a? String
+      items.split(/,\s*/)
+           .map { |name| name.partition('*') }
+           .map { |name, star, count| [name, count == '' ? 1 : count.to_i] }
+    end.select { |name, count| @@db.find(name) }
   end
 
   post '/solve.?:format?' do
-    items = params[:items]
+    items = parse_items_query params[:items]
     solveopts = {}
     if (tier = params[:tier])
       tier = tier.to_i
-      max_items_tier = items.map { |name| @@db.find(name).tier }.max
+      max_items_tier = items.map { |name, count| @@db.find(name).tier }.max
       tier = [max_items_tier - 1, tier].min
       solveopts[:min_tier] = tier
     end
@@ -71,8 +98,8 @@ class TechTreeApp < Sinatra::Base
       solveopts[:exclude_cluster] = xmod
     end
     item_resolver = make_item_resolver(solveopts)
-    solutions = items.map do |name|
-      item_resolver.new(@@db.find(name), 1).resolve
+    solutions = items.map do |name, count|
+      item_resolver.new(@@db.find(name), count).resolve
     end
     solver = Solver.new(solutions, solveopts).solve
 
@@ -83,7 +110,13 @@ class TechTreeApp < Sinatra::Base
       haml :solution, layout: :base, locals: {
         raw: solver.raw_resources,
         crafts: solver.craft_sequence, 
-        targets: items, 
+        targets: items.map do |name, count|
+          if count > 1
+            "#{count} #{name}"
+          else
+            name
+          end
+        end, 
         tier: tier,
         forbidden_machines: fm,
         excluded_mods: xmod
