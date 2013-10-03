@@ -1,0 +1,14 @@
+equivalents:
+  dust:
+    electrum: [electrum blend]
+    brass: [brass blend]
+    invar: [invar blend]
+    bronze: [bronze blend]
+    iron: [pulverized iron]
+    gold: [pulverized gold]
+    copper: [pulverized copper]
+    tin: [pulverized tin]
+    silver: [pulverized silver]
+    lead: [pulverized lead]
+    nickel: [pulverized ferrous metal]
+    platinum: [pulverized shiny metal]

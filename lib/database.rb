@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-%w(graph crafts primitives shapes templates processing).each do |mod|
+%w(graph crafts primitives shapes templates processing forge).each do |mod|
   autoload mod.capitalize.to_sym, "./lib/#{mod}"
 end
 
@@ -10,6 +10,7 @@ class Database < Set
   include Crafts
   include Shapes
   include Templates
+  include Forge
   include Processing
 
   def initialize(*args)
@@ -17,6 +18,7 @@ class Database < Set
     @pending = Set.new
     @conflicts = Set.new
     @equivalents = Hash.new { |h, key| h[key] = Set.new }
+    @equivalent_categories = Hash.new { |h, key| h[key] = Set.new }
     @hierarchy = Hash.new { |h, key| h[key] = Set.new }
     @defaults = {}
   end
@@ -79,15 +81,6 @@ class Database < Set
     end
   end
 
-  def load_equivalents definitions, group=nil
-    definitions.each do |names|
-      nn = Set.new(names)
-      nn.each do |name|
-        @equivalents[name].merge(nn - [name])
-      end
-    end
-  end
-
   def fixup_pending
     @pending.select! do |item|
       if (newitem = find(item.name))
@@ -97,20 +90,7 @@ class Database < Set
         true
       end
     end
-    # anything left? try the equivalents list
-    @pending.select! do |item|
-      if (eq = @equivalents[item.name])
-        new_item = eq.map { |name| find(name) }.compact.first
-        if new_item.nil?
-          true
-        else
-          replace_pending item, new_item
-          false
-        end
-      else
-        true
-      end
-    end
+    pending_from_dictionary
     if @pending.size > 0
       raise UndefinedItemsError.new(@pending.to_a.join(','))
     end
@@ -131,12 +111,17 @@ class Database < Set
       else
         count = 1
       end
-      item = self.find(name) 
-      if item.nil?
-        item = @pending.select { |obj| obj.name == name }.first || Item.pending(name).tap { |obj| @pending.add obj }
-      end
+      item = self.find(name) || already_pending(name) || add_pending_item(name)
       [item] * count
     end.flatten
+  end
+  
+  def already_pending name
+    item = @pending.select { |obj| obj.name == name }.first 
+  end
+
+  def add_pending_item name
+    Item.pending(name).tap { |obj| @pending.add obj }
   end
 
   def detect_name_clashes
