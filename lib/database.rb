@@ -1,13 +1,14 @@
 # encoding: utf-8
 
-%w(graph crafts primitives shapes templates processing forge).each do |mod|
-  autoload mod.capitalize.to_sym, "./lib/#{mod}"
-end
+autoload :Graph, './lib/graph'
+autoload :Filter, './lib/filter'
+
 
 class Database < Set
   include Graph
   include Primitives
   include Crafts
+  include Filter
   include Shapes
   include Templates
   include Forge
@@ -15,6 +16,7 @@ class Database < Set
 
   def initialize(*args)
     super(*args)
+        @packs = {} # disputable, packs are one level above a database.
     @pending = Set.new
     @conflicts = Set.new
     @equivalents = Hash.new { |h, key| h[key] = Set.new }
@@ -47,7 +49,7 @@ class Database < Set
     group = data['cluster']
     @hierarchy[data['parent']].add group
     # defaults has to go first
-    %w(defaults equivalents primitives crafts processing).each do |key|
+    %w(defaults equivalents primitives crafts processing packs).each do |key|
       send "load_#{key}", data[key] || {}, group
     end
     forget_defaults
@@ -114,6 +116,12 @@ class Database < Set
       item = self.find(name) || already_pending(name) || add_pending_item(name)
       [item] * count
     end.flatten
+    end
+
+    def load_packs data, cluster=nil
+      data.each do |pack|
+        @packs[pack['name']] = pack['requires']
+      end
   end
   
   def already_pending name

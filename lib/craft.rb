@@ -11,7 +11,7 @@ class Craft
     attr_accessor :tag
 
     def to_s
-        "Craft(" + [
+        "#{self.class}(" + [
          "result=#{self.result}",
          ("makes=#{self.makes}" if makes > 1),
          "ingredients=#{count_ingredients.map{|k,v| "#{k}*#{v}"}.join('+')}",

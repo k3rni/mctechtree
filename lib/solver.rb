@@ -4,6 +4,10 @@ class Counter < Hash
   def initialize
     super { |hash, key| hash[key] = 0 }
   end
+
+  def drop_zeros
+    self.dup.reject { |k, v| v == 0 }
+  end
 end
 
 class Solver
@@ -109,6 +113,5 @@ class Solver
         puts msg
       end
     end
-
 end
 

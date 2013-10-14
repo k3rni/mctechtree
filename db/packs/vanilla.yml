@@ -1,0 +1,6 @@
+packs:
+- name: vanilla
+  requires:
+  - vanilla
+  - forge
+
