@@ -1,8 +1,8 @@
 # encoding: utf-8
 
-autoload :Graph, './lib/graph'
-autoload :Filter, './lib/filter'
-
+%w(graph primitives crafts filter shapes templates forge processing).each do |cls|
+  autoload cls.classify.to_sym, "./lib/#{cls}.rb"
+end
 
 class Database < Set
   include Graph
