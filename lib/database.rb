@@ -1,7 +1,8 @@
 # encoding: utf-8
 
-%w(graph primitives crafts filter shapes templates forge processing).each do |cls|
-  autoload cls.classify.to_sym, "./lib/#{cls}.rb"
+%w(graph primitives crafts filter shapes templates forge processing).each do |mod|
+  symbol = mod.gsub(/^./){ |m| m.upcase}.to_sym
+  autoload symbol, "./lib/#{mod}.rb"
 end
 
 class Database < Set

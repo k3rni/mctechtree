@@ -9,15 +9,12 @@ require 'yaml'
 require 'set'
 require 'pry'
 
-autoload :Item, './lib/item'
-autoload :Craft, './lib/craft'
-autoload :Database, './lib/database'
-autoload :Graph, './lib/graph'
+%w(item craft database graph optimizer solver addons).each do |mod|
+  symbol = mod.gsub(/(?:\A|_)(.)/){ |m| $1.upcase }.to_sym
+  autoload symbol, "./lib/#{mod}.rb"
+end
 autoload :ItemResolver, './lib/resolvers'
 autoload :CraftResolver, './lib/resolvers'
-autoload :Optimizer, './lib/optimizer'
-autoload :Solver, './lib/solver'
-autoload :Addons, './lib/addons'
 require './lib/errors'
 
 DB = Database.new
@@ -31,6 +28,7 @@ end
 paths = ['db/**']
 files = []
 gather_files(paths, files).each do |filename|
+  puts filename
   DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending
