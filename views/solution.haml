@@ -31,24 +31,44 @@
             %td= count
             %td= stack_info
   .span8
-    %h4 Crafting sequence
-    %table.table
-      %thead
-        %tr
-          %th #
-          %th Craft
-          %th Machine
-          %th From
-      %tbody
-        - crafts.each do |step|
-          %tr{class: [('success' if targets.include? step.result.to_s)]}
-            %td= step.num
-            %td
-              = step.count if step.count > 1
-              - if targets.include? step.result.to_s
-                %strong= step.result
-              - else
-                = step.result.inspect
-            %td= step.machine
-            %td
-              = step.ingredients
+    .row
+      .span4
+        %h4 Crafting sequence
+      .span4
+        %label(for="toggle_sort")
+          %input#toggle_sort(type="checkbox")
+          sort by tiers
+    .row
+      %table.table
+        %thead
+          %tr.row
+            %th #
+            %th Craft
+            %th Machine
+            %th From
+        %tbody#craftseq
+          - crafts.each_with_index do |step, index|
+            %tr.row.solution-row{class: [('success' if targets.include? step.result.to_s)], data: {tier: step.result.tier, index: index}}
+              %td.step= step.num 
+              %td
+                = step.count if step.count > 1
+                - if targets.include? step.result.to_s
+                  %strong= step.result
+                - else
+                  = step.result.inspect
+              %td= step.machine
+              %td
+                = step.ingredients
+:javascript
+  $(function() {
+    $('input#toggle_sort').on('change', function() {
+      var rows = $('tr.solution-row').detach();
+      if ($(this).is(':checked')) {
+        rows = _.sortBy(rows, function(e) { return Number(e.dataset.tier) });
+        $('#craftseq').append(rows);
+      } else {
+        rows = _.sortBy(rows, function(e) { return Number(e.dataset.index) });
+        $('#craftseq').append(rows);
+      }
+    });
+  });

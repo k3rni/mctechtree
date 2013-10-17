@@ -2,8 +2,9 @@
 %html
   %head
     = bootstrap_assets
-    %script(src="/chosen/chosen.jquery.js")
-    %link(rel="stylesheet" href="/chosen/chosen.css")
+    %script(src="/selectize/selectize.js")
+    %script(src="/underscore.js")
+    %link(rel="stylesheet" href="/selectize/selectize.bootstrap2.css")
     :css
       i.example {
         text-decoration: underline;
@@ -29,5 +30,3 @@
                       - if subcount > 0
                         %span{title: multigroup_text(submodules(cluster))}(style="text-decoration: underline") +#{subcount}
       = yield
-    :javascript
-      $('.chzn-select').chosen({search_contains: true})

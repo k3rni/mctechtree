@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require 'digest/md5'
 %w(graph crafts primitives shapes templates processing forge).each do |mod|
   autoload mod.capitalize.to_sym, "./lib/#{mod}"
 end
@@ -163,6 +163,10 @@ class Database < Set
         end
       end
     end
+    end
+
+    def signature
+      @signature ||= Digest::MD5.new.update(self.map(&:name).join(';'))
   end
 
   def fan_out items, tier
