@@ -22,6 +22,7 @@ Dir.glob('db/**/*.yml').each do |filename|
 end
 DB.fixup_pending
 DB.detect_name_clashes
+DB.fill_reverse
 DB.classify_tiers
 
 TechTreeApp.db = DB
