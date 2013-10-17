@@ -1,0 +1,72 @@
+cluster: vanilla
+
+crafts:
+- trapdoor:
+    ingredients: [planks*6]
+    makes: 2
+    shape: ~ ~ ~ p p p p p p
+- $(type) pressure plate:
+    ingredients: [T|$(type)*2]
+    shape: ~ ~ T T
+    type: [stone, wooden/planks]
+- $(type) weighted pressure plate:
+    ingredients: [T|$(type)*2]
+    shape: ~ ~ T T
+    type: [gold/gold ingot, iron]
+- button:
+    ingredients: [stone]
+- wooden button:
+    ingredients: [planks]
+- note block:
+    ingredients: [planks*8, redstone]
+    shape: p p p p r p p p p
+- jukebox:
+    ingredients: [planks*8, diamond]
+    shape: p p p p d p p p p
+- dispenser:
+    ingredients: [cobble*7, bow, redstone]
+    shape: c c c c b c c r c
+- dropper:
+    ingredients: [cobble*7, redstone]
+    shape: c c c c ~ c c r c
+- piston:
+    ingredients: [planks*3, cobble*4, iron, redstone]
+    shape: p p p c i c c r c
+- sticky piston:
+    ingredients: [piston, slimeball]
+    shape: s ~ p ~
+- redstone lamp:
+    ingredients: [redstone*4, glowstone]
+    shape: ~ r ~ r g r ~ r ~
+- redstone torch:
+    ingredients: [stick, redstone]
+    shape: r ~ s ~
+- lever:
+    ingredients: [cobble, stick]
+    shape: s ~ c ~
+- tripwire hook:
+    ingredients: [iron, stick, planks]
+    makes: 2
+    shape: ~ i ~ ~ s ~ ~ p ~
+- daylight sensor:
+    ingredients: [glass*3, nether quartz*3, wooden slab*3]
+    shape: g g g n n n w w w
+- hopper:
+    ingredients: [iron*5, chest]
+    shape: i ~ i i c i ~ i ~
+- trapped chest:
+    ingredients: [tripwire hook, chest]
+    shape: t c ~ ~
+- door:
+    ingredients: [planks*6]
+    shape: p p ~ p p ~ p p ~
+- iron door:
+    ingredients: [iron*6]
+    shape: i i ~ i i ~ i i ~
+- redstone repeater:
+    ingredients: [t|redstone torch*2, redstone, stone*3]
+    shape: ~ ~ ~ t r t s s s
+- redstone comparator:
+    ingredients: [redstone torch*3, nether quartz, stone*3]
+    shape: ~ r ~ r n r s s s 
+

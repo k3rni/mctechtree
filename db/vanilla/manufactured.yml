@@ -1,0 +1,79 @@
+cluster: vanilla
+
+crafts:
+- glowstone:
+    ingredients: [glowstone dust*4]
+    shape: g g g g
+- wool:
+    ingredients: [string*4]
+    shape: s s s s
+- TNT:
+    ingredients: [gunpowder*5, sand*4]
+    shape: g s g s g s g s g
+- wooden slab:
+    ingredients: [planks*3]
+    makes: 6
+    shape: ~ ~ ~ ~ ~ ~ p p p
+- $(stone) slab:
+    ingredients: [S|$(stone)*3]
+    makes: 6
+    stone: [stone, cobblestone/cobble, brick/bricks, stone brick, nether brick, quartz/quartz block, sandstone]
+    shape: ~ ~ ~ ~ ~ ~ S S S
+- wood stairs:
+    ingredients: [planks*6]
+    makes: 4
+    shape: ~ ~ p ~ p p p p p
+- $(stone) stairs:
+    ingredients: [S|$(stone)*6]
+    makes: 4
+    shape: ~ ~ S ~ S S S S S
+    stone: [stone, cobblestone/cobble, brick/bricks, stone brick, nether brick, quartz/quartz block]
+- snow block:
+    ingredients: [snowball*4]
+    shape: s s s s
+- clay block:
+    ingredients: [clay*4]
+    shape: c c c c
+- bricks:
+    ingredients: [brick*4]
+    shape: b b b b
+- $(stone) brick:
+    ingredients: [stone*4]
+    shape: s s s s
+    stone: [stone, nether/nether brick]
+- bookshelf:
+    ingredients: [planks*6, book*3]
+    shape: p p p b b b p p p
+- sandstone:
+    ingredients: [sand*4]
+    shape: s s s s
+- smooth sandstone:
+    ingredients: [sandstone*4]
+    makes: 4
+    shape: s s s s
+- chiseled sandstone:
+    ingredients: [sandstone slab*2]
+    shape: s ~ s ~
+- quartz block:
+    ingredients: [nether quartz*4]
+    shape: n n n n
+- pillar quartz block:
+    ingredients: [quartz block*2]
+    makes: 2
+    shape: q ~ q ~
+- chiseled quartz block:
+    ingredients: [quartz slab*2]
+    shape: q ~ q ~
+- "jack'o'lantern":
+    ingredients: [pumpkin, torch]
+    shape: p ~ t ~
+- ender chest:
+    ingredients: [obsidian*8, eye of ender]
+    shape: o o o o e o o o o
+- anvil:
+    ingredients: [B|iron block*3, iron*4]
+    shape: B B B ~ i ~ i i i
+- beacon:
+    ingredients: [glass*5, nether star, obsidian*3]
+    shape: g g g g n g o o o
+

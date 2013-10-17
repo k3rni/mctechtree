@@ -1,28 +1,58 @@
 cluster: vanilla
 
+materials: &materials
+  material:
+  - wooden/planks
+  - stone/cobble
+  - iron
+  - gold/gold ingot
+  - diamond
+
 crafts:
-- flint and steel: [flint, iron]
-- crafting table: [planks*4]
-- enchantment table: [obsidian*4, diamond*2, book]
-- anvil: [iron*4, iron block*3]
-- shears: [iron*2]
-- bow: [stick*3, string*3]
-- clock: [gold ingot*4, redstone]
-- compass: [iron*4, redstone]
-- map: [paper*8, compass]
-- $(material) pickaxe:
-    ingredients: [stick*2, $(material)*3]
-    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
 - $(material) axe:
-    ingredients: [stick*2, $(material)*3]
-    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+    ingredients: [M|$(material)*3, stick*2]
+    shape: M M ~ M s ~ ~ s ~
+    <<: *materials
+- $(material) pickaxe:
+    ingredients: [M|$(material)*3, stick*2]
+    shape: M M M ~ s ~ ~ s ~
+    <<: *materials
 - $(material) shovel:
-    ingredients: [stick*2, $(material)]
-    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+    ingredients: [M|$(material), stick*2]
+    shape: ~ M ~ ~ s ~ ~ s ~
+    <<: *materials
 - $(material) hoe:
-    ingredients: [stick*2, $(material)*2]
-    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
-- $(material) sword:
-    ingredients: [stick, $(material)*2]
-    material: [wooden/planks, stone/cobble, iron, golden/gold ingot, diamond]
+    ingredients: [M|$(material)*2, stick*2]
+    shape: M M ~ ~ s ~ ~ s ~
+    <<: *materials
+- flint and steel: # without any actual steel
+    ingredients: [iron, flint]
+    shape: i ~ ~ f
+- bucket:
+    ingredients: [iron*3]
+    shape: ~ ~ ~ i ~ i ~ i ~
+- compass:
+    ingredients: [iron*4, redstone]
+    shape: ~ i ~ i r i ~ i ~
+- map:
+    ingredients: [paper*8, compass]
+    shape: p p p p c p p p p
+- clock:
+    ingredients: [gold ingot*4, redstone]
+    shape: ~ g ~ g r g ~ g ~
+- fishing rod:
+    ingredients: [T|stick*3, string*2]
+    shape: ~ ~ T ~ T s T ~ s
+- carrot on a stick:
+    ingredients: [fishing rod, carrot]
+    shape: f ~ ~ c
+- shears:
+    ingredients: [iron*2]
+    shape: ~ i i ~
+- fire charge:
+    makes: 3
+    ingredients: [blaze powder, C|$(coal), gunpowder]
+    shape: b C ~ g
+    vars: [coal]
+    coal: [coal, charcoal]
 

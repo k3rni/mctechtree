@@ -1,3 +1,5 @@
+cluster: vanilla
+
 equivalents:
   dye:
     white: [white dye, bonemeal]
@@ -5,10 +7,12 @@ equivalents:
     red: [red dye, rose red]
     yellow: [yellow dye, dandelion yellow]
     green: [green dye, cactus green]
-    brown: [brown dye, cocoa]
+    brown: [brown dye, cocoa beans]
     black: [black dye, ink sac]
   ingot:
     iron: [iron ingot, iron]
-    silver: [silver ingot, silver]
-  ore:
+    gold: [gold ingot]
+  gem:
     diamond: [diamond]
+    emerald: [emerald]
+
