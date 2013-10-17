@@ -2,9 +2,11 @@ cluster: harvestcraft
 
 crafts: 
 - cake: 
+    compatible: vanilla
     ingredients: [milk bucket*3, egg, sugar*2, harvest wheat*3] # vanilla-cake with harvest wheat
     keeps: [bucket]
 - cookie: 
+    compatible: vanilla
     ingredients: [harvest wheat*2, cocoa beans] # vanilla-cookie
 - donut: [dough, olive oil]
 - $(flavor) donut:

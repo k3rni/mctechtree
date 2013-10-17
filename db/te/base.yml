@@ -4,41 +4,10 @@ primitives:
 - lead ore: 10
 - silver ore: 10
 - ferrous ore: 40
+- copper ore: 4
+- tin ore: 4
 
 crafts:
-- silver:
-    machine: furnace
-    ingredients: [silver ore]
-    compatible: all
-- silver:
-    machine: furnace
-    ingredients: [pulverized silver]
-    compatible: all
-- molten redstone:
-    machine: magma crucible
-    makes: 25 # 25mb
-    ingredients: [redstone] 
-- molten ender:
-    machine: magma crucible
-    makes: 250
-    ingredients: [ender pearl]
-- pulverized obsidian:
-    machine: pulverizer
-    ingredients: [obsidian]
-- pulverized silver:
-    machine: pulverizer
-    ingredients: [silver ore]
-    makes: 2
-- pulverized lead:
-    machine: pulverizer
-    ingredients: [lead ore]
-    makes: 2
-- lead ingot:
-    machine: furnace
-    ingredients: [lead ore]
-- lead ingot:
-    machine: furnace
-    ingredients: [pulverized lead]
 - electrum ingot:
     machine: furnace
     ingredients: [electrum blend]

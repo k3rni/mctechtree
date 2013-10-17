@@ -55,6 +55,5 @@ crafts:
     makes: 2
 - $(color) wool:
     ingredients: [$(color) dye, wool]
-    color:
     <<: *colors
 

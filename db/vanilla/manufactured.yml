@@ -4,9 +4,9 @@ crafts:
 - glowstone:
     ingredients: [glowstone dust*4]
     shape: g g g g
-- wool:
-    ingredients: [string*4]
-    shape: s s s s
+# - wool:
+#     ingredients: [string*4]
+#     shape: s s s s
 - TNT:
     ingredients: [gunpowder*5, sand*4]
     shape: g s g s g s g s g

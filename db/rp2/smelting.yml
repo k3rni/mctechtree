@@ -7,6 +7,14 @@ crafts:
     makes: 16
 
 processing:
+- outputs: [copper ingot]
+  inputs: [copper ore]
+  machine: furnace
+  compatible: all
+- outputs: [tin ingot]
+  inputs: [tin ore]
+  machine: furnace
+  compatible: all
 - outputs: [basalt]
   machine: furnace
   inputs: [basalt cobblestone]

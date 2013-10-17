@@ -6,10 +6,12 @@ defaults:
 processing:
 - outputs: [iron]
   inputs: [iron dust]
+  compatible: vanilla
 - outputs: [refined iron]
   inputs: [iron]
 - outputs: [gold ingot]
   inputs: [gold dust]
+  compatible: vanilla
 - outputs: [tin ingot]
   inputs: [tin ore]
 - outputs: [tin ingot]

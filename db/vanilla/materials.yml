@@ -16,8 +16,8 @@ primitives:
 - spider eye: 1
 - nether star: 200
 - ink sac: 1
-- string: 1
 - wool: 1
+- string: 1
 - blaze rod: 20
 
 # mined/dug
@@ -35,12 +35,15 @@ primitives:
 - dirt: 1
 - sandstone: 2
 - netherrack: 10
+- soul sand: 30
 - nether quartz: 80
 - obsidian: 80
 - lapis: 50
 - moss stone: 10
 - snowball: 1
-
+- gravel: 1
+- mossy stone brick: 100
+- mossy cobble: 100
 
 # farmed/gathered
 - potato: 1
@@ -57,9 +60,14 @@ primitives:
 - pumpkin: 1
 - brown mushroom: 3
 - red mushroom: 3
-- wood: 1
+- oak wood: 1
+- spruce wood: 1
+- birch wood: 1
+- jungle wood: 1
 - egg: 2
 - cocoa beans: 20
+- sapling: 2
+- leaves: 1
 
 # liquids, even if not always in liquid form
 - water: 

@@ -8,7 +8,7 @@ primitives:
 
 crafts:
 - angel block:
-    ingredients: [gold, feather*2, obsidian]
+    ingredients: [gold ingot, feather*2, obsidian]
     shape: ~ g ~ f o f ~ ~ ~
 - blackout curtains:
     ingredients: [black wool*6] # TODO: any color
@@ -17,32 +17,32 @@ crafts:
     ingredients: [stone*6, redstone, P|sticky piston, redstone torch]
     shape: s r s s P s s r s
 - chandelier:
-    ingredients: [gold*2, diamond, torch*4]
+    ingredients: [gold ingot*2, diamond, torch*4]
     shape: g d g t t t ~ t ~
 - $(color) planks:
     makes: 7
     ingredients: [planks*7, D|$(color) dye, B|paintbrush]
     shape: p p p p D p p B p
     <<: *colors
-- $(color) stone bricks:
+- $(color) stone brick:
     makes: 7
-    ingredients: [p|stone bricks*7, D|$(color) dye, B|paintbrush]
+    ingredients: [p|stone brick*7, D|$(color) dye, B|paintbrush]
     shape: p p p p D p p B p
     <<: *colors
 - compressed cobblestone:
     ingredients: [cobble*9]
     shape: c c c c c c c c c # TODO: infer shape in this case
 - $(level) compressed cobblestone:
-    ingredients: [c|$(level) compressed cobblestone]
+    ingredients: [c|$(level) cobblestone*9]
     shape: c c c c c c c c c
     level:
-    - double: []
-    - triple: double
-    - quadruple: triple
-    - quintuple: quadruple
-    - sextuple: quintuple
-    - septuple: sextuple
-    - octuple: septuple
+    - double: compressed
+    - triple: double compressed
+    - quadruple: triple compressed
+    - quintuple: quadruple compressed
+    - sextuple: quintuple compressed
+    - septuple: sextuple compressed
+    - octuple: septuple compressed
 - conveyor belt:
     ingredients: [track*6, iron*2, redstone]
     makes: 8
@@ -77,7 +77,7 @@ crafts:
     shape: s s s g r g s s s
 - sorting pipe:
     makes: 8
-    ingredients: [stone slab*6, glass*2, G|gold]
+    ingredients: [stone slab*6, glass*2, G|gold ingot]
     shape: s s s g G g s s s
 - filter pipe:
     ingredients: [yellow dye, white dye, red dye, blue dye, k|black dye, green dye, transfer pipe]
@@ -86,10 +86,10 @@ crafts:
     ingredients: [B|blue dye*2, bucket, iron*2, transfer node]
     shape: B b B i t i ~ ~ ~
 - energy transfer node:
-    ingredients: [gold*4, transfer node*4, redstone block]
+    ingredients: [gold ingot*4, transfer node*4, redstone block]
     shape: g t g t r t g t g
 - node speed upgrade:
-    ingredients: [redstone block*4, gold nugget*3, G|gold*2]
+    ingredients: [redstone block*4, gold nugget*3, G|gold ingot*2]
     shape: r g r g G g r G r
 - node item filter:
     ingredients: [redstone*4, stick*4, S|string]
@@ -98,10 +98,10 @@ crafts:
     ingredients: [stone*3, cobble*5, C|chest]
     shape: s s s c C c c c c
 - golden bag of holding:
-    ingredients: [white wool*4, gold*3, chest, G|gold block]
+    ingredients: [white wool*4, gold ingot*3, chest, G|block of gold]
     shape: w g w g c g w G w
 - golden lasso:
-    ingredients: [gold*4, string*4, ender pearl]
+    ingredients: [gold ingot*4, string*4, ender pearl]
     shape: g s g s e s g s g
 - paintbrush:
     ingredients: [t|stick*2, string]

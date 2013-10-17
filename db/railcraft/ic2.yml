@@ -2,7 +2,7 @@ cluster: railcraft
 
 crafts:
 - detector - energy:
-    ingredients: [tin ingot*8, pressure plate]
+    ingredients: [tin ingot*8, stone pressure plate]
 - energy loader:
     ingredients: [RE battery*6, machine, detector - energy, dispenser]   
 - energy unloader:

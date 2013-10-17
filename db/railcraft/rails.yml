@@ -2,7 +2,7 @@ cluster: railcraft
 
 crafts:
 - wooden tie:
-    ingredients: [plank slab*3, creosote oil*1000]
+    ingredients: [wooden slab*3, creosote oil*1000]
     tag: without-forestry
 # TODO: readd this with forestry
 # - wooden tie:

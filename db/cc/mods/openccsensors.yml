@@ -21,7 +21,7 @@ crafts:
     ingredients: [redstone*5, $(detector), paper*3]
     detector:
     - inventory/chest
-    - proximity/pressure plate
+    - proximity/stone pressure plate
     - machine/redstone
     - power/coal
     - tank/bucket

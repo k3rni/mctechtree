@@ -20,15 +20,17 @@ processing:
   outputs: [iridium ingot]
 - inputs: [clay dust]
   outputs: [clay]
-- inputs: [netherrack*3]
+- inputs: [netherrack*3] # NOTE: still there? Vanilla smelting netherrack is more efficient
   outputs: [nether brick]
+  compatible: vanilla
 - inputs: [snowball]
   outputs: [ice]
 - inputs: [water cell]
   outputs: [snowball]
 - inputs: [coal dust]
   outputs: [coal]
-- inputs: [sand*4]
+- inputs: [sand]
   outputs: [sandstone]
+  compatible: vanilla
 
 

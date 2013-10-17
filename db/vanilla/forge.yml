@@ -15,4 +15,8 @@ equivalents:
   gem:
     diamond: [diamond]
     emerald: [emerald]
-
+  block:
+    snow: [snow block, snow]
+    gold: [gold block, block of gold]
+  wood:
+    any: [wood, oak wood, spruce wood, birch wood, jungle wood]
