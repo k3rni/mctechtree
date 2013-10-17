@@ -5,38 +5,60 @@ en:
       two_words_connector: ! ' and '
       words_connector: ! ', '
   clusters:
-    ic2: IndustrialCraft²
-    ic2_adv_sol: Advanced Solar Panels
-    redpower2: RedPower 2
-    vanilla: Minecraft
-    te: Thermal Expansion
+    abo: Additional Buildcraft Objects
+    additional_pipes: Additional Pipes
+    adv_reactor: Advanced Reactors
+    advanced_machines: Advanced Machines
     ae: Applied Energistics
+    apm: Advanced Power Management
+    barrels: Barrels
+    biblio: Bibliocraft
+    biolock: BioLock
+    biomes: "Biomes'O'Plenty"
+    buildcraft: BuildCraft 3
     cc: ComputerCraft
     cc_ip: Immibis' Peripherals
-    gravisuite: Gravisuite
-    railcraft: Railcraft
-    buildcraft: BuildCraft 3
-    logi: Logistics Pipes
-    thaum: ThaumCraft 3
-    forestry: Forestry
-    gregtech: GregTech
-    chargepads: ChargePads
-    abo: Additional Buildcraft Objects
-    advanced_machines: Advanced Machines
-    additional_pipes: Additional Pipes
-    xfels: Xfel's Peripherals
-    ocs: OpenCCSensors
     cc_printer: Printer Peripheral
-    biolock: BioLock
-    apm: Advanced Power Management
-    harvestcraft: Pam's Harvestcraft
-    iron_chests: Iron Chests
-    misc_per: Misc Peripherals
-    paintball: Paintball
-    omni: OmniTools
-    nuclear: Nuclear Control
+    chargepads: ChargePads
+    enderstorage: Ender Storage
+    extrabees: Extra Bees
+    extratrees: Extra Trees
+    extrautils: Extra Utilities
     flowerpot: Painter's Flower Pot
+    forestry: Forestry
+    furniture: Jammy Furniture
+    gravisuite: Gravisuite
+    gregtech: GregTech
+    harvestcraft: Pam's Harvestcraft
+    ic2: IndustrialCraft²
+    ic2_adv_sol: Advanced Solar Panels
+    iron_chests: Iron Chests
+    logi: Logistics Pipes
+    mfr: Minefactory Reloaded
+    misc_per: Misc Peripherals
+    natura: Natura
+    nuclear: Nuclear Control
+    numirp: NumiRP
+    obsidianplates: Obsidian Pressure Plates
+    ocs: OpenCCSensors
+    omni: OmniTools
+    openblocks: Open Blocks
+    paintball: Paintball
+    portarecharger: Portable Recharger
+    powerconverters: Power Converters
+    powersuits: ModularMuse Powersuits
+    railcraft: Railcraft
+    redlogic: RedLogic
+    redpower2: RedPower 2
+    stevescarts: Steve's Carts
+    tconstruct: Tinker's Construct
+    te: Thermal Expansion
+    thaum: ThaumCraft 3
+    usefulfood: Usefuil Food
+    vanilla: Minecraft
     wrcbe: Wireless Redstone CBE
+    xeno: Xeno's Reliquiary
+    xfels: Xfel's Peripherals
   tiers:
     t0: raw items
     t1: dusts, ingots
