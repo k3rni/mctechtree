@@ -33,10 +33,7 @@ crafts:
       - bronze*3
       - tin ingot*3
 - iridium plate:
-    ingredients:
-    - iridium*4
-    - advanced alloy*4
-    - diamond
+    ingredients: [iridium*4, advanced alloy*4, diamond]
     tag: plain
 - reinforced stone:
     makes: 8
