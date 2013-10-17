@@ -59,12 +59,26 @@ class Craft
         end.join(', ')
     end
 
+    def needs? item
+        count_ingredients.keys.include? item
+    end
+
+    def deep_needs? item
+        needs?(item) || count_ingredients.keys.any? do |ing|
+          if ing.primitive
+            false
+          else
+            ing.crafts.any? { |cr| cr.deep_needs?(item) }
+          end
+        end
+    end
+
     def grid
       return nil if shape.nil?
       # TODO: reprezentacja shapeless?
       return [ingredients] if shape == :shapeless
       items = shape.split.map do |prefix| 
-        prefix.nil? ? nil : (shape_map[prefix] || find_ingredient_by_prefix(prefix))
+        prefix.nil? ? nil : ((shape_map && shape_map[prefix]) || find_ingredient_by_prefix(prefix))
       end
       if items.size == 9
         return items.in_groups_of 3

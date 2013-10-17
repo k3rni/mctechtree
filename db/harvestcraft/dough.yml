@@ -1,8 +1,8 @@
 cluster: harvestcraft
 
 crafts:
-- pizza: [dough, tomato, cheese, cooked pork]
-- shepard pie: [cooked pork, mashed potatoes, corn, dough]
+- pizza: [dough, tomato, cheese, cooked porkchop]
+- shepard pie: [cooked porkchop, mashed potatoes, corn, dough]
 - blueberry muffins: [blueberry, dough, sugar]
 - raspberry tart: [raspberry, dough, sugar]
 - blackberry cobbler: [blackberry, dough, sugar]
@@ -24,8 +24,6 @@ crafts:
 - ginger snaps: [flour, sugar, ginger]
 - sunflower wheat rolls: [sunflower seeds, flour, egg, salt, olive oil]
 - garlic toast: [toast, butter, garlic]
- 
-craft_templates:
 - $(stuffing) pie:
     ingredients: [dough, $(stuffing), sugar]
-    stuffing: [apple, pumpkin, strawberry, cherry, lemon]
+    stuffing: [apple, strawberry, cherry, lemon] # and pumpkin. but that is now in vanilla

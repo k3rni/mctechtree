@@ -8,6 +8,7 @@ crafts:
 - cheese: [milk bucket, salt*2]
 - bread: 
     ingredients: [dough]
+    compatible: vanilla
     machine: furnace
 - pasta: [flour, butter]
 - cornmeal dough: [cornmeal, water bucket, salt]
@@ -15,13 +16,13 @@ crafts:
 - tortilla:
     machine: furnace
     ingredients: [cornmeal dough]
-- mayo: [egg, bottle]
+- mayo: [egg, glass bottle]
 - vinegar:
     ingredients: [pot, grape juice]
     keeps: [pot]
-- peanut butter: [peanuts, bottle]
-- grape jelly: [grape, sugar, bottle]
-- strawberry jam: [strawberry, sugar, bottle]
+- peanut butter: [peanuts, glass bottle]
+- grape jelly: [grape, sugar, glass bottle]
+- strawberry jam: [strawberry, sugar, glass bottle]
 - stock:
     ingredients: [pot, bone, bowl]
     keeps: [pot]
@@ -29,10 +30,10 @@ crafts:
     ingredients: [pot, raw chicken, bowl]
     keeps: [pot]
 - mustard: [mustard seeds, vinegar]
-- olive oil: [olive, bottle]
+- olive oil: [olive, glass bottle]
 - vanilla:
     machine: furnace
     ingredients: [vanilla bean]
-- syrup: [water bucket, sugar, bottle]
-- berry syrup: [water bucket, blueberry*2, blackberry*2, raspberry*2, sugar, bottle]
+- syrup: [water bucket, sugar, glass bottle]
+- berry syrup: [water bucket, blueberry*2, blackberry*2, raspberry*2, sugar, glass bottle]
 

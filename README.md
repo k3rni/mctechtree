@@ -2,7 +2,8 @@
 
 1. Get the code from https://gist.github.com/k3rni/5400291
 2. Upload, paste or type it into the Computercraft editor
-3. Run it: `mctechtree <item name>`
+3. Alternatively, install [cc-get](http://cc-get.djranger.com/) and then run `cc-get mctechtree`
+4. Run it: `mctechtree <item name>`
 
 ## Contributing
 

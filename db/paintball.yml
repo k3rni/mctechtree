@@ -8,14 +8,15 @@ paintball_letter: &symbols
   symbol: [R, O, Y, G, B, P]
 
 equivalents: # workarounds, the template system isn't powerful enough
-- [wool (R), red wool]
-- [wool (O), orange wool]
-- [wool (Y), yellow wool]
-- [wool (G), green wool]
-- [wool (B), blue wool]
-- [wool (P), red wool]
+  wool:
+    red: [wool (R), red wool]
+    orange: [wool (O), orange wool]
+    yellow: [wool (Y), yellow wool]
+    green: [wool (G), green wool]
+    blue: [wool (B), blue wool]
+    purple: [wool (P), purple wool]
   
-craft_templates:
+crafts:
 - scanner ($(color)):
     ingredients: [$(color) wool*2]
     <<: *colors

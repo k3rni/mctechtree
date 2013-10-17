@@ -1,7 +1,7 @@
 cluster: harvestcraft
 
 crafts:
-- lemonaide: [lemon, bottle] # typo in game
+- lemonaide: [lemon, glass bottle] # typo in game
 # there's more juices, most fruits yield one
 - tea:
     machine: furnace
@@ -13,8 +13,6 @@ crafts:
     ingredients: [ground coffee]
 - espresso: [ground coffee*3, sugar]
 - coffee con leche: [espresso, milk bucket, cinnamon]
-
-craft_templates:
 - $(fruit) juice:
-    ingredients: [$(fruit), bottle]
+    ingredients: [$(fruit), glass bottle]
     fruit: [apple, melon/melon slice*2, carrot, strawberry, grape, blueberry, cherry]

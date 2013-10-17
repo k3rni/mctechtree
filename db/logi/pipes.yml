@@ -30,8 +30,6 @@ crafts:
     ingredients: [red dye, provider logistics pipe]
 - chassis mk5:
     ingredients: [diamond block*4, block of gold*4, basic logistics pipe]
-
-craft_templates:
 - chassis $(tier):
     ingredients: [basic logistics pipe, $(tier)*8]
     tier:

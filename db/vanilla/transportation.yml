@@ -1,0 +1,38 @@
+cluster: vanilla
+
+crafts:
+- track: # alias: rail, and all following rails too
+    ingredients: [iron*6, stick]
+    makes: 16
+    shape: i ~ i i s i i ~ i
+- powered track:
+    ingredients: [gold ingot*6, stick, redstone]
+    makes: 6
+    shape: g ~ g g s g g r g
+- detector track:
+    ingredients: [iron*6, stone pressure plate, redstone]
+    makes: 6
+    shape: i ~ i i s i i r i
+- activator track:
+    ingredients: [iron*6, stick*2, redstone torch]
+    makes: 6
+    shape: i s i i r i i s i
+- minecart:
+    ingredients: [iron*5]
+    shape: ~ ~ ~ i ~ i i i i
+- furnace minecart:
+    ingredients: [minecart, furnace]
+    shape: f ~ m ~
+- chest cart: # minecart with chest
+    ingredients: [minecart, chest]
+    shape: c ~ m ~
+- TNT cart:
+    ingredients: [TNT, minecart]
+    shape: T ~ m ~
+- hopper cart: # minecrart with hopper
+    ingredients: [hopper, minecart]
+    shape: h ~ m ~
+- boat:
+    ingredients: [planks*5]
+    shape: ~ ~ ~ p ~ p p p p 
+

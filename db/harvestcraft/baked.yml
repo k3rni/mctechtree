@@ -1,36 +1,29 @@
 cluster: harvestcraft
 
-crafts:
-- baked potato:
-    machine: furnace
-    ingredients: [potato]
-- toast:
-    machine: furnace
-    ingredients: [bread]
-- popcorn:
-    machine: furnace
-    ingredients: [corn]
-- raisins:
-    machine: furnace
-    ingredients: [grape]
-- rice cake:
-    machine: furnace
-    ingredients: [rice]
-- dried strawberries:
-    machine: furnace
-    ingredients: [strawberry]
-- dried apple slices:
-    machine: furnace
-    ingredients: [apple]
-- toasted coconut:
-    machine: furnace
-    ingredients: [coconut]
-- corn bread muffins:
-    machine: furnace
-    ingredients: [corn muffin mix]
+defaults:
+  machine: furnace
 
-craft_templates:
-- grilled $(plant):
-    machine: furnace
-    ingredients: [$(plant)]
-    plant: [sweet potato, eggplant, radish, asparagus]
+processing:
+- outputs: [baked potato]
+  inputs: [potato]
+  compatible: vanilla
+- outputs: [toast]
+  inputs: [bread]
+- outputs: [popcorn]
+  inputs: [corn]
+- outputs: [raisins]
+  inputs: [grape]
+- outputs: [rice cake]
+  inputs: [rice]
+- outputs: [dried strawberries]
+  inputs: [strawberry]
+- outputs: [dried apple slices]
+  inputs: [apple]
+- outputs: [toasted coconut]
+  inputs: [coconut]
+- outputs: [corn bread muffins]
+  inputs: [corn muffin mix]
+- outputs: [grilled $(plant)]
+  vars: [plant]
+  inputs: [$(plant)]
+  plant: [sweet potato, eggplant, radish, asparagus]

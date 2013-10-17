@@ -1,0 +1,22 @@
+cluster: vanilla
+
+equivalents:
+  dye:
+    white: [white dye, bonemeal]
+    blue: [blue dye, lapis]
+    red: [red dye, rose red]
+    yellow: [yellow dye, dandelion yellow]
+    green: [green dye, cactus green]
+    brown: [brown dye, cocoa beans]
+    black: [black dye, ink sac]
+  ingot:
+    iron: [iron ingot, iron]
+    gold: [gold ingot]
+  gem:
+    diamond: [diamond]
+    emerald: [emerald]
+  block:
+    snow: [snow block, snow]
+    gold: [gold block, block of gold]
+  wood:
+    any: [wood, oak wood, spruce wood, birch wood, jungle wood]

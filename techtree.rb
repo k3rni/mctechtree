@@ -27,7 +27,8 @@ Dir.glob('db/**/*.yml').each do |filename|
 end
 DB.fixup_pending
 DB.detect_name_clashes
-DB.classify_tiers
+DB.fill_reverse
+DB.classify_tiers if ARGV.include? '--tiers'
 DB.dump_graph File.open('techtree.dot', 'w')
 
 def build_solutions names

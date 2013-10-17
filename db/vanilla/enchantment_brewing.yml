@@ -1,0 +1,33 @@
+cluster: vanilla
+
+crafts:
+- enchantment table:
+    ingredients: [book, diamond*2, obsidian*4]
+    shape: ~ b ~ d o d o o o
+- glass bottle:
+    ingredients: [glass*3]
+    makes: 3
+    shape: ~ ~ ~ g ~ g ~ g ~
+- cauldron:
+    ingredients: [iron*7]
+    shape: i ~ i i ~ i i i i
+- brewing stand:
+    ingredients: [blaze rod, cobble*3]
+    shape: ~ ~ ~ ~ b ~ c c c
+- blaze powder:
+    ingredients: [blaze rod]
+    makes: 2
+    shapeless: y
+- magma cream:
+    ingredients: [slimeball, blaze powder]
+    shapeless: y
+- fermented spider eye:
+    ingredients: [spider eye, brown mushroom, sugar]
+    shapeless: y
+- glistering melon:
+    ingredients: [gold nugget*9, melon slice]
+    shape: g g g g m g g g g
+- gold nugget:
+    ingredients: [gold ingot]
+    makes: 9
+    shapeless: y

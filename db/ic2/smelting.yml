@@ -1,0 +1,26 @@
+cluster: ic2
+
+defaults:
+  machine: furnace
+
+processing:
+- outputs: [iron]
+  inputs: [iron dust]
+  compatible: vanilla
+- outputs: [refined iron]
+  inputs: [iron]
+- outputs: [gold ingot]
+  inputs: [gold dust]
+  compatible: vanilla
+- outputs: [tin ingot]
+  inputs: [tin ore]
+- outputs: [tin ingot]
+  inputs: [tin dust]
+- outputs: [copper ingot]
+  inputs: [copper dust]
+- outputs: [copper ingot]
+  inputs: [copper ore]
+- outputs: [bronze] # NOTE: forestry has an alternative, compatible recipe
+  inputs: [bronze dust]
+- outputs: [rubber]
+  inputs: [sticky resin]

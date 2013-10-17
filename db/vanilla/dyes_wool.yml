@@ -1,0 +1,59 @@
+cluster: vanilla
+
+# TODO: All of these should be forge-enabled
+
+colors: &colors
+  color: [black, red, green, brown, blue, purple, cyan, light gray, gray, pink, lime, yellow, light blue, magenta, orange, white]
+
+defaults:
+  shapeless: yes
+
+crafts:
+- bonemeal:
+    ingredients: [bone]
+    makes: 3
+- light gray dye:
+    ingredients: [ink sac, bonemeal*2]
+    makes: 3
+- light gray dye:
+    ingredients: [bonemeal, gray dye] 
+    makes: 2
+- gray dye:
+    ingredients: [bonemeal, ink sac]
+    makes: 2
+- rose red:
+    ingredients: [rose]
+- orange dye:
+    ingredients: [rose red, dandelion yellow]
+    makes: 2
+- dandelion yellow:
+    ingredients: [dandelion]
+    makes: 2
+- lime dye:
+    ingredients: [cactus green, bonemeal]
+    makes: 2
+- light blue dye:
+    ingredients: [lapis, bonemeal]
+    makes: 2
+- cyan dye:
+    ingredients: [lapis, cactus green]
+    makes: 2
+- purple dye:
+    ingredients: [lapis, rose red]
+    makes: 2
+- magenta dye:
+    ingredients: [purple dye, pink dye]
+    makes: 2
+- magenta dye:
+    ingredients: [lapis, bonemeal, rose red*2]
+    makes: 4
+- magenta dye:
+    ingredients: [lapis, pink dye, rose red]
+    makes: 3
+- pink dye:
+    ingredients: [rose red, bonemeal]
+    makes: 2
+- $(color) wool:
+    ingredients: [$(color) dye, wool]
+    <<: *colors
+

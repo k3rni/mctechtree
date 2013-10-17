@@ -31,11 +31,7 @@ crafts:
     makes: 16
     ingredients: [brass*6, glass]
 - item detector:
-  - brass*2
-  - pneumatic tube*2
-  - red-doped wafer*2
-  - wood*2
-  - pressure plate
+    ingredients: [brass*2, pneumatic tube*2, red-doped wafer*2, wood*2, stone pressure plate]
 - buffer:
   - iron bars*4
   - wood*4
