@@ -5,14 +5,15 @@ colors: &colors
 
 crafts:
 - wireless receiver: 
-    ingredients: [iron*3, ender pearl, quartz fiber]
-    shape: ~ e ~ i q i ~ i ~
+    ingredients: [iron*3, fluix pearl, stick]
+    shape: ~ f ~ i s i ~ i ~
 - wireless booster: 
-    ingredients: [quartz crystal, iron*2, redstone]
+    ingredients: [q|certus quartz crystal, iron*2, redstone]
     shape: q r i i
 - ME cable: 
-    ingredients: [quartz fiber, redstone*2]
-    shape: q r r ~
+    ingredients: [glass*6, fluix dust*3]
+    makes: 3
+    shape: g g g f f f g g g
 - ME dark cable: 
     ingredients: [redstone*2, ME cable*2, lever]
     shape: ~ r ~ M l M ~ r ~
@@ -32,8 +33,8 @@ crafts:
     ingredients: [C|ME cable, X|ME conversion matrix, iron*4, glass*3]
     shape: i g i C X g i g i
 - ME wireless access terminal: 
-    ingredients: [ME access terminal, wireless receiver]
-    shape: ~ w ~ M
+    ingredients: [ME access terminal, wireless receiver, energy cell]
+    shape: ~ w ~ ~ M ~ ~ e ~
 - ME wireless access point: 
     ingredients: [iron*4, glass*3, ME cable, wireless receiver]
     shape: i g i M w g i g i
@@ -48,3 +49,6 @@ crafts:
     makes: 8
     shape: M M M M D M M M M
     <<: *colors
+- ME power relay:
+    ingredients: [iron*4, c|ME cable*4, energy cell]
+    shape: i c i c e c i c i

@@ -25,11 +25,11 @@ crafts:
     ingredients: [stick*2, quartz crystal*2, iron]
     shape: ~ ~ s i s ~ q q ~ 
 - entropy accelerator:
-    ingredients: [ice, quartz crystal*2, iron, ME conversion matrix]
-    shape: |
-        ic qu --
-        qu ME --
-        -- -- ir
+    ingredients: [ME conversion matrix, C|ice, energy cell, iron]
+    shape: M C ~ ~ e ~ ~ ~ i
 - vibration catalyst:
-    ingredients: [lava bucket, quartz crystal*2, iron, ME conversion matrix]
-    shape: l q - q m - - - i
+    ingredients: [ME conversion matrix, lava bucket, energy cell, iron]
+    shape: M l ~ ~ e ~ ~ ~ i
+- matter cannon:
+    ingredients: [iron*3, ME conversion matrix, storage segment, energy cell]
+    shape: i i M s e ~ i ~ ~

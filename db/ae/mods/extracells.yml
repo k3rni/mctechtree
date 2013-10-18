@@ -1,0 +1,45 @@
+cluster: extracells
+parent: ae
+
+
+crafts:
+- $(tier) ME Storage:
+    ingredients: [fluix dust*3, glass*2, S|$(tier) storage cluster, diamond*3]
+    shape: g f g f S f d d d
+    tier:
+    - 256k/kilo
+    - 1M/mega
+    - 4M/giga
+    - 16M/tera
+- $(tier) storage cluster:
+    ingredients: [fluix dust*4, ME advanced processor, diamond, $(tier)]
+    shape: f M f S d S f S f
+    tier:
+    - kilo/storage cluster
+    - mega/kilo storage cluster
+    - giga/mega storage cluster
+    - tera/giga storage cluster
+- adjustable ME storage:
+    ingredients: [B|ME basic processor*2, S|ME 1k storage*3]
+    shape: ~ B ~ S S S ~ B ~
+- ME block container:
+    ingredients: [ME 1k storage, chest]
+    shapeless: yes # TODO or not
+- encryptable ME storage:
+    ingredients: [iron*7, ME 1k storage]
+    shape: ~ i i i M i i i i
+- ME 1k fluid storage:
+    ingredients: [ME 1k storage*4, bucket, C|ME cable*4]
+    shape: M C M C b C M C M
+
+TODO_crafts:
+- soldering station
+- ME item dropper
+- ME backup battery
+- blast resistant ME drive
+- ME fluid import bus
+- ME fluid export bus
+- ME fluid storage bus
+- ME fluid terminal
+- ME fluid transition plane
+- certus quartz tank
