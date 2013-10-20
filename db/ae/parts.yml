@@ -16,5 +16,8 @@ crafts:
     machine: furnace
     ingredients: [advanced processor assembly]
 - ME conversion matrix:
-    ingredients: [iron*4, quartz crystal*2, redstone*2, ME basic processor]
-    shape: i c i r M r i c i
+    ingredients: [iron*4, nether quartz, certus quartz crystal, fluix dust*2, ME basic processor]
+    shape: i n i f M f i c i
+- energy cell:
+    ingredients: [iron*4, fluix crystal*4, glass]
+    shape: i f i f g f i f i

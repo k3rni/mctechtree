@@ -1,0 +1,62 @@
+cluster: extracells
+parent: ae
+
+
+crafts:
+- $(tier) ME Storage:
+    ingredients: [fluix dust*3, glass*2, S|$(tier) storage cluster, diamond*3]
+    shape: g f g f S f d d d
+    tier:
+    - 256k/kilo
+    - 1M/mega
+    - 4M/giga
+    - 16M/tera
+- $(tier) storage cluster:
+    ingredients: [fluix dust*4, ME advanced processor, diamond, $(tier)]
+    shape: f M f S d S f S f
+    tier:
+    - kilo/storage cluster
+    - mega/kilo storage cluster
+    - giga/mega storage cluster
+    - tera/giga storage cluster
+- adjustable ME storage:
+    ingredients: [B|ME basic processor*2, S|ME 1k storage*3]
+    shape: ~ B ~ S S S ~ B ~
+- ME block container:
+    ingredients: [ME 1k storage, chest]
+    shapeless: yes # TODO or not
+- encryptable ME storage:
+    ingredients: [iron*7, ME 1k storage]
+    shape: ~ i i i M i i i i
+- ME 1k fluid storage:
+    ingredients: [ME 1k storage*4, bucket, C|ME cable*4]
+    shape: M C M C b C M C M
+- soldering station:
+    ingredients: [iron*7, diamond]
+    shape: i i i i d i i ~ i
+- ME item dropper:
+    ingredients: [cobble*2, ME conversion matrix, redstone, iron*2]
+    shape: c M c i ~ i i r i
+- ME backup battery:
+    ingredients: [energy cell*4, fluix crystal*4, B|ME basic processor]
+    shape: e f e f B f e f e
+- blast resistant ME drive:
+    ingredients: [obsidian*7, D|ME drive, C|ME cable]
+    shape: o o o o D o o C o
+- ME fluid $(device):
+    ingredients: [iron*6, bucket, B|ME $(device), C|ME cable]
+    shape: i b i i B i i C i
+    device: 
+    - import/import bus
+    - export/export bus
+    - storage/storage bus
+    - terminal/access terminal
+    - transition plane/transition plane
+
+unconfirmed:
+- certus quartz glass:
+    machine: furnace
+    ingredients: [certus quartz dust]
+- certus quartz tank:
+    ingredients: [certus quartz glass*7, ME cable]
+    shape: c c c c ~ c c M c

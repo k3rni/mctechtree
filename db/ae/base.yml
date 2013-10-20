@@ -1,19 +1,35 @@
 cluster: ae
 
 primitives:
-- quartz dust: 30 
+- certus quartz dust: 30 
 # NOTE: quartz dust is craftable from Quartz Ore (when mined with Silk Touch enchant, and macerated/pulverized/grinded from crystals. Adding those would introduce cycles.
 # - quartz ore: 60
 
 crafts:
-- quartz fiber:
-    ingredients: [glass*6, quartz dust*3]
-    shape: g g g q q q g g g
-    makes: 4
+- nether quartz dust:
+    ingredients: [nether quartz]
+    machine: quartz grind stone
+- nether quartz dust:
+    ingredients: [nether quartz]
+    machine: macerator
+    requires: ic2
+- nether quartz dust:
+    ingredients: [nether quartz]
+    machine: pulverizer
+    requires: te
 - silicon:
-    ingredients: [quartz dust]
+    ingredients: [certus quartz dust]
     machine: furnace
-- quartz crystal:
+- certus quartz crystal:
     machine: compressor
-    ingredients: [quartz dust*4]
-    # NOTE: only available with ic2
+    ingredients: [certus quartz dust*4]
+    requires: ic2
+- fluix pearl:
+    ingredients: [d|fluix dust*4, fluix crystal*4, ender pearl]
+    shape: d f d f p f d f d
+- fluix crystal:
+    ingredients: [nether quartz, redstone, certus quartz crystal]
+    shape: ~ ~ ~ n r q ~ ~ ~
+- fluix dust:
+    makes: 2
+    ingredients: [nether quartz dust, redstone, certus quartz dust]

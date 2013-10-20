@@ -8,13 +8,13 @@ crafts:
     ingredients: [glass*3, iron*4, P|ME basic processor, C|ME cable]
     shape: i i g C P g i i g
 - ME crafting CPU:
-    ingredients: [iron*4, quartz crystal*2, glowstone dust*2, ME advanced processor]
+    ingredients: [iron*4, certus quartz crystal*2, glowstone dust*2, ME advanced processor]
     shape: i q i g M g i q i
 - ME heat vent:
     ingredients: [B|iron bars*4, iron, ME cable]
     shape: i B i B M B i B i
 - ME assembler containment wall:
-    ingredients: [iron*4, gold ingot*4, quartz crystal]
+    ingredients: [iron*4, gold ingot*4, certus quartz crystal]
     shape: i g i g q g i g i
 - ME pattern provider:
     ingredients: [iron*4, crafting table, P|ME advanced processor, X|ME conversion matrix*2, storage cell]
