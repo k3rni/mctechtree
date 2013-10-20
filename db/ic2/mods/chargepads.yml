@@ -2,13 +2,13 @@ cluster: chargepads
 parent: ic2
 
 crafts:
-- static charge pad: [rubber*2, pressure plate, integrated circuit*2, batbox]
+- static charge pad: [rubber*2, stone pressure plate, integrated circuit*2, batbox]
 - crystalizor charge pad: 
-    ingredients: [rubber*2, pressure plate, integrated circuit*2, MFE]
+    ingredients: [rubber*2, stone pressure plate, integrated circuit*2, MFE]
 - crystalizor charge pad:
     ingredients: [static charge pad, crystalizor upgrade kit]
 - lapotronic charge pad:
-    ingredients: [rubber*2, pressure plate, advanced circuit*2, MFSU]
+    ingredients: [rubber*2, stone pressure plate, advanced circuit*2, MFSU]
 - lapotronic charge pad:
     ingredients: [crystalizor charge pad, lapotronic upgrade kit]
 - crystalizor upgrade kit: [electric wrench, integrated circuit, MFE]

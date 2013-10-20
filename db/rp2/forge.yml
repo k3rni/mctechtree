@@ -1,0 +1,12 @@
+cluster: redpower2
+
+equivalents:
+  ingot:
+    copper: [copper ingot, copper]
+    silver: [silver ingot, silver]
+  gem:
+    sapphire: [sapphire]
+    green sapphire: [green sapphire]
+    ruby: [ruby]
+  redwire:
+    any: [any insulated wire, white insulated wire, black insulated wire, red insulated wire, green insulated wire, brown insulated wire, blue insulated wire, purple insulated wire, cyan insulated wire, light gray insulated wire, gray insulated wire, pink insulated wire, lime insulated wire, yellow insulated wire, light blue insulated wire, magenta insulated wire, orange insulated wire]

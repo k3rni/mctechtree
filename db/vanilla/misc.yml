@@ -1,0 +1,88 @@
+cluster: vanilla
+
+crafts:
+- $(mineral) block:
+    ingredients: [M|$(mineral)*9]
+    shape: M M M M M M M M M
+    mineral:
+    - iron
+    - gold/gold ingot
+    - diamond
+    - lapis
+    - emerald
+    - redstone
+    - coal
+- carpet:
+    makes: 3
+    ingredients: [wool*2] # any colour. TODO make colour variants?
+    shape: ~ ~ ~ ~ ~ ~ w w ~
+- lead:
+    makes: 2
+    ingredients: [B|slimeball, string*4]
+    shape: s s ~ s B ~ ~ ~ s
+- ladder:
+    makes: 3
+    ingredients: [stick*7]
+    shape: s ~ s s s s s ~ s
+- glass pane:
+    makes: 16
+    ingredients: [glass*6]
+    shape: ~ ~ ~ g g g g g g
+- iron bars:
+    makes: 16
+    ingredients: [iron*6]
+    shape: ~ ~ ~ i i i i i i
+- fence:
+    makes: 2
+    ingredients: [stick*6]
+    shape: ~ ~ ~ s s s s s s
+- nether brick fence:
+    makes: 6
+    ingredients: [nether brick*6]
+    shape: ~ ~ ~ n n n n n n
+- fence gate:
+    ingredients: [stick*4, planks*2]
+    shape: ~ ~ ~ s p s s p s
+- $(stone) wall:
+    makes: 6
+    ingredients: [S|$(stone)*6]
+    shape: ~ ~ ~ S S S S S S
+    stone: [cobblestone/cobble, moss stone]
+- melon:
+    ingredients: [melon slice*9]
+    shape: m m m m m m m m m
+# mineral from blocks
+- painting:
+    ingredients: [stick*8, wool]
+    shape: s s s s w s s s s 
+- item frame:
+    ingredients: [stick*8, leather]
+    shape: s s s s l s s s s
+- sign:
+    ingredients: [planks*6, stick]
+    makes: 3
+    shape: p p p p p p ~ s ~
+- paper:
+    ingredients: [sugar cane*3]
+    makes: 3
+    shape: ~ ~ ~ ~ ~ ~ s s s
+- book:
+    ingredients: [paper*3, leather]
+    shapeless: y
+- book and quill:
+    ingredients: [feather, ink sac, book]
+    shapeless: y
+- bed:
+    ingredients: [wool*3, planks*3]
+    shape: ~ ~ ~ w w w p p p
+- gold ingot:
+    ingredients: [gold nugget*9]
+    shape: g g g g g g g g g
+- eye of ender:
+    ingredients: [blaze powder, ender pearl]
+    shapeless: y
+- flower pot:
+    ingredients: [brick*3]
+    shape: ~ ~ ~ b ~ b ~ b ~
+
+

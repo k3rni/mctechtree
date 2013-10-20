@@ -1,0 +1,37 @@
+cluster: te
+
+mined: &mined_te_metals
+  metal: [copper, tin, silver, lead]
+
+te: &te_metals
+  metal: [lead, invar, nickel, electrum]
+
+processing:
+- inputs: [$(metal) ore]
+  outputs: [$(metal) ingot]
+  vars: [metal]
+  <<: *mined_te_metals
+  machine: furnace
+  compatible: all
+- inputs: [pulverized $(metal)]
+  outputs: [$(metal) ingot]
+  vars: [metal]
+  compatible: all
+  <<: *te_metals
+- inputs: [redstone]
+  outputs: [molten redstone*25]
+  machine: magma crucible
+- inputs: [ender pearl]
+  outputs: [molten ender*250]
+  machine: magma crucible
+- inputs: [$(metal) ore]
+  outputs: [pulverized $(metal)*2]
+  machine: pulverizer
+  vars: [metal]
+  <<: *mined_te_metals
+- inputs: [obsidian]
+  outputs: [crushed obsidian]
+  machine: pulverizer
+- inputs: [crushed obsidian]
+  outputs: [pulverized obsidian]
+  machine: pulverizer

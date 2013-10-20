@@ -43,7 +43,7 @@ class PendingItem
 end
 
 class Item
-  attr_accessor :name, :primitive, :cost, :stacks, :group, :compatible, :tier
+  attr_accessor :name, :primitive, :cost, :stacks, :group, :compatible, :tier, :liquid
   attr_reader :crafts, :crafts_into
 
   def initialize attrs={}
@@ -52,7 +52,7 @@ class Item
     end
     @crafts = []
     @crafts_into = Set.new
-    self.stacks = 64 if stacks.nil?
+    self.stacks = 64 if stacks.nil? && !self.liquid
   end
 
   def hash
@@ -72,7 +72,7 @@ class Item
   end
 
   def stack_info count
-    return nil if @stacks == false
+    return nil if @liquid || !@stacks
     num, rem = count.divmod(@stacks)
     plural = 's' if num > 1
     if num == 0
@@ -97,8 +97,8 @@ class Item
     Set.new([group] + crafts.map(&:group)).to_a
   end
 
-  def self.primitive name, cost, stacks, group
-    self.new(name: name, primitive: true, cost: cost, stacks: stacks, group: group)
+  def self.primitive name, cost, stacks, liquid, group
+    self.new(name: name, primitive: true, cost: cost, stacks: stacks, liquid: liquid, group: group)
   end
 
   def self.crafted name, group, extra={}

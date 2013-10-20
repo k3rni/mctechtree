@@ -1,7 +1,9 @@
 cluster: redpower2
 
 primitives:
-- silver ore: 20
+- silver ore: 8
+- copper ore: 4
+- tin ore: 4
 - nikolite: 50
 - sapphire: 40
 - ruby: 40

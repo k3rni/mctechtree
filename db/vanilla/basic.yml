@@ -1,0 +1,25 @@
+cluster: vanilla
+
+crafts:
+- planks:
+    makes: 4
+    ingredients: [wood]
+- stick:
+    makes: 4
+    ingredients: [planks*2]
+    shape: p ~ p ~
+- crafting table:
+    ingredients: [planks*4]
+    shape: p p p p
+- furnace:
+    ingredients: [cobble*8]
+    shape: c c c c ~ c c c c
+- chest:
+    ingredients: [planks*8]
+    shape: p p p p ~ p p p p
+- torch:
+    vars: [burnable]
+    ingredients: [stick, B|$(burnable)]
+    shape: B ~ s ~
+    burnable: [coal, charcoal]
+

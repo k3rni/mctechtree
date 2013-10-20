@@ -7,10 +7,10 @@ crafts:
     compatible: vanilla
     overrides: vanilla
 - cart boarding track:
-    ingredients: [advanced rail*6, redstone, pressure plate, wooden railbed]
+    ingredients: [advanced rail*6, redstone, stone pressure plate, wooden railbed]
     makes: 8
 - train boarding track:
-    ingredients: [advanced rail*6, redstone repeater, pressure plate, wooden railbed]
+    ingredients: [advanced rail*6, redstone repeater, stone pressure plate, wooden railbed]
     makes: 8
 - buffer stop track:
     ingredients: [standard rail*6, wooden railbed, iron block]
@@ -25,15 +25,15 @@ crafts:
     ingredients: [advanced rail*6, wooden railbed, crowbar]
     makes: 8
 - detector track:
-    ingredients: [standard rail*6, wooden railbed, pressure plate, redstone]
+    ingredients: [standard rail*6, wooden railbed, stone pressure plate, redstone]
     makes: 8
     compatible: vanilla
     overrides: vanilla
 - directional detector track:
-    ingredients: [standard rail*6, wooden railbed, pressure plate, redstone]
+    ingredients: [standard rail*6, wooden railbed, stone pressure plate, redstone]
     makes: 8
 - disembarking track:
-    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone]
+    ingredients: [advanced rail*6, wooden railbed, stone pressure plate, redstone]
     makes: 8
 - disposal track:
     ingredients: [standard rail*6, wooden tie*2, steel plate]
@@ -66,10 +66,10 @@ crafts:
     ingredients: [high-speed rail*8, stone railbed]
     makes: 8
 - cart holding track:
-    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone]
+    ingredients: [advanced rail*6, wooden railbed, stone pressure plate, redstone]
     makes: 8
 - train holding track:
-    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone repeater]
+    ingredients: [advanced rail*6, wooden railbed, stone pressure plate, redstone repeater]
     makes: 8
 - junction track:
     ingredients: [standard rail*8, wooden railbed]
@@ -81,10 +81,10 @@ crafts:
     ingredients: [standard rail*6, redstone repeater*2, wooden railbed]
     makes: 8
 - cart lockdown track:
-    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone]
+    ingredients: [advanced rail*6, wooden railbed, stone pressure plate, redstone]
     makes: 8
 - train lockdown track:
-    ingredients: [advanced rail*6, wooden railbed, pressure plate, redstone repeater]
+    ingredients: [advanced rail*6, wooden railbed, stone pressure plate, redstone repeater]
     makes: 8
 - locomotive track:
     ingredients: [standard rail*6, signal lamp*2, wooden railbed]
@@ -95,7 +95,7 @@ crafts:
     compatible: vanilla
     overrides: vanilla
 - priming track:
-    ingredients: [reinforced rail*6, stone railbed, pressure plate, flint and steel]
+    ingredients: [reinforced rail*6, stone railbed, stone pressure plate, flint and steel]
     makes: 8
 - reinforced track:
     ingredients: [reinforced rail*6, stone railbed]
@@ -122,7 +122,7 @@ crafts:
     ingredients: [standard rail*8, wooden railbed]
     makes: 8
 - one-way track:
-    ingredients: [standard rail*6, piston, wooden railbed, pressure plate]
+    ingredients: [standard rail*6, piston, wooden railbed, stone pressure plate]
     makes: 8
 - wooden track:
     ingredients: [wooden rail*6, wooden railbed]

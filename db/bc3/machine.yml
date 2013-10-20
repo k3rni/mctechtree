@@ -12,7 +12,6 @@ crafts:
     overrides: railcraft
 - gold gear: [iron gear, gold ingot*4]
 - diamond gear: [gold gear, diamond*4]
-- hopper: [iron*5, stone gear, chest]
 - fuel: 
     ingredients: [oil]
     machine: refinery
