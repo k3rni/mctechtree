@@ -12,7 +12,7 @@ crafts:
     - 4M/giga
     - 16M/tera
 - $(tier) storage cluster:
-    ingredients: [fluix dust*4, ME advanced processor, diamond, $(tier)]
+    ingredients: [fluix dust*4, ME advanced processor, diamond, S|$(tier)*3]
     shape: f M f S d S f S f
     tier:
     - kilo/storage cluster
