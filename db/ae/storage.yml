@@ -2,7 +2,7 @@ cluster: ae
 
 crafts:
 - storage cell:
-    ingredients: [quartz crystal*4, redstone*4, ME basic processor]
+    ingredients: [certus quartz crystal*4, redstone*4, ME basic processor]
     shape: r q r q M q r q r
 - storage segment: 
     ingredients: [redstone*4, ME basic processor, storage cell*3, glass]

@@ -39,7 +39,7 @@ crafts:
     ingredients: [iron*4, glass*3, ME cable, wireless receiver]
     shape: i g i M w g i g i
 - ME controller: 
-    ingredients: [iron*4, quartz crystal*4, ME advanced processor]
+    ingredients: [iron*4, fluix crystal*4, ME advanced processor]
     shape: i q i q m q i q i
 - ME access terminal: 
     ingredients: [glass*3, iron*4, C|ME cable, M|ME conversion matrix]
