@@ -31,7 +31,8 @@ crafts:
 - ME 1k fluid storage:
     ingredients: [ME 1k storage*4, bucket, C|ME cable*4]
     shape: M C M C b C M C M
-- soldering station:
+# NOTE: naming conflict with logipipes, renamed with prefix 
+- ME soldering station:
     ingredients: [iron*7, diamond]
     shape: i i i i d i i ~ i
 - ME item dropper:
