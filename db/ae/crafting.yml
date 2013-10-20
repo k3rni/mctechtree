@@ -23,8 +23,6 @@ crafts:
     ingredients: [iron*7, ME conversion matrix, crafting table]
     shape: i M i i c i i i i
 - ME blank pattern:
-    ingredients: [iron*3, glass*2, quartz crystal, glowstone dust*3]
-    shape: |
-        gla glo gla
-        glo qua glo
-        iro iro iro
+    ingredients: [iron*3, G|glass*2, q|certus quartz crystal, glowstone dust*3]
+    shape: G g G g q g i i i
+
