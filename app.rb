@@ -63,6 +63,7 @@ class TechTreeApp < Sinatra::Base
   get '/' do
     last_modified File.mtime(__FILE__)
     etag Digest::MD5.new.update(File.read(__FILE__)).hexdigest
+    @items = params[:items]
     haml :index, layout: :base
   end
   
