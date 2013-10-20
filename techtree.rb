@@ -9,21 +9,27 @@ require 'yaml'
 require 'set'
 require 'pry'
 
-autoload :Item, './lib/item'
-autoload :Craft, './lib/craft'
-autoload :Database, './lib/database'
-autoload :Graph, './lib/graph'
+%w(item craft database graph optimizer solver addons).each do |mod|
+  symbol = mod.gsub(/(?:\A|_)(.)/){ |m| $1.upcase }.to_sym
+  autoload symbol, "./lib/#{mod}.rb"
+end
 autoload :ItemResolver, './lib/resolvers'
 autoload :CraftResolver, './lib/resolvers'
-autoload :Optimizer, './lib/optimizer'
-autoload :Solver, './lib/solver'
-autoload :Addons, './lib/addons'
 require './lib/errors'
 
 DB = Database.new
-Dir.glob('db/**/*.yml').each do |filename|
+
+def gather_files paths, files
+  [ paths.map { |pth| Dir.glob("#{pth}/*.yml") },
+    files
+  ].flatten
+end
+
+paths = ['db/**']
+files = []
+gather_files(paths, files).each do |filename|
   puts filename
-    DB.load_definitions YAML.load_file(filename)
+  DB.load_definitions YAML.load_file(filename)
 end
 DB.fixup_pending
 DB.detect_name_clashes
@@ -47,8 +53,14 @@ def solve *names
   else
     options = {}
   end
+  if names.last.is_a? Database
+    db = names.pop
+  else
+    db = DB
+  end
+  puts "Using #{db} (#{db.size})"
   item_resolver = make_item_resolver(options)
-  solutions = build_solutions(names).map { |name, count| item_resolver.new(DB.find(name), count).resolve }
+  solutions = build_solutions(names).map { |name, count| item_resolver.new(db.find(name), count).resolve }
   result = Solver.new(solutions, options).solve
   if result.valid
     result.describe
@@ -80,5 +92,6 @@ def make_item_resolver options
 end
 
 
-solve 'molten redstone*1000'
+# solve 'molten redstone*1000'
+vdb = DB.filter_clusters 'vanilla'
 binding.pry

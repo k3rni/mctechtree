@@ -1,0 +1,24 @@
+packs:
+- name: skcraft
+  requires:
+  - vanilla
+  - forge
+  - ae
+  - bc3
+  - cc
+  - ocs
+  - ic2
+  - advanced_machines
+  - adv_solars
+  - chargepads
+  - nuclear_control
+  - railcraft
+  - te
+  - flowerpot
+  - iron_chests
+  - gravisuite
+  - omnitools
+  #- frogcraft
+  #- gt
+  #- imcore
+  #- mfr

@@ -1,0 +1,16 @@
+cluster: portablerechargers
+parent: ic2
+
+crafts:
+- small recharger:
+    ingredients: [B|RE battery*4, T|LV transformer*2, R|batbox]
+    shape: B T B ~ R ~ B T B
+- medium recharger:
+    ingredients: [B|energy crystal*4, T|MV transformer*2, R|small recharger]
+    shape: B T B ~ R ~ B T B
+- large recharger:
+    ingredients: [B|lapotron crystal*4, T|HV transformer*2, R|medium recharger]
+    shape: B T B ~ R ~ B T B
+- huge recharger:
+    ingredients: [MFSU*4, iridium plate*4, large recharger]
+    shape: M i M i l i M i M

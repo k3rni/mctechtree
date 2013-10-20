@@ -18,7 +18,7 @@ class PendingItem
   end
 
   def hash
-    to_s.hash
+    name.hash
   end
 
   def <=> other
@@ -31,6 +31,14 @@ class PendingItem
 
   def safe_name
     "!#{ActiveSupport::Inflector.underscore name}".gsub(/\W/, '_')
+  end
+
+  def <=> other
+    self.name <=> other.name
+  end
+
+  def ==(other)
+    self.name == other.name
   end
 end
 
@@ -45,6 +53,10 @@ class Item
     @crafts = []
     @crafts_into = Set.new
     self.stacks = 64 if stacks.nil? && !self.liquid
+  end
+
+  def hash
+    name.hash
   end
 
   def to_s
@@ -75,6 +87,10 @@ class Item
 
   def <=> other
     self.name <=> other.name
+  end
+
+  def ==(other)
+    self.name == other.name
   end
 
   def groups
