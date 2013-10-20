@@ -31,15 +31,32 @@ crafts:
 - ME 1k fluid storage:
     ingredients: [ME 1k storage*4, bucket, C|ME cable*4]
     shape: M C M C b C M C M
+- soldering station:
+    ingredients: [iron*7, diamond]
+    shape: i i i i d i i ~ i
+- ME item dropper:
+    ingredients: [cobble*2, ME conversion matrix, redstone, iron*2]
+    shape: c M c i ~ i i r i
+- ME backup battery:
+    ingredients: [energy cell*4, fluix crystal*4, B|ME basic processor]
+    shape: e f e f B f e f e
+- blast resistant ME drive:
+    ingredients: [obsidian*7, D|ME drive, C|ME cable]
+    shape: o o o o D o o C o
+- ME fluid $(device):
+    ingredients: [iron*6, bucket, B|ME $(device), C|ME cable]
+    shape: i b i i B i i C i
+    device: 
+    - import/import bus
+    - export/export bus
+    - storage/storage bus
+    - terminal/access terminal
+    - transition plane/transition plane
 
-TODO_crafts:
-- soldering station
-- ME item dropper
-- ME backup battery
-- blast resistant ME drive
-- ME fluid import bus
-- ME fluid export bus
-- ME fluid storage bus
-- ME fluid terminal
-- ME fluid transition plane
-- certus quartz tank
+unconfirmed:
+- certus quartz glass:
+    machine: furnace
+    ingredients: [certus quartz dust]
+- certus quartz tank:
+    ingredients: [certus quartz glass*7, ME cable]
+    shape: c c c c ~ c c M c

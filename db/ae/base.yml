@@ -18,11 +18,11 @@ crafts:
     machine: pulverizer
     requires: te
 - silicon:
-    ingredients: [quartz dust]
+    ingredients: [certus quartz dust]
     machine: furnace
-- quartz crystal:
+- certus quartz crystal:
     machine: compressor
-    ingredients: [quartz dust*4]
+    ingredients: [certus quartz dust*4]
     requires: ic2
 - fluix pearl:
     ingredients: [d|fluix dust*4, fluix crystal*4, ender pearl]
