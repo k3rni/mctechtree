@@ -2,17 +2,17 @@ cluster: ae
 
 crafts:
 - storage cell:
-    ingredients: [quartz crystal*4, redstone*4, ME basic processor]
+    ingredients: [certus quartz crystal*4, redstone*4, ME basic processor]
     shape: r q r q M q r q r
 - storage segment: 
     ingredients: [redstone*4, ME basic processor, storage cell*3, glass]
     shape: r M r s g s r s r
 - storage block: 
-    ingredients: [glowstone dust*4, ME advanced processor, storage segment*3, glass]
-    shape: glo M glo s gla s glo s glo
+    ingredients: [G|glowstone dust*4, ME advanced processor, storage segment*3, S|glass]
+    shape: G M G s S s G s G
 - storage cluster: 
-    ingredients: [glowstone dust*4, ME advanced processor, storage block*3, glass]
-    shape: glo M glo s gla s glo s glo
+    ingredients: [G|glowstone dust*4, ME advanced processor, storage block*3, glass]
+    shape: G M G s gla s G s G
 - ME drive:
     ingredients: [iron*4, ME basic processor*2, glass*2, chest]
     shape: i M i g c g i M i
@@ -20,12 +20,17 @@ crafts:
     ingredients: [iron*5, ME conversion matrix, chest, glass*2]
     shape: g M g i c i i i i
 - ME IO port:
-    ingredients: [glass*3, ME drive*2, ME cable, ME basic processor, iron*2]
-    # TODO: shape; cannot express it properly atm
-- ME storage monitor: [iron*4, ME cable, ME level emitter, glass*3]
-- ME preformatter:
+    ingredients: [glass*3, D|ME drive*2, C|ME cable, P|ME basic processor, iron*2]
+    shape: g g g D C D i P i
+- ME storage monitor: 
+    ingredients: [iron*4, C|ME cable, E|ME level emitter, glass*3]
+    shape: i i g C E g i i g
+- ME partition editor:
     ingredients: [iron*5, crafting table, glass*2, ME conversion matrix]
     shape: g M g i c i i i i
+- ME transition plane:
+    ingredients: [iron*4, fluix dust*3, ME conversion matrix, C|ME cable]
+    shape: f f f i M i i C i
 - ME 1k storage: 
     ingredients: [redstone*3, glass*2, iron*3, storage cell]
     shape: g r g r s r i i i

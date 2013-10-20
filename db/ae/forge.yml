@@ -1,0 +1,7 @@
+cluster: ae
+
+equivalents:
+  gem:
+    quartz: [any quartz crystal, certus quartz crystal, nether quartz crystal]
+  dust:
+    quartz: [any quartz dust, certus quartz dust, nether quartz dust]
