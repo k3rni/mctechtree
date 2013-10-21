@@ -1,4 +1,5 @@
 require 'uri'
+require 'set'
 
 class UnknownComponentError < StandardError; end
 
@@ -81,6 +82,7 @@ class ReactorLoader
 
   def decode_reactor stack
     stack.read_bits(10) # initial heat, we don't care
+    cols = Set.new
     components = Hash.new { |h, k| h[k] = 0 }
     # coordinates aren't important, but size must be preserved
     (0..8).each do |i|
@@ -94,9 +96,19 @@ class ReactorLoader
         else
           stack_size = 1
         end
+        puts "col #{i} row #{j} = #{v}"
+        cols.add i
         components[lookup_component(v)] += stack_size
       end
     end
-    components
+    base_components(cols.size).merge components
+  end
+
+  def base_components ncols
+    if ncols <= 3
+      { 'nuclear reactor' => 1 }
+    else
+      { 'nuclear reactor' => 1, 'reactor chamber' => ncols - 3 }
+    end
   end
 end
