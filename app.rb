@@ -83,8 +83,20 @@ class TechTreeApp < Sinatra::Base
     end.select { |name, count| @@db.find(name) }
   end
 
+  def is_reactor str
+    str =~ %r(^http://(?:www\.)?talonfiremage\.pwp\.blueyonder\.co\.uk/)
+  end
+
+  def load_reactor url
+    ReactorLoader.new(url).ingredients
+  end
+
   post '/solve.?:format?' do
-    items = parse_items_query params[:items]
+    if is_reactor params[:items]
+      items = load_reactor(params[:items])
+    else
+      items = parse_items_query params[:items]
+    end
     solveopts = {}
     if (tier = params[:tier])
       tier = tier.to_i

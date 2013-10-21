@@ -44,7 +44,15 @@
         $.get('/items.json', function(data, xhr, status) {
           callback(data);
           });
+        },
+      create: function(input, callback) {
+        if (/^http:\/\/(?:www\.)?talonfiremage.pwp.blueyonder.co.uk\//.test(input)) {
+          var data = {text: 'Reactor', value: input};
+          callback(data);
+        } else {
+          callback(input);
         }
+      }
     });
     $('.toggle-more').click(function() {
       $('.more-options').show();
