@@ -34,6 +34,7 @@ module Processing
        makes = 1
      end
      machine = extra.delete('machine') || @defaults['machine']
+     extra['liquid'] ||= @defaults['liquid']
      # NOTE: code duplication with parse_recipe
      shape_map, ingredients = strip_shapes(inputs)
      ingredients = resolve_items(ingredients)

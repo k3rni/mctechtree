@@ -72,16 +72,37 @@ class Item
   end
 
   def stack_info count
-    return nil if @liquid || !@stacks
+    if @liquid
+      liquid_stack_info count
+    elsif !@stacks
+      nil
+    else
+      item_stack_info count
+    end
+  end
+
+  def item_stack_info count
     num, rem = count.divmod(@stacks)
+    # NOTE: poor man's pluralization
     plural = 's' if num > 1
     if num == 0
       nil
     elsif rem == 0
-      # NOTE: marne i18n
       "#{num} stack#{plural}"
     else
       "#{num} stack#{plural} + #{rem}"
+    end
+  end
+
+  def liquid_stack_info count
+    num, rem = count.divmod(1000)
+    plural = 's' if num > 1
+    if num == 0
+      nil
+    elsif rem == 0
+      "#{num} bucket#{plural}"
+    else
+      "#{num} bucket#{plural} + #{rem}mB"
     end
   end
 

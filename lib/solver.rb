@@ -70,7 +70,7 @@ class Solver
     def raw_resources
       raw.sort_by { |item, count| item.name }.map do |item, count|
         stack_info = item.stack_info count.ceil
-        [item.name, count.ceil, stack_info]
+        [item.name, count.ceil, item.liquid, stack_info]
       end
     end
 
@@ -84,7 +84,8 @@ class Solver
             num: (order < last ? j : nil),
             machine: craft.machine,
             result: craft.result,
-            ingredients: craft.describe_ingredients(count)
+            ingredients: craft.describe_ingredients(count),
+            liquid: craft.result.liquid
           )
           j += 1 if order < last
           last = order
@@ -94,9 +95,14 @@ class Solver
 
     def show_raw
         puts "Resources required:"
-        raw_resources.each do |name, count, stack_info|
-          puts [name, '*', count,
+        raw_resources.each do |name, count, liquid, stack_info|
+          if liquid
+            puts ["#{count}mB ", name, 
                 (" (#{stack_info})" if stack_info)].join ''
+          else
+            puts [name, '*', count,
+                (" (#{stack_info})" if stack_info)].join ''
+          end
         end
     end
 
@@ -106,7 +112,7 @@ class Solver
         msg = [
           (row.num != nil ? "#{row.num}. " : ' ' * "#{last_num}. ".size),
           ("using #{row.machine} " if row.machine),
-          "craft #{row.count} #{row.result} ",
+          "craft #{row.count}#{'mB' if row.liquid} #{row.result} ",
           "from #{row.ingredients}"
         ].join ''
         last_num = row.num

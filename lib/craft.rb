@@ -55,7 +55,12 @@ class Craft
 
     def describe_ingredients mul=1
         count_ingredients.map do |item, count|
-            "#{(count*mul).ceil} * #{item.name}"
+          if item.liquid
+            op = 'mB'
+          else
+            op = ' *'
+          end
+          "#{(count*mul).ceil}#{op} #{item.name}"
         end.join(', ')
     end
 

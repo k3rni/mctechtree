@@ -20,13 +20,16 @@ module Crafts
     item = find(name)
 
     if !item
-      item = Item.crafted name, group, compatible: extra.delete('compatible') do |craft|
+      item = Item.crafted name, group, 
+          compatible: extra.delete('compatible'), 
+          liquid: extra.delete('liquid') do |craft|
         craft.makes(makes, machine, ingredients, group, extra)
       end
       self.add item
     elsif conflicts?(item, extra, group)
       @conflicts.add [:craft, name, group, item.group]
     else
+      item.liquid ||= extra.delete('liquid')
       item.add_craft do |craft|
         craft.makes(makes, machine, ingredients, group, extra)
       end
