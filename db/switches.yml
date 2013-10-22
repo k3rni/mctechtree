@@ -1,0 +1,13 @@
+cluster: switches
+
+crafts:
+- switch ($(metal)):
+    ingredients: [M|$(metal)*3, rose red, cactus green, lever]
+    shape: r M g M l M ~ ~ ~
+    makes: 4
+    metal: [iron, gold/gold ingot]
+- switch ($(gem)):
+    ingredients: [M|$(gem)*3, rose red, cactus green, lever]
+    shape: r M g M l M ~ ~ ~
+    makes: 4
+    gem: [diamond, emerald]

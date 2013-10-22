@@ -1,0 +1,58 @@
+cluster: powerconverters
+
+crafts:
+- energy bridge:
+    ingredients: [gold ingot*4, redstone*2, G|glass*2, diamond]
+    shape: g r g G d G g r g
+- universal charger:
+    ingredients: [gold ingot*4, redstone*2, iron*2, chest]
+    shape: g r g i c i g r g
+- BC consumer:
+    ingredients: [gold ingot*4, E|steam engine]
+    shape: g ~ g ~ E ~ g ~ g
+- BC consumer:
+    ingredients: [gold ingot*4, E|magmatic engine]
+    shape: g ~ g ~ E ~ g ~ g
+    requires: te
+- BC producer:
+    ingredients: [BC consumer]
+- IC2 $(tier) consumer:
+    ingredients: [gold ingot*4, E|$(tier) transformer]
+    shape: g ~ g ~ E ~ g ~ g
+    tier: [LV, MV, HV]
+- IC2 EV consumer:
+    ingredients: [gold ingot*4, E|MFSU]
+    shape: g ~ g ~ E ~ g ~ g
+- IC2 $(tier) producer:
+    ingredients: [IC2 $(tier) consumer]
+    tier: [LV, MV, HV, EV]
+- steam consumer:
+    ingredients: [gold ingot*4, E|commercial steam engine]
+    shape: g ~ g ~ E ~ g ~ g
+
+# TODO: enable this after adding Factorization
+fz_crafts:
+- FZ consumer:
+    ingredients: [gold ingot*4, E|solar boiler]
+    shape: g ~ g ~ E ~ g ~ g
+- FZ producer:
+    ingredients: [FZ consumer]
+
+# TODO: Universal Electricity
+# note: PC forum post warns about replacing battery boxes with batteries
+ue_crafts:
+- UE 60V consumer:
+    ingredients: [gold ingot*4, E|advanced battery box]
+    shape: g ~ g ~ ~ ~ g E g
+- UE 120V consumer:
+    ingredients: [gold ingot*4, E|advanced battery box]
+    shape: g ~ g ~ E ~ g ~ g
+- UE 240V consumer:
+    ingredients: [gold ingot*4, E|advanced battery box]
+    shape: g E g ~ ~ ~ g ~ g
+- UE 480V consumer:
+    ingredients: [gold ingot*6, E|advanced battery box]
+    shape: g E g g ~ g g ~ g
+- UE $(tier) producer:
+    ingredients: [UE $(tier) consumer]
+    tier: [60V, 120V, 240V, 480V]
