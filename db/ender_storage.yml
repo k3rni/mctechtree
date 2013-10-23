@@ -1,0 +1,14 @@
+cluster: enderstorage
+
+crafts:
+# naming conflict with vanilla enderchest
+- ender storage chest:
+    # NOTE: wool of any colour, chest starts with that colour on its pads. Doesn't matter to us.
+    ingredients: [blaze rod*4, obsidian*2, ender pearl, chest, wool] 
+    shape: b w b o c o b e b
+- ender pouch:
+    ingredients: [blaze powder*4, leather*3, ender pearl, wool]
+    shape: b l b l e l b w b
+- ender tank:
+    ingredients: [blaze rod*4, obsidian*2, ender pearl, cauldron, wool]
+    shape: b w b o c o b e b
