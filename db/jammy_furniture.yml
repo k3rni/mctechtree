@@ -1,0 +1,207 @@
+cluster: jammyfurniture
+
+wool_colours: &wool_colours
+  wool: [light blue wool, green wool, black wool, red wool]
+
+crafts:
+- unfinished ceramic panel:
+    ingredients: [clay*6]
+    shape: c c c c c c ~ ~ ~
+- ceramic panel:
+    ingredients: [unfinished ceramic panel]
+    machine: furnace
+- light bulb:
+    ingredients: [glass pane*4, torch]
+    shape: ~ g ~ g t g ~ g ~
+- blind part:
+    ingredients: [wooden slab*3]
+    shape: ~ ~ ~ w w w ~ ~ ~
+- kitchen side:
+    ingredients: [wooden slab]
+    makes: 2
+    shapeless: yes
+- roofing block:
+    ingredients: [stone, ink sac]
+    shapeless: yes
+    makes: 6
+- armchair:
+    ingredients: [planks*4, stick*2, W|$(wool)]
+    shape: p ~ p p W p s ~ s
+    vars: [wool]
+    <<: *wool_colours
+- basket:
+    ingredients: [planks*5, W|$(wool)]
+    shape: p W p p p p ~ ~ ~
+    vars: [wool]
+    <<: *wool_colours
+- bathroom cupboard:
+    ingredients: [ceramic panel*7, iron]
+    shape: c c c i ~ c c c c
+- bathroom sink:
+    ingredients: [ceramic panel*4, iron]
+    shape: c i c ~ c ~ ~ c ~
+- bath:
+    ingredients: [iron block*5]
+    shape: i ~ i i i i ~ ~ ~
+- blaze head:
+    ingredients: [orange wool*7, blaze rod, redstone]
+    shape: o o o o b o o r o
+- blinds:
+    ingredients: [blind part*6]
+    shape: b b b b b b ~ ~ ~
+- chair:
+    ingredients: [planks*3, stick*2]
+    shape: p ~ ~ p p ~ s s ~
+- chicken head:
+    ingredients: [wool*7, egg, redstone]
+    shape: w w w w e w w r w
+- chimney:
+    ingredients: [clay*2, bricks*7]
+    shape: c b c b b b b b b
+- christmas tree:
+    ingredients: [orange wool, light blue wool, R|red wool, redstone, G|green wool, glowstone dust, stone, wood, stone]
+    shape: o l R r G g s w s
+- clock base:
+    ingredients: [planks*7]
+    shape: ~ p ~ p p p p p p
+- clock middle:
+    ingredients: [planks*6, iron]
+    shape: ~ p p i p p ~ p p
+- clock top:
+    ingredients: [planks*6, clock]
+    shape: ~ p ~ p c p p p p
+- coffee table:
+    ingredients: [iron*5, glass pane]
+    shape: i g i i ~ i ~ ~ ~
+- cooker:
+    ingredients: [furnace, iron*7]
+    shape: i ~ i i f i i i i
+- cow head:
+    ingredients: [brown wool*7, leather, redstone]
+    shape: b b b b l b b r b
+- crafting side:
+    ingredients: [crafting table]
+    makes: 2
+    shapeless: yes
+- creeper head:
+    ingredients: [G|green wool*7, gunpowder, redstone]
+    shape: G G G G g G G r G
+- dishwasher:
+    ingredients: [s|button*2, iron*6]
+    shape: s s i i ~ i i i i
+- enderdragon head:
+    ingredients: [black wool*7, eye of ender, redstone]
+    shape: b b b b e b b r b
+- enderman head:
+    ingredients: [black wool*7, ender pearl, redstone]
+    shape: b b b b e b b r b
+- freezer:
+    ingredients: [iron*8, snow block]
+    shape: i i i i s i i i i
+- fridge:
+    ingredients: [iron*8, light bulb]
+    shape: i i i i l i i i i
+- unfinished mantlepiece:
+    ingredients: [clay*7]
+    shape: c c c c ~ c c ~ c
+- mantlepiece:
+    ingredients: [unfinished mantlepiece]
+    machine: furnace
+- kitchen cupboard (shelf):
+    ingredients: [iron, planks*7]
+    shape: p p p i ~ p p p p
+- kitchen cupboard:
+    ingredients: [kitchen side*3, iron, planks*4]
+    shape: k k k i ~ p p p p
+- kitchen sink:
+    ingredients: [iron, ceramic panel*5]
+    shape: ~ i ~ c ~ c c c c
+- lamp:
+    ingredients: [iron*3, light bulb, glass pane*2]
+    shape: ~ i ~ g l g ~ i i
+- light:
+    ingredients: [light bulb, string, wool*2]
+    shape: ~ s ~ w l w ~ ~ ~
+- pig head:
+    ingredients: [W|pink wool*7, P|raw porkchop, redstone]
+    shape: W W W W P W W r W
+- pigman head:
+    ingredients: [W|pink wool*7, green wool*3, eye of ender, redstone]
+    shape: W g g W e g W r W
+- radio:
+    ingredients: [iron, planks*5, s|button]
+    shape: i ~ ~ p p s p p p
+- roofing pyramid:
+    ingredients: [roofing block*5]
+    shape: ~ r ~ ~ r ~ r r r
+- roofing corner:
+    ingredients: [roofing block*8]
+    shape: r ~ r r r r r r r
+- roofing slope:
+    ingredients: [roofing block*6]
+    shape: ~ ~ r ~ r r r r r
+- rubbish bin:
+    ingredients: [iron*6, lava bucket]
+    shape: ~ i ~ i l i i i i
+- sheep head:
+    ingredients: [wool*8, redstone]
+    shape: w w w w w w w r w
+- skeleton head:
+    ingredients: [light gray wool*7, bone, redstone]
+    shape: l l l l b l l r l
+- slime head:
+    ingredients: [green wool*7, slimeball, redstone]
+    shape: g g g g s g g r g
+- sofa part (corner):
+    ingredients: [W|$(wool)*4, stick*2]
+    shape: ~ W ~ W W W s ~ s
+    vars: [wool]
+    <<: *wool_colours
+- sofa part (left):
+    ingredients: [W|$(wool), planks*2, stick*2]
+    shape: p ~ ~ p W ~ s s ~
+    vars: [wool]
+    <<: *wool_colours
+- sofa part (middle):
+    ingredients: [W|$(wool)*3, stick*2]
+    shape: ~ ~ ~ W W W s ~ s
+    vars: [wool]
+    <<: *wool_colours
+- sofa part (right):
+    ingredients: [W|$(wool), planks*2, stick*2]
+    shape: ~ p ~ W p ~ s s ~
+    vars: [wool]
+    <<: *wool_colours
+- spider head:
+    ingredients: [black wool*7, spider eye, redstone]
+    shape: b b b b s b b r b
+- squid head:
+    ingredients: [black wool*7, ink sac, redstone]
+    shape: b b b b i b b r b
+- steve head:
+    ingredients: [W|brown wool*3, P|pink wool*4, wooden pickaxe, redstone]
+    shape: W W W P w P P r P
+- table:
+    ingredients: [planks*3, stick*4]
+    shape: p p p s ~ s s ~ s
+- table lamp:
+    ingredients: [wool*4, light bulb, stick*4]
+    shape: w l w w s w s s s
+- television:
+    ingredients: [wood*6, iron, glass, s|button]
+    shape: w i w w g w w w s
+- toilet:
+    ingredients: [ceramic panel*6, iron]
+    shape: c i ~ c ~ c c c c
+- washing machine drum:
+    ingredients: [iron*4]
+    shape: ~ i ~ i ~ i ~ i ~
+- washing machine:
+    ingredients: [s|button*3, iron*5, washing machine drum]
+    shape: s s s i w i i i i
+- wolf head:
+    ingredients: [wool*7, bone, redstone]
+    shape: w w w w b w w r w
+- zombie head:
+    ingredients: [green wool*7, f|rotten flesh, redstone]
+    shape: g g g g f g g r g
