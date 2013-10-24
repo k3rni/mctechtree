@@ -1,0 +1,30 @@
+cluster: openblocks
+
+crafts:
+- elevator:
+    ingredients: [wool*8. gold ingot]
+    shape: w w w w g w w w w
+- lightbox:
+    ingredients: [iron*7, glass pane, torch]
+    shape: i g i i t i i i i
+- transparent tank: # not just tank
+    ingredients: [obsidian*4, glass pane*5]
+    shape: o g o g g g o g o
+- target:
+    ingredients: [wool*6, stick*2]
+    shape: w w w w w w s ~ s
+- hang glider:
+    ingredients: [glider wing*2, stick]
+    shape: ~ ~ ~ g s g ~ ~ ~
+- glider wing:
+    ingredients: [stick*2, leather*6]
+    shape: ~ s l s l l l l l
+- guide block:
+    ingredients: [glass*8, torch]
+    shape: g g g g t g g g g
+- flag:
+    ingredients: [stick*3, wool*3]
+    shape: s w ~ s w w s ~ ~
+- jaded ladder:
+    ingredients: [ladder, trapdoor]
+    shape: ~ ~ ~ l t ~ ~ ~ ~

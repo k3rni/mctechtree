@@ -1,0 +1,18 @@
+cluster: openperipheral
+
+crafts:
+- terminal glasses:
+    ingredients: [advanced monitor*2, networking cable]
+    shape: ~ ~ ~ a n a ~ ~ ~
+- terminal glasses bridge:
+    ingredients: [redstone block, wired modem*4, m|wireless modem*4]
+    shape: m w m w r w m w m
+- peripheral proxy:
+    ingredients: [iron*4, redstone*5]
+    shape: i r i r r r i r i
+- ticket machine:
+    ingredients: [iron*8, glass pane]
+    shape: i i i i i i i g i
+- personal inventory manager:
+    ingredients: [obsidian*3, redstone*2, chest]
+    shape: ~ ~ ~ o o o r c r
