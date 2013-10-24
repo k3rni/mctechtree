@@ -7,10 +7,10 @@ crafts:
 - bookcase:
     ingredients: [planks*6, wooden slab*3]
     shape: p w p p w p p w p
-- stand:
+- armor stand:
     ingredients: [iron*2, stone slab*3]
     shape: ~ i ~ ~ i ~ s s s
-- case:
+- display case:
     ingredients: [glass, wooden slab*7, W|$(wool)] 
     shape: w g w w W w w w w
     vars: [wool]
@@ -18,13 +18,13 @@ crafts:
 - potion shelf:
     ingredients: [wooden slab*6, planks*2, glass bottle]
     shape: w w w p g p w w w
-- rack:
+- tool rack:
     ingredients: [wooden slab*8, iron]
     shape: w w w w i w w w w
 - shelf:
     ingredients: [wooden slab*6, planks]
     shape: w w w ~ p ~ w w w
-- label:
+- wood label:
     ingredients: [wooden slab*6]
     shape: ~ ~ ~ w w w w w w
 - desk:
@@ -34,17 +34,17 @@ crafts:
     # NOTE: specifically, oak+spruce+birch slabs, jungle+spruce planks
     ingredients: [iron*2, chase, wooden slab*3, planks*2, redstone]
     shape: i c i w w w p r p
-- press:
+- printing press:
     ingredients: [iron*2, blaze rod, wooden slab*2, P|iron weighted pressure plate, B|iron block*3]
     shape: i b i w P w B B B
 - wooden table:
     ingredients: [wooden slab*3, planks*2]
     shape: w w w ~ p ~ ~ p ~
-- lantern:
+- golden lantern:
     ingredients: [G|gold ingot*2, P|glass pane*4, glowstone*2, torch]
     shape: P G P g t g P G P
 - $(colour) lantern:
-    ingredients: [lantern, $(colour) dye]
+    ingredients: [golden lantern, $(colour) dye]
     shapeless: yes
     <<: *colours
 - fancy lamp:
@@ -75,14 +75,15 @@ crafts:
 - chase:
     ingredients: [wooden slab*4, iron]
     shape: ~ w ~ w i w ~ w ~
-#- printing press plate: ?
+- printing press plate:
+    ingredients: [book, chase] # vastly simplified
+    machine: typesetting table
 - redstone book:
     ingredients: [redstone torch, book]
     shapeless: yes
 - clipboard:
     ingredients: [ink sac, feather, paper*3, P|wooden pressure plate]
     shape: i ~ f p p p ~ P ~
-- nail gun: # just 'gun' in the forum post
+- screw gun:
     ingredients: [iron, orange wool*3, button, redstone block]
     shape: i o o ~ b o ~ ~ r
-
