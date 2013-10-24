@@ -1,0 +1,23 @@
+cluster: obsidiplates
+
+crafts:
+- obsidian pressure plate:
+    ingredients: [obsidian*2]
+    shape: ~ ~ o o
+- mossy cobblestone pressure plate:
+    ingredients: [mossy cobble*2]
+    shape: ~ ~ m m
+- silent $(style) pressure plate:
+    ingredients: [P|$(style) pressure plate, wool]
+    shape: ~ w ~ P
+    style: [obsidian, mossy cobblestone]
+- shrouded $(style) pressure plate:
+    ingredients: [P|$(style) pressure plate, nether quartz*4, glowstone dust*4]
+    shape: g n g n P n g n g
+    style: [obsidian, mossy cobblestone]
+- shrouded silent $(style) pressure plate: # TODO: verify
+    ingredients: [P|silent $(style) pressure plate, nether quartz*4, glowstone dust*4]
+    shape: g n g n P n g n g
+    style: [obsidian, mossy cobblestone]
+
+

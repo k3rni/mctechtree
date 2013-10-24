@@ -1,0 +1,13 @@
+cluster: flatsigns
+# This mod is mostly about placing signs on floors and ceilings.
+# But it also provides a way to erase signs.
+
+primitives:
+# actually made by throwing yellow wool into water. No way of expressing that.
+- sponge: 999
+
+crafts:
+- sponge wipe:
+    ingredients: [sponge, cactus green]
+    shapeless: yes
+
