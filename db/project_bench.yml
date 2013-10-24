@@ -1,0 +1,9 @@
+cluster: project_bench
+
+crafts:
+- project bench:
+    ingredients: [glass, iron*2, t|crafting table, chest, planks*2]
+    shape: ~ g ~ i t i p c p
+- project bench upgrade:
+    ingredients: [glass, iron*2, planks*3, chest]
+    shape: ~ g ~ i p i p c p

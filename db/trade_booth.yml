@@ -1,0 +1,9 @@
+cluster: tradebooth
+
+crafts:
+- trade booth storage:
+    ingredients: [planks*8, iron]
+    shape: p p p p i p p p p
+- trade booth top:
+    ingredients: [planks*7, gold nugget]
+    shape: p p p p ~ p p g p
