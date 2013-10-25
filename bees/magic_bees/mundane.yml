@@ -3,16 +3,22 @@ cluster: magicbees
 primitives:
 - mystical bee:
     origin: curious hive
+    produce: [mundane comb]
 - sorcerous bee:
     origin: resonating hive
+    produce: [mundane comb]
 - unusual bee:
     origin: unusual hive
+    produce: [mundane comb]
 - attuned bee:
     origin: deep hive
+    produce: [mundane comb]
 - oblivion bee:
     origin: oblivion hive
     flowers: dragon eggs
+    produce: [forgotten comb]
 - infernal bee:
     origin: infernal hive
     flowers: nether wart
     biome: [nether, desert]
+    produce: [molten comb]

@@ -4,12 +4,16 @@ primitive:
 - water bee:
     origin: water hive
     flowers: lily pad
+    produce: [wet comb]
 - rocky bee:
     origin: rocky hive
     flowers: stone
+    produce: [rocky comb]
 - embittered bee:
     origin: nether hive
     flowers: nether wart
     biome: [desert, nether]
+    produce: [simmering comb]
+
 
 

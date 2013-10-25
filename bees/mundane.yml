@@ -3,27 +3,35 @@ cluster: mundane
 primitives:
 - forest bee:
     origin: forest hive
+    produce: [honey comb]
 - meadows bee:
     origin: meadows hive
+    produce: [honey comb]
 - valiant bee:
     origin: any hive
     note: 5% chancce of any bees from wild hives
+    produce: [honey comb, sugar]
 - modest bee:
     origin: desert hive
     flowers: cacti
     biome: [desert]
+    produce: [parched comb]
 - tropical bee:
     origin: jungle hive
     flowers: ferns, vines
     biome: [jungle]
+    produce: [silky comb]
 - ender bee:
     origin: end hive
     flowers: dragon eggs
+    produce: [mysterious comb]
 - wintry bee:
     origin: snow hive
     biome: [snow]
+    produce: [frozen comb]
 - marshy bee:
     origin: swamp hive
     flowsers: mushroom
     biome: [swamp, river]
+    produce: [mossy comb]
 
