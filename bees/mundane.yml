@@ -1,0 +1,29 @@
+cluster: mundane
+
+primitives:
+- forest bee:
+    origin: forest hive
+- meadows bee:
+    origin: meadows hive
+- valiant bee:
+    origin: any hive
+    note: 5% chancce of any bees from wild hives
+- modest bee:
+    origin: desert hive
+    flowers: cacti
+    biome: [desert]
+- tropical bee:
+    origin: jungle hive
+    flowers: ferns, vines
+    biome: [jungle]
+- ender bee:
+    origin: end hive
+    flowers: dragon eggs
+- wintry bee:
+    origin: snow hive
+    biome: [snow]
+- marshy bee:
+    origin: swamp hive
+    flowsers: mushroom
+    biome: [swamp, river]
+

@@ -1,0 +1,15 @@
+cluster: extrabees
+
+primitive:
+- water bee:
+    origin: water hive
+    flowers: lily pad
+- rocky bee:
+    origin: rocky hive
+    flowers: stone
+- embittered bee:
+    origin: nether hive
+    flowers: nether wart
+    biome: [desert, nether]
+
+

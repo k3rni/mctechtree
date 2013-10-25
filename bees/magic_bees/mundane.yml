@@ -1,0 +1,18 @@
+cluster: magicbees
+
+primitives:
+- mystical bee:
+    origin: curious hive
+- sorcerous bee:
+    origin: resonating hive
+- unusual bee:
+    origin: unusual hive
+- attuned bee:
+    origin: deep hive
+- oblivion bee:
+    origin: oblivion hive
+    flowers: dragon eggs
+- infernal bee:
+    origin: infernal hive
+    flowers: nether wart
+    biome: [nether, desert]
