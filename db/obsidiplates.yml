@@ -17,7 +17,7 @@ crafts:
     style: [obsidian, mossy cobblestone]
 - shrouded silent $(style) pressure plate: # TODO: verify
     ingredients: [P|silent $(style) pressure plate, nether quartz*4, glowstone dust*4]
-    shape: g n g n P n g n g
+    shape: n g n g P g n g n
     style: [obsidian, mossy cobblestone]
 
 
