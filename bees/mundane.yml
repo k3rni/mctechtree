@@ -11,11 +11,13 @@ species:
     origin: any hive
     note: 5% chancce of any bees from wild hives
     produce: [honey comb, sugar]
+    nocturnal: yes
 - modest bee:
     origin: desert hive
     flowers: cacti
     biome: [desert]
     produce: [parched comb]
+    nocturnal: yes
 - tropical bee:
     origin: jungle hive
     flowers: ferns, vines

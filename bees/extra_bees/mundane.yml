@@ -10,8 +10,10 @@ species:
     origin: rocky hive
     flowers: stone
     produce: [rocky comb]
+    nocturnal: yes
 - embittered bee:
     origin: nether hive
     flowers: nether wart
     biome: [desert, nether]
     produce: [simmering comb]
+    nocturnal: yes

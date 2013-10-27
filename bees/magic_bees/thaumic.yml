@@ -62,14 +62,17 @@ breeding:
     chance: 9
     produce: [furtive comb, rotten flesh, zombie brain]
     note: Brainy effect spawns Angry Zombies
+    nocturnal: yes
 - wispy bee:
     parents: [ethereal bee, ghastly bee]
     chance: 9
     produce: [silk comb, silky wisp]
     note: Can only be created between Waning Crescent and New Moon.
+    nocturnal: yes
 - batty bee:
     parents: [skulking bee, windy bee]
     chance: 9
     produce: [furtive comb, gunpowder]
     note: Batty effect spawns Fire Bats
+    nocturnal: yes
 

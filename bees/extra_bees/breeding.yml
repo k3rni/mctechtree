@@ -60,14 +60,17 @@ breeding:
     parents: [meadows bee, modest bee]
     chance: 10
     produce: [barren comb]
+    nocturnal: yes
 - barren bee:
     parents: [arid bee, common bee]
     chance: 8
     produce: [barren comb]
+    nocturnal: yes
 - desolate bee:
     parents: [arid bee, barren bee]
     chance: 8
     produce: [barren comb]
+    nocturnal: yes
 - gnawing bee:
     parents: [barren bee, forest bee]
     chance: 15
@@ -81,111 +84,163 @@ breeding:
     parents: [desolate bee, modest bee]
     chance: 15
     produce: [barren comb, rotten comb]
+    nocturnal: yes
 - skeletal bee:
     parents: [desolate bee, frugal bee]
     chanec: 15
     produce: [barren comb, skeletal comb]
+    nocturnal: yes
 - creepy bee:
     parents: [desolate bee, austere bee]
     chance: 15
     produce: [barren comb, powdery comb]
+    nocturnal: yes
 # rocky branch
 - tolerant bee:
     parents: [rocky bee, diligent bee]
     chance: 15
     produce: [rocky comb]
+    nocturnal: yes
 - robust bee:
     parents: [rocky bee, tolerant bee]
     chance: 15
     produce: [rocky comb]
+    nocturnal: yes
 - resilient bee:
     parents: [tolerant bee, robust bee]
     chance: 15
     produce: [rocky comb]
+    nocturnal: yes
 # rusty branch
 - rusty bee:
     parents: [resilient bee, meadows bee]
     chance: 5
     produce: [rocky comb, iron comb]
+    nocturnal: yes
 - corroded bee:
     parents: [resilient bee, diligent bee]
     chance: 5
     produce: [rocky comb, copper comb]
+    nocturnal: yes
 - tarnished bee:
     parents: [resilient bee, marshy bee]
     chance: 5
     produce: [rocky comb, tin comb]
+    nocturnal: yes
 - leaden bee:
     parents: [resilient bee, unweary bee]
     chance: 5
     produce: [rocky comb, leaden comb]
+    nocturnal: yes
 # metallic branch
 - lustered bee:
     parents: [resilient bee, unweary bee]
     chance: 10
     produce: [rocky comb, nickel comb]
+    nocturnal: yes
 - galvanized bee:
     parents: [tarnished bee, cultivated bee]
     chance: 10
     produce: [rocky comb, zinc comb]
+    nocturnal: yes
 - invincible bee:
     parents: [resilient bee, ender bee]
     chance: 5
     produce: [rocky comb, tungsten comb]
+    nocturnal: yes
 # alloyed branch
 - impregnable bee:
     parents: [resilient bee, noble bee]
     chance: 3
     produce: [rocky comb, titanium comb]
+    nocturnal: yes
+- brazen bee:
+    parents: [corroded bee, galvanized bee]
+    chance: 5
+    produce: [rocky comb, brazen comb]
+    nocturnal: yes
+- fortified bee:
+    parents: [rusty bee, fossilized bee]
+    chance: 10
+    produce: [rocky comb, steel comb]
+    nocturnal: yes
+- lustrous bee:
+    produce: [rocky comb, invar comb]
+    parents: [imperial bee, resilient bee]
+    chance: 10
+    nocturnal: yes
+    extinct: yes
+- resolute bee:
+    produce: [rocky comb, bronze comb]
+    flowers: rock
+    chance: 5
+    parents: [corroded bee, tarnished bee]
+    nocturnal: yes
 # precious branch
 - shining bee:
     parents: [rusty bee, imperial bee]
     chance: 2
     produce: [rocky comb, silver comb]
+    nocturnal: yes
 - glittering bee:
     parents: [corroded bee, imperial bee]
     chance: 2
     produce: [rocky comb, golden comb]
+    nocturnal: yes
 - valuable bee:
     parents: [glittering bee, shining bee]
     chance: 2
     produce: [rocky comb, platinum comb]
+    nocturnal: yes
 - lapis bee:
     parents: [resilient bee, water bee]
     chance: 5
     produce: [rocky comb, lapis comb]
+    nocturnal: yes
+- precious bee:
+    parents: [glittering bee, shining bee]
+    chance: 2
+    produce: [rocky comb, electrum comb]
+    nocturnal: yes
 # gemstone branch
 - emerald bee:
     parents: [lapis bee, noble bee]
     chance: 5
     produce: [rocky comb, emerald comb]
+    nocturnal: yes
 - ruby bee:
     parents: [emerald bee, austere bee]
     chance: 5
     produce: [rocky comb, ruby comb]
+    nocturnal: yes
 - sapphire bee:
     parents: [emerald bee, ocean bee]
     chance: 5
     produce: [rocky comb, sapphire comb]
+    nocturnal: yes
 - diamond bee:
     parents: [lapis bee, imperial bee]
     chance: 5
     produce: [rocky comb, diamond comb]
+    nocturnal: yes
 # nuclear branch
 - unstable bee:
     parents: [austere bee, rocky bee]
     chance: 5
     produce: [barren comb]
     note: Unstable effect causes damage
+    nocturnal: yes
 - nuclear bee:
     parents: [unstable bee, rusty bee]
     chance: 5
     produce: [barren comb]
     note: Unstable effect causes damage
+    nocturnal: yes
 - radioactive bee:
     parents: [nuclear bee, glittering bee]
     chance: 5
     produce: [barren comb, radioactive comb]
+    nocturnal: yes
 # historic branch
 - ancient bee:
     parents: [noble bee, diligent bee]
@@ -287,18 +342,21 @@ breeding:
     chance: 5
     produce: [honey comb, sugar, fruity comb]
 # volcanic branch
-- furious bee:
+- furious bee: # a.k.a. angry?
     parents: [sinister bee, embittered bee]
     chance: 10
     produce: [simmering comb]
+    nocturnal: yes
 - volcanic bee:
     parents: [furious bee, embittered bee]
     chance: 6
     produce: [simmering comb, blazing comb]
+    nocturnal: yes
 - glowering bee:
     parents: [furious bee, excited bee]
     chance: 5
     produce: [glowing comb]
+    nocturnal: yes
 # viscous branch
 - viscous bee:
     parents: [water bee, exotic bee]
@@ -369,16 +427,19 @@ breeding:
     chance: 10
     produce: [shadow comb]
     note: Darkness effect causes blindness
+    nocturnal: yes
 - darkened bee:
     parents: [shadowed bee, embittered bee]
     chance: 8
     produce: [shadow comb]
     note: Darkness effect causes blindness
+    nocturnal: yes
 - abyssmal bee:
     parents: [shadowed bee, darkened bee]
     chance: 8
     produce: [shadow comb]
     note: Darkness effect causes blindness
+    nocturnal: yes
 
 special:
 - jaded bee:

@@ -24,37 +24,45 @@ breeding:
     parents: [cultivated bee, eldritch bee]
     chance: 10
     produce: [otherworldly comb]
+    nocturnal: yes
 - enchanted bee:
     parents: [eldritch bee, charmed bee]
     chance: 8
     produce: [otherworldly comb]
+    nocturnal: yes
 - supernatural bee:
     parents: [charmed bee, enchanted bee]
     chance: 8
     produce: [otherworldly comb, unusual pollen]
+    nocturnal: yes
 # scholarly branch
 - pupil bee:
     parents: [monastic bee, arcane bee]
     chance: 10
     produce: [papery comb]
+    nocturnal: yes
 - scholarly bee:
     parents: [pupil bee, arcane bee]
     chance: 8
     produce: [papery comb, knowledge fragment]
+    nocturnal: yes
 - savant bee:
     parents: [scholarly bee, pupil bee]
     chance: 6
     produce: [papery comb, knowledge fragment]
+    nocturnal: yes
 # skulking branch
 - skulking bee:
     parents: [modest bee, eldritch bee]
     chance: 12
     produce: [furtive comb]
+    nocturnal: yes
 - ghastly bee:
     parents: [skulking bee, ethereal bee]
     chance: 9
     produce: [furtive comb, ghast tear]
     note: Ghastly effect occasionaly spawns Ghasts
+    nocturnal: yes
 - spidery bee:
     parents: [tropical bee, skulking bee]
     chance: 10
@@ -64,6 +72,12 @@ breeding:
     chance: 7
     biome: [nether]
     produce: [furtive comb, molten comb, blaze rod]
+- gossamer bee:
+    parents: [skulking bee, ancient bee]
+    chance: 10
+    flowers: magic flowers
+    produce: [silky comb]
+    nocturnal: yes
 # aware branch
 - ethereal bee:
     parents: [arcane bee, supernatural bee]
@@ -104,11 +118,13 @@ breeding:
     chance: 8
     produce: [temporal comb]
     note: Drunkard effect causes nausea
+    nocturnal: yes
 - doctoral bee:
     parents: [timely bee, lordly bee]
     chance: 7
     produce: [temporal comb, handful of jelly babies)
     note: Heroic effect damages nearby mobs
+    nocturnal: yes
 # soulful branch
 - spirit bee:
     parents: [ethereal bee, aware bee]

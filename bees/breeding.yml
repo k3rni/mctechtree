@@ -51,6 +51,7 @@ breeding:
     parents: [steadfast bee, valiant bee]
     chance: 6
     produce: [cocoa comb]
+    nocturnal: yes
 # infernal branch
 - sinister bee:
     parents: [modest bee, cultivated bee]
@@ -58,53 +59,62 @@ breeding:
     produce: [simmering comb]
     biome: [nether]
     aggressive: yes
+    nocturnal: yes
 - sinister bee:
     parents: [tropical bee, cultivated bee]
     chance: 60
     produce: [simmering comb]
     biome: [nether]
     aggressive: yes
+    nocturnal: yes
 - fiendish bee:
     parents: [sinister bee, cultivated bee]
     chance: 40
     produce: [simmering comb, ash]
     biome: [nether]
     aggressive: yes
+    nocturnal: yes
 - fiendish bee:
     parents: [sinister bee, modest bee]
     chance: 40
     produce: [simmering comb, ash]
     biome: [nether]
     aggressive: yes
+    nocturnal: yes
 - fiendish bee:
     parents: [sinister bee, tropical bee]
     chance: 40
     produce: [simmering comb, ash]
     biome: [nether]
     aggressive: yes
+    nocturnal: yes
 - demonic bee:
     parents: [sinister bee, fiendish bee]
     chance: 25
     produce: [simmering comb, glowstone dust]
     biome: [nether]
     aggressive: yes
+    nocturnal: yes
 # austere branch
 - frugal bee:
     parents: [modest bee, sinister bee]
     chance: 16
     produce: [parched comb]
     biome: [desert]
+    nocturnal: yes
 - frugal bee:
     parents: [modest bee, fiendish bee]
     chance: 10
     produce: [parched comb]
     biome: [desert]
+    nocturnal: yes
 - austere bee:
     parents: [modest bee, frugal bee]
     chance: 8
     produce: [parched comb, powdery comb]
     biome: [desert]
     note: Creeper effect causes damage
+    nocturnal: yes
 # end branch
 - spectral bee:
     parents: [ender bee, hermitic bee]
@@ -170,11 +180,13 @@ breeding:
     chance: 10
     produce: [frozen comb, ice shard]
     note: Can only be created around Christmas
+    nocturnal: yes
 - tipsy bee:
     parents: [wintry bee, meadows bee]
     chance: 10
     produce: [frozen comb, ice shard]
     note: "Can only be created around New Year's Eve"
+    nocturnal: yes
 # agrarian branch
 - rural bee:
     parents: [meadows bee, diligent bee]
