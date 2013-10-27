@@ -1,0 +1,56 @@
+cluster: magicbees
+
+breeding:
+# metallic branch
+- ferrous bee:
+    parents: [common bee, industrious bee]
+    # NOTE: FTBwiki list says the above, but the page says industrious_diligent
+    # same for all following bees, and maybe for every species :(
+    chance: 100
+    produce: [honey comb, iron nugget]
+    note: Can only be created with a block of Iron under the apiary
+- auric bee:
+    parents: [minium bee, plumbum bee]
+    chance: 8
+    produce: [honey comb, gold nugget]
+    note: Can only be created with a block of Gold under the apiary
+- cuprum bee:
+    parents: [industrious bee, meadows bee]
+    chance: 12
+    produce: [honey comb, copper nugget]
+    note: Can only be created with a block of Copper under the apiary
+- stannum bee:
+    parents: [industrious bee, forest bee]
+    chance: 12
+    produce: [honey comb, tin nugget]
+    note: Can only be created with a block of Tin under the apiary
+- argentum bee:
+    parents: [imperial bee, modest bee]
+    chance: 8
+    produce: [honey comb, silver nugget]
+    note: Can only be created with a block of Silver under the apiary
+- plumbum bee:
+    parents: [stannum bee, common bee]
+    chance: 10
+    produce: [honey comb, lead nugget]
+    note: Can only be created with a block of Lead under the apiary
+- aluminium bee:
+    parents: [industrious bee, cultivated bee]
+    chance: 10
+    produce: [honey comb, aluminium nugget]
+    note: Can only be created with a block of Alumiunium under the apiary
+- ardite bee:
+    parents: [industrious bee, infernal bee]
+    chance: 9
+    produce: [honey comb, ardite nugget]
+    note: Can only be created with a block of Ardite under the apiary
+- cobalt bee:
+    parents: [imperial bee, infernal bee]
+    chance: 9
+    produce: [honey comb, cobalt nugget]
+    note: Can only be created with a block of Cobalt under the apiary
+- manyullyn bee:
+    parents: [ardite bee, cobalt bee]
+    chance: 9
+    produce: [honey comb, ardite nugget]
+    note: Can only be created with a block of Manyullyn under the apiary

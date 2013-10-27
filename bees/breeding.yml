@@ -1,0 +1,192 @@
+cluster: forestry
+
+species:
+- steadfast bee:
+    origin: dungeon chests
+    produce: [cocoa comb]
+    nocturnal: yes
+- monastic bee:
+    origin: apiarist villager
+    produce: [wheaten comb, mellow comb]
+
+breeding:
+- common bee:
+    parents: [hive bee, hive bee]
+    chance: 15
+    produce: [honey comb]
+- cultivated bee:
+    parents: [hive bee, common bee]
+    chance: 12
+    produce: [honey comb]
+# noble branch
+- common bee:
+    parents: [common bee, cultivated bee]
+    chance: 10
+    produce: [dripping comb]
+- majestic bee:
+    parents: [noble bee, cultivated bee]
+    chance: 8
+    produce: [dripping comb]
+    note: Maximum fertility (4x drones)
+- imperial bee:
+    parents: [noble bee, majestic bee]
+    chance: 8
+    produce: [dripping comb, royal jelly]
+    note: Beatific effect gives regeneration
+# industrious branch
+- diligent bee:
+    parents: [common bee, cultivated bee]
+    chance: 10
+    produce: [stringy comb]
+- unweary bee:
+    parents: [diligent bee, cultivated bee]
+    chance: 8
+    produce: [stringy comb]
+- industrious bee:
+    parents: [diligent bee, unweary bee]
+    chance: 8
+    produce: [pollen, stringy comb]
+# heroic branch
+- heroic bee:
+    parents: [steadfast bee, valiant bee]
+    chance: 6
+    produce: [cocoa comb]
+# infernal branch
+- sinister bee:
+    parents: [modest bee, cultivated bee]
+    chance: 60
+    produce: [simmering comb]
+    biome: [nether]
+    aggressive: yes
+- sinister bee:
+    parents: [tropical bee, cultivated bee]
+    chance: 60
+    produce: [simmering comb]
+    biome: [nether]
+    aggressive: yes
+- fiendish bee:
+    parents: [sinister bee, cultivated bee]
+    chance: 40
+    produce: [simmering comb, ash]
+    biome: [nether]
+    aggressive: yes
+- fiendish bee:
+    parents: [sinister bee, modest bee]
+    chance: 40
+    produce: [simmering comb, ash]
+    biome: [nether]
+    aggressive: yes
+- fiendish bee:
+    parents: [sinister bee, tropical bee]
+    chance: 40
+    produce: [simmering comb, ash]
+    biome: [nether]
+    aggressive: yes
+- demonic bee:
+    parents: [sinister bee, fiendish bee]
+    chance: 25
+    produce: [simmering comb, glowstone dust]
+    biome: [nether]
+    aggressive: yes
+# austere branch
+- frugal bee:
+    parents: [modest bee, sinister bee]
+    chance: 16
+    produce: [parched comb]
+    biome: [desert]
+- frugal bee:
+    parents: [modest bee, fiendish bee]
+    chance: 10
+    produce: [parched comb]
+    biome: [desert]
+- austere bee:
+    parents: [modest bee, frugal bee]
+    chance: 8
+    produce: [parched comb, powdery comb]
+    biome: [desert]
+    note: Creeper effect causes damage
+# end branch
+- spectral bee:
+    parents: [ender bee, hermitic bee]
+    chance: 4
+    produce: [mysterious comb]
+    note: End effect causes damage
+    flowers: dragon eggs
+- phantasmal bee:
+    parents: [ender bee, spectral bee]
+    chance: 2
+    produce: [mysterious comb]
+    flowers: dragon eggs
+# vengeful branch
+- vindictive bee:
+    parents: [monastic bee, demonic bee]
+    chance: 4
+    produce: [irradiated comb]
+    note: Radioactive effect destroys nearby blocks
+- vengeful bee:
+    parents: [demonic bee, vindictive bee]
+    chance: 8
+    produce: [irradiated comb]
+    note: Radioactive effect destroys nearby blocks
+- vengeful bee:
+    parents: [monastic bee, vindictive bee]
+    chance: 8
+    produce: [irradiated comb]
+    note: Radioactive effect destroys nearby blocks
+- avenging bee:
+    parents: [vengeful bee, vindictive bee]
+    chance: 4
+    produce: [irradiated comb]
+    note: Radioactive effect destroys nearby blocks
+# tropical branch
+- exotic bee:
+    parents: [austere bee, tropical bee]
+    chance: 12
+    produce: [silky comb]
+    note: Fastest producer of silky comb.
+- edenic bee:
+    parents: [exotic bee, tropical bee]
+    chance: 8
+    produce: [silky comb]
+    note: Explorer effect gives experience (stacks).
+# frozen branch
+- icy bee:
+    parents: [industrious bee, wintry bee]
+    chance: 12
+    produce: [frozen comb, ice shard]
+    biome: [snow]
+- glacial bee:
+    parents: [icy bee, wintry bee]
+    chance: 8
+    produce: [frozen comb, ice shard]
+    biome: [snow]
+# festive branch
+- leporine bee:
+    parents: [meadows bee, forest bee]
+    produce: [silky comb, egg]
+    note: Can only be created around Easter.
+- merry bee:
+    parents: [wintry bee, forest bee]
+    chance: 10
+    produce: [frozen comb, ice shard]
+    note: Can only be created around Christmas
+- tipsy bee:
+    parents: [wintry bee, meadows bee]
+    chance: 10
+    produce: [frozen comb, ice shard]
+    note: "Can only be created around New Year's Eve"
+# agrarian branch
+- rural bee:
+    parents: [meadows bee, diligent bee]
+    chance: 12
+    produce: [wheaten comb]
+    biome: [plains]
+# monastic branch
+- secluded bee:
+    parents: [monastic bee, austere bee]
+    chance: 12
+    produce: [mellow comb]
+- hermitic bee:
+    parents: [monastic bee, secluded bee]
+    chance: 8
+    produce: [mellow comb]

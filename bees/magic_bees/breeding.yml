@@ -1,0 +1,195 @@
+cluster: magicbees
+
+breeding:
+# veiled branch
+- eldritch bee:
+    parents: [magic bee, cultivated bee]
+    chance: 12
+    produce: [mundane comb]
+# arcane branch
+- esoteric bee:
+    parents: [cultivated bee, eldritch bee]
+    chance: 10
+    produce: [occult comb]
+- mysterious bee:
+    parents: [eldritch bee, esoteric bee]
+    chance: 8
+    produce: [occult comb]
+- arcane bee:
+    parents: [esoteric bee, mysterious bee]
+    chance: 9
+    produce: [occult comb, enchanting drop]
+# supernatural branch
+- charmed bee:
+    parents: [cultivated bee, eldritch bee]
+    chance: 10
+    produce: [otherworldly comb]
+- enchanted bee:
+    parents: [eldritch bee, charmed bee]
+    chance: 8
+    produce: [otherworldly comb]
+- supernatural bee:
+    parents: [charmed bee, enchanted bee]
+    chance: 8
+    produce: [otherworldly comb, unusual pollen]
+# scholarly branch
+- pupil bee:
+    parents: [monastic bee, arcane bee]
+    chance: 10
+    produce: [papery comb]
+- scholarly bee:
+    parents: [pupil bee, arcane bee]
+    chance: 8
+    produce: [papery comb, knowledge fragment]
+- savant bee:
+    parents: [scholarly bee, pupil bee]
+    chance: 6
+    produce: [papery comb, knowledge fragment]
+# skulking branch
+- skulking bee:
+    parents: [modest bee, eldritch bee]
+    chance: 12
+    produce: [furtive comb]
+- ghastly bee:
+    parents: [skulking bee, ethereal bee]
+    chance: 9
+    produce: [furtive comb, ghast tear]
+    note: Ghastly effect occasionaly spawns Ghasts
+- spidery bee:
+    parents: [tropical bee, skulking bee]
+    chance: 10
+    produce: [furtive comb, string, spider eye]
+- smouldering bee:
+    parents: [skulking bee, hateful bee]
+    chance: 7
+    biome: [nether]
+    produce: [furtive comb, molten comb, blaze rod]
+# aware branch
+- ethereal bee:
+    parents: [arcane bee, supernatural bee]
+    chance: 7
+    produce: [occult comb, otherworldly comb]
+- watery bee:
+    parents: [supernatural bee, ethereal bee]
+    chance: 14
+    note: Can only be created with a block of still water below the apiary
+    produce: [watery comb, ice]
+- earthen bee:
+    parents: [supernatural bee, ethereal bee]
+    chance: 14
+    note: Can only be created with a block of bricks below the apiary
+    produce: [earthy comb, clay]
+- firey bee:
+    parents: [supernatural bee, ethereal bee]
+    chance: 14
+    note: Can only be created with a block of still lava below the apiary
+    produce: [firey comb, blaze powder]
+- windy bee:
+    parents: [supernatural bee, ethereal bee]
+    chance: 14
+    note: Can only be created with a block of oak leaves below the apiary
+    produce: [windy comb, feather]
+- aware bee:
+    parents: [ethereal bee, attuned bee]
+    chance: 10
+    produce: [memory comb]
+# time branch
+- timely bee:
+    parents: [imperial bee, ethereal bee]
+    chance: 8
+    produce: [temporal comb]
+    note: Time Warp effect causes slowness
+- lordly bee:
+    parents: [timely bee, imperial bee]
+    chance: 8
+    produce: [temporal comb]
+    note: Drunkard effect causes nausea
+- doctoral bee:
+    parents: [timely bee, lordly bee]
+    chance: 7
+    produce: [temporal comb, handful of jelly babies)
+    note: Heroic effect damages nearby mobs
+# soulful branch
+- spirit bee:
+    parents: [ethereal bee, aware bee]
+    chance: 8
+    produce: [memory comb, soul comb]
+- spirit bee:
+    parents: [attuned bee, aware bee]
+    chance: 8
+    produce: [memory comb, soul comb]
+- soul bee:
+    parents: [aware bee, spirit bee]
+    chance: 7
+    produce: [memory comb, soul comb]
+# abominable branch
+- hateful bee:
+    parents: [infernal bee, eldritch bee]
+    chance: 9
+    produce: [molten comb]
+    biome: [nether]
+- spiteful bee:
+    parents: [hateful bee, infernal bee]
+    chance: 7
+    produce: [molten comb]
+    biome: [nether]
+- withering bee:
+    parents: [demonic bee, spiteful bee]
+    chance: 6
+    biome: [nether]
+    produce: [wither skeleton bone chip]
+# nameless branch
+- nameless bee:
+    parents: [ethereal bee, oblivion bee]
+    chance: 10
+    produce: [forgotten comb]
+- abandoned bee:
+    parents: [oblivion bee, nameless bee]
+    chance: 8
+    produce: [forgotten comb]
+- forlorn bee:
+    parents: [nameless bee, abandoned bee]
+    chance: 6
+    produce: [forgotten comb]
+- draconic bee:
+    parents: [imperial bee, abandoned bee]
+    chance: 6
+    produce: [draconic dust]
+    biome: [end]
+# gem branch
+- diamandi bee:
+    parents: [austere bee, auric bee]
+    chance: 7
+    produce: [honey comb, diamond shard]
+    note: Can only be created with a block of Diamond under the apiary
+- esmeraldi bee:
+    parents: [austere bee, argentum bee]
+    chance: 6
+    produce: [honey comb, emerald nugget]
+    note: Can only be created with a block of Emerald under the apiary
+- apatine bee:
+    parents: [rural bee, cuprum bee]
+    chance: 12
+    produce: [honey comb, apatite shard]
+    note: Can only be created with a block of Apatite Ore under the apiary
+# fleshy branch
+- poultry bee:
+    parents: [common bee, skulking bee]
+    chance: 12
+    produce: [honey comb, chicken nugget]
+    biome: [forest]
+- beefy bee:
+    parents: [common bee, skulking bee]
+    chance: 12
+    produce: [honey comb, beef nugget]
+    biome: [plains]
+- porcine bee:
+    parents: [common bee, skulking bee]
+    chance: 12
+    produce: [honey comb, pork nugget]
+    biome: [mountain]
+# alchemical branch
+- minium bee:
+    parents: [frugal bee, eldritch bee]
+    chance: 8
+    produce: [occult comb, shard of minium]

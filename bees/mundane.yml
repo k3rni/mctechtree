@@ -1,6 +1,6 @@
-cluster: mundane
+cluster: forestry
 
-primitives:
+species:
 - forest bee:
     origin: forest hive
     produce: [honey comb]
@@ -31,7 +31,7 @@ primitives:
     produce: [frozen comb]
 - marshy bee:
     origin: swamp hive
-    flowsers: mushroom
+    flowers: mushroom
     biome: [swamp, river]
     produce: [mossy comb]
 

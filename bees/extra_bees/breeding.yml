@@ -1,0 +1,388 @@
+cluster: extrabees
+
+breeding:
+# frozen branch
+- frigid bee:
+    parents: [wintry bee, diligent bee]
+    chance: 10
+    produce: [frozen comb]
+- absolute bee:
+    parents: [ocean bee, frigid bee]
+    chance: 10
+    produce: [frozen comb, glacial comb]
+# festive branch
+- celebratory bee:
+    parents: [austere bee, excited bee]
+    chance: 5
+    note: Fireworks effect
+# agrarian branch
+- farmed bee:
+    parents: [cultivated bee, rural bee]
+    chance: 10
+    produce: [wheaten comb, seedy comb]
+# boggy branch
+- damp bee:
+    parents: [common bee, marshy bee]
+    chance: 10
+    produce: [mossy comb]
+- boggy bee:
+    parents: [damp bee, marshy bee]
+    chance: 8
+    produce: [mossy comb]
+- fungal bee:
+    parents: [boggy bee, damp bee]
+    chance: 8
+    produce: [mossy comb, fungal comb]
+    note: Fungal effect bonemeals mushrooms
+# agricultural branch
+- fermented bee:
+    parents: [fruity bee, rural bee]
+    chance: 10
+    produce: [wheaten comb, alcoholic comb]
+- bovine bee:
+    parents: [water bee, rural bee]
+    chance: 10
+    produce: [wheaten comb, milky comb]
+- caffeinated bee:
+    parents: [tropical bee, rural bee]
+    chance: 10
+    produce: [wheaten comb, coffee comb]
+- citrus bee:
+    parents: [modest bee, farmed bee]
+    chance: 10
+    produce: [wheaten comb, citrus comb]
+- minty bee:
+    parents: [tropical bee, farmed bee]
+    chance: 10
+    produce: [wheaten comb, mint comb]
+# barren branch
+- arid bee:
+    parents: [meadows bee, modest bee]
+    chance: 10
+    produce: [barren comb]
+- barren bee:
+    parents: [arid bee, common bee]
+    chance: 8
+    produce: [barren comb]
+- desolate bee:
+    parents: [arid bee, barren bee]
+    chance: 8
+    produce: [barren comb]
+- gnawing bee:
+    parents: [barren bee, forest bee]
+    chance: 15
+    produce: [barren comb, dusty comb]
+- decomposing bee:
+    parents: [gnawing bee, common bee]
+    chance: 8
+    produce: [barren comb, decomposing comb]
+# hostile branch
+- decaying bee:
+    parents: [desolate bee, modest bee]
+    chance: 15
+    produce: [barren comb, rotten comb]
+- skeletal bee:
+    parents: [desolate bee, frugal bee]
+    chanec: 15
+    produce: [barren comb, skeletal comb]
+- creepy bee:
+    parents: [desolate bee, austere bee]
+    chance: 15
+    produce: [barren comb, powdery comb]
+# rocky branch
+- tolerant bee:
+    parents: [rocky bee, diligent bee]
+    chance: 15
+    produce: [rocky comb]
+- robust bee:
+    parents: [rocky bee, tolerant bee]
+    chance: 15
+    produce: [rocky comb]
+- resilient bee:
+    parents: [tolerant bee, robust bee]
+    chance: 15
+    produce: [rocky comb]
+# rusty branch
+- rusty bee:
+    parents: [resilient bee, meadows bee]
+    chance: 5
+    produce: [rocky comb, iron comb]
+- corroded bee:
+    parents: [resilient bee, diligent bee]
+    chance: 5
+    produce: [rocky comb, copper comb]
+- tarnished bee:
+    parents: [resilient bee, marshy bee]
+    chance: 5
+    produce: [rocky comb, tin comb]
+- leaden bee:
+    parents: [resilient bee, unweary bee]
+    chance: 5
+    produce: [rocky comb, leaden comb]
+# metallic branch
+- lustered bee:
+    parents: [resilient bee, unweary bee]
+    chance: 10
+    produce: [rocky comb, nickel comb]
+- galvanized bee:
+    parents: [tarnished bee, cultivated bee]
+    chance: 10
+    produce: [rocky comb, zinc comb]
+- invincible bee:
+    parents: [resilient bee, ender bee]
+    chance: 5
+    produce: [rocky comb, tungsten comb]
+# alloyed branch
+- impregnable bee:
+    parents: [resilient bee, noble bee]
+    chance: 3
+    produce: [rocky comb, titanium comb]
+# precious branch
+- shining bee:
+    parents: [rusty bee, imperial bee]
+    chance: 2
+    produce: [rocky comb, silver comb]
+- glittering bee:
+    parents: [corroded bee, imperial bee]
+    chance: 2
+    produce: [rocky comb, golden comb]
+- valuable bee:
+    parents: [glittering bee, shining bee]
+    chance: 2
+    produce: [rocky comb, platinum comb]
+- lapis bee:
+    parents: [resilient bee, water bee]
+    chance: 5
+    produce: [rocky comb, lapis comb]
+# gemstone branch
+- emerald bee:
+    parents: [lapis bee, noble bee]
+    chance: 5
+    produce: [rocky comb, emerald comb]
+- ruby bee:
+    parents: [emerald bee, austere bee]
+    chance: 5
+    produce: [rocky comb, ruby comb]
+- sapphire bee:
+    parents: [emerald bee, ocean bee]
+    chance: 5
+    produce: [rocky comb, sapphire comb]
+- diamond bee:
+    parents: [lapis bee, imperial bee]
+    chance: 5
+    produce: [rocky comb, diamond comb]
+# nuclear branch
+- unstable bee:
+    parents: [austere bee, rocky bee]
+    chance: 5
+    produce: [barren comb]
+    note: Unstable effect causes damage
+- nuclear bee:
+    parents: [unstable bee, rusty bee]
+    chance: 5
+    produce: [barren comb]
+    note: Unstable effect causes damage
+- radioactive bee:
+    parents: [nuclear bee, glittering bee]
+    chance: 5
+    produce: [barren comb, radioactive comb]
+# historic branch
+- ancient bee:
+    parents: [noble bee, diligent bee]
+    chance: 10
+    produce: [ancient comb]
+- primeval bee:
+    parents: [ancient bee, noble bee]
+    chance: 8
+    produce: [ancient comb]
+- prehistoric bee:
+    parents: [primeval bee, majestic bee]
+    chance: 8
+    produce: [ancient comb]
+- relic bee:
+    parents: [prehistoric bee, imperial bee]
+    chance: 8
+    produce: [anceint comb]
+    note: Longest lifespan
+# fossilized branch
+- fossilized bee: # FTBwiki has typo?
+    parents: [primeval bee, growing bee]
+    chance: 8
+    produce: [ancient comb, fossilized comb]
+- resinous bee:
+    parents: [primeval bee, fungal bee]
+    chance: 8
+    produce: [ancient comb, amber comb]
+    # NOTE: there are two kinds of amber comb. This one centrifuges to sticky resin.
+- oily bee:
+    parents: [primeval bee, ocean bee]
+    chance: 8
+    produce: [ancient comb, oily comb]
+- preserved bee:
+    parents: [primeval bee, boggy bee]
+    chance: 8
+    produce: [ancient comb, peat comb]
+# refined branch
+- distilled bee:
+    parents: [oily bee, industrious bee]
+    chance: 8
+    produce: [oily comb]
+- refined bee:
+    parents: [oily bee, distilled bee]
+    chance: 8
+    produce: [oily comb, petroleum comb]
+- tarry bee:
+    parents: [refined bee, fossilized bee]
+    chance: 8
+    produce: [oily comb, tar comb]
+- elastic bee:
+    parents: [refined bee, resinous bee]
+    chance: 8
+    produce: [amber comb, latex comb]
+# aquatic branch
+- river bee:
+    parents: [water bee, common bee]
+    chance: 10
+    produce: [wet comb, clay comb]
+- ocean bee:
+    parents: [water bee, diligent bee]
+    chance: 10
+    biome: [ocean]
+    produce: [wet comb]
+- stained bee:
+    parents: [ebony bee, ocean bee]
+    chance: 8
+    produce: [wet comb, ink sac]
+# flowering branch
+- growing bee:
+    parents: [diligent bee, forest bee]
+    chance: 10
+    flowers: leaves
+    produce: [honey comb]
+- thriving bee:
+    parents: [growing bee, rural bee]
+    chance: 10
+    flowers: leaves
+    produce: [honey comb]
+- blooming bee:
+    parents: [growing bee, thriving bee]
+    chance: 8
+    flowers: saplings
+    note: Growth effect bonemeals nearby saplings
+# saccharine branch
+- sweetened bee:
+    parents: [valiant bee, diligent bee]
+    chance: 15
+    produce: [honey comb, sugar]
+- sugary bee:
+    parents: [sweetened bee, diligent bee]
+    chance: 15
+    produce: [honey comb, sugar]
+- ripening bee:
+    parents: [sugary bee, forest bee]
+    chance: 5
+    produce: [honey comb, sugar, fruity comb]
+- fruity bee:
+    parents: [ripening bee, rural bee]
+    chance: 5
+    produce: [honey comb, sugar, fruity comb]
+# volcanic branch
+- furious bee:
+    parents: [sinister bee, embittered bee]
+    chance: 10
+    produce: [simmering comb]
+- volcanic bee:
+    parents: [furious bee, embittered bee]
+    chance: 6
+    produce: [simmering comb, blazing comb]
+- glowering bee:
+    parents: [furious bee, excited bee]
+    chance: 5
+    produce: [glowing comb]
+# viscous branch
+- viscous bee:
+    parents: [water bee, exotic bee]
+    chance: 10
+    produce: [silky comb]
+    note: Ectoplasm effect spawns ectoplasm
+- glutinous bee:
+    parents: [viscous bee, exotic bee]
+    chance: 8
+    produce: [silky comb]
+    note: Ectoplasm effect spawns ectoplasm
+- sticky bee:
+    parents: [viscous bee, glutinous bee]
+    chance: 8
+    note: Ectoplasm effect spawns ectoplasm
+    produce: [silky comb, mucous comb]
+# virulent branch:
+- malicious bee:
+    parents: [sinister bee, tropical bee]
+    chance: 10
+    produce: [silky comb]
+- infectious bee:
+    parents: [malicious bee, tropical bee]
+    chance: 8
+    produce: [silky comb]
+- virulent bee:
+    parents: [malicious bee, infectious bee]
+    chance: 8
+    produce: [silky comb, venomous comb]
+# caustic branch
+- corrosive bee:
+    parents: [virulent bee, sticky bee]
+    chance: 10
+    produce: [silky comb]
+    note: Acidic effect turns dirt into sand and stone into gravel
+- caustic bee:
+    parents: [corrosive bee, fiendish bee]
+    chance: 8
+    produce: [silky comb]
+    note: Acidic effect turns dirt into sand and stone into gravel
+- acidic bee:
+    parents: [corrosive bee, caustic bee]
+    chance: 4
+    produce: [silky comb, brimstone comb]
+    note: Acidic effect turns dirt into sand and stone into gravel
+# energetic branch
+- excited bee:
+    parents: [cultivated bee, valiant bee]
+    chance: 10
+    produce: [glowing comb]
+    flowers: redstone torch
+    note: Lightning effect
+- energetic bee:
+    parents: [excited bee, valiant bee]
+    chance: 8
+    produce: [glowing comb]
+    flowers: redstone torch
+    note: Lightning effect
+- ecstatic bee:
+    parents: [excited bee, energetic bee]
+    chance: 8
+    produce: [glowing comb, static comb]
+    flowers: redstone torch
+    note: Lightning effect
+# shadow branch
+- shadowed bee:
+    parents: [tolerant bee, sinister bee]
+    chance: 10
+    produce: [shadow comb]
+    note: Darkness effect causes blindness
+- darkened bee:
+    parents: [shadowed bee, embittered bee]
+    chance: 8
+    produce: [shadow comb]
+    note: Darkness effect causes blindness
+- abyssmal bee:
+    parents: [shadowed bee, darkened bee]
+    chance: 8
+    produce: [shadow comb]
+    note: Darkness effect causes blindness
+
+special:
+- jaded bee:
+    parents: [ender bee, relic bee]
+    chance: 2
+    produce: [honey comb, pollen, indigo comb]
+    note: Can only be created by user 'JadedCat'

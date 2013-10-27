@@ -1,6 +1,6 @@
 cluster: magicbees
 
-primitives:
+species:
 - mystical bee:
     origin: curious hive
     produce: [mundane comb]
@@ -15,6 +15,7 @@ primitives:
     produce: [mundane comb]
 - oblivion bee:
     origin: oblivion hive
+    biome: [end]
     flowers: dragon eggs
     produce: [forgotten comb]
 - infernal bee:

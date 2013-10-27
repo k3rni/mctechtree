@@ -1,0 +1,71 @@
+cluster: extrabees
+
+breeding:
+# primary [color] branch
+- maroon bee:
+    parents: [forest bee, valiant bee]
+    chance: 5
+    produce: [honey comb, maroon comb]
+- saffron bee:
+    parents: [meadows bee, valiant bee]
+    chance: 5
+    produce: [honey comb, saffron comb]
+- prussian bee:
+    parents: [water bee, valiant bee]
+    chance: 5
+    produce: [honey comb, prussian comb]
+- natural bee:
+    parents: [tropical bee, valiant bee]
+    chance: 5
+    produce: [honey comb, forest comb]
+- ebony bee:
+    parents: [rocky bee, valiant bee]
+    chance: 5
+    produce: [honey comb, ebony comb]
+- bleached bee:
+    parents: [wintry bee, valiant bee]
+    chance: 5
+    produce: [honey comb, bleached comb]
+- sepia bee:
+    parents: [marshy bee, valiant bee]
+    chance: 5
+    produce: [honey comb, sepia comb]
+# secondary [color] branch
+- amber bee:
+    parents: [maroon bee, saffron bee]
+    chance: 5
+    produce: [honey comb, amber comb]
+    # NOTE: there are two kinds of amber combs. This one centrifuges to amber drops.
+- turquoise bee:
+    parents: [natural bee, prussian bee]
+    chance: 5
+    produce: [honey comb, turquoise comb]
+- indigo bee:
+    parents: [maroon bee, prussian bee]
+    chance: 5
+    produce: [honey comb, indigo comb]
+- slate bee:
+    parents: [ebony bee, bleached bee]
+    chance: 5
+    produce: [honey comb, slate comb]
+- azure bee:
+    parents: [prussian bee, bleached bee]
+    chance: 5
+    produce: [honey comb, azure comb]
+- lavender comb:
+    parents: [maroon comb, bleached comb]
+    chance: 5
+    produce: [honey comb, lavender comb]
+- lime bee:
+    parents: [natural bee, bleached bee]
+    chance: 5
+    produce: [honey comb, lime comb]
+# tertiary [color] branch
+- fuchsia bee:
+    parents: [indigo bee, lavender bee]
+    chance: 5
+    produce: [honey comb, fuchsia comb]
+- ashen bee:
+    parents: [slate bee, bleached bee]
+    chance: 5
+    produce: [honey comb, ashen comb]

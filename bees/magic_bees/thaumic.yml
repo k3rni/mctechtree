@@ -1,0 +1,75 @@
+cluster: magicbees
+
+breeding:
+- stark bee:
+    # NOTE: elemental is any of windy/fiery/watery/earthen. Two *different* bees are needed.
+    parents: [elemental bee, elemental bee]
+    chance: 8
+    produce: [harmonizing comb, dull shard]
+    note: Can only be created with a Crystal Cluster under the apiary
+- aura bee:
+    parents: [windy bee, windy bee]
+    chance: 8
+    produce: [windy comb, air shard]
+    note: Can only be created with an Air Crystal Cluster under the apiary
+- ignis bee:
+    parents: [fiery bee, fiery bee]
+    chance: 8
+    produce: [firey comb, fire shard]
+    note: Can only be created with an Fire Crystal Cluster under the apiary
+- aqua bee:
+    parents: [watery bee, watery bee]
+    chance: 8
+    produce: [watery comb, water shard]
+    note: Can only be created with an Water Crystal Cluster under the apiary
+- solum bee:
+    parents: [earthen bee, earthen bee]
+    chance: 8
+    produce: [earthy comb, earth shard]
+    note: Can only be created with an Earth Crystal Cluster under the apiary
+- praecantatio bee:
+    parents: [ethereal bee, ethereal bee]
+    chance: 8
+    produce: [infused comb, vis shard]
+    note: Can only be created with an Vis Crystal Cluster under the apiary
+- vis bee:
+    parents: [eldritch bee, ethereal bee]
+    chance: 10
+    produce: [memory comb]
+    note: Can only be created within 75m of any node
+- flux bee:
+    parents: [demonic bee, vis bee]
+    chance: 8
+    produce: [memory comb]
+    note: Can only be created within 50m of a Dark node
+- attractive bee:
+    parents: [vis bee, flux bee]
+    chance: 13
+    produce: [memory comb]
+    note: Can only be created within 30m of an Unstable node AND during a new moon
+- rejuvenating bee:
+    parents: [vis bee, imperial bee]
+    chance: 8
+    produce: [memory comb]
+    note: Can only be created within 25m of any node
+- pure bee:
+    parents: [vis bee, rejuvenating bee]
+    chance: 6
+    produce: [memory comb]
+    note: Can only be created within 10m of a Pure node AND during a full moon
+- brainy bee:
+    parents: [skulking bee, pupil bee]
+    chance: 9
+    produce: [furtive comb, rotten flesh, zombie brain]
+    note: Brainy effect spawns Angry Zombies
+- wispy bee:
+    parents: [ethereal bee, ghastly bee]
+    chance: 9
+    produce: [silk comb, silky wisp]
+    note: Can only be created between Waning Crescent and New Moon.
+- batty bee:
+    parents: [skulking bee, windy bee]
+    chance: 9
+    produce: [furtive comb, gunpowder]
+    note: Batty effect spawns Fire Bats
+
