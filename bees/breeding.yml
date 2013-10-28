@@ -19,7 +19,7 @@ breeding:
     chance: 12
     produce: [honey comb]
 # noble branch
-- common bee:
+- noble bee:
     parents: [common bee, cultivated bee]
     chance: 10
     produce: [dripping comb]

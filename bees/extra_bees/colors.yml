@@ -52,8 +52,8 @@ breeding:
     parents: [prussian bee, bleached bee]
     chance: 5
     produce: [honey comb, azure comb]
-- lavender comb:
-    parents: [maroon comb, bleached comb]
+- lavender bee:
+    parents: [maroon bee, bleached bee]
     chance: 5
     produce: [honey comb, lavender comb]
 - lime bee:

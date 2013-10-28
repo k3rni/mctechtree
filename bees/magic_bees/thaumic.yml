@@ -1,5 +1,9 @@
 cluster: magicbees
 
+equivalents:
+  bee:
+    elemental: [elemental bee, aura bee, fiery bee, watery bee, earthen bee]
+
 breeding:
 - stark bee:
     # NOTE: elemental is any of windy/fiery/watery/earthen. Two *different* bees are needed.

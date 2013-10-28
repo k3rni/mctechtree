@@ -4,9 +4,9 @@ breeding:
 # metallic branch
 - ferrous bee:
     parents: [common bee, industrious bee]
-    # NOTE: FTBwiki list says the above, but the page says industrious_diligent
+    # NOTE: FTBwiki list says the above, but the page says industrious+diligent
     # same for all following bees, and maybe for every species :(
-    chance: 100
+    chance: 10
     produce: [honey comb, iron nugget]
     note: Can only be created with a block of Iron under the apiary
 - auric bee:

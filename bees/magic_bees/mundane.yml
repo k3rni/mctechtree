@@ -1,5 +1,9 @@
 cluster: magicbees
 
+equivalents:
+  bee: 
+    magic_hive: [magic hive bee, mystical bee, sorcerous bee, unusual bee, attuned bee, oblivion bee, infernal bee]
+
 species:
 - mystical bee:
     origin: curious hive

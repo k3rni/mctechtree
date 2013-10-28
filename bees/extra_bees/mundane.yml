@@ -1,5 +1,9 @@
 cluster: extrabees
 
+equivalents:
+  bee: 
+    hive: [water bee, rocky bee, embittered bee]
+
 species:
 - water bee:
     origin: water hive

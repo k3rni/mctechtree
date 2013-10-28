@@ -3,7 +3,7 @@ cluster: magicbees
 breeding:
 # veiled branch
 - eldritch bee:
-    parents: [magic bee, cultivated bee]
+    parents: [magic hive bee, cultivated bee]
     chance: 12
     produce: [mundane comb]
 # arcane branch
@@ -122,7 +122,7 @@ breeding:
 - doctoral bee:
     parents: [timely bee, lordly bee]
     chance: 7
-    produce: [temporal comb, handful of jelly babies)
+    produce: [temporal comb, handful of jelly babies]
     note: Heroic effect damages nearby mobs
     nocturnal: yes
 # soulful branch

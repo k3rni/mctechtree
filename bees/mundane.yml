@@ -1,5 +1,9 @@
 cluster: forestry
 
+equivalents:
+  bee: 
+    hive: [hive bee, forest bee, meadows bee, modest bee, tropical bee, ender bee, wintry bee, marshy bee]
+
 species:
 - forest bee:
     origin: forest hive
