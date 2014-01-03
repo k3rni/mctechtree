@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Isomet</title>
+  </head>
+  <body>
+    <style type="text/css">
+      div.iso {
+        height: 160px;
+        border: 1px solid blue;
+      }
+      div.cube, div.cube::before, div.cube::after {
+        display: block;
+      }
+      div.cube {
+        position: relative;
+        top: 32px;
+        left: 32px;
+        width: 64px;
+        height: 64px;
+        -webkit-transform: translateY(50%) skewY(30deg) scaleY(1.1);
+      }
+      div.cube::before {
+        position: relative;
+        content: "";
+        top: 0px;
+        left: 64px;
+        width: 64px;
+        height: 64px;
+        -webkit-transform: skewY(-50deg) translateX(0%) translateY(-60%);
+      }
+      div.cube::after {
+        position: relative;
+        content: "";
+        top: -64px;
+        left: 64px;
+        width: 64px;
+        height: 64px;
+        -webkit-transform: translateY(-109%) skewX(-40deg) translateX(-50%) scaleY(1.19);
+      }
+      .dirt {
+        background: url(side.png) no-repeat;
+        background-size: cover;
+      }
+
+      .dirt::before {
+        background: url(side.png) no-repeat;
+        background-size: cover;
+      }
+
+      .dirt::after {
+        background: url(top.png) no-repeat;
+        background-size: cover;
+      }
+
+      .plain, .plain::before, .plain::after {
+        border: 1px solid black;
+      }
+
+      .isometric {
+        -webkit-transform: matrix3d(0.707106, 1, 0.5773502, 0,  0, 2, -0.5773502, 0, -0.707106, 1, 0.5773502, 0, 0, 0, 0, 1);
+      }
+
+    </style>
+    <div>
+      <input type="number" id="size" value="64">
+    </div>
+    <div class="iso">
+      <div class="cube plain"></div>
+    </div>
+    <div>
+      <p>Lorem ipsum dolor</p>
+    </div>
+    <div class="iso">
+      <div class="cube dirt"></div>
+    </div>
+    <script type="text/javascript">
+      function find_rule(selector) {
+        // nibytablice, ale nie obsługują forEach itd.
+        for (var i = 0; i < document.styleSheets.length; i++) {
+          var ss = document.styleSheets[i];
+          for (var j = 0; j < ss.rules.length; j++) {
+            var rule = ss.rules[j];
+            if (rule.selectorText == selector) return rule;
+          }
+        }
+      }
+      document.querySelector('#size').addEventListener('change', function(event) {
+        var s = Number(event.srcElement.value);
+        var cr = find_rule('div.cube').style;
+        cr.width = cr.height = s + 'px'
+        cr.top = cr.left = Math.floor(s/2) + 'px';
+        cr = find_rule('div.cube::before').style;
+        cr.width = cr.height = cr.left = s + 'px';
+        cr = find_rule('div.cube::after').style;
+        cr.width = cr.height = cr.left = s + 'px';
+        cr.top = (-s) + 'px';
+        cr = find_rule('div.iso').style;
+        cr.height = Math.floor(5*s/2) + 'px';
+      }, false);
+    </script>
+  </body>
+</html>
