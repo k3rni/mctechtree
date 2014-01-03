@@ -58,7 +58,11 @@ class ItemResolver
     end
 
     def resolve
-      raise UncraftableItemError if !craftable
+      # raise UncraftableItemError if !craftable
+      if !craftable
+        puts "Uncraftable: #{item} #{craftable_children} #{children.select(&:craftable).size}"
+        raise UncraftableItemError
+      end
       if primitive
         [:get, count, item]
       else
@@ -110,11 +114,11 @@ class CraftResolver
     end
 
     def sum_children_costs
-        @children.map(&:cost).inject(0){ |a,b| a + b }
+      @children.map(&:cost).inject(0){ |a,b| a + b }
     end
 
     def resolve
-        [craft, @children.map { |ir| [ir.count, ir.resolve] }]
+      [craft, @children.map { |ir| [ir.count, ir.resolve] }]
     end
 
 end
