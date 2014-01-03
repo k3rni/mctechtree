@@ -138,4 +138,8 @@ class ForgeItem < SimpleDelegator
     @items = srcitems
     @delegate_sd_obj = @items.first
   end
+
+  def crafts
+    @items.map(&:crafts).flatten
+  end
 end

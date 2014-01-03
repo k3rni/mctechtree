@@ -75,6 +75,7 @@ class BeeSolver < Solver
     j, last = 1, ordering.first[1] + 1# max waga
     ordering.map do |craft, order|
       row = OpenStruct.new(
+        craft: craft,
         num: (order < last ? j : nil),
         species: craft.result,
         generations: craft.success_99,
@@ -101,5 +102,53 @@ class BeeSolver < Solver
       last_num = row.num
       puts msg
     end
+  end
+
+  def dump_graph names
+    File.open "#{names.join('-').gsub(' ', '_')}.dot", 'w' do |fp|
+      fp.puts "digraph G {"
+      last_num = nil
+      seq = craft_sequence.map do |row| 
+        if row.num
+          last_num = row.num
+        end
+        [row, last_num]
+      end
+      used = Set.new
+      lastrank = nil
+      seq.group_by(&:last).each do |rank, items|
+        items.each do |row, _i|
+          row.craft.ingredients.each do |bee|
+            unless used.include? bee
+              fp.puts %Q(n_#{bee.safe_name} [label="#{bee.name}" #{bee_attrs bee}];)
+              used.add bee
+            end
+          end
+          row.craft.ingredients.each do |bee|
+            fp.puts %Q(n_#{bee.safe_name} -> n_#{row.species.safe_name} [label="#{row.craft.chance}%"];)
+          end
+          bee = row.species
+          unless used.include? bee
+            fp.puts %Q(n_#{bee.safe_name} [label="#{bee.name}" #{bee_attrs bee}];)
+            used.add bee
+          end
+        end
+      end
+      fp.puts "}"
+    end
+  end
+
+  private
+
+  def bee_attrs bee
+    attrs = case bee.group
+      when 'forestry'
+        { color: '#afe2a7' }
+      when 'extrabees'
+        { color: '#dac390' }
+      when 'magicbees'
+        { color: '#a49cde' }
+    end
+    attrs.merge(style: 'filled').map { |k, v| %Q(#{k}="#{v}") }.join(' ')
   end
 end

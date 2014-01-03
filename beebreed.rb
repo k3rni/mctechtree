@@ -34,9 +34,9 @@ gather_files(paths, files).each do |filename|
 end
 DB.fixup_pending
 # DB.detect_name_clashes
-# DB.fill_reverse
-# DB.classify_tiers if ARGV.include? '--tiers'
-# DB.dump_graph File.open('techtree.dot', 'w')
+DB.fill_reverse
+DB.classify_tiers #if ARGV.include? '--tiers'
+DB.dump_graph File.open('beetree.dot', 'w')
 
 def build_solutions names
   names.map do |name|
@@ -64,6 +64,7 @@ def solve *names
   solutions = build_solutions(names).map { |name, count| item_resolver.new(db.find(name), count).resolve }
   result = BeeSolver.new(solutions, options).solve
   if result.valid
+    result.dump_graph names
     result.describe
   else
     false
