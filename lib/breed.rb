@@ -41,4 +41,5 @@ class Breed < Craft
       meta.map{|k,v| "#{k}=#{v}"},
     ].flatten.compact.join(' ') + ")"
   end
+
 end

@@ -45,7 +45,7 @@ class Craft
     end
 
     def count_ingredients
-        Hash[ingredients.group_by(&:name).map { |name,items| [items.first, items.size] }]
+      Hash[ingredients.group_by(&:name).map { |name,items| [items.first, items.size] }]
     end
 
     def replace_ingredients old, new
